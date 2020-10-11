@@ -10,14 +10,22 @@ package Elementos;
  * 
  * @author Sammy Guergachi <sguergachi at gmail.com>
  */
-public class Elemento {
+public abstract class Elemento {
     public int ID;
     public String Marca;
     public String Modelo;
     public float Precio;
     public boolean disponibilidad;
 
+    public Elemento(int ID, String Marca, String Modelo, float Precio, boolean disponibilidad) {
+        this.ID = ID;
+        this.Marca = Marca;
+        this.Modelo = Modelo;
+        this.Precio = Precio;
+        this.disponibilidad = disponibilidad;
+    }
     
+   
     
     public int getID() {
         return ID;
