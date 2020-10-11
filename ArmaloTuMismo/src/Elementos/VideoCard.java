@@ -18,8 +18,9 @@ public class VideoCard extends Elemento{
     public String TipoMem;
     public float largo;
     public float ancho;
+    public float Potencia;
 
-    public VideoCard(int ID, String Marca, String Modelo, float Precio, boolean disponibilidad, String Arquitectura, String TipoBus, float Frecuencia, int Memoria, String TipoMem, float largo, float ancho) {
+    public VideoCard(int ID, String Marca, String Modelo, float Precio, boolean disponibilidad, String Arquitectura, String TipoBus, float Frecuencia, int Memoria, String TipoMem, float largo, float ancho, float Potencia) {
         super(ID, Marca, Modelo, Precio, disponibilidad);
         this.Arquitectura = Arquitectura;
         this.TipoBus = TipoBus;
@@ -28,6 +29,7 @@ public class VideoCard extends Elemento{
         this.TipoMem = TipoMem;
         this.largo = largo;
         this.ancho = ancho;
+        this.Potencia=Potencia;
     }
 
     public String getArquitectura() {

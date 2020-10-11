@@ -10,53 +10,40 @@ package Elementos;
  * 
  * @author Sammy Guergachi <sguergachi at gmail.com>
  */
-public class Case extends Elemento{
-    
-   public String tamano;
-   public int SlotStorage;
-   public int SlotVideoCard;
-   public int fans;
-   float Potencia;
+public class PowerSupply extends Elemento{
+public int Capacidad;
+public String Certificacion;
+public float potencia;
 
-    public Case(int ID, String Marca, String Modelo, float Precio, boolean disponibilidad, String tamano, int SlotStorage, int SlotVideoCard, int fans, float Potencia) {
+    public PowerSupply(int ID, String Marca, String Modelo, float Precio, boolean disponibilidad, int Capacidad, String Certificacion, float Potencia ) {
         super(ID, Marca, Modelo, Precio, disponibilidad);
-        this.tamano = tamano;
-        this.SlotStorage = SlotStorage;
-        this.SlotVideoCard = SlotVideoCard;
-        this.fans = fans;
-        this.Potencia=Potencia;
+        this.Capacidad = Capacidad;
+        this.Certificacion = Certificacion;
+        this.potencia=Potencia;
     }
 
-    public String getTamano() {
-        return tamano;
+    public int getCapacidad() {
+        return Capacidad;
     }
 
-    public void setTamano(String tamano) {
-        this.tamano = tamano;
+    public void setCapacidad(int Capacidad) {
+        this.Capacidad = Capacidad;
     }
 
-    public int getSlotStorage() {
-        return SlotStorage;
+    public String getCertificacion() {
+        return Certificacion;
     }
 
-    public void setSlotStorage(int SlotStorage) {
-        this.SlotStorage = SlotStorage;
+    public void setCertificacion(String Certificacion) {
+        this.Certificacion = Certificacion;
     }
 
-    public int getSlotVideoCard() {
-        return SlotVideoCard;
+    public float getPotencia() {
+        return potencia;
     }
 
-    public void setSlotVideoCard(int SlotVideoCard) {
-        this.SlotVideoCard = SlotVideoCard;
-    }
-
-    public int getFans() {
-        return fans;
-    }
-
-    public void setFans(int fans) {
-        this.fans = fans;
+    public void setPotencia(float potencia) {
+        this.potencia = potencia;
     }
 
     public int getID() {
@@ -98,6 +85,7 @@ public class Case extends Elemento{
     public void setDisponibilidad(boolean disponibilidad) {
         this.disponibilidad = disponibilidad;
     }
-   
-   
+
+    
+
 }
