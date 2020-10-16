@@ -13,18 +13,16 @@ package Elementos;
 public class Case extends Elemento{
     
    public String tamano;
-   public int SlotStorage;
-   public int SlotVideoCard;
-   public int fans;
-   float Potencia;
+   public String SlotStorage;
+   public String SlotVideoCard;
+   public String fans;
 
-    public Case(int ID, String Marca, String Modelo, float Precio, boolean disponibilidad, String tamano, int SlotStorage, int SlotVideoCard, int fans, float Potencia) {
-        super(ID, Marca, Modelo, Precio, disponibilidad);
+    public Case(String tamano, String SlotStorage, String SlotVideoCard, String fans, String ID, String Marca, String Modelo, String Precio, String disponibilidad, String Potencia) {
+        super(ID, Marca, Modelo, Precio, disponibilidad, Potencia);
         this.tamano = tamano;
         this.SlotStorage = SlotStorage;
         this.SlotVideoCard = SlotVideoCard;
         this.fans = fans;
-        this.Potencia=Potencia;
     }
 
     public String getTamano() {
@@ -35,35 +33,35 @@ public class Case extends Elemento{
         this.tamano = tamano;
     }
 
-    public int getSlotStorage() {
+    public String getSlotStorage() {
         return SlotStorage;
     }
 
-    public void setSlotStorage(int SlotStorage) {
+    public void setSlotStorage(String SlotStorage) {
         this.SlotStorage = SlotStorage;
     }
 
-    public int getSlotVideoCard() {
+    public String getSlotVideoCard() {
         return SlotVideoCard;
     }
 
-    public void setSlotVideoCard(int SlotVideoCard) {
+    public void setSlotVideoCard(String SlotVideoCard) {
         this.SlotVideoCard = SlotVideoCard;
     }
 
-    public int getFans() {
+    public String getFans() {
         return fans;
     }
 
-    public void setFans(int fans) {
+    public void setFans(String fans) {
         this.fans = fans;
     }
 
-    public int getID() {
+    public String getID() {
         return ID;
     }
 
-    public void setID(int ID) {
+    public void setID(String ID) {
         this.ID = ID;
     }
 
@@ -83,21 +81,29 @@ public class Case extends Elemento{
         this.Modelo = Modelo;
     }
 
-    public float getPrecio() {
+    public String getPrecio() {
         return Precio;
     }
 
-    public void setPrecio(float Precio) {
+    public void setPrecio(String Precio) {
         this.Precio = Precio;
     }
 
-    public boolean isDisponibilidad() {
+    public String getDisponibilidad() {
         return disponibilidad;
     }
 
-    public void setDisponibilidad(boolean disponibilidad) {
+    public void setDisponibilidad(String disponibilidad) {
         this.disponibilidad = disponibilidad;
     }
-   
-   
+
+    public String getPotencia() {
+        return Potencia;
+    }
+
+    public void setPotencia(String Potencia) {
+        this.Potencia = Potencia;
+    }
+
+    
 }

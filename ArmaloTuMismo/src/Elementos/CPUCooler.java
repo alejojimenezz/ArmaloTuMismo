@@ -12,12 +12,10 @@ package Elementos;
  */
 public class CPUCooler extends Elemento{
     public String tipo;
-    public float Potencia;
 
-    public CPUCooler(int ID, String Marca, String Modelo, float Precio, boolean disponibilidad, String tipo, float Potencia) {
-        super(ID, Marca, Modelo, Precio, disponibilidad);
+    public CPUCooler(String tipo, String ID, String Marca, String Modelo, String Precio, String disponibilidad, String Potencia) {
+        super(ID, Marca, Modelo, Precio, disponibilidad, Potencia);
         this.tipo = tipo;
-        this.Potencia=Potencia;
     }
 
     public String getTipo() {
@@ -28,19 +26,11 @@ public class CPUCooler extends Elemento{
         this.tipo = tipo;
     }
 
-    public float getPotencia() {
-        return Potencia;
-    }
-
-    public void setPotencia(float Potencia) {
-        this.Potencia = Potencia;
-    }
-
-    public int getID() {
+    public String getID() {
         return ID;
     }
 
-    public void setID(int ID) {
+    public void setID(String ID) {
         this.ID = ID;
     }
 
@@ -60,20 +50,31 @@ public class CPUCooler extends Elemento{
         this.Modelo = Modelo;
     }
 
-    public float getPrecio() {
+    public String getPrecio() {
         return Precio;
     }
 
-    public void setPrecio(float Precio) {
+    public void setPrecio(String Precio) {
         this.Precio = Precio;
     }
 
-    public boolean isDisponibilidad() {
+    public String getDisponibilidad() {
         return disponibilidad;
     }
 
-    public void setDisponibilidad(boolean disponibilidad) {
+    public void setDisponibilidad(String disponibilidad) {
         this.disponibilidad = disponibilidad;
     }
+
+    public String getPotencia() {
+        return Potencia;
+    }
+
+    public void setPotencia(String Potencia) {
+        this.Potencia = Potencia;
+    }
+    
+    
+
     
 }

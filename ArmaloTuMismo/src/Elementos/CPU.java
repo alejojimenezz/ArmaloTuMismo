@@ -11,45 +11,44 @@ package Elementos;
  * @author Sammy Guergachi <sguergachi at gmail.com>
  */
 public class CPU extends Elemento{
-    public float Frecuencia;
-    public int Nucleos;
-    public int Hilos;
+    public String Frecuencia;
+    public String Nucleos;
+    public String Hilos;
     public String Arquitectura;
     public String Socket;
-    public int cache;
+    public String cache;
 
-    public CPU(int ID, String Marca, String Modelo, float Precio, boolean disponibilidad, float Frecuencia, int Nucleos, int Hilos, String Arquitectura, float potencia, String Socket, int cache) {
-        super(ID, Marca, Modelo, Precio, disponibilidad);
+    public CPU(String Frecuencia, String Nucleos, String Hilos, String Arquitectura, String Socket, String cache, String ID, String Marca, String Modelo, String Precio, String disponibilidad, String Potencia) {
+        super(ID, Marca, Modelo, Precio, disponibilidad, Potencia);
         this.Frecuencia = Frecuencia;
         this.Nucleos = Nucleos;
         this.Hilos = Hilos;
         this.Arquitectura = Arquitectura;
-        this.potencia = potencia;
         this.Socket = Socket;
         this.cache = cache;
     }
 
-    public float getFrecuencia() {
+    public String getFrecuencia() {
         return Frecuencia;
     }
 
-    public void setFrecuencia(float Frecuencia) {
+    public void setFrecuencia(String Frecuencia) {
         this.Frecuencia = Frecuencia;
     }
 
-    public int getNucleos() {
+    public String getNucleos() {
         return Nucleos;
     }
 
-    public void setNucleos(int Nucleos) {
+    public void setNucleos(String Nucleos) {
         this.Nucleos = Nucleos;
     }
 
-    public int getHilos() {
+    public String getHilos() {
         return Hilos;
     }
 
-    public void setHilos(int Hilos) {
+    public void setHilos(String Hilos) {
         this.Hilos = Hilos;
     }
 
@@ -61,14 +60,6 @@ public class CPU extends Elemento{
         this.Arquitectura = Arquitectura;
     }
 
-    public float getPotencia() {
-        return potencia;
-    }
-
-    public void setPotencia(int potencia) {
-        this.potencia = potencia;
-    }
-
     public String getSocket() {
         return Socket;
     }
@@ -77,19 +68,19 @@ public class CPU extends Elemento{
         this.Socket = Socket;
     }
 
-    public int getCache() {
+    public String getCache() {
         return cache;
     }
 
-    public void setCache(int cache) {
+    public void setCache(String cache) {
         this.cache = cache;
     }
 
-    public int getID() {
+    public String getID() {
         return ID;
     }
 
-    public void setID(int ID) {
+    public void setID(String ID) {
         this.ID = ID;
     }
 
@@ -109,22 +100,30 @@ public class CPU extends Elemento{
         this.Modelo = Modelo;
     }
 
-    public float getPrecio() {
+    public String getPrecio() {
         return Precio;
     }
 
-    public void setPrecio(float Precio) {
+    public void setPrecio(String Precio) {
         this.Precio = Precio;
     }
 
-    public boolean isDisponibilidad() {
+    public String getDisponibilidad() {
         return disponibilidad;
     }
 
-    public void setDisponibilidad(boolean disponibilidad) {
+    public void setDisponibilidad(String disponibilidad) {
         this.disponibilidad = disponibilidad;
     }
-    
+
+    public String getPotencia() {
+        return Potencia;
+    }
+
+    public void setPotencia(String Potencia) {
+        this.Potencia = Potencia;
+    }
+
     
     
     
