@@ -17,8 +17,8 @@ public class Storage extends Elemento {
     public String vel_Read;
     public String BusType;
 
-    public Storage(String Tipo, String capacidad, String vel_write, String vel_Read, String BusType, String ID, String Marca, String Modelo, String Precio, String disponibilidad, String Potencia) {
-        super(ID, Marca, Modelo, Precio, disponibilidad, Potencia);
+    public Storage(String Tipo, String capacidad, String vel_write, String vel_Read, String BusType, String ID, String Marca, String Modelo, String Precio, String cantidad, String Potencia) {
+        super(ID, Marca, Modelo, Precio, cantidad, Potencia);
         this.Tipo = Tipo;
         this.capacidad = capacidad;
         this.vel_write = vel_write;
@@ -98,12 +98,12 @@ public class Storage extends Elemento {
         this.Precio = Precio;
     }
 
-    public String getDisponibilidad() {
-        return disponibilidad;
+    public String getCantidad() {
+        return cantidad;
     }
 
-    public void setDisponibilidad(String disponibilidad) {
-        this.disponibilidad = disponibilidad;
+    public void setCantidad(String cantidad) {
+        this.cantidad = cantidad;
     }
 
     public String getPotencia() {
@@ -114,6 +114,7 @@ public class Storage extends Elemento {
         this.Potencia = Potencia;
     }
 
+    
 
    
     

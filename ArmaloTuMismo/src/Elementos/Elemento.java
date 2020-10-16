@@ -15,17 +15,19 @@ public abstract class Elemento {
     public String Marca;
     public String Modelo;
     public String Precio;
-    public String disponibilidad;
+    public String cantidad;
     public String Potencia;
 
-    public Elemento(String ID, String Marca, String Modelo, String Precio, String disponibilidad, String Potencia) {
+    public Elemento(String ID, String Marca, String Modelo, String Precio, String cantidad, String Potencia) {
         this.ID = ID;
         this.Marca = Marca;
         this.Modelo = Modelo;
         this.Precio = Precio;
-        this.disponibilidad = disponibilidad;
+        this.cantidad = cantidad;
         this.Potencia = Potencia;
     }
+
+
 
     public String getID() {
         return ID;
@@ -59,13 +61,15 @@ public abstract class Elemento {
         this.Precio = Precio;
     }
 
-    public String getDisponibilidad() {
-        return disponibilidad;
+    public String getCantidad() {
+        return cantidad;
     }
 
-    public void setDisponibilidad(String disponibilidad) {
-        this.disponibilidad = disponibilidad;
+    public void setCantidad(String cantidad) {
+        this.cantidad = cantidad;
     }
+
+
 
     public String getPotencia() {
         return Potencia;

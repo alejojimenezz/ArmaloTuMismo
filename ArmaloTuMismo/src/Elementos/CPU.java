@@ -18,8 +18,8 @@ public class CPU extends Elemento{
     public String Socket;
     public String cache;
 
-    public CPU(String Frecuencia, String Nucleos, String Hilos, String Arquitectura, String Socket, String cache, String ID, String Marca, String Modelo, String Precio, String disponibilidad, String Potencia) {
-        super(ID, Marca, Modelo, Precio, disponibilidad, Potencia);
+    public CPU(String Frecuencia, String Nucleos, String Hilos, String Arquitectura, String Socket, String cache, String ID, String Marca, String Modelo, String Precio, String cantidad, String Potencia) {
+        super(ID, Marca, Modelo, Precio, cantidad, Potencia);
         this.Frecuencia = Frecuencia;
         this.Nucleos = Nucleos;
         this.Hilos = Hilos;
@@ -27,6 +27,7 @@ public class CPU extends Elemento{
         this.Socket = Socket;
         this.cache = cache;
     }
+
 
     public String getFrecuencia() {
         return Frecuencia;
@@ -108,13 +109,15 @@ public class CPU extends Elemento{
         this.Precio = Precio;
     }
 
-    public String getDisponibilidad() {
-        return disponibilidad;
+    public String getCantidad() {
+        return cantidad;
     }
 
-    public void setDisponibilidad(String disponibilidad) {
-        this.disponibilidad = disponibilidad;
+    public void setCantidad(String cantidad) {
+        this.cantidad = cantidad;
     }
+
+
 
     public String getPotencia() {
         return Potencia;

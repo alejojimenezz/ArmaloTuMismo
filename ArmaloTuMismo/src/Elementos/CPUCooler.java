@@ -13,10 +13,12 @@ package Elementos;
 public class CPUCooler extends Elemento{
     public String tipo;
 
-    public CPUCooler(String tipo, String ID, String Marca, String Modelo, String Precio, String disponibilidad, String Potencia) {
-        super(ID, Marca, Modelo, Precio, disponibilidad, Potencia);
+    public CPUCooler(String tipo, String ID, String Marca, String Modelo, String Precio, String cantidad, String Potencia) {
+        super(ID, Marca, Modelo, Precio, cantidad, Potencia);
         this.tipo = tipo;
     }
+
+
 
     public String getTipo() {
         return tipo;
@@ -58,13 +60,14 @@ public class CPUCooler extends Elemento{
         this.Precio = Precio;
     }
 
-    public String getDisponibilidad() {
-        return disponibilidad;
+    public String getCantidad() {
+        return cantidad;
     }
 
-    public void setDisponibilidad(String disponibilidad) {
-        this.disponibilidad = disponibilidad;
+    public void setCantidad(String cantidad) {
+        this.cantidad = cantidad;
     }
+
 
     public String getPotencia() {
         return Potencia;

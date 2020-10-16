@@ -16,8 +16,8 @@ public class RAM extends Elemento{
     public String capacidad;
     public String disipacion;
 
-    public RAM(String Gen, String Vel, String capacidad, String disipacion, String ID, String Marca, String Modelo, String Precio, String disponibilidad, String Potencia) {
-        super(ID, Marca, Modelo, Precio, disponibilidad, Potencia);
+    public RAM(String Gen, String Vel, String capacidad, String disipacion, String ID, String Marca, String Modelo, String Precio, String cantidad, String Potencia) {
+        super(ID, Marca, Modelo, Precio, cantidad, Potencia);
         this.Gen = Gen;
         this.Vel = Vel;
         this.capacidad = capacidad;
@@ -88,12 +88,12 @@ public class RAM extends Elemento{
         this.Precio = Precio;
     }
 
-    public String getDisponibilidad() {
-        return disponibilidad;
+    public String getCantidad() {
+        return cantidad;
     }
 
-    public void setDisponibilidad(String disponibilidad) {
-        this.disponibilidad = disponibilidad;
+    public void setCantidad(String cantidad) {
+        this.cantidad = cantidad;
     }
 
     public String getPotencia() {
@@ -104,7 +104,7 @@ public class RAM extends Elemento{
         this.Potencia = Potencia;
     }
 
-    
+   
 
     
    

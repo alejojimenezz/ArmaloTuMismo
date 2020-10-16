@@ -19,8 +19,8 @@ public class VideoCard extends Elemento{
     public String largo;
     public String ancho;
 
-    public VideoCard(String Arquitectura, String TipoBus, String Frecuencia, String Memoria, String TipoMem, String largo, String ancho, String ID, String Marca, String Modelo, String Precio, String disponibilidad, String Potencia) {
-        super(ID, Marca, Modelo, Precio, disponibilidad, Potencia);
+    public VideoCard(String Arquitectura, String TipoBus, String Frecuencia, String Memoria, String TipoMem, String largo, String ancho, String ID, String Marca, String Modelo, String Precio, String cantidad, String Potencia) {
+        super(ID, Marca, Modelo, Precio, cantidad, Potencia);
         this.Arquitectura = Arquitectura;
         this.TipoBus = TipoBus;
         this.Frecuencia = Frecuencia;
@@ -118,12 +118,12 @@ public class VideoCard extends Elemento{
         this.Precio = Precio;
     }
 
-    public String getDisponibilidad() {
-        return disponibilidad;
+    public String getCantidad() {
+        return cantidad;
     }
 
-    public void setDisponibilidad(String disponibilidad) {
-        this.disponibilidad = disponibilidad;
+    public void setCantidad(String cantidad) {
+        this.cantidad = cantidad;
     }
 
     public String getPotencia() {
@@ -133,7 +133,6 @@ public class VideoCard extends Elemento{
     public void setPotencia(String Potencia) {
         this.Potencia = Potencia;
     }
-
 
    
 }

@@ -12,8 +12,8 @@ package Elementos;
  */
 public class OS extends Elemento{
 
-    public OS(String ID, String Marca, String Modelo, String Precio, String disponibilidad, String Potencia) {
-        super(ID, Marca, Modelo, Precio, disponibilidad, Potencia);
+    public OS(String ID, String Marca, String Modelo, String Precio, String cantidad, String Potencia) {
+        super(ID, Marca, Modelo, Precio, cantidad, Potencia);
     }
 
     public String getID() {
@@ -48,12 +48,12 @@ public class OS extends Elemento{
         this.Precio = Precio;
     }
 
-    public String getDisponibilidad() {
-        return disponibilidad;
+    public String getCantidad() {
+        return cantidad;
     }
 
-    public void setDisponibilidad(String disponibilidad) {
-        this.disponibilidad = disponibilidad;
+    public void setCantidad(String cantidad) {
+        this.cantidad = cantidad;
     }
 
     public String getPotencia() {
@@ -64,5 +64,5 @@ public class OS extends Elemento{
         this.Potencia = Potencia;
     }
 
-    
+       
 }

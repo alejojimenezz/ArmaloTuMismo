@@ -14,8 +14,8 @@ public class PowerSupply extends Elemento{
 public String Capacidad;
 public String Certificacion;
 
-    public PowerSupply(String Capacidad, String Certificacion, String ID, String Marca, String Modelo, String Precio, String disponibilidad, String Potencia) {
-        super(ID, Marca, Modelo, Precio, disponibilidad, Potencia);
+    public PowerSupply(String Capacidad, String Certificacion, String ID, String Marca, String Modelo, String Precio, String cantidad, String Potencia) {
+        super(ID, Marca, Modelo, Precio, cantidad, Potencia);
         this.Capacidad = Capacidad;
         this.Certificacion = Certificacion;
     }
@@ -68,12 +68,12 @@ public String Certificacion;
         this.Precio = Precio;
     }
 
-    public String getDisponibilidad() {
-        return disponibilidad;
+    public String getCantidad() {
+        return cantidad;
     }
 
-    public void setDisponibilidad(String disponibilidad) {
-        this.disponibilidad = disponibilidad;
+    public void setCantidad(String cantidad) {
+        this.cantidad = cantidad;
     }
 
     public String getPotencia() {
@@ -84,8 +84,6 @@ public String Certificacion;
         this.Potencia = Potencia;
     }
 
-
-
-    
+   
 
 }

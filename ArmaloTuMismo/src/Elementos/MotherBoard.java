@@ -20,8 +20,8 @@ public class MotherBoard extends Elemento{
     public String SLI;
     public String puertos;
 
-    public MotherBoard(String Socket, String RAMSupported, String Tamano, Boolean Overclock, String Chipset, String SLI, String puertos, String ID, String Marca, String Modelo, String Precio, String disponibilidad, String Potencia) {
-        super(ID, Marca, Modelo, Precio, disponibilidad, Potencia);
+    public MotherBoard(String Socket, String RAMSupported, String Tamano, Boolean Overclock, String Chipset, String SLI, String puertos, String ID, String Marca, String Modelo, String Precio, String cantidad, String Potencia) {
+        super(ID, Marca, Modelo, Precio, cantidad, Potencia);
         this.Socket = Socket;
         this.RAMSupported = RAMSupported;
         this.Tamano = Tamano;
@@ -30,6 +30,8 @@ public class MotherBoard extends Elemento{
         this.SLI = SLI;
         this.puertos = puertos;
     }
+
+    
 
     public String getSocket() {
         return Socket;
@@ -119,13 +121,14 @@ public class MotherBoard extends Elemento{
         this.Precio = Precio;
     }
 
-    public String getDisponibilidad() {
-        return disponibilidad;
+    public String getCantidad() {
+        return cantidad;
     }
 
-    public void setDisponibilidad(String disponibilidad) {
-        this.disponibilidad = disponibilidad;
+    public void setCantidad(String cantidad) {
+        this.cantidad = cantidad;
     }
+
 
     public String getPotencia() {
         return Potencia;
