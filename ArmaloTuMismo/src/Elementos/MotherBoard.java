@@ -13,16 +13,15 @@ package Elementos;
 public class MotherBoard extends Elemento{
 
     public String Socket;
-    public int RAMSupported;
+    public String RAMSupported;
     public String Tamano;
     public Boolean Overclock;
     public String Chipset ;
-    public boolean SLI;
-    public int puertos;
-    public float Potencia;
+    public String SLI;
+    public String puertos;
 
-    public MotherBoard(int ID, String Marca, String Modelo, float Precio, boolean disponibilidad, String Socket, int RAMSupported, String Tamano, Boolean Overclock, String Chipset, boolean SLI, int puertos, float Potencia) {
-        super(ID, Marca, Modelo, Precio, disponibilidad);
+    public MotherBoard(String Socket, String RAMSupported, String Tamano, Boolean Overclock, String Chipset, String SLI, String puertos, String ID, String Marca, String Modelo, String Precio, String disponibilidad, String Potencia) {
+        super(ID, Marca, Modelo, Precio, disponibilidad, Potencia);
         this.Socket = Socket;
         this.RAMSupported = RAMSupported;
         this.Tamano = Tamano;
@@ -30,15 +29,6 @@ public class MotherBoard extends Elemento{
         this.Chipset = Chipset;
         this.SLI = SLI;
         this.puertos = puertos;
-        this.Potencia=Potencia;
-    }
-
-    public float getPotencia() {
-        return Potencia;
-    }
-
-    public void setPotencia(float Potencia) {
-        this.Potencia = Potencia;
     }
 
     public String getSocket() {
@@ -49,11 +39,11 @@ public class MotherBoard extends Elemento{
         this.Socket = Socket;
     }
 
-    public int getRAMSupported() {
+    public String getRAMSupported() {
         return RAMSupported;
     }
 
-    public void setRAMSupported(int RAMSupported) {
+    public void setRAMSupported(String RAMSupported) {
         this.RAMSupported = RAMSupported;
     }
 
@@ -81,27 +71,27 @@ public class MotherBoard extends Elemento{
         this.Chipset = Chipset;
     }
 
-    public boolean isSLI() {
+    public String getSLI() {
         return SLI;
     }
 
-    public void setSLI(boolean SLI) {
+    public void setSLI(String SLI) {
         this.SLI = SLI;
     }
 
-    public int getPuertos() {
+    public String getPuertos() {
         return puertos;
     }
 
-    public void setPuertos(int puertos) {
+    public void setPuertos(String puertos) {
         this.puertos = puertos;
     }
 
-    public int getID() {
+    public String getID() {
         return ID;
     }
 
-    public void setID(int ID) {
+    public void setID(String ID) {
         this.ID = ID;
     }
 
@@ -121,22 +111,28 @@ public class MotherBoard extends Elemento{
         this.Modelo = Modelo;
     }
 
-    public float getPrecio() {
+    public String getPrecio() {
         return Precio;
     }
 
-    public void setPrecio(float Precio) {
+    public void setPrecio(String Precio) {
         this.Precio = Precio;
     }
 
-    public boolean isDisponibilidad() {
+    public String getDisponibilidad() {
         return disponibilidad;
     }
 
-    public void setDisponibilidad(boolean disponibilidad) {
+    public void setDisponibilidad(String disponibilidad) {
         this.disponibilidad = disponibilidad;
     }
-    
-    
-    
+
+    public String getPotencia() {
+        return Potencia;
+    }
+
+    public void setPotencia(String Potencia) {
+        this.Potencia = Potencia;
+    }
+
 }

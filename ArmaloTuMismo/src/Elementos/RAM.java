@@ -12,12 +12,12 @@ package Elementos;
  */
 public class RAM extends Elemento{
     public String Gen;
-    public float Vel;
-    public int capacidad;
-    public boolean disipacion;
+    public String Vel;
+    public String capacidad;
+    public String disipacion;
 
-    public RAM(int ID, String Marca, String Modelo, float Precio, boolean disponibilidad, String Gen, float Vel, int capacidad, boolean disipacion) {
-        super(ID, Marca, Modelo, Precio, disponibilidad);
+    public RAM(String Gen, String Vel, String capacidad, String disipacion, String ID, String Marca, String Modelo, String Precio, String disponibilidad, String Potencia) {
+        super(ID, Marca, Modelo, Precio, disponibilidad, Potencia);
         this.Gen = Gen;
         this.Vel = Vel;
         this.capacidad = capacidad;
@@ -32,35 +32,35 @@ public class RAM extends Elemento{
         this.Gen = Gen;
     }
 
-    public float getVel() {
+    public String getVel() {
         return Vel;
     }
 
-    public void setVel(float Vel) {
+    public void setVel(String Vel) {
         this.Vel = Vel;
     }
 
-    public int getCapacidad() {
+    public String getCapacidad() {
         return capacidad;
     }
 
-    public void setCapacidad(int capacidad) {
+    public void setCapacidad(String capacidad) {
         this.capacidad = capacidad;
     }
 
-    public boolean isDisipacion() {
+    public String getDisipacion() {
         return disipacion;
     }
 
-    public void setDisipacion(boolean disipacion) {
+    public void setDisipacion(String disipacion) {
         this.disipacion = disipacion;
     }
 
-    public int getID() {
+    public String getID() {
         return ID;
     }
 
-    public void setID(int ID) {
+    public void setID(String ID) {
         this.ID = ID;
     }
 
@@ -80,22 +80,31 @@ public class RAM extends Elemento{
         this.Modelo = Modelo;
     }
 
-    public float getPrecio() {
+    public String getPrecio() {
         return Precio;
     }
 
-    public void setPrecio(float Precio) {
+    public void setPrecio(String Precio) {
         this.Precio = Precio;
     }
 
-    public boolean isDisponibilidad() {
+    public String getDisponibilidad() {
         return disponibilidad;
     }
 
-    public void setDisponibilidad(boolean disponibilidad) {
+    public void setDisponibilidad(String disponibilidad) {
         this.disponibilidad = disponibilidad;
     }
 
+    public String getPotencia() {
+        return Potencia;
+    }
+
+    public void setPotencia(String Potencia) {
+        this.Potencia = Potencia;
+    }
+
+    
 
     
    

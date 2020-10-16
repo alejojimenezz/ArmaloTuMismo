@@ -12,30 +12,19 @@ package Elementos;
  */
 public class Storage extends Elemento {
     public String Tipo;
-    public long capacidad;
-    public int vel_write;
-    public int vel_Read;
+    public String capacidad;
+    public String vel_write;
+    public String vel_Read;
     public String BusType;
-    public float Potencia;
 
-    public Storage(int ID, String Marca, String Modelo, float Precio, boolean disponibilidad, String Tipo, long capacidad, int vel_write, int vel_Read, String BusType, float Potencia) {
-        super(ID, Marca, Modelo, Precio, disponibilidad);
+    public Storage(String Tipo, String capacidad, String vel_write, String vel_Read, String BusType, String ID, String Marca, String Modelo, String Precio, String disponibilidad, String Potencia) {
+        super(ID, Marca, Modelo, Precio, disponibilidad, Potencia);
         this.Tipo = Tipo;
         this.capacidad = capacidad;
         this.vel_write = vel_write;
         this.vel_Read = vel_Read;
         this.BusType = BusType;
-        this.Potencia=Potencia;
     }
-
-    public float getPotencia() {
-        return Potencia;
-    }
-
-    public void setPotencia(float Potencia) {
-        this.Potencia = Potencia;
-    }
-    
 
     public String getTipo() {
         return Tipo;
@@ -45,27 +34,27 @@ public class Storage extends Elemento {
         this.Tipo = Tipo;
     }
 
-    public long getCapacidad() {
+    public String getCapacidad() {
         return capacidad;
     }
 
-    public void setCapacidad(long capacidad) {
+    public void setCapacidad(String capacidad) {
         this.capacidad = capacidad;
     }
 
-    public int getVel_write() {
+    public String getVel_write() {
         return vel_write;
     }
 
-    public void setVel_write(int vel_write) {
+    public void setVel_write(String vel_write) {
         this.vel_write = vel_write;
     }
 
-    public int getVel_Read() {
+    public String getVel_Read() {
         return vel_Read;
     }
 
-    public void setVel_Read(int vel_Read) {
+    public void setVel_Read(String vel_Read) {
         this.vel_Read = vel_Read;
     }
 
@@ -77,11 +66,11 @@ public class Storage extends Elemento {
         this.BusType = BusType;
     }
 
-    public int getID() {
+    public String getID() {
         return ID;
     }
 
-    public void setID(int ID) {
+    public void setID(String ID) {
         this.ID = ID;
     }
 
@@ -101,22 +90,31 @@ public class Storage extends Elemento {
         this.Modelo = Modelo;
     }
 
-    public float getPrecio() {
+    public String getPrecio() {
         return Precio;
     }
 
-    public void setPrecio(float Precio) {
+    public void setPrecio(String Precio) {
         this.Precio = Precio;
     }
 
-    public boolean isDisponibilidad() {
+    public String getDisponibilidad() {
         return disponibilidad;
     }
 
-    public void setDisponibilidad(boolean disponibilidad) {
+    public void setDisponibilidad(String disponibilidad) {
         this.disponibilidad = disponibilidad;
     }
-    
-    
+
+    public String getPotencia() {
+        return Potencia;
+    }
+
+    public void setPotencia(String Potencia) {
+        this.Potencia = Potencia;
+    }
+
+
+   
     
 }

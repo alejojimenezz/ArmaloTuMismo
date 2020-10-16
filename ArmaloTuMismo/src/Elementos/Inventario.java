@@ -6,9 +6,20 @@
 
 package Elementos;
 
+import java.util.*;
+
 
 public class Inventario {
 
+    public HashMap<String, Elemento> componentes=new HashMap<String, Elemento>();
+
+    public void agregar(String key, Elemento e){
+    
+            componentes.put(key, e);
+    }
+    
+    
+    
     
     
 }

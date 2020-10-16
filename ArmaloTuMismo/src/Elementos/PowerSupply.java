@@ -11,22 +11,20 @@ package Elementos;
  * @author Sammy Guergachi <sguergachi at gmail.com>
  */
 public class PowerSupply extends Elemento{
-public int Capacidad;
+public String Capacidad;
 public String Certificacion;
-public float potencia;
 
-    public PowerSupply(int ID, String Marca, String Modelo, float Precio, boolean disponibilidad, int Capacidad, String Certificacion, float Potencia ) {
-        super(ID, Marca, Modelo, Precio, disponibilidad);
+    public PowerSupply(String Capacidad, String Certificacion, String ID, String Marca, String Modelo, String Precio, String disponibilidad, String Potencia) {
+        super(ID, Marca, Modelo, Precio, disponibilidad, Potencia);
         this.Capacidad = Capacidad;
         this.Certificacion = Certificacion;
-        this.potencia=Potencia;
     }
 
-    public int getCapacidad() {
+    public String getCapacidad() {
         return Capacidad;
     }
 
-    public void setCapacidad(int Capacidad) {
+    public void setCapacidad(String Capacidad) {
         this.Capacidad = Capacidad;
     }
 
@@ -38,19 +36,11 @@ public float potencia;
         this.Certificacion = Certificacion;
     }
 
-    public float getPotencia() {
-        return potencia;
-    }
-
-    public void setPotencia(float potencia) {
-        this.potencia = potencia;
-    }
-
-    public int getID() {
+    public String getID() {
         return ID;
     }
 
-    public void setID(int ID) {
+    public void setID(String ID) {
         this.ID = ID;
     }
 
@@ -70,21 +60,31 @@ public float potencia;
         this.Modelo = Modelo;
     }
 
-    public float getPrecio() {
+    public String getPrecio() {
         return Precio;
     }
 
-    public void setPrecio(float Precio) {
+    public void setPrecio(String Precio) {
         this.Precio = Precio;
     }
 
-    public boolean isDisponibilidad() {
+    public String getDisponibilidad() {
         return disponibilidad;
     }
 
-    public void setDisponibilidad(boolean disponibilidad) {
+    public void setDisponibilidad(String disponibilidad) {
         this.disponibilidad = disponibilidad;
     }
+
+    public String getPotencia() {
+        return Potencia;
+    }
+
+    public void setPotencia(String Potencia) {
+        this.Potencia = Potencia;
+    }
+
+
 
     
 

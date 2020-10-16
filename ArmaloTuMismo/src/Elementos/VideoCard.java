@@ -13,15 +13,14 @@ package Elementos;
 public class VideoCard extends Elemento{
     public String Arquitectura;
     public String TipoBus;
-    public float Frecuencia;
-    public int Memoria;
+    public String Frecuencia;
+    public String Memoria;
     public String TipoMem;
-    public float largo;
-    public float ancho;
-    public float Potencia;
+    public String largo;
+    public String ancho;
 
-    public VideoCard(int ID, String Marca, String Modelo, float Precio, boolean disponibilidad, String Arquitectura, String TipoBus, float Frecuencia, int Memoria, String TipoMem, float largo, float ancho, float Potencia) {
-        super(ID, Marca, Modelo, Precio, disponibilidad);
+    public VideoCard(String Arquitectura, String TipoBus, String Frecuencia, String Memoria, String TipoMem, String largo, String ancho, String ID, String Marca, String Modelo, String Precio, String disponibilidad, String Potencia) {
+        super(ID, Marca, Modelo, Precio, disponibilidad, Potencia);
         this.Arquitectura = Arquitectura;
         this.TipoBus = TipoBus;
         this.Frecuencia = Frecuencia;
@@ -29,7 +28,6 @@ public class VideoCard extends Elemento{
         this.TipoMem = TipoMem;
         this.largo = largo;
         this.ancho = ancho;
-        this.Potencia=Potencia;
     }
 
     public String getArquitectura() {
@@ -48,19 +46,19 @@ public class VideoCard extends Elemento{
         this.TipoBus = TipoBus;
     }
 
-    public float getFrecuencia() {
+    public String getFrecuencia() {
         return Frecuencia;
     }
 
-    public void setFrecuencia(float Frecuencia) {
+    public void setFrecuencia(String Frecuencia) {
         this.Frecuencia = Frecuencia;
     }
 
-    public int getMemoria() {
+    public String getMemoria() {
         return Memoria;
     }
 
-    public void setMemoria(int Memoria) {
+    public void setMemoria(String Memoria) {
         this.Memoria = Memoria;
     }
 
@@ -72,27 +70,27 @@ public class VideoCard extends Elemento{
         this.TipoMem = TipoMem;
     }
 
-    public float getLargo() {
+    public String getLargo() {
         return largo;
     }
 
-    public void setLargo(float largo) {
+    public void setLargo(String largo) {
         this.largo = largo;
     }
 
-    public float getAncho() {
+    public String getAncho() {
         return ancho;
     }
 
-    public void setAncho(float ancho) {
+    public void setAncho(String ancho) {
         this.ancho = ancho;
     }
 
-    public int getID() {
+    public String getID() {
         return ID;
     }
 
-    public void setID(int ID) {
+    public void setID(String ID) {
         this.ID = ID;
     }
 
@@ -112,22 +110,30 @@ public class VideoCard extends Elemento{
         this.Modelo = Modelo;
     }
 
-    public float getPrecio() {
+    public String getPrecio() {
         return Precio;
     }
 
-    public void setPrecio(float Precio) {
+    public void setPrecio(String Precio) {
         this.Precio = Precio;
     }
 
-    public boolean isDisponibilidad() {
+    public String getDisponibilidad() {
         return disponibilidad;
     }
 
-    public void setDisponibilidad(boolean disponibilidad) {
+    public void setDisponibilidad(String disponibilidad) {
         this.disponibilidad = disponibilidad;
     }
-    
-    
-    
+
+    public String getPotencia() {
+        return Potencia;
+    }
+
+    public void setPotencia(String Potencia) {
+        this.Potencia = Potencia;
+    }
+
+
+   
 }

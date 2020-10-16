@@ -12,58 +12,57 @@ package Elementos;
  */
 public class OS extends Elemento{
 
-    public OS(int ID, String Marca, String Modelo, float Precio, boolean disponibilidad) {
-        super(ID, Marca, Modelo, Precio, disponibilidad);
+    public OS(String ID, String Marca, String Modelo, String Precio, String disponibilidad, String Potencia) {
+        super(ID, Marca, Modelo, Precio, disponibilidad, Potencia);
     }
 
-    @Override
-    public int getID() {
+    public String getID() {
         return ID;
     }
 
-    @Override
-    public void setID(int ID) {
+    public void setID(String ID) {
         this.ID = ID;
     }
 
-    @Override
     public String getMarca() {
         return Marca;
     }
 
-    @Override
     public void setMarca(String Marca) {
         this.Marca = Marca;
     }
 
-    @Override
     public String getModelo() {
         return Modelo;
     }
 
-    @Override
     public void setModelo(String Modelo) {
         this.Modelo = Modelo;
     }
 
-    @Override
-    public float getPrecio() {
+    public String getPrecio() {
         return Precio;
     }
 
-    @Override
-    public void setPrecio(float Precio) {
+    public void setPrecio(String Precio) {
         this.Precio = Precio;
     }
 
-    @Override
-    public boolean isDisponibilidad() {
+    public String getDisponibilidad() {
         return disponibilidad;
     }
 
-    @Override
-    public void setDisponibilidad(boolean disponibilidad) {
+    public void setDisponibilidad(String disponibilidad) {
         this.disponibilidad = disponibilidad;
     }
 
+    public String getPotencia() {
+        return Potencia;
+    }
+
+    public void setPotencia(String Potencia) {
+        this.Potencia = Potencia;
+    }
+
+    
 }
