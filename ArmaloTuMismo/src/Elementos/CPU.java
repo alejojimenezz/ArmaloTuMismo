@@ -15,7 +15,6 @@ public class CPU extends Elemento{
     public int Nucleos;
     public int Hilos;
     public String Arquitectura;
-    public float potencia;
     public String Socket;
     public int cache;
 

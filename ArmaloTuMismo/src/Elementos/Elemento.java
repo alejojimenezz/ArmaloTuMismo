@@ -11,27 +11,27 @@ package Elementos;
  * @author Sammy Guergachi <sguergachi at gmail.com>
  */
 public abstract class Elemento {
-    public int ID;
+    public String ID;
     public String Marca;
     public String Modelo;
-    public float Precio;
-    public boolean disponibilidad;
+    public String Precio;
+    public String disponibilidad;
+    public String Potencia;
 
-    public Elemento(int ID, String Marca, String Modelo, float Precio, boolean disponibilidad) {
+    public Elemento(String ID, String Marca, String Modelo, String Precio, String disponibilidad, String Potencia) {
         this.ID = ID;
         this.Marca = Marca;
         this.Modelo = Modelo;
         this.Precio = Precio;
         this.disponibilidad = disponibilidad;
+        this.Potencia = Potencia;
     }
-    
-   
-    
-    public int getID() {
+
+    public String getID() {
         return ID;
     }
 
-    public void setID(int ID) {
+    public void setID(String ID) {
         this.ID = ID;
     }
 
@@ -51,21 +51,30 @@ public abstract class Elemento {
         this.Modelo = Modelo;
     }
 
-    public float getPrecio() {
+    public String getPrecio() {
         return Precio;
     }
 
-    public void setPrecio(float Precio) {
+    public void setPrecio(String Precio) {
         this.Precio = Precio;
     }
 
-    public boolean isDisponibilidad() {
+    public String getDisponibilidad() {
         return disponibilidad;
     }
 
-    public void setDisponibilidad(boolean disponibilidad) {
+    public void setDisponibilidad(String disponibilidad) {
         this.disponibilidad = disponibilidad;
     }
+
+    public String getPotencia() {
+        return Potencia;
+    }
+
+    public void setPotencia(String Potencia) {
+        this.Potencia = Potencia;
+    }
+
     
     
 }
