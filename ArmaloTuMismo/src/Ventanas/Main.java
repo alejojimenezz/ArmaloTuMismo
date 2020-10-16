@@ -15,6 +15,7 @@ import java.util.List;
 import com.csvreader.CsvReader;
 import com.csvreader.CsvWriter;
 
+
 /**
  *
  * @author Julian Medina
@@ -92,14 +93,6 @@ while(leerUsuarios.readRecord()){
 
     usuarios.add(new Usuario(userid,nombre,password,age,Boolean.parseBoolean(modificar))); // añade la informacion a la lista
 }
-
-
-for(Usuario user: usuarios){
-    System.out.println(user.getUserid() +" ; "+user.getNombre()+" ; "+user.getPassword()+" ; "+user.getAge()+" ; "+user.isModificar());
-
-}
-
-
 
 
 

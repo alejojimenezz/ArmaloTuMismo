@@ -13,17 +13,21 @@ import java.util.Date;
  */
 public class Usuario {
   
-    protected String Userid;
-    protected String Password;
-    protected boolean LoginStatus;
-    protected Date Birthday;
+     private String Userid;
+    private String Nombre;
+    private String Password;
+    private String Age;
+    private boolean Modificar;
 
-    public Usuario(String Userid, String Password, boolean LoginStatus, Date Birthday) {
+    public Usuario(String Userid, String Nombre, String Password, String Age, boolean Modificar) {
         this.Userid = Userid;
+        this.Nombre = Nombre;
         this.Password = Password;
-        this.LoginStatus = LoginStatus;
-        this.Birthday = Birthday;
+        this.Age = Age;
+        this.Modificar = Modificar;
     }
+
+   
 
     public String getUserid() {
         return Userid;
@@ -41,20 +45,31 @@ public class Usuario {
         this.Password = Password;
     }
 
-    public boolean isLoginStatus() {
-        return LoginStatus;
+ 
+
+    public String getAge() {
+        return Age;
     }
 
-    public void setLoginStatus(boolean LoginStatus) {
-        this.LoginStatus = LoginStatus;
+    public void setAge(String age) {
+        this.Age = age;
     }
 
-    public Date getBirthday() {
-        return Birthday;
-    }
-
-    public void setBirthday(Date Birthday) {
-        this.Birthday = Birthday;
-    }
     
+
+    public String getNombre() {
+        return Nombre;
+    }
+
+    public void setNombre(String Nombre) {
+        this.Nombre = Nombre;
+    }
+
+    public boolean isModificar() {
+        return Modificar;
+    }
+
+    public void setModificar(boolean Modificar) {
+        this.Modificar = Modificar;
+    }
 }
