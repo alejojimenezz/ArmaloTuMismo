@@ -73,9 +73,22 @@ public class ListaEnlazada {
     
     public boolean empty (){
     
-        return(head==null)?true:false;
+        return(head==null);
     }
     
-    
-    
+    public void add(Object o, int i){
+    Nodo temp=head;
+        if(head==null)
+                head=new Nodo(o);
+        else{
+            for(int j=0;j<i-1;j++){
+                temp=temp.getNext();
+            }
+            Nodo newN= new Nodo(o);
+            Nodo temp1=temp.getNext();
+            temp.setNext(newN);
+            newN.setNext(temp1);           
+        
+        }
+    }      
 }
