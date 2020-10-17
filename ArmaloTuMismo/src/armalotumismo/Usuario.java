@@ -26,7 +26,6 @@ public class Usuario {
         this.Age = Age;
         this.Modificar = Modificar;
     }
-
    
 
     public String getUserid() {

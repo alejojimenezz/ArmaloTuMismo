@@ -20,7 +20,7 @@ public class Nodo {
     
     }
     
-    public void link(Nodo n, Nodo p){
+    public void link(Nodo n){
     next=n;
  
     }

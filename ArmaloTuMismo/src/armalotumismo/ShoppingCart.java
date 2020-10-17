@@ -12,17 +12,8 @@ import Elementos.Elemento;
  * @author Familia
  */
 public class ShoppingCart {
-    
+    // Se usa lista doblemente enlazada
     private Nodo Head;
-    private class Nodo {
-        public Elemento e;
-        public Nodo next = null;
-            //ACTUALIZADOOOOOO
-        public Nodo(Elemento e) {
-            this.e = e;
-        }
-
-    }
     
     public void AddElement (Elemento e){
         Nodo nodo = new Nodo (e);
