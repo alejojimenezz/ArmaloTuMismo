@@ -15,12 +15,12 @@ public class MotherBoard extends Elemento{
     private String Socket;
     private String RAMSupported;
     private String Tamano;
-    private Boolean Overclock;
+    private String Overclock;
     private String Chipset ;
     private String SLI;
     private String puertos;
 
-    public MotherBoard(String Socket, String RAMSupported, String Tamano, Boolean Overclock, String Chipset, String SLI, String puertos, String ID, String Marca, String Modelo, String Precio, String cantidad, String Potencia) {
+    public MotherBoard(String Socket, String RAMSupported, String Tamano, String Overclock, String Chipset, String SLI, String puertos, String ID, String Marca, String Modelo, String Precio, String cantidad, String Potencia) {
         super(ID, Marca, Modelo, Precio, cantidad, Potencia);
         this.Socket = Socket;
         this.RAMSupported = RAMSupported;
@@ -57,11 +57,11 @@ public class MotherBoard extends Elemento{
         this.Tamano = Tamano;
     }
 
-    public Boolean getOverclock() {
+    public String getOverclock() {
         return Overclock;
     }
 
-    public void setOverclock(Boolean Overclock) {
+    public void setOverclock(String Overclock) {
         this.Overclock = Overclock;
     }
 
