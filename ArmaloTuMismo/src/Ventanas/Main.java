@@ -22,9 +22,6 @@ import com.csvreader.CsvWriter;
  */
 public class Main {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
    List<Usuario> usuarios = new ArrayList<Usuario>();
    usuarios.add(new Usuario("1","julian","cedula9906","21","true"));
