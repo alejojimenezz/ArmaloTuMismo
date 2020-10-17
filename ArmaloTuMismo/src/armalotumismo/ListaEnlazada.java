@@ -76,7 +76,7 @@ public class ListaEnlazada {
         return(head==null);
     }
     
-    public void add(Object o, int i){
+    public void addAfter(Object o, int i){
     Nodo temp=head;
         if(head==null)
                 head=new Nodo(o);

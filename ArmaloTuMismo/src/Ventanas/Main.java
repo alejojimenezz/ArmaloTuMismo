@@ -5,6 +5,8 @@
  */
 package Ventanas;
 
+import Elementos.CPU;
+import Elementos.Inventario;
 import armalotumismo.Usuario;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -24,8 +26,14 @@ public class Main {
 
     public static void main(String[] args) {
    List<Usuario> usuarios = new ArrayList<Usuario>();
+   Inventario in = new Inventario();
+   CPU c=new CPU("1800", "2", "4", "Zen", "Am4", "16", "1", "AMD", "dasd", "50000", "5", "15");
+   in.agregarCPU(184, c);
+   
+   System.out.println(in.consultarCpu(184).getMarca());
+   
    usuarios.add(new Usuario("1","julian","cedula9906","21","true"));
- 
+   
         ExportarCSV(usuarios);
         ImportarCSV();
     }

@@ -29,7 +29,6 @@ public class CPU extends Elemento{
         this.cache = cache;
     }
 
-
     public String getFrecuencia() {
         return Frecuencia;
     }
@@ -78,55 +77,8 @@ public class CPU extends Elemento{
         this.cache = cache;
     }
 
-    public String getID() {
-        return getID();
-    }
-
-    public void setID(String ID) {
-        this.setID(ID);
-    }
-
-    public String getMarca() {
-        return getMarca();
-    }
-
-    public void setMarca(String Marca) {
-        this.setMarca(Marca);
-    }
-
-    public String getModelo() {
-        return getModelo();
-    }
-
-    public void setModelo(String Modelo) {
-        this.setModelo(Modelo);
-    }
-
-    public String getPrecio() {
-        return getPrecio();
-    }
-
-    public void setPrecio(String Precio) {
-        this.setPrecio(Precio);
-    }
-
-    public String getCantidad() {
-        return getCantidad();
-    }
-
-    public void setCantidad(String cantidad) {
-        this.setCantidad(cantidad);
-    }
 
 
-
-    public String getPotencia() {
-        return getPotencia();
-    }
-
-    public void setPotencia(String Potencia) {
-        this.setPotencia(Potencia);
-    }
 
     
     

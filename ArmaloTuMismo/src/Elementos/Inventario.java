@@ -12,6 +12,8 @@ import java.util.*;
 public class Inventario {
 //metodos y hashmap por cada tipo
     //procesadores
+    
+    
     public HashMap<Integer, CPU> CPU=new HashMap<Integer, CPU>();
     public HashMap<Integer, CPUCooler> cooler=new HashMap<Integer, CPUCooler>();
     public HashMap<Integer, Case> Cases=new HashMap<Integer, Case>();
