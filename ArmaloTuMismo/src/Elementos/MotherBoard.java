@@ -12,13 +12,13 @@ package Elementos;
  */
 public class MotherBoard extends Elemento{
 
-    public String Socket;
-    public String RAMSupported;
-    public String Tamano;
-    public Boolean Overclock;
-    public String Chipset ;
-    public String SLI;
-    public String puertos;
+    private String Socket;
+    private String RAMSupported;
+    private String Tamano;
+    private Boolean Overclock;
+    private String Chipset ;
+    private String SLI;
+    private String puertos;
 
     public MotherBoard(String Socket, String RAMSupported, String Tamano, Boolean Overclock, String Chipset, String SLI, String puertos, String ID, String Marca, String Modelo, String Precio, String cantidad, String Potencia) {
         super(ID, Marca, Modelo, Precio, cantidad, Potencia);
@@ -90,52 +90,52 @@ public class MotherBoard extends Elemento{
     }
 
     public String getID() {
-        return ID;
+        return getID();
     }
 
     public void setID(String ID) {
-        this.ID = ID;
+        this.setID(ID);
     }
 
     public String getMarca() {
-        return Marca;
+        return getMarca();
     }
 
     public void setMarca(String Marca) {
-        this.Marca = Marca;
+        this.setMarca(Marca);
     }
 
     public String getModelo() {
-        return Modelo;
+        return getModelo();
     }
 
     public void setModelo(String Modelo) {
-        this.Modelo = Modelo;
+        this.setModelo(Modelo);
     }
 
     public String getPrecio() {
-        return Precio;
+        return getPrecio();
     }
 
     public void setPrecio(String Precio) {
-        this.Precio = Precio;
+        this.setPrecio(Precio);
     }
 
     public String getCantidad() {
-        return cantidad;
+        return getCantidad();
     }
 
     public void setCantidad(String cantidad) {
-        this.cantidad = cantidad;
+        this.setCantidad(cantidad);
     }
 
 
     public String getPotencia() {
-        return Potencia;
+        return getPotencia();
     }
 
     public void setPotencia(String Potencia) {
-        this.Potencia = Potencia;
+        this.setPotencia(Potencia);
     }
 
 }

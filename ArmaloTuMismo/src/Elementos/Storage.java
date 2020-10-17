@@ -11,11 +11,11 @@ package Elementos;
  * @author Sammy Guergachi <sguergachi at gmail.com>
  */
 public class Storage extends Elemento {
-    public String Tipo;
-    public String capacidad;
-    public String vel_write;
-    public String vel_Read;
-    public String BusType;
+    private String Tipo;
+    private String capacidad;
+    private String vel_write;
+    private String vel_Read;
+    private String BusType;
 
     public Storage(String Tipo, String capacidad, String vel_write, String vel_Read, String BusType, String ID, String Marca, String Modelo, String Precio, String cantidad, String Potencia) {
         super(ID, Marca, Modelo, Precio, cantidad, Potencia);
@@ -67,51 +67,51 @@ public class Storage extends Elemento {
     }
 
     public String getID() {
-        return ID;
+        return getID();
     }
 
     public void setID(String ID) {
-        this.ID = ID;
+        this.setID(ID);
     }
 
     public String getMarca() {
-        return Marca;
+        return getMarca();
     }
 
     public void setMarca(String Marca) {
-        this.Marca = Marca;
+        this.setMarca(Marca);
     }
 
     public String getModelo() {
-        return Modelo;
+        return getModelo();
     }
 
     public void setModelo(String Modelo) {
-        this.Modelo = Modelo;
+        this.setModelo(Modelo);
     }
 
     public String getPrecio() {
-        return Precio;
+        return getPrecio();
     }
 
     public void setPrecio(String Precio) {
-        this.Precio = Precio;
+        this.setPrecio(Precio);
     }
 
     public String getCantidad() {
-        return cantidad;
+        return getCantidad();
     }
 
     public void setCantidad(String cantidad) {
-        this.cantidad = cantidad;
+        this.setCantidad(cantidad);
     }
 
     public String getPotencia() {
-        return Potencia;
+        return getPotencia();
     }
 
     public void setPotencia(String Potencia) {
-        this.Potencia = Potencia;
+        this.setPotencia(Potencia);
     }
 
     

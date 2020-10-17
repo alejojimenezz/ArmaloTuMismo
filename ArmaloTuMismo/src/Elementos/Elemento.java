@@ -11,12 +11,12 @@ package Elementos;
  * @author Sammy Guergachi <sguergachi at gmail.com>
  */
 public abstract class Elemento {
-    public String ID;
-    public String Marca;
-    public String Modelo;
-    public String Precio;
-    public String cantidad;
-    public String Potencia;
+    protected String ID;
+    protected String Marca;
+    protected String Modelo;
+    protected String Precio;
+    protected String cantidad;
+    protected String Potencia;
 
     public Elemento(String ID, String Marca, String Modelo, String Precio, String cantidad, String Potencia) {
         this.ID = ID;

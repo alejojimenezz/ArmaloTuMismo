@@ -27,7 +27,7 @@ public class Main {
      */
     public static void main(String[] args) {
    List<Usuario> usuarios = new ArrayList<Usuario>();
-   usuarios.add(new Usuario("1","julian","cedula9906","21",true));
+   usuarios.add(new Usuario("1","julian","cedula9906","21","true"));
  
         ExportarCSV(usuarios);
         ImportarCSV();
@@ -59,7 +59,7 @@ for(Usuario user: usuarios){
     salidaCSV.write(user.getNombre());
     salidaCSV.write(user.getPassword());
     salidaCSV.write(user.getAge());
-    salidaCSV.write(String.valueOf(user.isModificar()));
+    salidaCSV.write(user.getModificar());
     
     salidaCSV.endRecord(); //Deja de escribir en el archivo
     
@@ -91,7 +91,7 @@ while(leerUsuarios.readRecord()){
     String age = leerUsuarios.get(3);
     String modificar = leerUsuarios.get(4);
 
-    usuarios.add(new Usuario(userid,nombre,password,age,Boolean.parseBoolean(modificar))); // añade la informacion a la lista
+    usuarios.add(new Usuario(userid,nombre,password,age,modificar)); // añade la informacion a la lista
 }
 
 
