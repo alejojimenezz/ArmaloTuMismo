@@ -13,19 +13,25 @@ import Elementos.Elemento;
  */
 public class ShoppingCart {
     // Se usa lista doblemente enlazada
-    private Nodo Head;
     
-    public void AddElement (Elemento e){
-        Nodo nodo = new Nodo (e);
-        nodo.next = Head;
-        Head = nodo;
+    ListaEnlazada componentes=new ListaEnlazada();
+    
+    public void additem(Elemento e){
+    Nodo head=new Nodo(e);
+    componentes.addfirst(head);
     }
     
     public void DeleteElement (Elemento e){
-        
+       for(int i=0; i<componentes.size;i++){
+           if(e==componentes.getObject(i)){
+           componentes.eliminar(i);
+           }
+        }
     }
     
     public void GetElementos (){
-        
+        for(int i=0; i<componentes.size;i++){
+            System.out.println(componentes.getObject(i));
+        }
     }
 }

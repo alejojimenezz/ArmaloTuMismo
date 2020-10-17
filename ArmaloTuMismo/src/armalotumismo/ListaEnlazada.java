@@ -66,6 +66,7 @@ public class ListaEnlazada {
     
     
     }
+    
     public int size(){
     return size;
     }
