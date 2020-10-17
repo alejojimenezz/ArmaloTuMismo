@@ -149,8 +149,8 @@ String salidaArchivo = "Inventario.csv"; // nombre del archivo
 boolean existe = new File(salidaArchivo).exists();
 // si existe un archivo llamado asi lo borra
 if(existe){
-File archivoUsuarios = new File(salidaArchivo);
-archivoUsuarios.delete();
+File archivoInventario = new File(salidaArchivo);
+archivoInventario.delete();
 }
 try {
  CsvWriter salidaCSV = new CsvWriter(new FileWriter(salidaArchivo, true),';');
@@ -322,33 +322,160 @@ try {
     Map<Integer, RAM> RAM1 =new HashMap<Integer, RAM>();
     Map<Integer, Storage> Storage1 =new HashMap<Integer, Storage>();
     Map<Integer, VideoCard> VideoCard1 =new HashMap<Integer, VideoCard>();
-CsvReader leerUsuarios = new CsvReader("Inventario.csv");
-leerUsuarios.readHeaders();
+CsvReader leerInventario = new CsvReader("Inventario.csv");
+leerInventario.readHeaders();
 
 
 // Mientras haya lineas obtendremos los datos del archivo 
-while(leerUsuarios.readRecord()){
- if(leerUsuarios.get(0)=="a"){
-     String userid = leerUsuarios.get(0);
-    String nombre = leerUsuarios.get(1);
-    String password = leerUsuarios.get(2);
-    String age = leerUsuarios.get(3);
-    String modificar = leerUsuarios.get(4);
-
-     
+while(leerInventario.readRecord()){
+ if(leerInventario.get(0)=="a"){
+     String ID1 = leerInventario.get(1);
+    String Marca1 = leerInventario.get(2);
+    String Modelo1 = leerInventario.get(3);
+    String Precio1 = leerInventario.get(4);
+    String Cantidad1 = leerInventario.get(5);
+    String Potencia1 = leerInventario.get(6);
+    String Frecuencia1 = leerInventario.get(7);
+    String Nucleos1 = leerInventario.get(8);
+    String Hilos1 = leerInventario.get(9);
+    String Arquitectura1 = leerInventario.get(10);
+    String Socket1 = leerInventario.get(11);
+    String cache1 = leerInventario.get(12);
+    
+    CPU1.put(Integer.parseInt(ID1), new CPU(Frecuencia1, Nucleos1, Hilos1, Arquitectura1, Socket1, cache1, ID1, Marca1, Modelo1, Precio1, Cantidad1, Potencia1))  ;// añade la informacion a la lista
+    
  }
-
-
+ else if(leerInventario.get(0)=="b"){
+    String ID1 = leerInventario.get(1);
+    String Marca1 = leerInventario.get(2);
+    String Modelo1 = leerInventario.get(3);
+    String Precio1 = leerInventario.get(4);
+    String Cantidad1 = leerInventario.get(5);
+    String Potencia1 = leerInventario.get(6);
+    String Tipo1 = leerInventario.get(7);
+    
+    CPUCooler1.put(Integer.parseInt(ID1), new CPUCooler(Tipo1, ID1, Marca1, Modelo1, Precio1, Cantidad1, Potencia1));// añade la informacion a la lista
+ 
+ }
+ 
+ else if(leerInventario.get(0)=="c"){
+    String ID1 = leerInventario.get(1);
+    String Marca1 = leerInventario.get(2);
+    String Modelo1 = leerInventario.get(3);
+    String Precio1 = leerInventario.get(4);
+    String Cantidad1 = leerInventario.get(5);
+    String Potencia1 = leerInventario.get(6);
+    String Tamano1 = leerInventario.get(7);
+    String SlotStorage1 = leerInventario.get(8);
+    String SlotVideoCard1 = leerInventario.get(9);
+    String Fans1 = leerInventario.get(10);
+    
+    Case1.put(Integer.parseInt(ID1), new Case(Tamano1, SlotStorage1, SlotVideoCard1, Fans1, ID1, Marca1, Modelo1, Precio1, Cantidad1, Potencia1));// añade la informacion a la lista
+   
+ }
+ else if(leerInventario.get(0)=="d"){
+    String ID1 = leerInventario.get(1);
+    String Marca1 = leerInventario.get(2);
+    String Modelo1 = leerInventario.get(3);
+    String Precio1 = leerInventario.get(4);
+    String Cantidad1 = leerInventario.get(5);
+    String Potencia1 = leerInventario.get(6);
+    String Socket1 = leerInventario.get(7);
+    String RAMSupported1 = leerInventario.get(8);
+    String Tamano1 = leerInventario.get(9);
+    String Overclock1 = leerInventario.get(10);
+    String Chipset1 = leerInventario.get(11);
+    String SLI1 = leerInventario.get(12);
+    String Puertos1 = leerInventario.get(13);
+    
+  MotherBoard1.put(Integer.parseInt(ID1), new MotherBoard(Socket1, RAMSupported1, Tamano1, Overclock1, Chipset1, SLI1, Puertos1, ID1, Marca1, Modelo1, Precio1, Cantidad1, Potencia1));// añade la informacion a la lista
+    
+ 
+ }
+ else if (leerInventario.get(0)=="e"){
+    String ID1 = leerInventario.get(1);
+    String Marca1 = leerInventario.get(2);
+    String Modelo1 = leerInventario.get(3);
+    String Precio1 = leerInventario.get(4);
+    String Cantidad1 = leerInventario.get(5);
+    String Potencia1 = leerInventario.get(6);
+   
+    OS1.put(Integer.parseInt(ID1), new OS(ID1, Marca1, Modelo1, Precio1, Cantidad1, Potencia1));// añade la informacion a la lista
+   }
+ 
+ else if (leerInventario.get(0)=="f"){
+    String ID1 = leerInventario.get(1);
+    String Marca1 = leerInventario.get(2);
+    String Modelo1 = leerInventario.get(3);
+    String Precio1 = leerInventario.get(4);
+    String Cantidad1 = leerInventario.get(5);
+    String Potencia1 = leerInventario.get(6);
+    String Capacidad1 = leerInventario.get(7);
+    String Certificacion1 = leerInventario.get(8);
+    
+    PowerSupply1.put(Integer.parseInt(ID1), new PowerSupply(Capacidad1, Certificacion1, ID1, Marca1, Modelo1, Precio1, Cantidad1, Potencia1));// añade la informacion a la lista
+ }
+ 
+ else if (leerInventario.get(0)=="g"){
+    String ID1 = leerInventario.get(1);
+    String Marca1 = leerInventario.get(2);
+    String Modelo1 = leerInventario.get(3);
+    String Precio1 = leerInventario.get(4);
+    String Cantidad1 = leerInventario.get(5);
+    String Potencia1 = leerInventario.get(6);
+    String Gen1 = leerInventario.get(7);
+    String Vel1 = leerInventario.get(8);
+    String Capacidad1 = leerInventario.get(9);
+    String Disipacion1 = leerInventario.get(10);
+    
+    RAM1.put(Integer.parseInt(ID1), new RAM(Gen1, Vel1, Capacidad1, Disipacion1, ID1, Marca1, Modelo1, Precio1, Cantidad1, Potencia1));// añade la informacion a la lista
+ }
+ 
+ else if (leerInventario.get(0)=="h"){
+      String ID1 = leerInventario.get(1);
+      String Marca1 = leerInventario.get(2);
+      String Modelo1 = leerInventario.get(3);
+      String Precio1 = leerInventario.get(4);
+      String Cantidad1 = leerInventario.get(5);
+      String Potencia1 = leerInventario.get(6);
+      String Tipo1 = leerInventario.get(7);
+      String Capacidad1 = leerInventario.get(8);
+      String Vel_write1 = leerInventario.get(9);
+      String Vel_Read1 = leerInventario.get(10);
+      String BusType1 = leerInventario.get(11);
+      
+      Storage1.put(Integer.parseInt(ID1), new Storage(Tipo1, Capacidad1, Vel_write1, Vel_Read1, BusType1, ID1, Marca1, Modelo1, Precio1, Cantidad1, Potencia1));// añade la informacion a la lista
+ 
+ }
+ 
+ else if (leerInventario.get(0)=="i"){
+     String ID1 = leerInventario.get(1);
+      String Marca1 = leerInventario.get(2);
+      String Modelo1 = leerInventario.get(3);
+      String Precio1 = leerInventario.get(4);
+      String Cantidad1 = leerInventario.get(5);
+      String Potencia1 = leerInventario.get(6);
+      String Arquitectura1 = leerInventario.get(7);
+      String TipoBus1 = leerInventario.get(8);
+      String Frecuencia1 = leerInventario.get(9);
+      String Memoria1 = leerInventario.get(10);
+      String TipoMem1 = leerInventario.get(11);
+      String Largo1 = leerInventario.get(12);
+      String Ancho1 = leerInventario.get(13);
+      
+      VideoCard1.put(Integer.parseInt(ID1), new VideoCard(Arquitectura1, TipoBus1, Frecuencia1, Memoria1, TipoMem1, Largo1, Ancho1, ID1, Marca1, Modelo1, Precio1, Cantidad1, Potencia1));// añade la informacion a la lista
+ 
+ }
 
 
 
 
 }
     
- //   usuarios.add(new Usuario(userid,nombre,password,age,modificar)); // añade la informacion a la lista
 
 
 
+leerInventario.close();
 }catch(FileNotFoundException e){
 e.printStackTrace();
 }catch(IOException e){
