@@ -165,63 +165,63 @@ public class Main {
  }
             //Eliminar COMPLETO
  public static void EliminarComp(Inventario in){
-      Scanner sn = new Scanner(System.in);
-      String Id;
+      Scanner s = new Scanner(System.in);
+      int id;
       System.out.println("¿Que tipo de componente deseas eliminiar?\n\n1. CPU\n2. Cooler\n3. Case\n4. MotherBoard\n5. Sistema operativo"
                                     + "\n6. Fuente de poder\n7. RAM\n8. Almacenamiento\n9. Tarjeta de Video");
-      int i=sn.nextInt();
+      int i=s.nextInt();
       switch(i){
          case 1:
              System.out.println("¿Qué ID deseas eliminar? ");
-             Id=sn.nextLine();
-             in.CPU.remove(Id);
+             id=s.nextInt();
+             in.CPU.remove(id);
          break;
          
          case 2:
              System.out.println("¿Qué ID deseas eliminar? ");
-             Id=sn.nextLine();
-             in.cooler.remove(Id);
+             id=s.nextInt();
+             in.cooler.remove(id);
          break;
          case 3:
              System.out.println("¿Qué ID deseas eliminar? ");
-             Id=sn.nextLine();
-             in.Cases.remove(Id);
+             id=s.nextInt();
+             in.Cases.remove(id);
          break;
              
          case 4:
              System.out.println("¿Qué ID deseas eliminar? ");
-             Id=sn.nextLine();
-             in.MotherBoard.remove(Id);
+             id=s.nextInt();
+             in.MotherBoard.remove(id);
          break;
              
          case 5:
              System.out.println("¿Qué ID deseas eliminar? ");
-             Id=sn.nextLine();
-             in.Os.remove(Id);
+             id=s.nextInt();
+             in.Os.remove(id);
          break;
          
          case 6:
              System.out.println("¿Qué ID deseas eliminar? ");
-             Id=sn.nextLine();
-             in.Fuentes.remove(Id);
+             id=s.nextInt();
+             in.Fuentes.remove(id);
          break;
              
          case 7:
              System.out.println("¿Qué ID deseas eliminar? ");
-             Id=sn.nextLine();
-             in.RAM.remove(Id);
+             id=s.nextInt();
+             in.RAM.remove(id);
          break;
              
          case 8:
              System.out.println("¿Qué ID deseas eliminar? ");
-             Id=sn.nextLine();
-             in.Storage.remove(Id);
+             id=s.nextInt();
+             in.Storage.remove(id);
          break;
              
          case 9: 
              System.out.println("¿Qué ID deseas eliminar? ");
-             Id=sn.nextLine();
-             in.VideoCard.remove(Id);
+             id=s.nextInt();
+             in.VideoCard.remove(id);
          break;
      
          default:
@@ -231,61 +231,61 @@ public class Main {
             //Consultar COMPLETO
  public static void ConsultarComp(Inventario in){
       Scanner sn = new Scanner(System.in);
-      String Id;
-      System.out.println("¿Que tipo de componente deseas eliminiar?\n\n1. CPU\n2. Cooler\n3. Case\n4. MotherBoard\n5. Sistema operativo"
+      int Id;
+      System.out.println("¿Que tipo de componente deseas consultar?\n\n1. CPU\n2. Cooler\n3. Case\n4. MotherBoard\n5. Sistema operativo"
                                     + "\n6. Fuente de poder\n7. RAM\n8. Almacenamiento\n9. Tarjeta de Video");
       int i=sn.nextInt();
       switch(i){
          case 1:
              System.out.println("¿Qué ID deseas consultar? ");
-             Id=sn.nextLine();
+             Id=sn.nextInt();
              System.out.println(in.CPU.get(Id).toString());
          break;
          
          case 2:
              System.out.println("¿Qué ID deseas eliminar? ");
-             Id=sn.nextLine();
+             Id=sn.nextInt();
              System.out.println(in.cooler.get(Id).toString());
          break;
          case 3:
              System.out.println("¿Qué ID deseas eliminar? ");
-             Id=sn.nextLine();
+             Id=sn.nextInt();
              System.out.println(in.Cases.get(Id).toString());
          break;
              
          case 4:
              System.out.println("¿Qué ID deseas eliminar? ");
-             Id=sn.nextLine();
+             Id=sn.nextInt();
              System.out.println(in.MotherBoard.get(Id).toString());
          break;
              
          case 5:
              System.out.println("¿Qué ID deseas eliminar? ");
-             Id=sn.nextLine();
+             Id=sn.nextInt();
              System.out.println(in.Os.get(Id).toString());
          break;
          
          case 6:
              System.out.println("¿Qué ID deseas eliminar? ");
-             Id=sn.nextLine();
+             Id=sn.nextInt();
              System.out.println(in.Fuentes.get(Id).toString());
          break;
              
          case 7:
              System.out.println("¿Qué ID deseas eliminar? ");
-             Id=sn.nextLine();
+             Id=sn.nextInt();
              System.out.println(in.RAM.get(Id).toString());
          break;
              
          case 8:
              System.out.println("¿Qué ID deseas eliminar? ");
-             Id=sn.nextLine();
+             Id=sn.nextInt();
              System.out.println(in.Storage.get(Id).toString());
          break;
              
          case 9: 
              System.out.println("¿Qué ID deseas eliminar? ");
-             Id=sn.nextLine();
+             Id=sn.nextInt();
              System.out.println(in.VideoCard.get(Id).toString());
          break;
      
@@ -311,6 +311,7 @@ public class Main {
  public static void main(String[] args) {
     Scanner sn = new Scanner(System.in);
     Inventario in =new Inventario();
+    ImportarCSVInventario();
    List<Usuario> usuarios = new ArrayList<Usuario>();
    Map<Integer, CPU> CPU1=new HashMap<Integer, CPU>();
    Map<Integer, CPUCooler> CPUCooler1 = new HashMap<Integer, CPUCooler>();
@@ -346,7 +347,7 @@ public class Main {
                         int opcion1=0;
                         System.out.println("1. CPU\n2. Cooler\n3. Case\n4. MotherBoard\n5. Sistema operativo"
                                     + "\n6. Fuente de poder\n7. RAM\n8. Almacenamiento\n9. Tarjeta de Video");
-                        opcion1=sn.nextInt();
+                    opcion1=sn.nextInt();
                     Elemento e= AgregarComp(opcion1);
                     key=Integer.parseInt(e.getID());
                                  switch(opcion1){
@@ -471,6 +472,9 @@ public class Main {
              break;
          }
      }
+    
+     
+     ExportarCSVInventario(CPU1, CPUCooler1, Case1, MotherBoard1, OS1, PowerSupply1, RAM1, Storage1, VideoCard1);
 
 
 
