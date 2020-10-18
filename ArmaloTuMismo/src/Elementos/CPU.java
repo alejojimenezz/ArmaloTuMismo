@@ -17,8 +17,7 @@ public class CPU extends Elemento{
     private String Arquitectura;
     private String Socket;
     private String cache;
-  
-    
+
     public CPU(String Frecuencia, String Nucleos, String Hilos, String Arquitectura, String Socket, String cache, String ID, String Marca, String Modelo, String Precio, String cantidad, String Potencia) {
         super(ID, Marca, Modelo, Precio, cantidad, Potencia);
         this.Frecuencia = Frecuencia;

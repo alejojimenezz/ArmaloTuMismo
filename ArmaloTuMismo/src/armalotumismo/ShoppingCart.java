@@ -31,7 +31,8 @@ public class ShoppingCart {
     
     public void GetElementos (){
         for(int i=0; i<componentes.size;i++){
-            System.out.println(componentes.getObject(i));
+            Elemento e= (Elemento) componentes.getObject(i);
+            System.out.println(e.toString());
         }
     }
 }

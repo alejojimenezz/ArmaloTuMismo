@@ -14,15 +14,15 @@ public class Inventario {
     //procesadores
     
     
-    public HashMap<Integer, CPU> CPU=new HashMap<Integer, CPU>();
-    public HashMap<Integer, CPUCooler> cooler=new HashMap<Integer, CPUCooler>();
-    public HashMap<Integer, Case> Cases=new HashMap<Integer, Case>();
-    public HashMap<Integer, MotherBoard> MotherBoard=new HashMap<Integer, MotherBoard>();
-    public HashMap<Integer, OS> Os=new HashMap<Integer, OS>();
-    public HashMap<Integer, PowerSupply> Fuentes=new HashMap<Integer, PowerSupply>();
-    public HashMap<Integer, RAM> RAM=new HashMap<Integer, RAM>();
-    public HashMap<Integer, Storage> Storage=new HashMap<Integer, Storage>();
-    public HashMap<Integer, VideoCard> VideoCard=new HashMap<Integer, VideoCard>();
+    public Map<Integer, CPU> CPU=new HashMap<Integer, CPU>();
+    public Map<Integer, CPUCooler> cooler=new HashMap<Integer, CPUCooler>();
+    public Map<Integer, Case> Cases=new HashMap<Integer, Case>();
+    public Map<Integer, MotherBoard> MotherBoard=new HashMap<Integer, MotherBoard>();
+    public Map<Integer, OS> Os=new HashMap<Integer, OS>();
+    public Map<Integer, PowerSupply> Fuentes=new HashMap<Integer, PowerSupply>();
+    public Map<Integer, RAM> RAM=new HashMap<Integer, RAM>();
+    public Map<Integer, Storage> Storage=new HashMap<Integer, Storage>();
+    public Map<Integer, VideoCard> VideoCard=new HashMap<Integer, VideoCard>();
    
     //CPU
     
@@ -39,11 +39,11 @@ public class Inventario {
         CPU.remove(key);
     }
     
-    public HashMap<Integer, CPU> getCPU() {
+    public Map<Integer, CPU> getCPU() {
         return CPU;
     }
 
-    public void setCPU(HashMap<Integer, CPU> cpu) {
+    public void setCPU(Map<Integer, CPU> cpu) {
         this.CPU = cpu;
     }
 
@@ -62,11 +62,11 @@ public class Inventario {
         cooler.remove(key);
     }
     
-    public HashMap<Integer, CPUCooler> getCooler() {
+    public Map<Integer, CPUCooler> getCooler() {
         return cooler;
     }
 
-    public void setCooler(HashMap<Integer, CPUCooler> cpu) {
+    public void setCooler(Map<Integer, CPUCooler> cpu) {
         this.cooler = cpu;
     }
  
@@ -85,11 +85,11 @@ public class Inventario {
         Cases.remove(key);
     }
     
-    public HashMap<Integer, Case> getCase() {
+    public Map<Integer, Case> getCase() {
         return Cases;
     }
 
-    public void setCases(HashMap<Integer, Case> cases) {
+    public void setCases(Map<Integer, Case> cases) {
         this.Cases = cases;
     }
     
@@ -108,11 +108,11 @@ public class Inventario {
         MotherBoard.remove(key);
     }
     
-    public HashMap<Integer, MotherBoard> getMother() {
+    public Map<Integer, MotherBoard> getMother() {
         return MotherBoard;
     }
 
-    public void setMotherBoard(HashMap<Integer, MotherBoard> MB) {
+    public void setMotherBoard(Map<Integer, MotherBoard> MB) {
         this.MotherBoard = MB;
     }
     
@@ -131,11 +131,11 @@ public class Inventario {
         cooler.remove(key);
     }
     
-    public HashMap<Integer, OS> getOs() {
+    public Map<Integer, OS> getOs() {
         return Os;
     }
 
-    public void setOs(HashMap<Integer, OS> os) {
+    public void setOs(Map<Integer, OS> os) {
         this.Os = os;
     }
     
@@ -154,11 +154,11 @@ public class Inventario {
         Fuentes.remove(key);
     }
     
-    public HashMap<Integer, PowerSupply> getPower() {
+    public Map<Integer, PowerSupply> getPower() {
         return Fuentes;
     }
 
-    public void setPower(HashMap<Integer, PowerSupply> PS) {
+    public void setPower(Map<Integer, PowerSupply> PS) {
         this.Fuentes = PS;
     }
     
@@ -177,11 +177,11 @@ public class Inventario {
         RAM.remove(key);
     }
     
-    public HashMap<Integer, RAM> getRAM() {
+    public Map<Integer, RAM> getRAM() {
         return RAM;
     }
 
-    public void setRAM(HashMap<Integer, RAM> ram) {
+    public void setRAM(Map<Integer, RAM> ram) {
         this.RAM = ram;
     }
     
@@ -200,11 +200,11 @@ public class Inventario {
         Storage.remove(key);
     }
     
-    public HashMap<Integer, Storage> getStorage() {
+    public Map<Integer, Storage> getStorage() {
         return Storage;
     }
 
-    public void setStorage(HashMap<Integer, Storage> S) {
+    public void setStorage(Map<Integer, Storage> S) {
         this.Storage = S;
     }
     
@@ -223,11 +223,11 @@ public class Inventario {
         VideoCard.remove(key);
     }
     
-    public HashMap<Integer, VideoCard> getVCard() {
+    public Map<Integer, VideoCard> getVCard() {
         return VideoCard;
     }
 
-    public void setVCard(HashMap<Integer, VideoCard> VC) {
+    public void setVCard(Map<Integer, VideoCard> VC) {
         this.VideoCard = VC;
     }
     

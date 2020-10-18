@@ -6,6 +6,8 @@
 
 package armalotumismo;
 
+import Elementos.CPU;
+
 /**
  * 
  * @author Sammy Guergachi <sguergachi at gmail.com>
@@ -26,6 +28,7 @@ public class ListaEnlazada {
             temp=temp.getNext();
         }
          return temp.getValue();
+        
     }
     
     public void addfirst(Object o){

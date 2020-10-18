@@ -8,6 +8,7 @@ package Ventanas;
 import Elementos.CPU;
 import Elementos.CPUCooler;
 import Elementos.Case;
+import Elementos.Elemento;
 import Elementos.Inventario;
 import Elementos.MotherBoard;
 import Elementos.OS;
@@ -15,6 +16,7 @@ import Elementos.PowerSupply;
 import Elementos.RAM;
 import Elementos.Storage;
 import Elementos.VideoCard;
+import armalotumismo.ShoppingCart;
 import armalotumismo.Usuario;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -25,8 +27,10 @@ import java.util.List;
 import com.csvreader.CsvReader;
 import com.csvreader.CsvWriter;
 import java.util.HashMap;
+import java.util.InputMismatchException;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Scanner;
 
 
 /**
@@ -34,8 +38,278 @@ import java.util.Map.Entry;
  * @author Julian Medina
  */
 public class Main {
+    
+    //Modulos opciones del menu
+    
+            //Agregar componentes está incompleto COMPLETAR
+ public static Elementos.Elemento AgregarComp(int i){
+      Scanner sn = new Scanner(System.in);
+      Elemento e = null;
+      String ID;
+      String marca;
+      String modelo;
+      String precio;
+      String cantidad;
+      String potencia;
+     switch(i){
+         case 1:
+             System.out.print("Ingrese la frecuencia: ");
+             String frec= sn.nextLine();
+             System.out.print("Ingrese el numero de nucleos: ");
+             String nucleos= sn.nextLine();
+             System.out.print("Ingrese el numero de hilos: ");
+             String hilos= sn.nextLine();
+             System.out.print("Ingrese la arquitectura: ");
+             String arqui= sn.nextLine();
+             System.out.print("Ingrese el tipo de socket: ");
+             String socket= sn.nextLine();
+             System.out.print("Ingrese la cantidad de caché: ");
+             String cache= sn.nextLine();
+             System.out.print("Ingrese la ID del objeto: ");
+             ID= sn.nextLine();
+             System.out.print("Ingrese la Marca: ");
+             marca= sn.nextLine();
+             System.out.print("Ingrese el Modelo ");
+             modelo= sn.nextLine();
+             System.out.print("Ingrese el precio: ");
+             precio= sn.nextLine();
+             System.out.print("Ingrese la cantidad de unidades disponibles: ");
+             cantidad= sn.nextLine();
+             System.out.print("Ingrese la potencia: ");
+             potencia= sn.nextLine();
+             e =new CPU(frec, nucleos, hilos, arqui, socket, cache, ID, marca, modelo, precio, cantidad, potencia);
+             return e;
+         case 2:
+             System.out.print("Ingrese el tipo de refrigeracion: ");
+             String tipo= sn.nextLine();
+             System.out.print("Ingrese la ID del objeto: ");
+             ID= sn.nextLine();
+             System.out.print("Ingrese la Marca: ");
+             marca= sn.nextLine();
+             System.out.print("Ingrese el Modelo ");
+             modelo= sn.nextLine();
+             System.out.print("Ingrese el precio: ");
+             precio= sn.nextLine();
+             System.out.print("Ingrese la cantidad de unidades disponibles: ");
+             cantidad= sn.nextLine();
+             System.out.print("Ingrese la potencia: ");
+             potencia= sn.nextLine();
+             e=new CPUCooler(tipo, ID, marca, modelo, precio, cantidad, potencia);
+             return e;             
+         case 3:
+             System.out.print("Ingrese el maximo tamaño de motherboard: ");
+             String tamano= sn.nextLine();
+             System.out.print("Ingrese la cantidad de Slot para el almacenamiento: ");
+             String SlotStorage= sn.nextLine();
+             System.out.print("Ingrese la cantidad de slot para la tarjeta de video: ");
+             String SlotVD= sn.nextLine();
+             System.out.print("Ingrese la cantidad de ventiladores incorporados al case: ");
+             String fans= sn.nextLine();
+             System.out.print("Ingrese la ID del objeto: ");
+             ID= sn.nextLine();
+             System.out.print("Ingrese la Marca: ");
+             marca= sn.nextLine();
+             System.out.print("Ingrese el Modelo ");
+             modelo= sn.nextLine();
+             System.out.print("Ingrese el precio: ");
+             precio= sn.nextLine();
+             System.out.print("Ingrese la cantidad de unidades disponibles: ");
+             cantidad= sn.nextLine();
+             potencia= null;
+             e=new Case(tamano, SlotStorage, SlotVD, fans, ID, marca, modelo, precio, cantidad, potencia);
+             return e;
+         case 4:
+             System.out.print("Ingrese el socket del procesador: ");
+             String socketM= sn.nextLine();
+             System.out.print("Ingrese la cantidad de RAM soportada: ");
+             String RAM= sn.nextLine();
+             System.out.print("Ingrese el tamaño de la motherboard: (atx, mini atx, eatx, etc) ");
+             String tamanoM= sn.nextLine();
+             System.out.print("La motherboard es optima para hacer overclock (True o False) ");
+             String overclock= sn.nextLine();
+             System.out.print("La motherboard tiene soporte SLI o CrossFire (True o False)");
+             String SLI= sn.nextLine();
+             System.out.print("Ingrese la cantidad de puertos SATA/M.2: ");
+             String puertos= sn.nextLine();
+             System.out.print("Ingrese la ID del objeto: ");
+             ID= sn.nextLine();
+             System.out.print("Ingrese la Marca: ");
+             marca= sn.nextLine();
+             System.out.print("Ingrese el Modelo ");
+             modelo= sn.nextLine();
+             System.out.print("Ingrese el precio: ");
+             precio= sn.nextLine();
+             System.out.print("Ingrese la cantidad de unidades disponibles: ");
+             cantidad= sn.nextLine();
+             System.out.print("Ingrese la potencia: ");
+             potencia= sn.nextLine();
+             e= new MotherBoard(socketM, RAM, tamanoM, overclock, SLI, puertos, ID, marca, modelo, precio, cantidad, potencia);
+             return e;
+         case 5:
+             return e;
+         case 6:
+             return e;
+         case 7:
+             return e;
+         case 8:
+             return e;
+         case 9:
+             return e;   
+         default:
+             System.out.println("Ingrese un numero valido");
+             return e;
+     }
 
-    public static void main(String[] args) {
+     
+ }
+            //Eliminar COMPLETO
+ public static void EliminarComp(Inventario in){
+      Scanner sn = new Scanner(System.in);
+      String Id;
+      System.out.println("¿Que tipo de componente deseas eliminiar?\n\n1. CPU\n2. Cooler\n3. Case\n4. MotherBoard\n5. Sistema operativo"
+                                    + "\n6. Fuente de poder\n7. RAM\n8. Almacenamiento\n9. Tarjeta de Video");
+      int i=sn.nextInt();
+      switch(i){
+         case 1:
+             System.out.println("¿Qué ID deseas eliminar? ");
+             Id=sn.nextLine();
+             in.CPU.remove(Id);
+         break;
+         
+         case 2:
+             System.out.println("¿Qué ID deseas eliminar? ");
+             Id=sn.nextLine();
+             in.cooler.remove(Id);
+         break;
+         case 3:
+             System.out.println("¿Qué ID deseas eliminar? ");
+             Id=sn.nextLine();
+             in.Cases.remove(Id);
+         break;
+             
+         case 4:
+             System.out.println("¿Qué ID deseas eliminar? ");
+             Id=sn.nextLine();
+             in.MotherBoard.remove(Id);
+         break;
+             
+         case 5:
+             System.out.println("¿Qué ID deseas eliminar? ");
+             Id=sn.nextLine();
+             in.Os.remove(Id);
+         break;
+         
+         case 6:
+             System.out.println("¿Qué ID deseas eliminar? ");
+             Id=sn.nextLine();
+             in.Fuentes.remove(Id);
+         break;
+             
+         case 7:
+             System.out.println("¿Qué ID deseas eliminar? ");
+             Id=sn.nextLine();
+             in.RAM.remove(Id);
+         break;
+             
+         case 8:
+             System.out.println("¿Qué ID deseas eliminar? ");
+             Id=sn.nextLine();
+             in.Storage.remove(Id);
+         break;
+             
+         case 9: 
+             System.out.println("¿Qué ID deseas eliminar? ");
+             Id=sn.nextLine();
+             in.VideoCard.remove(Id);
+         break;
+     
+         default:
+             System.out.println("Ingrese un valor valido");
+     }
+ }
+            //Consultar COMPLETO
+ public static void ConsultarComp(Inventario in){
+      Scanner sn = new Scanner(System.in);
+      String Id;
+      System.out.println("¿Que tipo de componente deseas eliminiar?\n\n1. CPU\n2. Cooler\n3. Case\n4. MotherBoard\n5. Sistema operativo"
+                                    + "\n6. Fuente de poder\n7. RAM\n8. Almacenamiento\n9. Tarjeta de Video");
+      int i=sn.nextInt();
+      switch(i){
+         case 1:
+             System.out.println("¿Qué ID deseas consultar? ");
+             Id=sn.nextLine();
+             System.out.println(in.CPU.get(Id).toString());
+         break;
+         
+         case 2:
+             System.out.println("¿Qué ID deseas eliminar? ");
+             Id=sn.nextLine();
+             System.out.println(in.cooler.get(Id).toString());
+         break;
+         case 3:
+             System.out.println("¿Qué ID deseas eliminar? ");
+             Id=sn.nextLine();
+             System.out.println(in.Cases.get(Id).toString());
+         break;
+             
+         case 4:
+             System.out.println("¿Qué ID deseas eliminar? ");
+             Id=sn.nextLine();
+             System.out.println(in.MotherBoard.get(Id).toString());
+         break;
+             
+         case 5:
+             System.out.println("¿Qué ID deseas eliminar? ");
+             Id=sn.nextLine();
+             System.out.println(in.Os.get(Id).toString());
+         break;
+         
+         case 6:
+             System.out.println("¿Qué ID deseas eliminar? ");
+             Id=sn.nextLine();
+             System.out.println(in.Fuentes.get(Id).toString());
+         break;
+             
+         case 7:
+             System.out.println("¿Qué ID deseas eliminar? ");
+             Id=sn.nextLine();
+             System.out.println(in.RAM.get(Id).toString());
+         break;
+             
+         case 8:
+             System.out.println("¿Qué ID deseas eliminar? ");
+             Id=sn.nextLine();
+             System.out.println(in.Storage.get(Id).toString());
+         break;
+             
+         case 9: 
+             System.out.println("¿Qué ID deseas eliminar? ");
+             Id=sn.nextLine();
+             System.out.println(in.VideoCard.get(Id).toString());
+         break;
+     
+         default:
+             System.out.println("Ingrese un valor valido");
+     } 
+ 
+ }
+            //COMPLETAR CODIGO DE FILTROS
+ public static void FiltrarComp(){
+ 
+ 
+ }
+            //HACER AGREGAR CARRITO
+ public static void AgregarCarrito(){
+ 
+ 
+ }
+  
+ 
+ 
+    
+ public static void main(String[] args) {
+    Scanner sn = new Scanner(System.in);
+    Inventario in =new Inventario();
    List<Usuario> usuarios = new ArrayList<Usuario>();
    Map<Integer, CPU> CPU1=new HashMap<Integer, CPU>();
    Map<Integer, CPUCooler> CPUCooler1 = new HashMap<Integer, CPUCooler>();
@@ -46,50 +320,97 @@ public class Main {
    Map<Integer, RAM> RAM1 =new HashMap<Integer, RAM>();
    Map<Integer, Storage> Storage1 =new HashMap<Integer, Storage>();
    Map<Integer, VideoCard> VideoCard1 =new HashMap<Integer, VideoCard>();
-   Inventario in =new Inventario();
-   int valid=0;
-
+   
+   boolean valid=true;
+   int opcion=0;
+   ShoppingCart SC=new ShoppingCart();
+   int key=0;
    ExportarCSVInventario(CPU1, CPUCooler1, Case1, MotherBoard1, OS1, PowerSupply1, RAM1, Storage1, VideoCard1);
-        
-        
-        while(valid!=6){
+       
+   //Modulo del menu     
+        while(valid){
             System.out.println("¿Qué desea hacer? Ingrese la opcion deseada: ");
             System.out.println("1. Agregar componente");
             System.out.println("2. Eliminar componente");
-            System.out.println("3. Buscar componente");
+            System.out.println("3. Consultar componente");
             System.out.println("4. Filtrar componentes");
             System.out.println("5. Agregar al carrito");
             System.out.println("6. Salir");
             
-            switch(valid){
+            opcion=sn.nextInt();
+            try{
+            switch(opcion){
                 case 1:
+                        System.out.println("¿Que componente deseas agregar al inventario?");
+                        int opcion1=0;
+                        System.out.println("1. CPU\n2. Cooler\n3. Case\n4. MotherBoard\n5. Sistema operativo"
+                                    + "\n6. Fuente de poder\n7. RAM\n8. Almacenamiento\n9. Tarjeta de Video");
+                        opcion1=sn.nextInt();
+                    Elemento e= AgregarComp(opcion1);
+                    key=Integer.parseInt(e.getID());
+                                 switch(opcion1){
+                                                case 1:
+                                                   CPU1.put(key, (CPU) e);
+                                                   break;
+                                                 case 2:
+                                                   CPUCooler1.put(key, (CPUCooler) e);
+                                                        break;
+                                                    case 3:
+                                                        Case1.put(key, (Case) e);
+                                                        break;
+                                                    case 4:
+                                                        MotherBoard1.put(key, (MotherBoard) e);
+                                                        break;
+                                                    case 5:
+                                                       OS1.put(key, (OS) e);
+                                                        break;
+                                                    case 6:
+                                                       PowerSupply1.put(key, (PowerSupply) e);
+                                                        break;
+                                                    case 7:
+                                                        RAM1.put(key, (RAM) e);
+                                                        break;
+                                                    case 8:
+                                                        Storage1.put(key, (Storage) e);
+                                                        break;
+                                                    case 9:
+                                                        VideoCard1.put(key, (VideoCard) e);
+                                                        break;   
+                                                    default:
+                                                        System.out.println("Ingrese un numero valido");
+                                                }
+                    in.setCPU(CPU1); in.setCases(Case1);in.setCooler(CPUCooler1);in.setMotherBoard(MotherBoard1);in.setOs(OS1);in.setPower(PowerSupply1);
+                    in.setRAM(RAM1);in.setStorage(Storage1);in.setVCard(VideoCard1);
                     
                     break;
-                case 2:
-                    
+                case 2:                    
+                    EliminarComp(in);
+                    CPU1=in.getCPU();Case1=in.getCase();CPUCooler1=in.getCooler();MotherBoard1=in.getMother();OS1=in.getOs();PowerSupply1=in.getPower();
+                    RAM1=in.getRAM();Storage1=in.getStorage();VideoCard1=in.getVCard();
                     break;
                 case 3:
-                    
+                    ConsultarComp(in);
                     break;
                     
                 case 4:
-                    
+                    FiltrarComp();
                     break;
                     
                 case 5:
-                    
+                    AgregarCarrito();
                     break;
-                
+        
                 case 6:
-                    valid=6;
+                    valid=false;
                     break;
+                default:
+                    System.out.println("Ingrese numeros validos");
             
+            }}catch (InputMismatchException e){
+                System.out.println("Debes ingresar solo numeros: ");
+                sn.next();
             }
-            
-   
-        
-        
-        }
+        }//FIN MENU
      
              }
 
@@ -249,7 +570,6 @@ for(Entry<Integer,MotherBoard> elemento : MotherBoard1.entrySet() ){
     salidaCSV.write(elemento.getValue().getRAMSupported());
     salidaCSV.write(elemento.getValue().getTamano());
     salidaCSV.write(elemento.getValue().getOverclock());
-    salidaCSV.write(elemento.getValue().getChipset());
     salidaCSV.write(elemento.getValue().getSLI());
     salidaCSV.write(elemento.getValue().getPuertos());
     salidaCSV.endRecord(); //Deja de escribir en el archivo 
@@ -416,11 +736,10 @@ while(leerInventario.readRecord()){
     String RAMSupported1 = leerInventario.get(8);
     String Tamano1 = leerInventario.get(9);
     String Overclock1 = leerInventario.get(10);
-    String Chipset1 = leerInventario.get(11);
-    String SLI1 = leerInventario.get(12);
-    String Puertos1 = leerInventario.get(13);
+    String SLI1 = leerInventario.get(11);
+    String Puertos1 = leerInventario.get(12);
     
-  MotherBoard1.put(Integer.parseInt(ID1), new MotherBoard(Socket1, RAMSupported1, Tamano1, Overclock1, Chipset1, SLI1, Puertos1, ID1, Marca1, Modelo1, Precio1, Cantidad1, Potencia1));// añade la informacion a la lista
+  MotherBoard1.put(Integer.parseInt(ID1), new MotherBoard(Socket1, RAMSupported1, Tamano1, Overclock1, SLI1, Puertos1, ID1, Marca1, Modelo1, Precio1, Cantidad1, Potencia1));// añade la informacion a la lista
     
  
  }
