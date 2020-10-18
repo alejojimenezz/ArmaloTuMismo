@@ -16,5 +16,11 @@ public class OS extends Elemento{
         super(ID, Marca, Modelo, Precio, cantidad, null);
     }
 
+    @Override
+    public String toString() {
+        return "OS{" + '}';
+    }
+
+    
        
 }

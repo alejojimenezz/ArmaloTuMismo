@@ -243,48 +243,48 @@ public class Main {
          break;
          
          case 2:
-             System.out.println("¿Qué ID deseas eliminar? ");
+             System.out.println("¿Qué ID deseas consultar? ");
              Id=sn.nextInt();
              System.out.println(in.cooler.get(Id).toString());
          break;
          case 3:
-             System.out.println("¿Qué ID deseas eliminar? ");
+             System.out.println("¿Qué ID deseas consultar? ");
              Id=sn.nextInt();
              System.out.println(in.Cases.get(Id).toString());
          break;
              
          case 4:
-             System.out.println("¿Qué ID deseas eliminar? ");
+             System.out.println("¿Qué ID deseas consultar? ");
              Id=sn.nextInt();
              System.out.println(in.MotherBoard.get(Id).toString());
          break;
              
          case 5:
-             System.out.println("¿Qué ID deseas eliminar? ");
+             System.out.println("¿Qué ID deseas consultar? ");
              Id=sn.nextInt();
              System.out.println(in.Os.get(Id).toString());
          break;
          
          case 6:
-             System.out.println("¿Qué ID deseas eliminar? ");
+             System.out.println("¿Qué ID deseas consultar? ");
              Id=sn.nextInt();
              System.out.println(in.Fuentes.get(Id).toString());
          break;
              
          case 7:
-             System.out.println("¿Qué ID deseas eliminar? ");
+             System.out.println("¿Qué ID deseas consultar? ");
              Id=sn.nextInt();
              System.out.println(in.RAM.get(Id).toString());
          break;
              
          case 8:
-             System.out.println("¿Qué ID deseas eliminar? ");
+             System.out.println("¿Qué ID deseas consultar? ");
              Id=sn.nextInt();
              System.out.println(in.Storage.get(Id).toString());
          break;
              
          case 9: 
-             System.out.println("¿Qué ID deseas eliminar? ");
+             System.out.println("¿Qué ID deseas consultar? ");
              Id=sn.nextInt();
              System.out.println(in.VideoCard.get(Id).toString());
          break;

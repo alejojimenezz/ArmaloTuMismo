@@ -79,6 +79,11 @@ public abstract class Elemento {
         this.Potencia = Potencia;
     }
 
+    @Override
+    public String toString() {
+        return "Elemento{" + "ID=" + ID + ", Marca=" + Marca + ", Modelo=" + Modelo + ", Precio=" + Precio + ", cantidad=" + cantidad + ", Potencia=" + Potencia + '}';
+    }
+
     
     
 }

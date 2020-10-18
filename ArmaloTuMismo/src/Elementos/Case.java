@@ -58,5 +58,12 @@ public class Case extends Elemento{
     public void setFans(String fans) {
         this.fans = fans;
     }
+
+    @Override
+    public String toString() {
+        return "Case{" + "tamano=" + tamano + ", SlotStorage=" + SlotStorage + ", SlotVideoCard=" + SlotVideoCard + ", fans=" + fans + '}';
+    }
+    
+    
     
 }

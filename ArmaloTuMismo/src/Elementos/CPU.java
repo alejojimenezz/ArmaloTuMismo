@@ -76,6 +76,11 @@ public class CPU extends Elemento{
         this.cache = cache;
     }
 
+    @Override
+    public String toString() {
+        return "CPU{" + "Frecuencia=" + Frecuencia + ", Nucleos=" + Nucleos + ", Hilos=" + Hilos + ", Arquitectura=" + Arquitectura + ", Socket=" + Socket + ", cache=" + cache + '}';
+    }
+
 
 
 

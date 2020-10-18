@@ -28,6 +28,11 @@ public class CPUCooler extends Elemento{
         this.tipo = tipo;
     }
 
+    @Override
+    public String toString() {
+        return "CPUCooler{" + "tipo=" + tipo + '}';
+    }
+
    
     
     

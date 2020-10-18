@@ -86,5 +86,10 @@ public class VideoCard extends Elemento{
         this.ancho = ancho;
     }
 
+    @Override
+    public String toString() {
+        return "VideoCard{" + "Arquitectura=" + Arquitectura + ", TipoBus=" + TipoBus + ", Frecuencia=" + Frecuencia + ", Memoria=" + Memoria + ", TipoMem=" + TipoMem + ", largo=" + largo + ", ancho=" + ancho + '}';
+    }
+
 
 }

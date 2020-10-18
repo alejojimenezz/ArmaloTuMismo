@@ -81,4 +81,10 @@ public class MotherBoard extends Elemento{
         this.puertos = puertos;
     }
 
+    @Override
+    public String toString() {
+        return "MotherBoard{" + "Socket=" + Socket + ", RAMSupported=" + RAMSupported + ", Tamano=" + Tamano + ", Overclock=" + Overclock + ", SLI=" + SLI + ", puertos=" + puertos + '}';
+    }
+
+    
 }

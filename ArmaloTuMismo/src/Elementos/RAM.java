@@ -51,5 +51,12 @@ public class RAM extends Elemento{
     public void setDisipacion(String disipacion) {
         this.disipacion = disipacion;
     }    
+
+    @Override
+    public String toString() {
+        return "RAM{" + "Gen=" + Gen + ", Vel=" + Vel + ", capacidad=" + capacidad + ", disipacion=" + disipacion + '}';
+    }
+    
+    
    
 }

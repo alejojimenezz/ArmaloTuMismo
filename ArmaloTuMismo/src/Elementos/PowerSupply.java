@@ -36,5 +36,11 @@ private String Certificacion;
         this.Certificacion = Certificacion;
     }
 
+    @Override
+    public String toString() {
+        return "PowerSupply{" + "Capacidad=" + Capacidad + ", Certificacion=" + Certificacion + '}';
+    }
+
+
 
 }
