@@ -46,19 +46,51 @@ public class Main {
    Map<Integer, RAM> RAM1 =new HashMap<Integer, RAM>();
    Map<Integer, Storage> Storage1 =new HashMap<Integer, Storage>();
    Map<Integer, VideoCard> VideoCard1 =new HashMap<Integer, VideoCard>();
+   Inventario in =new Inventario();
+   int valid=0;
+
+   ExportarCSVInventario(CPU1, CPUCooler1, Case1, MotherBoard1, OS1, PowerSupply1, RAM1, Storage1, VideoCard1);
+        
+        
+        while(valid!=6){
+            System.out.println("¿Qué desea hacer? Ingrese la opcion deseada: ");
+            System.out.println("1. Agregar componente");
+            System.out.println("2. Eliminar componente");
+            System.out.println("3. Buscar componente");
+            System.out.println("4. Filtrar componentes");
+            System.out.println("5. Agregar al carrito");
+            System.out.println("6. Salir");
+            
+            switch(valid){
+                case 1:
+                    
+                    break;
+                case 2:
+                    
+                    break;
+                case 3:
+                    
+                    break;
+                    
+                case 4:
+                    
+                    break;
+                    
+                case 5:
+                    
+                    break;
+                
+                case 6:
+                    valid=6;
+                    break;
+            
+            }
+            
    
-   
-   
-   CPU c=new CPU("1800", "2", "4", "Zen", "Am4", "16", "1", "AMD", "dasd", "50000", "5", "15");
-   
-   
-   CPU1.put(1, c);
-   
-   
-  
-   
-   usuarios.add(new Usuario("1","julian","cedula9906","21","true"));
-        ExportarCSVInventario(CPU1, CPUCooler1, Case1, MotherBoard1, OS1, PowerSupply1, RAM1, Storage1, VideoCard1);
+        
+        
+        }
+     
              }
 
 public static void ExportarCSVUsuario(List<Usuario> usuarios){
