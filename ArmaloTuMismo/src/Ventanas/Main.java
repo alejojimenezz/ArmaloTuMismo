@@ -42,7 +42,7 @@ public class Main {
     
     //Modulos opciones del menu
     
-            //Agregar componentes está incompleto COMPLETAR
+            //Agregar componentes está  COMPLETO
  public static Elementos.Elemento AgregarComp(int i){
       Scanner sn = new Scanner(System.in);
       Elemento e = null;
@@ -147,14 +147,115 @@ public class Main {
              e= new MotherBoard(socketM, RAM, tamanoM, overclock, SLI, puertos, ID, marca, modelo, precio, cantidad, potencia);
              return e;
          case 5:
+             System.out.print("Ingrese la ID del objeto: ");
+             ID= sn.nextLine();
+             System.out.print("Ingrese la Marca: ");
+             marca= sn.nextLine();
+             System.out.print("Ingrese el Modelo ");
+             modelo= sn.nextLine();
+             System.out.print("Ingrese el precio: ");
+             precio= sn.nextLine();
+             System.out.print("Ingrese la cantidad de unidades disponibles: ");
+             cantidad= sn.nextLine();
+             System.out.print("Ingrese la potencia: ");
+             potencia= sn.nextLine();
+             e= new OS(ID, marca, modelo, precio, cantidad, potencia);
              return e;
          case 6:
+             System.out.print("Ingrese la capacidad de la fuente (W):");
+             String cap= sn.nextLine();
+             System.out.print("Ingrese el tipo de certificacion sino tiene N/A");
+             String cert= sn.nextLine();
+             System.out.print("Ingrese la ID del objeto: ");
+             ID= sn.nextLine();
+             System.out.print("Ingrese la Marca: ");
+             marca= sn.nextLine();
+             System.out.print("Ingrese el Modelo ");
+             modelo= sn.nextLine();
+             System.out.print("Ingrese el precio: ");
+             precio= sn.nextLine();
+             System.out.print("Ingrese la cantidad de unidades disponibles: ");
+             cantidad= sn.nextLine();
+             System.out.print("Ingrese la potencia: ");
+             potencia= sn.nextLine();
+             e= new PowerSupply(cap, cert, ID, marca, modelo, precio, cantidad, potencia);
              return e;
          case 7:
+             System.out.print("Ingrese la generacion de ram DDR2-DDR3-DDR4 etc: ");
+             String gen= sn.nextLine();
+             System.out.print("Ingrese la velocidad de la ram: ");
+             String velo= sn.nextLine();
+             System.out.print("Ingrese la capacidad de memoria: ");
+             String capacidad= sn.nextLine();
+             System.out.print("¿Tiene algún tipo de disipacion? (True/False)");
+             String dis= sn.nextLine();
+             System.out.print("Ingrese la ID del objeto: ");
+             ID= sn.nextLine();
+             System.out.print("Ingrese la Marca: ");
+             marca= sn.nextLine();
+             System.out.print("Ingrese el Modelo ");
+             modelo= sn.nextLine();
+             System.out.print("Ingrese el precio: ");
+             precio= sn.nextLine();
+             System.out.print("Ingrese la cantidad de unidades disponibles: ");
+             cantidad= sn.nextLine();
+             System.out.print("Ingrese la potencia: ");
+             potencia= sn.nextLine();
+             e= new RAM(gen, velo, capacidad, dis, ID, marca, modelo, precio, cantidad, potencia);
              return e;
          case 8:
+             System.out.print("Ingrese el tipo de almacenamiento: ");
+             String tipoA= sn.nextLine();
+             System.out.print("Ingrese la capacidad: ");
+             String Mem= sn.nextLine();
+             System.out.print("Ingrese la velocidad de escritura:  ");
+             String write= sn.nextLine();
+             System.out.print("Ingrese la velocidad de lectura: ");
+             String read= sn.nextLine();
+             System.out.print("Ingrese el tipo de conexcion del modulo SATA/M.2: ");
+             String bus= sn.nextLine();
+             System.out.print("Ingrese la ID del objeto: ");
+             ID= sn.nextLine();
+             System.out.print("Ingrese la Marca: ");
+             marca= sn.nextLine();
+             System.out.print("Ingrese el Modelo ");
+             modelo= sn.nextLine();
+             System.out.print("Ingrese el precio: ");
+             precio= sn.nextLine();
+             System.out.print("Ingrese la cantidad de unidades disponibles: ");
+             cantidad= sn.nextLine();
+             System.out.print("Ingrese la potencia: ");
+             potencia= sn.nextLine();
+             e= new Storage(tipoA, Mem, write, read, bus, ID, marca, modelo, precio, cantidad, potencia);
              return e;
          case 9:
+             System.out.print("Ingrese la arquitectura: ");
+             String Arqui= sn.nextLine();
+             System.out.print("Ingrese el tipo de conexion: ");
+             String Bus= sn.nextLine();
+             System.out.print("Ingrese la frecuencia de la tarjeta: ");
+             String frecV= sn.nextLine();
+             System.out.print("Ingrese la capacidad de VRAM ");
+             String vram= sn.nextLine();
+             System.out.print("Ingrese el tipo de VRAM: (DDR4, DDR5, DDR6) ");
+             String vramgen= sn.nextLine();
+             System.out.print("Ingrese el ancho (mm) de la tarjeta: ");
+             String ancho= sn.nextLine();
+             System.out.print("Ingrese el alto(mm) de la tajeta: ");
+             String largo= sn.nextLine();
+             System.out.print("Ingrese la ID del objeto: ");
+             ID= sn.nextLine();
+             System.out.print("Ingrese la Marca: ");
+             marca= sn.nextLine();
+             System.out.print("Ingrese el Modelo ");
+             modelo= sn.nextLine();
+             System.out.print("Ingrese el precio: ");
+             precio= sn.nextLine();
+             System.out.print("Ingrese la cantidad de unidades disponibles: ");
+             cantidad= sn.nextLine();
+             System.out.print("Ingrese la potencia: ");
+             potencia= sn.nextLine();
+             e=new VideoCard(Arqui, Bus, frecV, vram, vramgen, largo, ancho, ID, marca, modelo, precio, cantidad, potencia);
              return e;   
          default:
              System.out.println("Ingrese un numero valido");
@@ -294,7 +395,7 @@ public class Main {
      } 
  
  }
-            //COMPLETAR CODIGO DE FILTROS
+           
  public static void FiltrarComp(){
  
  
