@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package Ventanas;
-
+import armalotumismo.LinkedList;
 import Elementos.CPU;
 import Elementos.CPUCooler;
 import Elementos.Case;
@@ -38,6 +38,7 @@ import java.util.Scanner;
  * @author Julian Medina
  */
 public class Main {
+    public static LinkedList lista = new LinkedList();
     
     //Modulos opciones del menu
     
@@ -411,10 +412,190 @@ public class Main {
                 sn.next();
             }
         }//FIN MENU
-     
-             }
 
-public static void ExportarCSVUsuario(List<Usuario> usuarios){
+     Map<String, Elemento> Componentes = new HashMap<String, Elemento>();
+
+        //datos prueba filtros
+     /*Elemento CPU1 = new CPU("100", "8", "9","cuadrado", "8", "34", "14", "intel","2020", "15.000","90","124");
+     Elemento CPU2 = new CPU("100", "8", "9","cuadrado", "8", "34", "14", "AMD","2020", "12.000","90","124");
+     Elemento RAM1 = new RAM("100", "8", "9","cuadrado", "8", "34", "14", "hola","2020", "17.000");*/
+
+
+     /*Componentes.put("C1", CPU1);
+     Componentes.put("C2", CPU2);
+     Componentes.put("R1", RAM1);*/
+
+     Scanner sc = new Scanner(System.in);
+     int count=0;
+     char d = 0;
+
+     System.out.println("Oprima el numero del componente del cual desea saber informacion:");
+     System.out.println("1. CPU");
+     System.out.println("2. RAM");
+     String Busqueda = sc.next();
+
+     switch (Busqueda){
+         case "1":{
+             d ='C';
+             count = imprimir(Componentes, d);
+             break;
+         }
+         case "2":{
+             d ='R';
+             count = imprimir(Componentes, d);
+         }
+     }
+
+     System.out.println("Oprima el numero del tipo de filtro que desea aplicar:");
+     System.out.println("1. Filtrar por referencia ");
+     System.out.println("2. Filtrar por precio");
+     String filt = sc.next();
+
+     switch (filt)
+     {
+         case "1":
+         {
+             System.out.println("ingrese la referencia ");
+             String ref = sc.next();
+             resultado(ref, Componentes, d);
+         }
+         case "2":
+         {
+             int Mm=0;
+             System.out.println("Oprima:");
+             System.out.println("1. ordenar de mayor a menor ");
+             System.out.println("2. ordenar de menor a mayor");
+             String ord = sc.next();
+             Mm = Integer.parseInt(ord);
+             organizacion(Componentes, count, d, Mm);
+             break;
+         }
+     }
+
+
+
+
+
+
+ }
+
+    public static int imprimir(Map<String, Elemento> Componentes, char tipCom){
+        int count = 0;
+        for (Entry<String, Elemento> CPU : Componentes.entrySet()){
+            if(CPU.getKey().charAt(0) == tipCom) {
+                System.out.println(CPU.getValue().getMarca());
+                count++;
+            }
+        }
+        return count;
+
+    }
+
+    public static void resultado(String Busqueda, Map<String, Elemento> Componentes, char tipCom){
+        int tam1 = Busqueda.length();
+
+        for (Entry<String, Elemento> CPU : Componentes.entrySet()){
+            if(CPU.getKey().charAt(0) == tipCom) {
+                String Bus2 = CPU.getValue().getMarca();
+
+                if (tam1 <= Bus2.length()) {
+                    int res=0;
+                    for (int j = 0; j < tam1; j++) {
+
+                        char a = Busqueda.charAt(j);
+                        char b = Bus2.charAt(j);
+                        int asc = (int) a;
+                        int asc2 = (int) b;
+                        int ran1 = 0;
+
+                        if (asc2 <= 90 && asc2 >= 65){
+                            ran1 = asc2 + 32;
+                        }else if(asc2 <= 122 && asc2 >= 97){
+                            ran1 = asc2 - 32;
+                        }else if (asc2 == 209){
+                            ran1 = 241;
+                        }else if (asc2 == 241){
+                            ran1 = 209;
+                        }
+
+                        if (asc == asc2 || asc == ran1) {
+                            res++;
+                        }
+                    }
+                    if (res == tam1){
+                        lista.pushFront(CPU.getValue());
+                    }
+                }
+            }
+
+
+        }
+
+
+        if (lista.size() == 0){
+            System.out.println("NO SE ENCONTRARON RESULTADO");
+        }else {
+            System.out.print("NUMERO DE RESULTADOS ENCONTRADOS: " + lista.size());
+            for (int b = 0; b < lista.size(); b++) {
+                Elemento Filtro = (Elemento) lista.get(b);
+                System.out.println("");
+                System.out.print(Filtro.getMarca());
+
+            }
+        }
+
+    }
+
+    public static  void organizacion(Map<String, Elemento> Componentes, int count, char tipCom, int MaoMe){
+        Elemento [] Compon = new Elemento[count];
+        int co=0;
+        for (Entry<String, Elemento> CPU : Componentes.entrySet()){
+            if(CPU.getKey().charAt(0) == tipCom) {
+                Compon [co] = CPU.getValue();
+                co++;
+            }
+        }
+
+        if (Compon.length == 0){
+            System.out.println("NO SE ENCONTRARON RESULTADO");
+        }else {
+            if (MaoMe == 1){
+                for (int i = 0; i < Compon.length; i++) {
+                    for (int j = 0; j < Compon.length-i-1; j++) {
+                        float pres = Float.parseFloat(Compon[j].getPrecio());
+                        float prox = Float.parseFloat(Compon[j+1].getPrecio());
+                        if( pres < prox){
+                            Elemento tmp = Compon[j+1];
+                            Compon[j+1] = Compon[j];
+                            Compon[j] = tmp;
+                        }
+                    }
+                }
+            }else {
+                for (int i = 0; i < Compon.length; i++) {
+                    for (int j = 0; j < Compon.length-i-1; j++) {
+                        float pres = Float.parseFloat(Compon[j].getPrecio());
+                        float prox = Float.parseFloat(Compon[j+1].getPrecio());
+                        if( pres > prox){
+                            Elemento tmp = Compon[j+1];
+                            Compon[j+1] = Compon[j];
+                            Compon[j] = tmp;
+                        }
+                    }
+                }
+            }
+
+            System.out.print("NUMERO DE RESULTADOS ENCONTRADOS: " + Compon.length);
+            for (int b = 0; b < Compon.length; b++) {
+                System.out.println("");
+                System.out.print(Compon[b].getMarca() + " " + Compon[b].getPrecio());
+
+            }
+        }
+    }
+
+
+    public static void ExportarCSVUsuario(List<Usuario> usuarios){
 String salidaArchivo = "Usuarios.csv"; // nombre del archivo
 boolean existe = new File(salidaArchivo).exists();
 // si existe un archivo llamado asi lo borra
