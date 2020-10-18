@@ -312,16 +312,16 @@ public class Main {
     Scanner sn = new Scanner(System.in);
     Inventario in =new Inventario();
     ImportarCSVInventario();
-   List<Usuario> usuarios = new ArrayList<Usuario>();
-   Map<Integer, CPU> CPU1=new HashMap<Integer, CPU>();
-   Map<Integer, CPUCooler> CPUCooler1 = new HashMap<Integer, CPUCooler>();
-   Map<Integer, Case> Case1= new HashMap<Integer, Case>();
-   Map<Integer,MotherBoard> MotherBoard1 = new HashMap<Integer, MotherBoard>();
-   Map<Integer, OS> OS1 =new HashMap<Integer, OS>();
-   Map<Integer, PowerSupply> PowerSupply1 =new HashMap<Integer, PowerSupply>();
-   Map<Integer, RAM> RAM1 =new HashMap<Integer, RAM>();
-   Map<Integer, Storage> Storage1 =new HashMap<Integer, Storage>();
-   Map<Integer, VideoCard> VideoCard1 =new HashMap<Integer, VideoCard>();
+   List<Usuario> usuarios = new ArrayList <Usuario>();
+   Map <Integer, CPU> CPU1 = new HashMap<Integer, CPU>();
+   Map <Integer, CPUCooler> CPUCooler1 = new HashMap<Integer, CPUCooler>();
+   Map <Integer, Case> Case1= new HashMap<Integer, Case>();
+   Map <Integer,MotherBoard> MotherBoard1 = new HashMap<Integer, MotherBoard>();
+   Map <Integer, OS> OS1 =new HashMap<Integer, OS>();
+   Map <Integer, PowerSupply> PowerSupply1 =new HashMap<Integer, PowerSupply>();
+   Map <Integer, RAM> RAM1 =new HashMap<Integer, RAM>();
+   Map <Integer, Storage> Storage1 =new HashMap<Integer, Storage>();
+   Map <Integer, VideoCard> VideoCard1 =new HashMap<Integer, VideoCard>();
    
    boolean valid=true;
    int opcion=0;
@@ -395,7 +395,158 @@ public class Main {
                     break;
                     
                 case 4:
-                    FiltrarComp();
+                   
+                    Scanner sc = new Scanner(System.in);
+                    int count=0;
+                    
+                    System.out.println("Oprima el numero del componente del cual desea saber informacion:");
+                    System.out.println("1. CPU\n 2. Cooler\n 3. Case\n 4. MotherBoard\n 5. Sistema operativo"
+                                    + "\n 6. Fuente de poder\n 7. RAM\n 8. Almacenamiento\n 9. Tarjeta de Video");
+                    int Busqueda = sc.nextInt();
+
+                    switch (Busqueda){
+                        case 1:{
+                            count = imprimirCPU(CPU1);
+                            break;
+                        }
+                        case 2:{
+                            count = imprimirCPUCooler(CPUCooler1);
+                            break;
+                        }
+                        case 3:{
+                            count = imprimirCase(Case1);
+                            break;
+                        }
+                        case 4:{
+                            count = imprimirMotherBoard(MotherBoard1);
+                            break;
+                        }
+                        case 5:{
+                            count = imprimirOS(OS1);
+                            break;
+                        }
+                        case 6:{
+                            count = imprimirPowerSupply(PowerSupply1);
+                            break;
+                        }
+                        case 7:{
+                            count = imprimirRAM(RAM1);
+                            break;
+                        }
+                        case 8:{
+                            count = imprimirStorage(Storage1);
+                            break;
+                        }
+                        case 9:{
+                            count = imprimirVideoCard(VideoCard1);
+                            break;
+                        }
+                        default:
+                            System.out.println("Ingrese un numero valido");
+                   }
+
+                    System.out.println("Oprima el numero del tipo de filtro que desea aplicar:");
+                    System.out.println("1. Filtrar por referencia ");
+                    System.out.println("2. Filtrar por precio");
+                    String filt = sc.next();
+                    
+                    switch (filt)
+                    {
+                        case "1":
+                        {
+                            System.out.println("ingrese la referencia ");
+                            String ref = sc.next();
+                                                 
+                                switch (Busqueda){
+                                     case 1:{
+                                         resultadoCPU(ref,CPU1);
+                                         break;
+                                     }
+                                     case 2:{
+                                         resultadoCPUCooler(ref,CPUCooler1);
+                                         break;
+                                     }
+                                     case 3:{
+                                          resultadoCase(ref,Case1);
+                                         break;
+                                     }
+                                     case 4:{
+                                         resultadoMotherBoard(ref,MotherBoard1);
+                                         break;
+                                     }
+                                     case 5:{
+                                         resultadoOS(ref,OS1);
+                                         break;
+                                     }
+                                     case 6:{
+                                         resultadoPowerSupply(ref,PowerSupply1);
+                                         break;
+                                     }
+                                     case 7:{
+                                        resultadoRAM(ref,RAM1);
+                                         break;
+                                     }
+                                     case 8:{
+                                         resultadoStorage(ref,Storage1);
+                                         break;
+                                     }
+                                     case 9:{
+                                         resultadoVideoCard(ref,VideoCard1);
+                                         break;
+                                     }
+                            }
+                        }
+                        case "2":
+                        {
+                            
+                            System.out.println("Oprima:");
+                            System.out.println("1. ordenar de mayor a menor ");
+                            System.out.println("2. ordenar de menor a mayor");
+                            int ord = sc.nextInt();
+                            
+                               switch (Busqueda){
+                                     case 1:{
+                                         organizacionCPU(CPU1, count, ord);
+                                         break;
+                                     }
+                                     case 2:{
+                                         organizacionCPUCooler(CPUCooler1, count, ord);
+                                         break;
+                                     }
+                                     case 3:{
+                                          organizacionCase(Case1, count, ord);
+                                         break;
+                                     }
+                                     case 4:{
+                                         organizacionMotherBoard(MotherBoard1, count, ord);
+                                         break;
+                                     }
+                                     case 5:{
+                                         organizacionOS(OS1, count, ord);
+                                         break;
+                                     }
+                                     case 6:{
+                                         organizacionPowerSupply(PowerSupply1, count, ord);
+                                         break;
+                                     }
+                                     case 7:{
+                                        organizacionRAM(RAM1, count, ord);
+                                         break;
+                                     }
+                                     case 8:{
+                                         organizacionStorage(Storage1, count, ord);
+                                         break;
+                                     }
+                                     case 9:{
+                                         organizacionVideoCard(VideoCard1, count, ord);
+                                         break;
+                                     }
+                            }
+                            break;
+                        }
+                    }
+    
+                    
                     break;
                     
                 case 5:
@@ -414,92 +565,165 @@ public class Main {
             }
         }//FIN MENU
 
-     Map<String, Elemento> Componentes = new HashMap<String, Elemento>();
-
-        //datos prueba filtros
-     /*Elemento CPU1 = new CPU("100", "8", "9","cuadrado", "8", "34", "14", "intel","2020", "15.000","90","124");
-     Elemento CPU2 = new CPU("100", "8", "9","cuadrado", "8", "34", "14", "AMD","2020", "12.000","90","124");
-     Elemento RAM1 = new RAM("100", "8", "9","cuadrado", "8", "34", "14", "hola","2020", "17.000");*/
-
-
-     /*Componentes.put("C1", CPU1);
-     Componentes.put("C2", CPU2);
-     Componentes.put("R1", RAM1);*/
-
-     Scanner sc = new Scanner(System.in);
-     int count=0;
-     char d = 0;
-
-     System.out.println("Oprima el numero del componente del cual desea saber informacion:");
-     System.out.println("1. CPU");
-     System.out.println("2. RAM");
-     String Busqueda = sc.next();
-
-     switch (Busqueda){
-         case "1":{
-             d ='C';
-             count = imprimir(Componentes, d);
-             break;
-         }
-         case "2":{
-             d ='R';
-             count = imprimir(Componentes, d);
-         }
-     }
-
-     System.out.println("Oprima el numero del tipo de filtro que desea aplicar:");
-     System.out.println("1. Filtrar por referencia ");
-     System.out.println("2. Filtrar por precio");
-     String filt = sc.next();
-
-     switch (filt)
-     {
-         case "1":
-         {
-             System.out.println("ingrese la referencia ");
-             String ref = sc.next();
-             resultado(ref, Componentes, d);
-         }
-         case "2":
-         {
-             int Mm=0;
-             System.out.println("Oprima:");
-             System.out.println("1. ordenar de mayor a menor ");
-             System.out.println("2. ordenar de menor a mayor");
-             String ord = sc.next();
-             Mm = Integer.parseInt(ord);
-             organizacion(Componentes, count, d, Mm);
-             break;
-         }
-     }
-    
+       
      
      ExportarCSVInventario(CPU1, CPUCooler1, Case1, MotherBoard1, OS1, PowerSupply1, RAM1, Storage1, VideoCard1);
 
 
-
-
-
-
  }
-
-    public static int imprimir(Map<String, Elemento> Componentes, char tipCom){
+ 
+    //imprimir componentes
+    public static int imprimirCPU(Map<Integer, CPU> Componentes){
         int count = 0;
-        for (Entry<String, Elemento> CPU : Componentes.entrySet()){
-            if(CPU.getKey().charAt(0) == tipCom) {
+        for (Entry<Integer, CPU> CPU : Componentes.entrySet()){
                 System.out.println(CPU.getValue().getMarca());
                 count++;
-            }
+            
+        }
+        return count;
+
+    }
+    public static int imprimirRAM(Map<Integer, RAM> Componentes){
+        int count = 0;
+        for (Entry<Integer, RAM> CPU : Componentes.entrySet()){
+                System.out.println(CPU.getValue().getMarca());
+                count++;
+            
+        }
+        return count;
+
+    }
+    public static int imprimirCPUCooler(Map<Integer, CPUCooler> Componentes){
+        int count = 0;
+        for (Entry<Integer, CPUCooler> CPU : Componentes.entrySet()){
+                System.out.println(CPU.getValue().getMarca());
+                count++;
+            
+        }
+        return count;
+
+    }
+    public static int imprimirCase(Map<Integer, Case> Componentes){
+        int count = 0;
+        for (Entry<Integer, Case> CPU : Componentes.entrySet()){
+                System.out.println(CPU.getValue().getMarca());
+                count++;
+            
+        }
+        return count;
+
+    }
+    public static int imprimirMotherBoard(Map<Integer, MotherBoard> Componentes){
+        int count = 0;
+        for (Entry<Integer, MotherBoard> CPU : Componentes.entrySet()){
+                System.out.println(CPU.getValue().getMarca());
+                count++;
+            
+        }
+        return count;
+
+    }
+    public static int imprimirOS(Map<Integer, OS> Componentes){
+        int count = 0;
+        for (Entry<Integer, OS> CPU : Componentes.entrySet()){
+                System.out.println(CPU.getValue().getMarca());
+                count++;
+            
+        }
+        return count;
+
+    }
+    public static int imprimirPowerSupply(Map<Integer, PowerSupply> Componentes){
+        int count = 0;
+        for (Entry<Integer, PowerSupply> CPU : Componentes.entrySet()){
+                System.out.println(CPU.getValue().getMarca());
+                count++;
+            
+        }
+        return count;
+
+    }
+    public static int imprimirStorage(Map<Integer, Storage> Componentes){
+        int count = 0;
+        for (Entry<Integer, Storage> CPU : Componentes.entrySet()){
+                System.out.println(CPU.getValue().getMarca());
+                count++;
+            
+        }
+        return count;
+
+    }
+    public static int imprimirVideoCard(Map<Integer, VideoCard> Componentes){
+        int count = 0;
+        for (Entry<Integer, VideoCard> CPU : Componentes.entrySet()){
+                System.out.println(CPU.getValue().getMarca());
+                count++;
+            
         }
         return count;
 
     }
 
-    public static void resultado(String Busqueda, Map<String, Elemento> Componentes, char tipCom){
+    //Resultados de la busqueda personalizada
+    public static void resultadoCPU(String Busqueda, Map<Integer, CPU> Componentes){
         int tam1 = Busqueda.length();
 
-        for (Entry<String, Elemento> CPU : Componentes.entrySet()){
-            if(CPU.getKey().charAt(0) == tipCom) {
+        for (Entry<Integer, CPU> CPU : Componentes.entrySet()){
+            
+                String Bus2 = CPU.getValue().getMarca();
+
+                if (tam1 <= Bus2.length()) {
+                    int res=0;
+                    for (int j = 0; j < tam1; j++) {
+
+                        char a = Busqueda.charAt(j);
+                        char b = Bus2.charAt(j);
+                        int asc = (int) a;
+                        int asc2 = (int) b;
+                        int ran1 = 0;
+
+                        if (asc2 <= 90 && asc2 >= 65){
+                            ran1 = asc2 + 32;
+                        }else if(asc2 <= 122 && asc2 >= 97){
+                            ran1 = asc2 - 32;
+                        }else if (asc2 == 209){
+                            ran1 = 241;
+                        }else if (asc2 == 241){
+                            ran1 = 209;
+                        }
+
+                        if (asc == asc2 || asc == ran1) {
+                            res++;
+                        }
+                    }
+                    if (res == tam1){
+                        lista.pushFront(CPU.getValue());
+                    }
+                }
+            
+
+
+        }
+
+
+        if (lista.size() == 0){
+            System.out.println("NO SE ENCONTRARON RESULTADO");
+        }else {
+            System.out.print("NUMERO DE RESULTADOS ENCONTRADOS: " + lista.size());
+            for (int b = 0; b < lista.size(); b++) {
+                Elemento Filtro = (Elemento) lista.get(b);
+                System.out.println("");
+                System.out.print(Filtro.getMarca());
+
+            }
+        }
+
+    }
+    public static void resultadoRAM(String Busqueda, Map<Integer, RAM> Componentes){
+        int tam1 = Busqueda.length();
+
+        for (Entry<Integer, RAM> CPU : Componentes.entrySet()){
+            
                 String Bus2 = CPU.getValue().getMarca();
 
                 if (tam1 <= Bus2.length()) {
@@ -533,7 +757,55 @@ public class Main {
             }
 
 
+        if (lista.size() == 0){
+            System.out.println("NO SE ENCONTRARON RESULTADO");
+        }else {
+            System.out.print("NUMERO DE RESULTADOS ENCONTRADOS: " + lista.size());
+            for (int b = 0; b < lista.size(); b++) {
+                Elemento Filtro = (Elemento) lista.get(b);
+                System.out.println("");
+                System.out.print(Filtro.getMarca());
+
+            }
         }
+
+    }
+    public static void resultadoCPUCooler(String Busqueda, Map<Integer, CPUCooler> Componentes){
+        int tam1 = Busqueda.length();
+
+        for (Entry<Integer, CPUCooler> CPU : Componentes.entrySet()){
+            
+                String Bus2 = CPU.getValue().getMarca();
+
+                if (tam1 <= Bus2.length()) {
+                    int res=0;
+                    for (int j = 0; j < tam1; j++) {
+
+                        char a = Busqueda.charAt(j);
+                        char b = Bus2.charAt(j);
+                        int asc = (int) a;
+                        int asc2 = (int) b;
+                        int ran1 = 0;
+
+                        if (asc2 <= 90 && asc2 >= 65){
+                            ran1 = asc2 + 32;
+                        }else if(asc2 <= 122 && asc2 >= 97){
+                            ran1 = asc2 - 32;
+                        }else if (asc2 == 209){
+                            ran1 = 241;
+                        }else if (asc2 == 241){
+                            ran1 = 209;
+                        }
+
+                        if (asc == asc2 || asc == ran1) {
+                            res++;
+                        }
+                    }
+                    if (res == tam1){
+                        lista.pushFront(CPU.getValue());
+                    }
+                }
+            }
 
 
         if (lista.size() == 0){
@@ -549,15 +821,689 @@ public class Main {
         }
 
     }
+    public static void resultadoCase(String Busqueda, Map<Integer, Case> Componentes){
+        int tam1 = Busqueda.length();
 
-    public static  void organizacion(Map<String, Elemento> Componentes, int count, char tipCom, int MaoMe){
+        for (Entry<Integer, Case> CPU : Componentes.entrySet()){
+            
+                String Bus2 = CPU.getValue().getMarca();
+
+                if (tam1 <= Bus2.length()) {
+                    int res=0;
+                    for (int j = 0; j < tam1; j++) {
+
+                        char a = Busqueda.charAt(j);
+                        char b = Bus2.charAt(j);
+                        int asc = (int) a;
+                        int asc2 = (int) b;
+                        int ran1 = 0;
+
+                        if (asc2 <= 90 && asc2 >= 65){
+                            ran1 = asc2 + 32;
+                        }else if(asc2 <= 122 && asc2 >= 97){
+                            ran1 = asc2 - 32;
+                        }else if (asc2 == 209){
+                            ran1 = 241;
+                        }else if (asc2 == 241){
+                            ran1 = 209;
+                        }
+
+                        if (asc == asc2 || asc == ran1) {
+                            res++;
+                        }
+                    }
+                    if (res == tam1){
+                        lista.pushFront(CPU.getValue());
+                    }
+                }
+            }
+
+
+        if (lista.size() == 0){
+            System.out.println("NO SE ENCONTRARON RESULTADO");
+        }else {
+            System.out.print("NUMERO DE RESULTADOS ENCONTRADOS: " + lista.size());
+            for (int b = 0; b < lista.size(); b++) {
+                Elemento Filtro = (Elemento) lista.get(b);
+                System.out.println("");
+                System.out.print(Filtro.getMarca());
+
+            }
+        }
+
+    }
+    public static void resultadoMotherBoard(String Busqueda, Map<Integer, MotherBoard> Componentes){
+        int tam1 = Busqueda.length();
+
+        for (Entry<Integer, MotherBoard> CPU : Componentes.entrySet()){
+            
+                String Bus2 = CPU.getValue().getMarca();
+
+                if (tam1 <= Bus2.length()) {
+                    int res=0;
+                    for (int j = 0; j < tam1; j++) {
+
+                        char a = Busqueda.charAt(j);
+                        char b = Bus2.charAt(j);
+                        int asc = (int) a;
+                        int asc2 = (int) b;
+                        int ran1 = 0;
+
+                        if (asc2 <= 90 && asc2 >= 65){
+                            ran1 = asc2 + 32;
+                        }else if(asc2 <= 122 && asc2 >= 97){
+                            ran1 = asc2 - 32;
+                        }else if (asc2 == 209){
+                            ran1 = 241;
+                        }else if (asc2 == 241){
+                            ran1 = 209;
+                        }
+
+                        if (asc == asc2 || asc == ran1) {
+                            res++;
+                        }
+                    }
+                    if (res == tam1){
+                        lista.pushFront(CPU.getValue());
+                    }
+                }
+            }
+
+
+        if (lista.size() == 0){
+            System.out.println("NO SE ENCONTRARON RESULTADO");
+        }else {
+            System.out.print("NUMERO DE RESULTADOS ENCONTRADOS: " + lista.size());
+            for (int b = 0; b < lista.size(); b++) {
+                Elemento Filtro = (Elemento) lista.get(b);
+                System.out.println("");
+                System.out.print(Filtro.getMarca());
+
+            }
+        }
+
+    }
+    public static void resultadoOS(String Busqueda, Map<Integer, OS> Componentes){
+        int tam1 = Busqueda.length();
+
+        for (Entry<Integer, OS> CPU : Componentes.entrySet()){
+            
+                String Bus2 = CPU.getValue().getMarca();
+
+                if (tam1 <= Bus2.length()) {
+                    int res=0;
+                    for (int j = 0; j < tam1; j++) {
+
+                        char a = Busqueda.charAt(j);
+                        char b = Bus2.charAt(j);
+                        int asc = (int) a;
+                        int asc2 = (int) b;
+                        int ran1 = 0;
+
+                        if (asc2 <= 90 && asc2 >= 65){
+                            ran1 = asc2 + 32;
+                        }else if(asc2 <= 122 && asc2 >= 97){
+                            ran1 = asc2 - 32;
+                        }else if (asc2 == 209){
+                            ran1 = 241;
+                        }else if (asc2 == 241){
+                            ran1 = 209;
+                        }
+
+                        if (asc == asc2 || asc == ran1) {
+                            res++;
+                        }
+                    }
+                    if (res == tam1){
+                        lista.pushFront(CPU.getValue());
+                    }
+                }
+            }
+
+
+        if (lista.size() == 0){
+            System.out.println("NO SE ENCONTRARON RESULTADO");
+        }else {
+            System.out.print("NUMERO DE RESULTADOS ENCONTRADOS: " + lista.size());
+            for (int b = 0; b < lista.size(); b++) {
+                Elemento Filtro = (Elemento) lista.get(b);
+                System.out.println("");
+                System.out.print(Filtro.getMarca());
+
+            }
+        }
+
+    }
+    public static void resultadoPowerSupply(String Busqueda, Map<Integer, PowerSupply> Componentes){
+        int tam1 = Busqueda.length();
+
+        for (Entry<Integer, PowerSupply> CPU : Componentes.entrySet()){
+            
+                String Bus2 = CPU.getValue().getMarca();
+
+                if (tam1 <= Bus2.length()) {
+                    int res=0;
+                    for (int j = 0; j < tam1; j++) {
+
+                        char a = Busqueda.charAt(j);
+                        char b = Bus2.charAt(j);
+                        int asc = (int) a;
+                        int asc2 = (int) b;
+                        int ran1 = 0;
+
+                        if (asc2 <= 90 && asc2 >= 65){
+                            ran1 = asc2 + 32;
+                        }else if(asc2 <= 122 && asc2 >= 97){
+                            ran1 = asc2 - 32;
+                        }else if (asc2 == 209){
+                            ran1 = 241;
+                        }else if (asc2 == 241){
+                            ran1 = 209;
+                        }
+
+                        if (asc == asc2 || asc == ran1) {
+                            res++;
+                        }
+                    }
+                    if (res == tam1){
+                        lista.pushFront(CPU.getValue());
+                    }
+                }
+            }
+
+
+        if (lista.size() == 0){
+            System.out.println("NO SE ENCONTRARON RESULTADO");
+        }else {
+            System.out.print("NUMERO DE RESULTADOS ENCONTRADOS: " + lista.size());
+            for (int b = 0; b < lista.size(); b++) {
+                Elemento Filtro = (Elemento) lista.get(b);
+                System.out.println("");
+                System.out.print(Filtro.getMarca());
+
+            }
+        }
+
+    }
+    public static void resultadoStorage(String Busqueda, Map<Integer, Storage> Componentes){
+        int tam1 = Busqueda.length();
+
+        for (Entry<Integer, Storage> CPU : Componentes.entrySet()){
+            
+                String Bus2 = CPU.getValue().getMarca();
+
+                if (tam1 <= Bus2.length()) {
+                    int res=0;
+                    for (int j = 0; j < tam1; j++) {
+
+                        char a = Busqueda.charAt(j);
+                        char b = Bus2.charAt(j);
+                        int asc = (int) a;
+                        int asc2 = (int) b;
+                        int ran1 = 0;
+
+                        if (asc2 <= 90 && asc2 >= 65){
+                            ran1 = asc2 + 32;
+                        }else if(asc2 <= 122 && asc2 >= 97){
+                            ran1 = asc2 - 32;
+                        }else if (asc2 == 209){
+                            ran1 = 241;
+                        }else if (asc2 == 241){
+                            ran1 = 209;
+                        }
+
+                        if (asc == asc2 || asc == ran1) {
+                            res++;
+                        }
+                    }
+                    if (res == tam1){
+                        lista.pushFront(CPU.getValue());
+                    }
+                }
+            }
+
+
+        if (lista.size() == 0){
+            System.out.println("NO SE ENCONTRARON RESULTADO");
+        }else {
+            System.out.print("NUMERO DE RESULTADOS ENCONTRADOS: " + lista.size());
+            for (int b = 0; b < lista.size(); b++) {
+                Elemento Filtro = (Elemento) lista.get(b);
+                System.out.println("");
+                System.out.print(Filtro.getMarca());
+
+            }
+        }
+
+    }
+    public static void resultadoVideoCard(String Busqueda, Map<Integer, VideoCard> Componentes){
+        int tam1 = Busqueda.length();
+
+        for (Entry<Integer, VideoCard> CPU : Componentes.entrySet()){
+            
+                String Bus2 = CPU.getValue().getMarca();
+
+                if (tam1 <= Bus2.length()) {
+                    int res=0;
+                    for (int j = 0; j < tam1; j++) {
+
+                        char a = Busqueda.charAt(j);
+                        char b = Bus2.charAt(j);
+                        int asc = (int) a;
+                        int asc2 = (int) b;
+                        int ran1 = 0;
+
+                        if (asc2 <= 90 && asc2 >= 65){
+                            ran1 = asc2 + 32;
+                        }else if(asc2 <= 122 && asc2 >= 97){
+                            ran1 = asc2 - 32;
+                        }else if (asc2 == 209){
+                            ran1 = 241;
+                        }else if (asc2 == 241){
+                            ran1 = 209;
+                        }
+
+                        if (asc == asc2 || asc == ran1) {
+                            res++;
+                        }
+                    }
+                    if (res == tam1){
+                        lista.pushFront(CPU.getValue());
+                    }
+                }
+            }
+
+
+        if (lista.size() == 0){
+            System.out.println("NO SE ENCONTRARON RESULTADO");
+        }else {
+            System.out.print("NUMERO DE RESULTADOS ENCONTRADOS: " + lista.size());
+            for (int b = 0; b < lista.size(); b++) {
+                Elemento Filtro = (Elemento) lista.get(b);
+                System.out.println("");
+                System.out.print(Filtro.getMarca());
+
+            }
+        }
+
+    }
+        
+    //Organizacion por precio componentes
+    public static  void organizacionCPU(Map<Integer, CPU> Componentes, int count,int MaoMe){
         Elemento [] Compon = new Elemento[count];
         int co=0;
-        for (Entry<String, Elemento> CPU : Componentes.entrySet()){
-            if(CPU.getKey().charAt(0) == tipCom) {
+        for (Entry<Integer, CPU> CPU : Componentes.entrySet()){
                 Compon [co] = CPU.getValue();
                 co++;
+            
+        }
+
+        if (Compon.length == 0){
+            System.out.println("NO SE ENCONTRARON RESULTADO");
+        }else {
+            if (MaoMe == 1){
+                for (int i = 0; i < Compon.length; i++) {
+                    for (int j = 0; j < Compon.length-i-1; j++) {
+                        float pres = Float.parseFloat(Compon[j].getPrecio());
+                        float prox = Float.parseFloat(Compon[j+1].getPrecio());
+                        if( pres < prox){
+                            Elemento tmp = Compon[j+1];
+                            Compon[j+1] = Compon[j];
+                            Compon[j] = tmp;
+                        }
+                    }
+                }
+            }else {
+                for (int i = 0; i < Compon.length; i++) {
+                    for (int j = 0; j < Compon.length-i-1; j++) {
+                        float pres = Float.parseFloat(Compon[j].getPrecio());
+                        float prox = Float.parseFloat(Compon[j+1].getPrecio());
+                        if( pres > prox){
+                            Elemento tmp = Compon[j+1];
+                            Compon[j+1] = Compon[j];
+                            Compon[j] = tmp;
+                        }
+                    }
+                }
             }
+
+            System.out.print("NUMERO DE RESULTADOS ENCONTRADOS: " + Compon.length);
+            for (int b = 0; b < Compon.length; b++) {
+                System.out.println("");
+                System.out.print(Compon[b].getMarca() + " " + Compon[b].getPrecio());
+
+            }
+        }
+    }
+    public static  void organizacionRAM(Map<Integer, RAM> Componentes, int count,int MaoMe){
+        Elemento [] Compon = new Elemento[count];
+        int co=0;
+        for (Entry<Integer, RAM> CPU : Componentes.entrySet()){
+                Compon [co] = CPU.getValue();
+                co++;
+            
+        }
+
+        if (Compon.length == 0){
+            System.out.println("NO SE ENCONTRARON RESULTADO");
+        }else {
+            if (MaoMe == 1){
+                for (int i = 0; i < Compon.length; i++) {
+                    for (int j = 0; j < Compon.length-i-1; j++) {
+                        float pres = Float.parseFloat(Compon[j].getPrecio());
+                        float prox = Float.parseFloat(Compon[j+1].getPrecio());
+                        if( pres < prox){
+                            Elemento tmp = Compon[j+1];
+                            Compon[j+1] = Compon[j];
+                            Compon[j] = tmp;
+                        }
+                    }
+                }
+            }else {
+                for (int i = 0; i < Compon.length; i++) {
+                    for (int j = 0; j < Compon.length-i-1; j++) {
+                        float pres = Float.parseFloat(Compon[j].getPrecio());
+                        float prox = Float.parseFloat(Compon[j+1].getPrecio());
+                        if( pres > prox){
+                            Elemento tmp = Compon[j+1];
+                            Compon[j+1] = Compon[j];
+                            Compon[j] = tmp;
+                        }
+                    }
+                }
+            }
+
+            System.out.print("NUMERO DE RESULTADOS ENCONTRADOS: " + Compon.length);
+            for (int b = 0; b < Compon.length; b++) {
+                System.out.println("");
+                System.out.print(Compon[b].getMarca() + " " + Compon[b].getPrecio());
+
+            }
+        }
+    }
+    public static  void organizacionCPUCooler(Map<Integer, CPUCooler> Componentes, int count,int MaoMe){
+            Elemento [] Compon = new Elemento[count];
+            int co=0;
+            for (Entry<Integer, CPUCooler> CPU : Componentes.entrySet()){
+                    Compon [co] = CPU.getValue();
+                    co++;
+
+            }
+
+            if (Compon.length == 0){
+                System.out.println("NO SE ENCONTRARON RESULTADO");
+            }else {
+                if (MaoMe == 1){
+                    for (int i = 0; i < Compon.length; i++) {
+                        for (int j = 0; j < Compon.length-i-1; j++) {
+                            float pres = Float.parseFloat(Compon[j].getPrecio());
+                            float prox = Float.parseFloat(Compon[j+1].getPrecio());
+                            if( pres < prox){
+                                Elemento tmp = Compon[j+1];
+                                Compon[j+1] = Compon[j];
+                                Compon[j] = tmp;
+                            }
+                        }
+                    }
+                }else {
+                    for (int i = 0; i < Compon.length; i++) {
+                        for (int j = 0; j < Compon.length-i-1; j++) {
+                            float pres = Float.parseFloat(Compon[j].getPrecio());
+                            float prox = Float.parseFloat(Compon[j+1].getPrecio());
+                            if( pres > prox){
+                                Elemento tmp = Compon[j+1];
+                                Compon[j+1] = Compon[j];
+                                Compon[j] = tmp;
+                            }
+                        }
+                    }
+                }
+
+                System.out.print("NUMERO DE RESULTADOS ENCONTRADOS: " + Compon.length);
+                for (int b = 0; b < Compon.length; b++) {
+                    System.out.println("");
+                    System.out.print(Compon[b].getMarca() + " " + Compon[b].getPrecio());
+
+                }
+            }
+        }
+    public static  void organizacionCase(Map<Integer, Case> Componentes, int count,int MaoMe){
+            Elemento [] Compon = new Elemento[count];
+            int co=0;
+            for (Entry<Integer, Case> CPU : Componentes.entrySet()){
+                    Compon [co] = CPU.getValue();
+                    co++;
+
+            }
+
+            if (Compon.length == 0){
+                System.out.println("NO SE ENCONTRARON RESULTADO");
+            }else {
+                if (MaoMe == 1){
+                    for (int i = 0; i < Compon.length; i++) {
+                        for (int j = 0; j < Compon.length-i-1; j++) {
+                            float pres = Float.parseFloat(Compon[j].getPrecio());
+                            float prox = Float.parseFloat(Compon[j+1].getPrecio());
+                            if( pres < prox){
+                                Elemento tmp = Compon[j+1];
+                                Compon[j+1] = Compon[j];
+                                Compon[j] = tmp;
+                            }
+                        }
+                    }
+                }else {
+                    for (int i = 0; i < Compon.length; i++) {
+                        for (int j = 0; j < Compon.length-i-1; j++) {
+                            float pres = Float.parseFloat(Compon[j].getPrecio());
+                            float prox = Float.parseFloat(Compon[j+1].getPrecio());
+                            if( pres > prox){
+                                Elemento tmp = Compon[j+1];
+                                Compon[j+1] = Compon[j];
+                                Compon[j] = tmp;
+                            }
+                        }
+                    }
+                }
+
+                System.out.print("NUMERO DE RESULTADOS ENCONTRADOS: " + Compon.length);
+                for (int b = 0; b < Compon.length; b++) {
+                    System.out.println("");
+                    System.out.print(Compon[b].getMarca() + " " + Compon[b].getPrecio());
+
+                }
+            }
+        }
+    public static  void organizacionMotherBoard(Map<Integer, MotherBoard> Componentes, int count,int MaoMe){
+            Elemento [] Compon = new Elemento[count];
+            int co=0;
+            for (Entry<Integer, MotherBoard> CPU : Componentes.entrySet()){
+                    Compon [co] = CPU.getValue();
+                    co++;
+
+            }
+
+            if (Compon.length == 0){
+                System.out.println("NO SE ENCONTRARON RESULTADO");
+            }else {
+                if (MaoMe == 1){
+                    for (int i = 0; i < Compon.length; i++) {
+                        for (int j = 0; j < Compon.length-i-1; j++) {
+                            float pres = Float.parseFloat(Compon[j].getPrecio());
+                            float prox = Float.parseFloat(Compon[j+1].getPrecio());
+                            if( pres < prox){
+                                Elemento tmp = Compon[j+1];
+                                Compon[j+1] = Compon[j];
+                                Compon[j] = tmp;
+                            }
+                        }
+                    }
+                }else {
+                    for (int i = 0; i < Compon.length; i++) {
+                        for (int j = 0; j < Compon.length-i-1; j++) {
+                            float pres = Float.parseFloat(Compon[j].getPrecio());
+                            float prox = Float.parseFloat(Compon[j+1].getPrecio());
+                            if( pres > prox){
+                                Elemento tmp = Compon[j+1];
+                                Compon[j+1] = Compon[j];
+                                Compon[j] = tmp;
+                            }
+                        }
+                    }
+                }
+
+                System.out.print("NUMERO DE RESULTADOS ENCONTRADOS: " + Compon.length);
+                for (int b = 0; b < Compon.length; b++) {
+                    System.out.println("");
+                    System.out.print(Compon[b].getMarca() + " " + Compon[b].getPrecio());
+
+                }
+            }
+        }
+    public static  void organizacionOS(Map<Integer, OS> Componentes, int count,int MaoMe){
+        Elemento [] Compon = new Elemento[count];
+        int co=0;
+        for (Entry<Integer, OS> CPU : Componentes.entrySet()){
+                Compon [co] = CPU.getValue();
+                co++;
+            
+        }
+
+        if (Compon.length == 0){
+            System.out.println("NO SE ENCONTRARON RESULTADO");
+        }else {
+            if (MaoMe == 1){
+                for (int i = 0; i < Compon.length; i++) {
+                    for (int j = 0; j < Compon.length-i-1; j++) {
+                        float pres = Float.parseFloat(Compon[j].getPrecio());
+                        float prox = Float.parseFloat(Compon[j+1].getPrecio());
+                        if( pres < prox){
+                            Elemento tmp = Compon[j+1];
+                            Compon[j+1] = Compon[j];
+                            Compon[j] = tmp;
+                        }
+                    }
+                }
+            }else {
+                for (int i = 0; i < Compon.length; i++) {
+                    for (int j = 0; j < Compon.length-i-1; j++) {
+                        float pres = Float.parseFloat(Compon[j].getPrecio());
+                        float prox = Float.parseFloat(Compon[j+1].getPrecio());
+                        if( pres > prox){
+                            Elemento tmp = Compon[j+1];
+                            Compon[j+1] = Compon[j];
+                            Compon[j] = tmp;
+                        }
+                    }
+                }
+            }
+
+            System.out.print("NUMERO DE RESULTADOS ENCONTRADOS: " + Compon.length);
+            for (int b = 0; b < Compon.length; b++) {
+                System.out.println("");
+                System.out.print(Compon[b].getMarca() + " " + Compon[b].getPrecio());
+
+            }
+        }
+    }
+    public static  void organizacionPowerSupply(Map<Integer, PowerSupply> Componentes, int count,int MaoMe){
+            Elemento [] Compon = new Elemento[count];
+            int co=0;
+            for (Entry<Integer, PowerSupply> CPU : Componentes.entrySet()){
+                    Compon [co] = CPU.getValue();
+                    co++;
+
+            }
+
+            if (Compon.length == 0){
+                System.out.println("NO SE ENCONTRARON RESULTADO");
+            }else {
+                if (MaoMe == 1){
+                    for (int i = 0; i < Compon.length; i++) {
+                        for (int j = 0; j < Compon.length-i-1; j++) {
+                            float pres = Float.parseFloat(Compon[j].getPrecio());
+                            float prox = Float.parseFloat(Compon[j+1].getPrecio());
+                            if( pres < prox){
+                                Elemento tmp = Compon[j+1];
+                                Compon[j+1] = Compon[j];
+                                Compon[j] = tmp;
+                            }
+                        }
+                    }
+                }else {
+                    for (int i = 0; i < Compon.length; i++) {
+                        for (int j = 0; j < Compon.length-i-1; j++) {
+                            float pres = Float.parseFloat(Compon[j].getPrecio());
+                            float prox = Float.parseFloat(Compon[j+1].getPrecio());
+                            if( pres > prox){
+                                Elemento tmp = Compon[j+1];
+                                Compon[j+1] = Compon[j];
+                                Compon[j] = tmp;
+                            }
+                        }
+                    }
+                }
+
+                System.out.print("NUMERO DE RESULTADOS ENCONTRADOS: " + Compon.length);
+                for (int b = 0; b < Compon.length; b++) {
+                    System.out.println("");
+                    System.out.print(Compon[b].getMarca() + " " + Compon[b].getPrecio());
+
+                }
+            }
+        }
+    public static  void organizacionStorage(Map<Integer, Storage> Componentes, int count,int MaoMe){
+            Elemento [] Compon = new Elemento[count];
+            int co=0;
+            for (Entry<Integer, Storage> CPU : Componentes.entrySet()){
+                    Compon [co] = CPU.getValue();
+                    co++;
+
+            }
+
+            if (Compon.length == 0){
+                System.out.println("NO SE ENCONTRARON RESULTADO");
+            }else {
+                if (MaoMe == 1){
+                    for (int i = 0; i < Compon.length; i++) {
+                        for (int j = 0; j < Compon.length-i-1; j++) {
+                            float pres = Float.parseFloat(Compon[j].getPrecio());
+                            float prox = Float.parseFloat(Compon[j+1].getPrecio());
+                            if( pres < prox){
+                                Elemento tmp = Compon[j+1];
+                                Compon[j+1] = Compon[j];
+                                Compon[j] = tmp;
+                            }
+                        }
+                    }
+                }else {
+                    for (int i = 0; i < Compon.length; i++) {
+                        for (int j = 0; j < Compon.length-i-1; j++) {
+                            float pres = Float.parseFloat(Compon[j].getPrecio());
+                            float prox = Float.parseFloat(Compon[j+1].getPrecio());
+                            if( pres > prox){
+                                Elemento tmp = Compon[j+1];
+                                Compon[j+1] = Compon[j];
+                                Compon[j] = tmp;
+                            }
+                        }
+                    }
+                }
+
+                System.out.print("NUMERO DE RESULTADOS ENCONTRADOS: " + Compon.length);
+                for (int b = 0; b < Compon.length; b++) {
+                    System.out.println("");
+                    System.out.print(Compon[b].getMarca() + " " + Compon[b].getPrecio());
+
+                }
+            }
+        }
+    public static  void organizacionVideoCard(Map<Integer, VideoCard> Componentes, int count,int MaoMe){
+        Elemento [] Compon = new Elemento[count];
+        int co=0;
+        for (Entry<Integer, VideoCard> CPU : Componentes.entrySet()){
+                Compon [co] = CPU.getValue();
+                co++;
+            
         }
 
         if (Compon.length == 0){
@@ -599,6 +1545,7 @@ public class Main {
     }
 
 
+      
     public static void ExportarCSVUsuario(List<Usuario> usuarios){
 String salidaArchivo = "Usuarios.csv"; // nombre del archivo
 boolean existe = new File(salidaArchivo).exists();
@@ -642,212 +1589,212 @@ e.printStackTrace();
 }
 
 
-public static void ImportarCSVUsuario(){
-try {
-List<Usuario> usuarios = new ArrayList<Usuario>(); // lista donde guardaremos los datos del archivo  leerUsuarios = new CsvReader("Usuarios.csv");
-CsvReader leerUsuarios = new CsvReader("Usuarios.csv");
-leerUsuarios.readHeaders();
+    public static void ImportarCSVUsuario(){
+    try {
+    List<Usuario> usuarios = new ArrayList<Usuario>(); // lista donde guardaremos los datos del archivo  leerUsuarios = new CsvReader("Usuarios.csv");
+    CsvReader leerUsuarios = new CsvReader("Usuarios.csv");
+    leerUsuarios.readHeaders();
 
-// Mientras haya lineas obtendremos los datos del archivo 
-while(leerUsuarios.readRecord()){
+    // Mientras haya lineas obtendremos los datos del archivo 
+    while(leerUsuarios.readRecord()){
 
-    String userid = leerUsuarios.get(0);
-    String nombre = leerUsuarios.get(1);
-    String password = leerUsuarios.get(2);
-    String age = leerUsuarios.get(3);
-    String modificar = leerUsuarios.get(4);
+        String userid = leerUsuarios.get(0);
+        String nombre = leerUsuarios.get(1);
+        String password = leerUsuarios.get(2);
+        String age = leerUsuarios.get(3);
+        String modificar = leerUsuarios.get(4);
 
-    usuarios.add(new Usuario(userid,nombre,password,age,modificar)); // añade la informacion a la lista
-}
-
-
-
-leerUsuarios.close(); // Cierra el archivo
-
-// recorremos la lista para imprimirla en pantalla
-
-
-}catch(FileNotFoundException e){
-e.printStackTrace();
-}catch(IOException e){
-e.printStackTrace();
-}
-
-}
+        usuarios.add(new Usuario(userid,nombre,password,age,modificar)); // añade la informacion a la lista
+    }
 
 
 
-public static void ExportarCSVInventario(Map<Integer,CPU> CPU1
-        ,Map<Integer,CPUCooler> CPUCooler1 ,Map<Integer,Case> Case1 , Map<Integer
-        ,MotherBoard> MotherBoard1 ,Map<Integer,OS> OS1 ,
-        Map<Integer,PowerSupply> PowerSupply1 , Map<Integer,RAM> RAM1 , 
-        Map<Integer,Storage> Storage1 , Map<Integer, VideoCard> VideoCard1 ){
+    leerUsuarios.close(); // Cierra el archivo
 
-String salidaArchivo = "Inventario.csv"; // nombre del archivo
-boolean existe = new File(salidaArchivo).exists();
-// si existe un archivo llamado asi lo borra
-if(existe){
-File archivoInventario = new File(salidaArchivo);
-archivoInventario.delete();
-}
-try {
- CsvWriter salidaCSV = new CsvWriter(new FileWriter(salidaArchivo, true),';');
-//datos para identificar las columnas
+    // recorremos la lista para imprimirla en pantalla
 
 
-//salidaCSV.endRecord(); //Deja de escribir en el archivo
+    }catch(FileNotFoundException e){
+    e.printStackTrace();
+    }catch(IOException e){
+    e.printStackTrace();
+    }
 
-//recorremos la lista y lo insertamos en el archivo
-for(Entry<Integer,CPU> elemento : CPU1.entrySet() ){
-    salidaCSV.write("a");
-    salidaCSV.write(elemento.getValue().getID());
-    salidaCSV.write(elemento.getValue().getMarca());
-    salidaCSV.write(elemento.getValue().getModelo());
-    salidaCSV.write(elemento.getValue().getPrecio());
-    salidaCSV.write(elemento.getValue().getCantidad());
-    salidaCSV.write(elemento.getValue().getPotencia());
-    salidaCSV.write(elemento.getValue().getFrecuencia());
-    salidaCSV.write(elemento.getValue().getNucleos());
-    salidaCSV.write(elemento.getValue().getHilos());
-    salidaCSV.write(elemento.getValue().getArquitectura());
-    salidaCSV.write(elemento.getValue().getSocket());
-    salidaCSV.write(elemento.getValue().getCache());
-    salidaCSV.endRecord(); //Deja de escribir en el archivo 
-}
-
-for(Entry<Integer,CPUCooler> elemento : CPUCooler1.entrySet() ){
-    salidaCSV.write("b");
-    salidaCSV.write(elemento.getValue().getID());
-    salidaCSV.write(elemento.getValue().getMarca());
-    salidaCSV.write(elemento.getValue().getModelo());
-    salidaCSV.write(elemento.getValue().getPrecio());
-    salidaCSV.write(elemento.getValue().getCantidad());
-    salidaCSV.write(elemento.getValue().getPotencia());
-    salidaCSV.write(elemento.getValue().getTipo());
-    salidaCSV.endRecord(); //Deja de escribir en el archivo 
-
-}
-
-for(Entry<Integer,Case> elemento : Case1.entrySet() ){
-    salidaCSV.write("c");
-    salidaCSV.write(elemento.getValue().getID());
-    salidaCSV.write(elemento.getValue().getMarca());
-    salidaCSV.write(elemento.getValue().getModelo());
-    salidaCSV.write(elemento.getValue().getPrecio());
-    salidaCSV.write(elemento.getValue().getCantidad());
-    salidaCSV.write(elemento.getValue().getPotencia());
-    salidaCSV.write(elemento.getValue().getTamano());
-    salidaCSV.write(elemento.getValue().getSlotStorage());
-    salidaCSV.write(elemento.getValue().getSlotVideoCard());
-    salidaCSV.write(elemento.getValue().getFans());
-    salidaCSV.endRecord(); //Deja de escribir en el archivo 
-
-}
-for(Entry<Integer,MotherBoard> elemento : MotherBoard1.entrySet() ){
-    salidaCSV.write("d");
-    salidaCSV.write(elemento.getValue().getID());
-    salidaCSV.write(elemento.getValue().getMarca());
-    salidaCSV.write(elemento.getValue().getModelo());
-    salidaCSV.write(elemento.getValue().getPrecio());
-    salidaCSV.write(elemento.getValue().getCantidad());
-    salidaCSV.write(elemento.getValue().getPotencia());
-    salidaCSV.write(elemento.getValue().getSocket());
-    salidaCSV.write(elemento.getValue().getRAMSupported());
-    salidaCSV.write(elemento.getValue().getTamano());
-    salidaCSV.write(elemento.getValue().getOverclock());
-    salidaCSV.write(elemento.getValue().getSLI());
-    salidaCSV.write(elemento.getValue().getPuertos());
-    salidaCSV.endRecord(); //Deja de escribir en el archivo 
-    
-    
-}
-for(Entry<Integer,OS> elemento : OS1.entrySet() ){
-    salidaCSV.write("e");
-    salidaCSV.write(elemento.getValue().getID());
-    salidaCSV.write(elemento.getValue().getMarca());
-    salidaCSV.write(elemento.getValue().getModelo());
-    salidaCSV.write(elemento.getValue().getPrecio());
-    salidaCSV.write(elemento.getValue().getCantidad());
-    salidaCSV.write(elemento.getValue().getPotencia());
-    salidaCSV.endRecord(); //Deja de escribir en el archivo 
-}
-
-for(Entry<Integer,PowerSupply> elemento : PowerSupply1.entrySet() ){
-    salidaCSV.write("f");
-    salidaCSV.write(elemento.getValue().getID());
-    salidaCSV.write(elemento.getValue().getMarca());
-    salidaCSV.write(elemento.getValue().getModelo());
-    salidaCSV.write(elemento.getValue().getPrecio());
-    salidaCSV.write(elemento.getValue().getCantidad());
-    salidaCSV.write(elemento.getValue().getPotencia());
-    salidaCSV.write(elemento.getValue().getCapacidad());
-    salidaCSV.write(elemento.getValue().getCertificacion());
-    salidaCSV.endRecord(); //Deja de escribir en el archivo 
-
-}
-
-for(Entry<Integer,RAM> elemento : RAM1.entrySet() ){
-    salidaCSV.write("g");
-    salidaCSV.write(elemento.getValue().getID());
-    salidaCSV.write(elemento.getValue().getMarca());
-    salidaCSV.write(elemento.getValue().getModelo());
-    salidaCSV.write(elemento.getValue().getPrecio());
-    salidaCSV.write(elemento.getValue().getCantidad());
-    salidaCSV.write(elemento.getValue().getPotencia());
-    salidaCSV.write(elemento.getValue().getGen());
-    salidaCSV.write(elemento.getValue().getVel());
-    salidaCSV.write(elemento.getValue().getCapacidad());
-    salidaCSV.write(elemento.getValue().getDisipacion());
-    salidaCSV.endRecord(); //Deja de escribir en el archivo 
-}
-for(Entry<Integer,Storage> elemento : Storage1.entrySet() ){
-    salidaCSV.write("h");
-    salidaCSV.write(elemento.getValue().getID());
-    salidaCSV.write(elemento.getValue().getMarca());
-    salidaCSV.write(elemento.getValue().getModelo());
-    salidaCSV.write(elemento.getValue().getPrecio());
-    salidaCSV.write(elemento.getValue().getCantidad());
-    salidaCSV.write(elemento.getValue().getPotencia());
-    salidaCSV.write(elemento.getValue().getTipo());
-    salidaCSV.write(elemento.getValue().getCapacidad());
-    salidaCSV.write(elemento.getValue().getVel_write());
-    salidaCSV.write(elemento.getValue().getVel_Read());
-    salidaCSV.write(elemento.getValue().getBusType());
-    salidaCSV.endRecord(); //Deja de escribir en el archivo 
-}
-for(Entry<Integer,VideoCard> elemento : VideoCard1.entrySet() ){
-    salidaCSV.write("i");
-    salidaCSV.write(elemento.getValue().getID());
-    salidaCSV.write(elemento.getValue().getMarca());
-    salidaCSV.write(elemento.getValue().getModelo());
-    salidaCSV.write(elemento.getValue().getPrecio());
-    salidaCSV.write(elemento.getValue().getCantidad());
-    salidaCSV.write(elemento.getValue().getPotencia());
-    salidaCSV.write(elemento.getValue().getArquitectura());
-    salidaCSV.write(elemento.getValue().getTipoBus());
-    salidaCSV.write(elemento.getValue().getFrecuencia());
-    salidaCSV.write(elemento.getValue().getMemoria());
-    salidaCSV.write(elemento.getValue().getTipoMem());
-    salidaCSV.write(elemento.getValue().getLargo());
-    salidaCSV.write(elemento.getValue().getAncho());
-    salidaCSV.endRecord(); //Deja de escribir en el archivo 
-}
+    }
 
 
 
-salidaCSV.close(); // cierra el archivo
+    public static void ExportarCSVInventario(Map<Integer,CPU> CPU1
+            ,Map<Integer,CPUCooler> CPUCooler1 ,Map<Integer,Case> Case1 , Map<Integer
+            ,MotherBoard> MotherBoard1 ,Map<Integer,OS> OS1 ,
+            Map<Integer,PowerSupply> PowerSupply1 , Map<Integer,RAM> RAM1 , 
+            Map<Integer,Storage> Storage1 , Map<Integer, VideoCard> VideoCard1 ){
 
-}catch(IOException e){
-e.printStackTrace();
-}
+    String salidaArchivo = "Inventario.csv"; // nombre del archivo
+    boolean existe = new File(salidaArchivo).exists();
+    // si existe un archivo llamado asi lo borra
+    if(existe){
+    File archivoInventario = new File(salidaArchivo);
+    archivoInventario.delete();
+    }
+    try {
+     CsvWriter salidaCSV = new CsvWriter(new FileWriter(salidaArchivo, true),';');
+    //datos para identificar las columnas
+
+
+    //salidaCSV.endRecord(); //Deja de escribir en el archivo
+
+    //recorremos la lista y lo insertamos en el archivo
+    for(Entry<Integer,CPU> elemento : CPU1.entrySet() ){
+        salidaCSV.write("a");
+        salidaCSV.write(elemento.getValue().getID());
+        salidaCSV.write(elemento.getValue().getMarca());
+        salidaCSV.write(elemento.getValue().getModelo());
+        salidaCSV.write(elemento.getValue().getPrecio());
+        salidaCSV.write(elemento.getValue().getCantidad());
+        salidaCSV.write(elemento.getValue().getPotencia());
+        salidaCSV.write(elemento.getValue().getFrecuencia());
+        salidaCSV.write(elemento.getValue().getNucleos());
+        salidaCSV.write(elemento.getValue().getHilos());
+        salidaCSV.write(elemento.getValue().getArquitectura());
+        salidaCSV.write(elemento.getValue().getSocket());
+        salidaCSV.write(elemento.getValue().getCache());
+        salidaCSV.endRecord(); //Deja de escribir en el archivo 
+    }
+
+    for(Entry<Integer,CPUCooler> elemento : CPUCooler1.entrySet() ){
+        salidaCSV.write("b");
+        salidaCSV.write(elemento.getValue().getID());
+        salidaCSV.write(elemento.getValue().getMarca());
+        salidaCSV.write(elemento.getValue().getModelo());
+        salidaCSV.write(elemento.getValue().getPrecio());
+        salidaCSV.write(elemento.getValue().getCantidad());
+        salidaCSV.write(elemento.getValue().getPotencia());
+        salidaCSV.write(elemento.getValue().getTipo());
+        salidaCSV.endRecord(); //Deja de escribir en el archivo 
+
+    }
+
+    for(Entry<Integer,Case> elemento : Case1.entrySet() ){
+        salidaCSV.write("c");
+        salidaCSV.write(elemento.getValue().getID());
+        salidaCSV.write(elemento.getValue().getMarca());
+        salidaCSV.write(elemento.getValue().getModelo());
+        salidaCSV.write(elemento.getValue().getPrecio());
+        salidaCSV.write(elemento.getValue().getCantidad());
+        salidaCSV.write(elemento.getValue().getPotencia());
+        salidaCSV.write(elemento.getValue().getTamano());
+        salidaCSV.write(elemento.getValue().getSlotStorage());
+        salidaCSV.write(elemento.getValue().getSlotVideoCard());
+        salidaCSV.write(elemento.getValue().getFans());
+        salidaCSV.endRecord(); //Deja de escribir en el archivo 
+
+    }
+    for(Entry<Integer,MotherBoard> elemento : MotherBoard1.entrySet() ){
+        salidaCSV.write("d");
+        salidaCSV.write(elemento.getValue().getID());
+        salidaCSV.write(elemento.getValue().getMarca());
+        salidaCSV.write(elemento.getValue().getModelo());
+        salidaCSV.write(elemento.getValue().getPrecio());
+        salidaCSV.write(elemento.getValue().getCantidad());
+        salidaCSV.write(elemento.getValue().getPotencia());
+        salidaCSV.write(elemento.getValue().getSocket());
+        salidaCSV.write(elemento.getValue().getRAMSupported());
+        salidaCSV.write(elemento.getValue().getTamano());
+        salidaCSV.write(elemento.getValue().getOverclock());
+        salidaCSV.write(elemento.getValue().getSLI());
+        salidaCSV.write(elemento.getValue().getPuertos());
+        salidaCSV.endRecord(); //Deja de escribir en el archivo 
+
+
+    }
+    for(Entry<Integer,OS> elemento : OS1.entrySet() ){
+        salidaCSV.write("e");
+        salidaCSV.write(elemento.getValue().getID());
+        salidaCSV.write(elemento.getValue().getMarca());
+        salidaCSV.write(elemento.getValue().getModelo());
+        salidaCSV.write(elemento.getValue().getPrecio());
+        salidaCSV.write(elemento.getValue().getCantidad());
+        salidaCSV.write(elemento.getValue().getPotencia());
+        salidaCSV.endRecord(); //Deja de escribir en el archivo 
+    }
+
+    for(Entry<Integer,PowerSupply> elemento : PowerSupply1.entrySet() ){
+        salidaCSV.write("f");
+        salidaCSV.write(elemento.getValue().getID());
+        salidaCSV.write(elemento.getValue().getMarca());
+        salidaCSV.write(elemento.getValue().getModelo());
+        salidaCSV.write(elemento.getValue().getPrecio());
+        salidaCSV.write(elemento.getValue().getCantidad());
+        salidaCSV.write(elemento.getValue().getPotencia());
+        salidaCSV.write(elemento.getValue().getCapacidad());
+        salidaCSV.write(elemento.getValue().getCertificacion());
+        salidaCSV.endRecord(); //Deja de escribir en el archivo 
+
+    }
+
+    for(Entry<Integer,RAM> elemento : RAM1.entrySet() ){
+        salidaCSV.write("g");
+        salidaCSV.write(elemento.getValue().getID());
+        salidaCSV.write(elemento.getValue().getMarca());
+        salidaCSV.write(elemento.getValue().getModelo());
+        salidaCSV.write(elemento.getValue().getPrecio());
+        salidaCSV.write(elemento.getValue().getCantidad());
+        salidaCSV.write(elemento.getValue().getPotencia());
+        salidaCSV.write(elemento.getValue().getGen());
+        salidaCSV.write(elemento.getValue().getVel());
+        salidaCSV.write(elemento.getValue().getCapacidad());
+        salidaCSV.write(elemento.getValue().getDisipacion());
+        salidaCSV.endRecord(); //Deja de escribir en el archivo 
+    }
+    for(Entry<Integer,Storage> elemento : Storage1.entrySet() ){
+        salidaCSV.write("h");
+        salidaCSV.write(elemento.getValue().getID());
+        salidaCSV.write(elemento.getValue().getMarca());
+        salidaCSV.write(elemento.getValue().getModelo());
+        salidaCSV.write(elemento.getValue().getPrecio());
+        salidaCSV.write(elemento.getValue().getCantidad());
+        salidaCSV.write(elemento.getValue().getPotencia());
+        salidaCSV.write(elemento.getValue().getTipo());
+        salidaCSV.write(elemento.getValue().getCapacidad());
+        salidaCSV.write(elemento.getValue().getVel_write());
+        salidaCSV.write(elemento.getValue().getVel_Read());
+        salidaCSV.write(elemento.getValue().getBusType());
+        salidaCSV.endRecord(); //Deja de escribir en el archivo 
+    }
+    for(Entry<Integer,VideoCard> elemento : VideoCard1.entrySet() ){
+        salidaCSV.write("i");
+        salidaCSV.write(elemento.getValue().getID());
+        salidaCSV.write(elemento.getValue().getMarca());
+        salidaCSV.write(elemento.getValue().getModelo());
+        salidaCSV.write(elemento.getValue().getPrecio());
+        salidaCSV.write(elemento.getValue().getCantidad());
+        salidaCSV.write(elemento.getValue().getPotencia());
+        salidaCSV.write(elemento.getValue().getArquitectura());
+        salidaCSV.write(elemento.getValue().getTipoBus());
+        salidaCSV.write(elemento.getValue().getFrecuencia());
+        salidaCSV.write(elemento.getValue().getMemoria());
+        salidaCSV.write(elemento.getValue().getTipoMem());
+        salidaCSV.write(elemento.getValue().getLargo());
+        salidaCSV.write(elemento.getValue().getAncho());
+        salidaCSV.endRecord(); //Deja de escribir en el archivo 
+    }
+
+
+
+    salidaCSV.close(); // cierra el archivo
+
+    }catch(IOException e){
+    e.printStackTrace();
+    }
 
 
 
 
-}
+    }
 
 
-public static void ImportarCSVInventario(){
+    public static void ImportarCSVInventario(){
 
 try {
     Map<Integer,CPU> CPU1 = new HashMap<Integer,CPU>(); // lista donde guardaremos los datos del archivo  leerUsuarios = new CsvReader("Usuarios.csv");

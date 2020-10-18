@@ -20,7 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="901c66e2-2bc2-4b58-a6ba-1ffacacfbd6e" name="Default Changelist" comment="implementacion de filtros ()">
-      <change beforePath="$PROJECT_DIR$/ArmaloTuMismo/src/Ventanas/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/ArmaloTuMismo/src/Ventanas/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,27 +49,18 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/.jdks" />
+    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RunManager">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Ventanas.Main" />
+    <configuration name="Main" type="Application" factoryName="Application">
       <module name="ArmaloTuMismo" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Ventanas.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.Main" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -101,34 +92,46 @@
     <option name="LAST_COMMIT_MESSAGE" value="implementacion de filtros" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="380" y="3" key="#Main" timestamp="1603044246317">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="380" y="3" key="#Main/0.0.1366.768@0.0.1366.768" timestamp="1603044246317" />
+    <state x="137" y="38" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1603044255189">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="137" y="38" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.768@0.0.1366.768" timestamp="1603044255189" />
     <state x="441" y="185" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1603035036242">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="441" y="185" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.768@0.0.1366.768" timestamp="1603035036242" />
+    <state x="412" y="173" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1603044243888">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="412" y="173" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1366.768@0.0.1366.768" timestamp="1603044243888" />
     <state x="92" y="92" width="1182" height="584" key="DiffContextDialog" timestamp="1603033698029">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="92" y="92" width="1182" height="584" key="DiffContextDialog/0.0.1366.768@0.0.1366.768" timestamp="1603033698029" />
-    <state x="463" y="138" key="FileChooserDialogImpl" timestamp="1603034915975">
+    <state x="463" y="138" key="FileChooserDialogImpl" timestamp="1603043677751">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="463" y="138" key="FileChooserDialogImpl/0.0.1366.768@0.0.1366.768" timestamp="1603034915975" />
-    <state width="1323" height="191" key="GridCell.Tab.0.bottom" timestamp="1603035371762">
+    <state x="463" y="138" key="FileChooserDialogImpl/0.0.1366.768@0.0.1366.768" timestamp="1603043677751" />
+    <state width="1323" height="192" key="GridCell.Tab.0.bottom" timestamp="1603044190128">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="191" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1603035371762" />
-    <state width="1323" height="191" key="GridCell.Tab.0.center" timestamp="1603035371761">
+    <state width="1323" height="192" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1603044190128" />
+    <state width="1323" height="192" key="GridCell.Tab.0.center" timestamp="1603044190128">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="191" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1603035371761" />
-    <state width="1323" height="191" key="GridCell.Tab.0.left" timestamp="1603035371761">
+    <state width="1323" height="192" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1603044190128" />
+    <state width="1323" height="192" key="GridCell.Tab.0.left" timestamp="1603044190128">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="191" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1603035371761" />
-    <state width="1323" height="191" key="GridCell.Tab.0.right" timestamp="1603035371762">
+    <state width="1323" height="192" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1603044190128" />
+    <state width="1323" height="192" key="GridCell.Tab.0.right" timestamp="1603044190128">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="191" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1603035371762" />
+    <state width="1323" height="192" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1603044190128" />
     <state x="129" y="58" key="MergeDialog" timestamp="1602988995251">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
@@ -141,6 +144,10 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="393" y="104" key="RollbackChangesDialog/0.0.1366.768@0.0.1366.768" timestamp="1602989722433" />
+    <state x="163" y="0" key="SettingsEditor" timestamp="1603043360299">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="163" y="0" key="SettingsEditor/0.0.1366.768@0.0.1366.768" timestamp="1603043360299" />
     <state x="387" y="275" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1602974861311">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
