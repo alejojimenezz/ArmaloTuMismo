@@ -68,7 +68,7 @@ public class Storage extends Elemento {
 
     @Override
     public String toString() {
-        return "Storage{" + "Tipo=" + Tipo + ", capacidad=" + capacidad + ", vel_write=" + vel_write + ", vel_Read=" + vel_Read + ", BusType=" + BusType + '}';
+        return "Storage{" + "Tipo=" + Tipo + ", capacidad=" + capacidad + ", vel_write=" + vel_write + ", vel_Read=" + vel_Read + ", BusType=" + BusType + "ID= "+super.ID +" Marca= "+ super.Marca+" Modelo= "+ super.Modelo+" Precio= "+ super.Precio+" Cantidad= "+ super.cantidad+" Potencia= "+ super.Potencia+'}';
     }
 
       

@@ -78,7 +78,7 @@ public class CPU extends Elemento{
 
     @Override
     public String toString() {
-        return "CPU{" + "Frecuencia=" + Frecuencia + ", Nucleos=" + Nucleos + ", Hilos=" + Hilos + ", Arquitectura=" + Arquitectura + ", Socket=" + Socket + ", cache=" + cache + '}';
+        return "CPU{" + "Frecuencia=" + Frecuencia + ", Nucleos=" + Nucleos + ", Hilos=" + Hilos + ", Arquitectura=" + Arquitectura + ", Socket=" + Socket + ", cache=" + cache + "ID= "+super.ID +" Marca= "+ super.Marca+" Modelo= "+ super.Modelo+" Precio= "+ super.Precio+" Cantidad= "+ super.cantidad+" Potencia= "+ super.Potencia+'}';
     }
 
 

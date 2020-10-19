@@ -61,7 +61,7 @@ public class Case extends Elemento{
 
     @Override
     public String toString() {
-        return "Case{" + "tamano=" + tamano + ", SlotStorage=" + SlotStorage + ", SlotVideoCard=" + SlotVideoCard + ", fans=" + fans + '}';
+        return "Case{" + "tamano=" + tamano + ", SlotStorage=" + SlotStorage + ", SlotVideoCard=" + SlotVideoCard + ", fans=" + fans + "ID= "+super.ID +" Marca= "+ super.Marca+" Modelo= "+ super.Modelo+" Precio= "+ super.Precio+" Cantidad= "+ super.cantidad+" Potencia= "+ super.Potencia+ '}';
     }
     
     

@@ -54,7 +54,7 @@ public class RAM extends Elemento{
 
     @Override
     public String toString() {
-        return "RAM{" + "Gen=" + Gen + ", Vel=" + Vel + ", capacidad=" + capacidad + ", disipacion=" + disipacion + '}';
+        return "RAM{" + "Gen=" + Gen + ", Vel=" + Vel + ", capacidad=" + capacidad + ", disipacion=" + disipacion + "ID= "+super.ID +" Marca= "+ super.Marca+" Modelo= "+ super.Modelo+" Precio= "+ super.Precio+" Cantidad= "+ super.cantidad+" Potencia= "+ super.Potencia+'}';
     }
     
     

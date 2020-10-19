@@ -83,7 +83,7 @@ public class MotherBoard extends Elemento{
 
     @Override
     public String toString() {
-        return "MotherBoard{" + "Socket=" + Socket + ", RAMSupported=" + RAMSupported + ", Tamano=" + Tamano + ", Overclock=" + Overclock + ", SLI=" + SLI + ", puertos=" + puertos + '}';
+        return "MotherBoard{" + "Socket=" + Socket + ", RAMSupported=" + RAMSupported + ", Tamano=" + Tamano + ", Overclock=" + Overclock + ", SLI=" + SLI + ", puertos=" + puertos + "ID= "+super.ID +" Marca= "+ super.Marca+" Modelo= "+ super.Modelo+" Precio= "+ super.Precio+" Cantidad= "+ super.cantidad+" Potencia= "+ super.Potencia+'}';
     }
 
     

@@ -30,7 +30,7 @@ public class CPUCooler extends Elemento{
 
     @Override
     public String toString() {
-        return "CPUCooler{" + "tipo=" + tipo + '}';
+        return "CPUCooler{" + "tipo=" + tipo + "ID= "+super.ID +" Marca= "+ super.Marca+" Modelo= "+ super.Modelo+" Precio= "+ super.Precio+" Cantidad= "+ super.cantidad+" Potencia= "+ super.Potencia+'}';
     }
 
    

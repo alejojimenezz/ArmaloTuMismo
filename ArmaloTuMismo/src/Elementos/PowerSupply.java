@@ -38,7 +38,7 @@ private String Certificacion;
 
     @Override
     public String toString() {
-        return "PowerSupply{" + "Capacidad=" + Capacidad + ", Certificacion=" + Certificacion + '}';
+        return "PowerSupply{" + "Capacidad=" + Capacidad + ", Certificacion=" + Certificacion + "ID= "+super.ID +" Marca= "+ super.Marca+" Modelo= "+ super.Modelo+" Precio= "+ super.Precio+" Cantidad= "+ super.cantidad+" Potencia= "+ super.Potencia+'}';
     }
 
 

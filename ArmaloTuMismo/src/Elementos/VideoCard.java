@@ -88,7 +88,7 @@ public class VideoCard extends Elemento{
 
     @Override
     public String toString() {
-        return "VideoCard{" + "Arquitectura=" + Arquitectura + ", TipoBus=" + TipoBus + ", Frecuencia=" + Frecuencia + ", Memoria=" + Memoria + ", TipoMem=" + TipoMem + ", largo=" + largo + ", ancho=" + ancho + '}';
+        return "VideoCard{" + "Arquitectura=" + Arquitectura + ", TipoBus=" + TipoBus + ", Frecuencia=" + Frecuencia + ", Memoria=" + Memoria + ", TipoMem=" + TipoMem + ", largo=" + largo + ", ancho=" + ancho + "ID= "+super.ID +" Marca= "+ super.Marca+" Modelo= "+ super.Modelo+" Precio= "+ super.Precio+" Cantidad= "+ super.cantidad+" Potencia= "+ super.Potencia+ '}';
     }
 
 

@@ -18,7 +18,8 @@ public class OS extends Elemento{
 
     @Override
     public String toString() {
-        return "OS{" + '}';
+        
+        return "OS{ ID= "+super.ID +" Marca= "+ super.Marca+" Modelo= "+ super.Modelo+" Precio= "+ super.Precio+" Cantidad= "+ super.cantidad+" Potencia= "+ super.Potencia+"}";
     }
 
     
