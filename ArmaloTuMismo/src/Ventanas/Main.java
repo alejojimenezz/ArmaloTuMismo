@@ -1913,7 +1913,6 @@ try {
     Map<Integer, Storage> Storage1 =new HashMap<Integer, Storage>();
     Map<Integer, VideoCard> VideoCard1 =new HashMap<Integer, VideoCard>();
 CsvReader leerInventario = new CsvReader("Inventario.csv");
-leerInventario.readHeaders();
 
 
 // Mientras haya lineas obtendremos los datos del archivo 
