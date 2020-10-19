@@ -32,9 +32,9 @@ public class Ventana extends JFrame{
         return paneles.get(s);
     }
     
-    public static void main(String[] args) {
-        Ventana atm = new Ventana();
-    }
+    //public static void main(String[] args) {
+     //   Ventana atm = new Ventana();
+   // }
 
     public void Cambiar_panel(String nuevo,String viejo){
         add(paneles.get(nuevo));

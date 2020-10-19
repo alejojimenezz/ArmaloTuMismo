@@ -401,7 +401,7 @@ public class Main {
  
  }
             //HACER AGREGAR CARRITO
- public static void AgregarCarrito(){
+ public static void AgregarCarrito(ShoppingCart SC){
  
  
  }
@@ -412,7 +412,8 @@ public class Main {
  public static void main(String[] args) {
     Scanner sn = new Scanner(System.in);
     Inventario in =new Inventario();
-    ImportarCSVInventario();
+    
+    
    List<Usuario> usuarios = new ArrayList <Usuario>();
    Map <Integer, CPU> CPU1 = new HashMap<Integer, CPU>();
    Map <Integer, CPUCooler> CPUCooler1 = new HashMap<Integer, CPUCooler>();
@@ -428,7 +429,10 @@ public class Main {
    int opcion=0;
    ShoppingCart SC=new ShoppingCart();
    int key=0;
-   ExportarCSVInventario(CPU1, CPUCooler1, Case1, MotherBoard1, OS1, PowerSupply1, RAM1, Storage1, VideoCard1);
+   
+   ImportarCSVInventario(in);
+   CPU1=in.getCPU();Case1=in.getCase();CPUCooler1=in.getCooler();MotherBoard1=in.getMother();OS1=in.getOs();PowerSupply1=in.getPower();
+   RAM1=in.getRAM();Storage1=in.getStorage();VideoCard1=in.getVCard(); //Actualiza mapas internos main desde inventario
        
    //Modulo del menu     
         while(valid){
@@ -651,7 +655,7 @@ public class Main {
                     break;
                     
                 case 5:
-                    AgregarCarrito();
+                    AgregarCarrito(SC);
                     break;
         
                 case 6:
@@ -667,8 +671,9 @@ public class Main {
         }//FIN MENU
 
        
-     
-     ExportarCSVInventario(CPU1, CPUCooler1, Case1, MotherBoard1, OS1, PowerSupply1, RAM1, Storage1, VideoCard1);
+     CPU1=in.getCPU();Case1=in.getCase();CPUCooler1=in.getCooler();MotherBoard1=in.getMother();OS1=in.getOs();PowerSupply1=in.getPower();
+     RAM1=in.getRAM();Storage1=in.getStorage();VideoCard1=in.getVCard();
+    ExportarCSVInventario(CPU1, CPUCooler1, Case1, MotherBoard1, OS1, PowerSupply1, RAM1, Storage1, VideoCard1);
 
 
  }
@@ -1739,7 +1744,7 @@ e.printStackTrace();
     archivoInventario.delete();
     }
     try {
-     CsvWriter salidaCSV = new CsvWriter(new FileWriter(salidaArchivo, true),';');
+     CsvWriter salidaCSV = new CsvWriter(new FileWriter(salidaArchivo, true),',');
     //datos para identificar las columnas
 
 
@@ -1895,7 +1900,7 @@ e.printStackTrace();
     }
 
 
-    public static void ImportarCSVInventario(){
+    public static void ImportarCSVInventario(Inventario in1){
 
 try {
     Map<Integer,CPU> CPU1 = new HashMap<Integer,CPU>(); // lista donde guardaremos los datos del archivo  leerUsuarios = new CsvReader("Usuarios.csv");
@@ -1913,7 +1918,9 @@ leerInventario.readHeaders();
 
 // Mientras haya lineas obtendremos los datos del archivo 
 while(leerInventario.readRecord()){
- if(leerInventario.get(0)=="a"){
+    String temp;
+    temp=leerInventario.get(0);
+ if("a".equals(temp)){
      String ID1 = leerInventario.get(1);
     String Marca1 = leerInventario.get(2);
     String Modelo1 = leerInventario.get(3);
@@ -1930,7 +1937,7 @@ while(leerInventario.readRecord()){
     CPU1.put(Integer.parseInt(ID1), new CPU(Frecuencia1, Nucleos1, Hilos1, Arquitectura1, Socket1, cache1, ID1, Marca1, Modelo1, Precio1, Cantidad1, Potencia1))  ;// añade la informacion a la lista
     
  }
- else if(leerInventario.get(0)=="b"){
+ else if("b".equals(temp)){
     String ID1 = leerInventario.get(1);
     String Marca1 = leerInventario.get(2);
     String Modelo1 = leerInventario.get(3);
@@ -1943,7 +1950,7 @@ while(leerInventario.readRecord()){
  
  }
  
- else if(leerInventario.get(0)=="c"){
+ else if("c".equals(temp)){
     String ID1 = leerInventario.get(1);
     String Marca1 = leerInventario.get(2);
     String Modelo1 = leerInventario.get(3);
@@ -1958,7 +1965,7 @@ while(leerInventario.readRecord()){
     Case1.put(Integer.parseInt(ID1), new Case(Tamano1, SlotStorage1, SlotVideoCard1, Fans1, ID1, Marca1, Modelo1, Precio1, Cantidad1, Potencia1));// añade la informacion a la lista
    
  }
- else if(leerInventario.get(0)=="d"){
+ else if("d".equals(temp)){
     String ID1 = leerInventario.get(1);
     String Marca1 = leerInventario.get(2);
     String Modelo1 = leerInventario.get(3);
@@ -1976,7 +1983,7 @@ while(leerInventario.readRecord()){
     
  
  }
- else if (leerInventario.get(0)=="e"){
+ else if ("e".equals(temp)){
     String ID1 = leerInventario.get(1);
     String Marca1 = leerInventario.get(2);
     String Modelo1 = leerInventario.get(3);
@@ -1984,10 +1991,11 @@ while(leerInventario.readRecord()){
     String Cantidad1 = leerInventario.get(5);
     String Potencia1 = leerInventario.get(6);
    
-    OS1.put(Integer.parseInt(ID1), new OS(ID1, Marca1, Modelo1, Precio1, Cantidad1, Potencia1));// añade la informacion a la lista
+    
+  OS1.put(Integer.parseInt(ID1), new OS(ID1, Marca1, Modelo1, Precio1, Cantidad1, Potencia1));// añade la informacion a la lista
    }
  
- else if (leerInventario.get(0)=="f"){
+ else if ("f".equals(temp)){
     String ID1 = leerInventario.get(1);
     String Marca1 = leerInventario.get(2);
     String Modelo1 = leerInventario.get(3);
@@ -2000,7 +2008,7 @@ while(leerInventario.readRecord()){
     PowerSupply1.put(Integer.parseInt(ID1), new PowerSupply(Capacidad1, Certificacion1, ID1, Marca1, Modelo1, Precio1, Cantidad1, Potencia1));// añade la informacion a la lista
  }
  
- else if (leerInventario.get(0)=="g"){
+ else if ("g".equals(temp)){
     String ID1 = leerInventario.get(1);
     String Marca1 = leerInventario.get(2);
     String Modelo1 = leerInventario.get(3);
@@ -2015,7 +2023,7 @@ while(leerInventario.readRecord()){
     RAM1.put(Integer.parseInt(ID1), new RAM(Gen1, Vel1, Capacidad1, Disipacion1, ID1, Marca1, Modelo1, Precio1, Cantidad1, Potencia1));// añade la informacion a la lista
  }
  
- else if (leerInventario.get(0)=="h"){
+ else if ("h".equals(temp)){
       String ID1 = leerInventario.get(1);
       String Marca1 = leerInventario.get(2);
       String Modelo1 = leerInventario.get(3);
@@ -2032,7 +2040,7 @@ while(leerInventario.readRecord()){
  
  }
  
- else if (leerInventario.get(0)=="i"){
+ else if ("i".equals(temp)){
      String ID1 = leerInventario.get(1);
       String Marca1 = leerInventario.get(2);
       String Modelo1 = leerInventario.get(3);
@@ -2051,20 +2059,21 @@ while(leerInventario.readRecord()){
  
  }
 
-
-
-
 }
     
 
 
 
 leerInventario.close();
+in1.setCPU(CPU1); in1.setCases(Case1);in1.setCooler(CPUCooler1);in1.setMotherBoard(MotherBoard1);in1.setOs(OS1);in1.setPower(PowerSupply1);
+in1.setRAM(RAM1);in1.setStorage(Storage1);in1.setVCard(VideoCard1);
+
 }catch(FileNotFoundException e){
 e.printStackTrace();
 }catch(IOException e){
 e.printStackTrace();
 }
+
 
 }
 }
