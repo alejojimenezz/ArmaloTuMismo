@@ -29,9 +29,9 @@ public class Ingreso extends javax.swing.JPanel {
 
         jFrame1 = new javax.swing.JFrame();
         jLabel2 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
         ClienteButton = new javax.swing.JButton();
-        AdminButton = new javax.swing.JButton();
+        ClienteButton1 = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         javax.swing.GroupLayout jFrame1Layout = new javax.swing.GroupLayout(jFrame1.getContentPane());
         jFrame1.getContentPane().setLayout(jFrame1Layout);
@@ -47,49 +47,55 @@ public class Ingreso extends javax.swing.JPanel {
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel2.setText("ARMALO TU MISMO");
 
-        jLabel1.setText("Ingresar como:");
-
-        ClienteButton.setText("Cliente");
+        ClienteButton.setText("Ingresar");
         ClienteButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ClienteButtonActionPerformed(evt);
             }
         });
 
-        AdminButton.setText("Administrador");
+        ClienteButton1.setText("Editar");
+        ClienteButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ClienteButton1ActionPerformed(evt);
+            }
+        });
+
+        jButton1.setText("Consultar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(161, 161, 161)
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(85, Short.MAX_VALUE)
+                .addComponent(jLabel2)
+                .addGap(101, 101, 101))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(158, 158, 158)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addGap(101, 101, 101))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(ClienteButton)
-                        .addGap(59, 59, 59)
-                        .addComponent(AdminButton)
-                        .addGap(74, 74, 74))))
+                    .addComponent(jButton1)
+                    .addComponent(ClienteButton1)
+                    .addComponent(ClienteButton))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(63, 63, 63)
                 .addComponent(jLabel2)
-                .addGap(61, 61, 61)
-                .addComponent(jLabel1)
+                .addGap(30, 30, 30)
+                .addComponent(ClienteButton)
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ClienteButton)
-                    .addComponent(AdminButton))
-                .addContainerGap(92, Short.MAX_VALUE))
+                .addComponent(ClienteButton1)
+                .addGap(18, 18, 18)
+                .addComponent(jButton1)
+                .addContainerGap(73, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -98,12 +104,20 @@ public class Ingreso extends javax.swing.JPanel {
         this.setVisible(false);
     }//GEN-LAST:event_ClienteButtonActionPerformed
 
+    private void ClienteButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClienteButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ClienteButton1ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton AdminButton;
     private javax.swing.JButton ClienteButton;
+    private javax.swing.JButton ClienteButton1;
+    private javax.swing.JButton jButton1;
     private javax.swing.JFrame jFrame1;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
 }

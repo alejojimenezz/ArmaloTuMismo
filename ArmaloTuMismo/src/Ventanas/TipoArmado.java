@@ -9,12 +9,12 @@ package Ventanas;
  *
  * @author Familia
  */
-public class Principal extends javax.swing.JPanel {
+public class TipoArmado extends javax.swing.JPanel {
 
     /**
      * Creates new form Principal
      */
-    public Principal(Ventana m) {
+    public TipoArmado(Ventana m) {
         initComponents();
         this.jFrame1=m;
     }

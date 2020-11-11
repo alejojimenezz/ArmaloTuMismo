@@ -16,7 +16,7 @@ public class Ventana extends JFrame{
     public Ventana() {
         paneles = new HashMap<>();
         paneles.put("Ingreso", new Ingreso(this));
-        paneles.put("Principal", new Principal(this));
+        paneles.put("Principal", new TipoArmado(this));
         
         add(paneles.get("Ingreso"));
         setTitle("ARMALO TU MISMO");
