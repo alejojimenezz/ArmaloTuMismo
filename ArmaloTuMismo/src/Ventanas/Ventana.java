@@ -5,7 +5,9 @@
  */
 package Ventanas;
 
+import java.awt.Image;
 import java.util.HashMap;
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
@@ -20,7 +22,7 @@ public class Ventana extends JFrame{
         
         add(paneles.get("Ingreso"));
         setTitle("ARMALO TU MISMO");
-        //setIconImage(loadImage("icon.jpg"));
+        setIconImage(loadImage("IconATM.png"));
         setSize(600, 450);
         setLocationRelativeTo(null); //Center the frame
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -32,9 +34,9 @@ public class Ventana extends JFrame{
         return paneles.get(s);
     }
     
-    //public static void main(String[] args) {
-     //   Ventana atm = new Ventana();
-   // }
+    /*public static void main(String[] args) {
+       Ventana atm = new Ventana();
+    }*/
 
     public void Cambiar_panel(String nuevo,String viejo){
         add(paneles.get(nuevo));
@@ -44,6 +46,12 @@ public class Ventana extends JFrame{
     
     public HashMap<String, JPanel> getPaneles() {
         return paneles;
+    }
+    
+    public final Image loadImage (String imageName) {
+        ImageIcon ii = new ImageIcon (imageName);
+        Image image = ii.getImage();
+        return image;
     }
     
 }
