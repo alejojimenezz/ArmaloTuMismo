@@ -15,6 +15,7 @@ public class Ingreso extends javax.swing.JPanel {
      */
     public Ingreso(Ventana m) {
         initComponents();
+        //this.setLocationRelativeTo(null);
         this.jFrame1=m;
     }
     
@@ -28,6 +29,7 @@ public class Ingreso extends javax.swing.JPanel {
     private void initComponents() {
 
         jFrame1 = new javax.swing.JFrame();
+        Fondo = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         ClienteButton = new javax.swing.JButton();
         ClienteButton1 = new javax.swing.JButton();
@@ -83,11 +85,15 @@ public class Ingreso extends javax.swing.JPanel {
                     .addComponent(ClienteButton1)
                     .addComponent(ClienteButton))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(Fondo)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(63, 63, 63)
+                .addComponent(Fondo)
+                .addGap(49, 49, 49)
                 .addComponent(jLabel2)
                 .addGap(30, 30, 30)
                 .addComponent(ClienteButton)
@@ -95,7 +101,7 @@ public class Ingreso extends javax.swing.JPanel {
                 .addComponent(ClienteButton1)
                 .addGap(18, 18, 18)
                 .addComponent(jButton1)
-                .addContainerGap(73, Short.MAX_VALUE))
+                .addContainerGap(87, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -116,6 +122,7 @@ public class Ingreso extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ClienteButton;
     private javax.swing.JButton ClienteButton1;
+    private javax.swing.JLabel Fondo;
     private javax.swing.JButton jButton1;
     private javax.swing.JFrame jFrame1;
     private javax.swing.JLabel jLabel2;
