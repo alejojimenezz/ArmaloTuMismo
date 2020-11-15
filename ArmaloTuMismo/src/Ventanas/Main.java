@@ -1620,150 +1620,162 @@ e.printStackTrace();
     
     
     for(Entry<String,Elemento> elemento : componentes1.entrySet() ){
-        if (elemento.getValue().getID().charAt(0)=='a') {
-        salidaCSV.write("a");
-        CPU var1 = (CPU) elemento.getValue(); 
-        salidaCSV.write(var1.getID());
-        salidaCSV.write(var1.getMarca());
-        salidaCSV.write(var1.getModelo());
-        salidaCSV.write(var1.getPrecio());
-        salidaCSV.write(var1.getCantidad());
-        salidaCSV.write(var1.getPotencia());
-        salidaCSV.write(var1.getFrecuencia());
-        salidaCSV.write(var1.getNucleos());
-        salidaCSV.write(var1.getHilos());
-        salidaCSV.write(var1.getArquitectura());
-        salidaCSV.write(var1.getSocket());
-        salidaCSV.write(var1.getCache());
-        salidaCSV.endRecord(); //Deja de escribir en el archivo     
-        }
-        else if(elemento.getValue().getID().charAt(0)=='b'){
-         salidaCSV.write("b");   
-         CPUCooler var1 = (CPUCooler) elemento.getValue(); 
-         salidaCSV.write(var1.getID());
-        salidaCSV.write(var1.getMarca());
-        salidaCSV.write(var1.getModelo());
-        salidaCSV.write(var1.getPrecio());
-        salidaCSV.write(var1.getCantidad());
-        salidaCSV.write(var1.getPotencia());
-        salidaCSV.write(var1.getTipo());
-        salidaCSV.endRecord(); //Deja de escribir en el archivo 
-        }
-        
-        else if(elemento.getValue().getID().charAt(0)=='c'){
-         salidaCSV.write("c");
-        Case var1 = (Case) elemento.getValue();
-        salidaCSV.write(var1.getID());
-        salidaCSV.write(var1.getMarca());
-        salidaCSV.write(var1.getModelo());
-        salidaCSV.write(var1.getPrecio());
-        salidaCSV.write(var1.getCantidad());
-        salidaCSV.write(var1.getPotencia());
-        salidaCSV.write(var1.getTamano());
-        salidaCSV.write(var1.getSlotStorage());
-        salidaCSV.write(var1.getSlotVideoCard());
-        salidaCSV.write(var1.getFans());
-        salidaCSV.endRecord(); //Deja de escribir en el archivo 
-        
-        }
-        else if(elemento.getValue().getID().charAt(0)=='d'){
-        
-         salidaCSV.write("d");
-         MotherBoard var1 = (MotherBoard) elemento.getValue();
-        salidaCSV.write(var1.getID());
-        salidaCSV.write(var1.getMarca());
-        salidaCSV.write(var1.getModelo());
-        salidaCSV.write(var1.getPrecio());
-        salidaCSV.write(var1.getCantidad());
-        salidaCSV.write(var1.getPotencia());
-        salidaCSV.write(var1.getSocket());
-        salidaCSV.write(var1.getRAMSupported());
-        salidaCSV.write(var1.getTamano());
-        salidaCSV.write(var1.getOverclock());
-        salidaCSV.write(var1.getSLI());
-        salidaCSV.write(var1.getPuertos());
-        salidaCSV.endRecord(); //Deja de escribir en el archivo 
-        
-        }
-        else if(elemento.getValue().getID().charAt(0)=='f'){
-         salidaCSV.write("f");
-        PowerSupply var1 = (PowerSupply) elemento.getValue();
-         salidaCSV.write(var1.getID());
-        salidaCSV.write(var1.getMarca());
-        salidaCSV.write(var1.getModelo());
-        salidaCSV.write(var1.getPrecio());
-        salidaCSV.write(var1.getCantidad());
-        salidaCSV.write(var1.getPotencia());
-        salidaCSV.write(var1.getCapacidad());
-        salidaCSV.write(var1.getCertificacion());
-        salidaCSV.endRecord(); //Deja de escribir en el archivo 
-        
-        }
-        else if(elemento.getValue().getID().charAt(0)=='e'){
-         salidaCSV.write("e");
-       OS var1 = (OS) elemento.getValue();  
-        salidaCSV.write(elemento.getValue().getID());
-        salidaCSV.write(elemento.getValue().getMarca());
-        salidaCSV.write(elemento.getValue().getModelo());
-        salidaCSV.write(elemento.getValue().getPrecio());
-        salidaCSV.write(elemento.getValue().getCantidad());
-        salidaCSV.write(elemento.getValue().getPotencia());
-        salidaCSV.endRecord(); //Deja de escribir en el archivo 
-        
-        }
-        else if(elemento.getValue().getID().charAt(0)=='g'){
-        salidaCSV.write("g");
-        RAM var1 = (RAM) elemento.getValue();  
-        salidaCSV.write(var1.getID());
-        salidaCSV.write(var1.getMarca());
-        salidaCSV.write(var1.getModelo());
-        salidaCSV.write(var1.getPrecio());
-        salidaCSV.write(var1.getCantidad());
-        salidaCSV.write(var1.getPotencia());
-        salidaCSV.write(var1.getGen());
-        salidaCSV.write(var1.getVel());
-        salidaCSV.write(var1.getCapacidad());
-        salidaCSV.write(var1.getDisipacion());
-        salidaCSV.endRecord(); //Deja de escribir en el archivo 
-        
-        }
-        else if(elemento.getValue().getID().charAt(0)=='h'){
-        salidaCSV.write("h");
-       Storage var1 = (Storage) elemento.getValue();   
-        salidaCSV.write(var1.getID());
-        salidaCSV.write(var1.getMarca());
-        salidaCSV.write(var1.getModelo());
-        salidaCSV.write(var1.getPrecio());
-        salidaCSV.write(var1.getCantidad());
-        salidaCSV.write(var1.getPotencia());
-        salidaCSV.write(var1.getTipo());
-        salidaCSV.write(var1.getCapacidad());
-        salidaCSV.write(var1.getVel_write());
-        salidaCSV.write(var1.getVel_Read());
-        salidaCSV.write(var1.getBusType());
-        salidaCSV.endRecord(); //Deja de escribir en el archivo 
-        
-        
-        }
-        else if(elemento.getValue().getID().charAt(0)=='i'){
-        salidaCSV.write("i");
-        VideoCard var1 = (VideoCard) elemento.getValue();
-        salidaCSV.write(var1.getID());
-        salidaCSV.write(var1.getMarca());
-        salidaCSV.write(var1.getModelo());
-        salidaCSV.write(var1.getPrecio());
-        salidaCSV.write(var1.getCantidad());
-        salidaCSV.write(var1.getPotencia());
-        salidaCSV.write(var1.getArquitectura());
-        salidaCSV.write(var1.getTipoBus());
-        salidaCSV.write(var1.getFrecuencia());
-        salidaCSV.write(var1.getMemoria());
-        salidaCSV.write(var1.getTipoMem());
-        salidaCSV.write(var1.getLargo());
-        salidaCSV.write(var1.getAncho());
-        salidaCSV.endRecord(); //Deja de escribir en el archivo 
-        
-        }
+         switch (elemento.getValue().getID().charAt(0)) {
+             case 'a':
+                 {
+                     salidaCSV.write("a");
+                     CPU var1 = (CPU) elemento.getValue();
+                     salidaCSV.write(var1.getID());
+                     salidaCSV.write(var1.getMarca());
+                     salidaCSV.write(var1.getModelo());
+                     salidaCSV.write(var1.getPrecio());
+                     salidaCSV.write(var1.getCantidad());
+                     salidaCSV.write(var1.getPotencia());
+                     salidaCSV.write(var1.getFrecuencia());
+                     salidaCSV.write(var1.getNucleos());
+                     salidaCSV.write(var1.getHilos());
+                     salidaCSV.write(var1.getArquitectura());
+                     salidaCSV.write(var1.getSocket());
+                     salidaCSV.write(var1.getCache());
+                     salidaCSV.endRecord(); //Deja de escribir en el archivo     
+                     break;
+                 }
+             case 'b':
+                 {
+                     salidaCSV.write("b");
+                     CPUCooler var1 = (CPUCooler) elemento.getValue();
+                     salidaCSV.write(var1.getID());
+                     salidaCSV.write(var1.getMarca());
+                     salidaCSV.write(var1.getModelo());
+                     salidaCSV.write(var1.getPrecio());
+                     salidaCSV.write(var1.getCantidad());
+                     salidaCSV.write(var1.getPotencia());
+                     salidaCSV.write(var1.getTipo());
+                     salidaCSV.endRecord(); //Deja de escribir en el archivo 
+                     break;
+                 }
+             case 'c':
+                 {
+                     salidaCSV.write("c");
+                     Case var1 = (Case) elemento.getValue();
+                     salidaCSV.write(var1.getID());
+                     salidaCSV.write(var1.getMarca());
+                     salidaCSV.write(var1.getModelo());
+                     salidaCSV.write(var1.getPrecio());
+                     salidaCSV.write(var1.getCantidad());
+                     salidaCSV.write(var1.getPotencia());
+                     salidaCSV.write(var1.getTamano());
+                     salidaCSV.write(var1.getSlotStorage());
+                     salidaCSV.write(var1.getSlotVideoCard());
+                     salidaCSV.write(var1.getFans());
+                     salidaCSV.endRecord(); //Deja de escribir en el archivo 
+                     break;
+                 }
+             case 'd':
+                 {
+                     salidaCSV.write("d");
+                     MotherBoard var1 = (MotherBoard) elemento.getValue();
+                     salidaCSV.write(var1.getID());
+                     salidaCSV.write(var1.getMarca());
+                     salidaCSV.write(var1.getModelo());
+                     salidaCSV.write(var1.getPrecio());
+                     salidaCSV.write(var1.getCantidad());
+                     salidaCSV.write(var1.getPotencia());
+                     salidaCSV.write(var1.getSocket());
+                     salidaCSV.write(var1.getRAMSupported());
+                     salidaCSV.write(var1.getTamano());
+                     salidaCSV.write(var1.getOverclock());
+                     salidaCSV.write(var1.getSLI());
+                     salidaCSV.write(var1.getPuertos());
+                     salidaCSV.endRecord(); //Deja de escribir en el archivo 
+                     break;
+                 }
+             case 'f':
+                 {
+                     salidaCSV.write("f");
+                     PowerSupply var1 = (PowerSupply) elemento.getValue();
+                     salidaCSV.write(var1.getID());
+                     salidaCSV.write(var1.getMarca());
+                     salidaCSV.write(var1.getModelo());
+                     salidaCSV.write(var1.getPrecio());
+                     salidaCSV.write(var1.getCantidad());
+                     salidaCSV.write(var1.getPotencia());
+                     salidaCSV.write(var1.getCapacidad());
+                     salidaCSV.write(var1.getCertificacion());
+                     salidaCSV.endRecord(); //Deja de escribir en el archivo 
+                     break;
+                 }
+             case 'e':
+                 {
+                     salidaCSV.write("e");
+                     OS var1 = (OS) elemento.getValue();
+                     salidaCSV.write(elemento.getValue().getID());
+                     salidaCSV.write(elemento.getValue().getMarca());
+                     salidaCSV.write(elemento.getValue().getModelo());
+                     salidaCSV.write(elemento.getValue().getPrecio());
+                     salidaCSV.write(elemento.getValue().getCantidad());
+                     salidaCSV.write(elemento.getValue().getPotencia());
+                     salidaCSV.endRecord(); //Deja de escribir en el archivo 
+                     break;
+                 }
+             case 'g':
+                 {
+                     salidaCSV.write("g");
+                     RAM var1 = (RAM) elemento.getValue();
+                     salidaCSV.write(var1.getID());
+                     salidaCSV.write(var1.getMarca());
+                     salidaCSV.write(var1.getModelo());
+                     salidaCSV.write(var1.getPrecio());
+                     salidaCSV.write(var1.getCantidad());
+                     salidaCSV.write(var1.getPotencia());
+                     salidaCSV.write(var1.getGen());
+                     salidaCSV.write(var1.getVel());
+                     salidaCSV.write(var1.getCapacidad());
+                     salidaCSV.write(var1.getDisipacion());
+                     salidaCSV.endRecord(); //Deja de escribir en el archivo 
+                     break;
+                 }
+             case 'h':
+                 {
+                     salidaCSV.write("h");
+                     Storage var1 = (Storage) elemento.getValue();
+                     salidaCSV.write(var1.getID());
+                     salidaCSV.write(var1.getMarca());
+                     salidaCSV.write(var1.getModelo());
+                     salidaCSV.write(var1.getPrecio());
+                     salidaCSV.write(var1.getCantidad());
+                     salidaCSV.write(var1.getPotencia());
+                     salidaCSV.write(var1.getTipo());
+                     salidaCSV.write(var1.getCapacidad());
+                     salidaCSV.write(var1.getVel_write());
+                     salidaCSV.write(var1.getVel_Read());
+                     salidaCSV.write(var1.getBusType());
+                     salidaCSV.endRecord(); //Deja de escribir en el archivo 
+                     break;
+                 }
+             case 'i':
+                 {
+                     salidaCSV.write("i");
+                     VideoCard var1 = (VideoCard) elemento.getValue();
+                     salidaCSV.write(var1.getID());
+                     salidaCSV.write(var1.getMarca());
+                     salidaCSV.write(var1.getModelo());
+                     salidaCSV.write(var1.getPrecio());
+                     salidaCSV.write(var1.getCantidad());
+                     salidaCSV.write(var1.getPotencia());
+                     salidaCSV.write(var1.getArquitectura());
+                     salidaCSV.write(var1.getTipoBus());
+                     salidaCSV.write(var1.getFrecuencia());
+                     salidaCSV.write(var1.getMemoria());
+                     salidaCSV.write(var1.getTipoMem());
+                     salidaCSV.write(var1.getLargo());
+                     salidaCSV.write(var1.getAncho());
+                     salidaCSV.endRecord(); //Deja de escribir en el archivo 
+                     break;
+                 }
+             default:
+                 break;
+         }
         
     }
 
