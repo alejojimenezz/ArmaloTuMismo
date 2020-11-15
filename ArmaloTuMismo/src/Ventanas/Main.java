@@ -66,7 +66,7 @@ public class Main {
              String socket= sn.nextLine();
              System.out.print("Ingrese la cantidad de caché: ");
              String cache= sn.nextLine();
-             System.out.print("Ingrese la ID del objeto: ");
+             System.out.print("Ingrese la ID del objeto inicializando con C, ejemplo 'C1' 'C2' 'C1000': ");
              ID= sn.nextLine();
              System.out.print("Ingrese la Marca: ");
              marca= sn.nextLine();
@@ -267,131 +267,22 @@ public class Main {
             //Eliminar COMPLETO
  public static void EliminarComp(Inventario in){
       Scanner s = new Scanner(System.in);
-      int id;
-      System.out.println("¿Que tipo de componente deseas eliminiar?\n\n1. CPU\n2. Cooler\n3. Case\n4. MotherBoard\n5. Sistema operativo"
-                                    + "\n6. Fuente de poder\n7. RAM\n8. Almacenamiento\n9. Tarjeta de Video");
-      int i=s.nextInt();
-      switch(i){
-         case 1:
-             System.out.println("¿Qué ID deseas eliminar? ");
-             id=s.nextInt();
-             in.CPU.remove(id);
-         break;
-         
-         case 2:
-             System.out.println("¿Qué ID deseas eliminar? ");
-             id=s.nextInt();
-             in.cooler.remove(id);
-         break;
-         case 3:
-             System.out.println("¿Qué ID deseas eliminar? ");
-             id=s.nextInt();
-             in.Cases.remove(id);
-         break;
-             
-         case 4:
-             System.out.println("¿Qué ID deseas eliminar? ");
-             id=s.nextInt();
-             in.MotherBoard.remove(id);
-         break;
-             
-         case 5:
-             System.out.println("¿Qué ID deseas eliminar? ");
-             id=s.nextInt();
-             in.Os.remove(id);
-         break;
-         
-         case 6:
-             System.out.println("¿Qué ID deseas eliminar? ");
-             id=s.nextInt();
-             in.Fuentes.remove(id);
-         break;
-             
-         case 7:
-             System.out.println("¿Qué ID deseas eliminar? ");
-             id=s.nextInt();
-             in.RAM.remove(id);
-         break;
-             
-         case 8:
-             System.out.println("¿Qué ID deseas eliminar? ");
-             id=s.nextInt();
-             in.Storage.remove(id);
-         break;
-             
-         case 9: 
-             System.out.println("¿Qué ID deseas eliminar? ");
-             id=s.nextInt();
-             in.VideoCard.remove(id);
-         break;
-     
-         default:
-             System.out.println("Ingrese un valor valido");
-     }
+      String id=null;
+      System.out.println("Ingrese el ID a eliminar: ");
+      id=s.nextLine();
+      in.componentes.remove(id);                              
  }
             //Consultar COMPLETO
  public static void ConsultarComp(Inventario in){
       Scanner sn = new Scanner(System.in);
-      int Id;
-      System.out.println("¿Que tipo de componente deseas consultar?\n\n1. CPU\n2. Cooler\n3. Case\n4. MotherBoard\n5. Sistema operativo"
-                                    + "\n6. Fuente de poder\n7. RAM\n8. Almacenamiento\n9. Tarjeta de Video");
-      int i=sn.nextInt();
-      switch(i){
-         case 1:
-             System.out.println("¿Qué ID deseas consultar? ");
-             Id=sn.nextInt();
-             System.out.println(in.CPU.get(Id).toString());
-         break;
+      String Id;
+      System.out.println("Ingrese el ID a consultar");
+      Id=sn.nextLine();
+      try {
+          in.componentes.get(Id).toString();
+     } catch (Exception e) {
          
-         case 2:
-             System.out.println("¿Qué ID deseas consultar? ");
-             Id=sn.nextInt();
-             System.out.println(in.cooler.get(Id).toString());
-         break;
-         case 3:
-             System.out.println("¿Qué ID deseas consultar? ");
-             Id=sn.nextInt();
-             System.out.println(in.Cases.get(Id).toString());
-         break;
-             
-         case 4:
-             System.out.println("¿Qué ID deseas consultar? ");
-             Id=sn.nextInt();
-             System.out.println(in.MotherBoard.get(Id).toString());
-         break;
-             
-         case 5:
-             System.out.println("¿Qué ID deseas consultar? ");
-             Id=sn.nextInt();
-             System.out.println(in.Os.get(Id).toString());
-         break;
-         
-         case 6:
-             System.out.println("¿Qué ID deseas consultar? ");
-             Id=sn.nextInt();
-             System.out.println(in.Fuentes.get(Id).toString());
-         break;
-             
-         case 7:
-             System.out.println("¿Qué ID deseas consultar? ");
-             Id=sn.nextInt();
-             System.out.println(in.RAM.get(Id).toString());
-         break;
-             
-         case 8:
-             System.out.println("¿Qué ID deseas consultar? ");
-             Id=sn.nextInt();
-             System.out.println(in.Storage.get(Id).toString());
-         break;
-             
-         case 9: 
-             System.out.println("¿Qué ID deseas consultar? ");
-             Id=sn.nextInt();
-             System.out.println(in.VideoCard.get(Id).toString());
-         break;
-     
-         default:
-             System.out.println("Ingrese un valor valido");
+          System.out.println("El componente no existe");
      } 
  
  }
@@ -425,15 +316,21 @@ public class Main {
    Map <Integer, Storage> Storage1 =new HashMap<Integer, Storage>();
    Map <Integer, VideoCard> VideoCard1 =new HashMap<Integer, VideoCard>();
    
+   //Mapa general
+   
+   Map<String, Elemento> componentes1 = new HashMap<String, Elemento>();
+   
    boolean valid=true;
    int opcion=0;
    ShoppingCart SC=new ShoppingCart();
-   int key=0;
+   String key=null;
    
-   ImportarCSVInventario(in);
+   
    CPU1=in.getCPU();Case1=in.getCase();CPUCooler1=in.getCooler();MotherBoard1=in.getMother();OS1=in.getOs();PowerSupply1=in.getPower();
    RAM1=in.getRAM();Storage1=in.getStorage();VideoCard1=in.getVCard(); //Actualiza mapas internos main desde inventario
-       
+   
+   componentes1=in.getComponentes();
+   ImportarCSVInventario(in);
    //Modulo del menu     
         while(valid){
             System.out.println("¿Qué desea hacer? Ingrese la opcion deseada: ");
@@ -454,46 +351,17 @@ public class Main {
                                     + "\n6. Fuente de poder\n7. RAM\n8. Almacenamiento\n9. Tarjeta de Video");
                     opcion1=sn.nextInt();
                     Elemento e= AgregarComp(opcion1);
-                    key=Integer.parseInt(e.getID());
-                                 switch(opcion1){
-                                                case 1:
-                                                   CPU1.put(key, (CPU) e);
-                                                   break;
-                                                 case 2:
-                                                   CPUCooler1.put(key, (CPUCooler) e);
-                                                        break;
-                                                    case 3:
-                                                        Case1.put(key, (Case) e);
-                                                        break;
-                                                    case 4:
-                                                        MotherBoard1.put(key, (MotherBoard) e);
-                                                        break;
-                                                    case 5:
-                                                       OS1.put(key, (OS) e);
-                                                        break;
-                                                    case 6:
-                                                       PowerSupply1.put(key, (PowerSupply) e);
-                                                        break;
-                                                    case 7:
-                                                        RAM1.put(key, (RAM) e);
-                                                        break;
-                                                    case 8:
-                                                        Storage1.put(key, (Storage) e);
-                                                        break;
-                                                    case 9:
-                                                        VideoCard1.put(key, (VideoCard) e);
-                                                        break;   
-                                                    default:
-                                                        System.out.println("Ingrese un numero valido");
-                                                }
-                    in.setCPU(CPU1); in.setCases(Case1);in.setCooler(CPUCooler1);in.setMotherBoard(MotherBoard1);in.setOs(OS1);in.setPower(PowerSupply1);
-                    in.setRAM(RAM1);in.setStorage(Storage1);in.setVCard(VideoCard1);
-                    
+                    key=e.getID();
+                                if (opcion1<9 || opcion>0){
+                                componentes1.put(key, e);
+                                }else{
+                                System.out.println("Ingrese un numero valido");
+                                }
+                                in.setComponentes(componentes1);                   
                     break;
                 case 2:                    
                     EliminarComp(in);
-                    CPU1=in.getCPU();Case1=in.getCase();CPUCooler1=in.getCooler();MotherBoard1=in.getMother();OS1=in.getOs();PowerSupply1=in.getPower();
-                    RAM1=in.getRAM();Storage1=in.getStorage();VideoCard1=in.getVCard();
+                    in.setComponentes(componentes1); 
                     break;
                 case 3:
                     ConsultarComp(in);
@@ -672,8 +540,8 @@ public class Main {
 
        
      CPU1=in.getCPU();Case1=in.getCase();CPUCooler1=in.getCooler();MotherBoard1=in.getMother();OS1=in.getOs();PowerSupply1=in.getPower();
-     RAM1=in.getRAM();Storage1=in.getStorage();VideoCard1=in.getVCard();
-    ExportarCSVInventario(CPU1, CPUCooler1, Case1, MotherBoard1, OS1, PowerSupply1, RAM1, Storage1, VideoCard1);
+     RAM1=in.getRAM();Storage1=in.getStorage();VideoCard1=in.getVCard() ; componentes1  =in.getComponentes();
+    ExportarCSVInventario(componentes1);
 
 
  }
@@ -1730,11 +1598,8 @@ e.printStackTrace();
 
 
 
-    public static void ExportarCSVInventario(Map<Integer,CPU> CPU1
-            ,Map<Integer,CPUCooler> CPUCooler1 ,Map<Integer,Case> Case1 , Map<Integer
-            ,MotherBoard> MotherBoard1 ,Map<Integer,OS> OS1 ,
-            Map<Integer,PowerSupply> PowerSupply1 , Map<Integer,RAM> RAM1 , 
-            Map<Integer,Storage> Storage1 , Map<Integer, VideoCard> VideoCard1 ){
+    public static void ExportarCSVInventario(Map<String,Elemento> componentes1
+             ){
 
     String salidaArchivo = "Inventario.csv"; // nombre del archivo
     boolean existe = new File(salidaArchivo).exists();
@@ -1751,142 +1616,173 @@ e.printStackTrace();
     //salidaCSV.endRecord(); //Deja de escribir en el archivo
 
     //recorremos la lista y lo insertamos en el archivo
-    for(Entry<Integer,CPU> elemento : CPU1.entrySet() ){
-        salidaCSV.write("a");
-        salidaCSV.write(elemento.getValue().getID());
-        salidaCSV.write(elemento.getValue().getMarca());
-        salidaCSV.write(elemento.getValue().getModelo());
-        salidaCSV.write(elemento.getValue().getPrecio());
-        salidaCSV.write(elemento.getValue().getCantidad());
-        salidaCSV.write(elemento.getValue().getPotencia());
-        salidaCSV.write(elemento.getValue().getFrecuencia());
-        salidaCSV.write(elemento.getValue().getNucleos());
-        salidaCSV.write(elemento.getValue().getHilos());
-        salidaCSV.write(elemento.getValue().getArquitectura());
-        salidaCSV.write(elemento.getValue().getSocket());
-        salidaCSV.write(elemento.getValue().getCache());
-        salidaCSV.endRecord(); //Deja de escribir en el archivo 
+    
+    
+    
+    for(Entry<String,Elemento> elemento : componentes1.entrySet() ){
+         switch (elemento.getValue().getID().charAt(0)) {
+             case 'a':
+                 {
+                     salidaCSV.write("a");
+                     CPU var1 = (CPU) elemento.getValue();
+                     salidaCSV.write(var1.getID());
+                     salidaCSV.write(var1.getMarca());
+                     salidaCSV.write(var1.getModelo());
+                     salidaCSV.write(var1.getPrecio());
+                     salidaCSV.write(var1.getCantidad());
+                     salidaCSV.write(var1.getPotencia());
+                     salidaCSV.write(var1.getFrecuencia());
+                     salidaCSV.write(var1.getNucleos());
+                     salidaCSV.write(var1.getHilos());
+                     salidaCSV.write(var1.getArquitectura());
+                     salidaCSV.write(var1.getSocket());
+                     salidaCSV.write(var1.getCache());
+                     salidaCSV.endRecord(); //Deja de escribir en el archivo     
+                     break;
+                 }
+             case 'b':
+                 {
+                     salidaCSV.write("b");
+                     CPUCooler var1 = (CPUCooler) elemento.getValue();
+                     salidaCSV.write(var1.getID());
+                     salidaCSV.write(var1.getMarca());
+                     salidaCSV.write(var1.getModelo());
+                     salidaCSV.write(var1.getPrecio());
+                     salidaCSV.write(var1.getCantidad());
+                     salidaCSV.write(var1.getPotencia());
+                     salidaCSV.write(var1.getTipo());
+                     salidaCSV.endRecord(); //Deja de escribir en el archivo 
+                     break;
+                 }
+             case 'c':
+                 {
+                     salidaCSV.write("c");
+                     Case var1 = (Case) elemento.getValue();
+                     salidaCSV.write(var1.getID());
+                     salidaCSV.write(var1.getMarca());
+                     salidaCSV.write(var1.getModelo());
+                     salidaCSV.write(var1.getPrecio());
+                     salidaCSV.write(var1.getCantidad());
+                     salidaCSV.write(var1.getPotencia());
+                     salidaCSV.write(var1.getTamano());
+                     salidaCSV.write(var1.getSlotStorage());
+                     salidaCSV.write(var1.getSlotVideoCard());
+                     salidaCSV.write(var1.getFans());
+                     salidaCSV.endRecord(); //Deja de escribir en el archivo 
+                     break;
+                 }
+             case 'd':
+                 {
+                     salidaCSV.write("d");
+                     MotherBoard var1 = (MotherBoard) elemento.getValue();
+                     salidaCSV.write(var1.getID());
+                     salidaCSV.write(var1.getMarca());
+                     salidaCSV.write(var1.getModelo());
+                     salidaCSV.write(var1.getPrecio());
+                     salidaCSV.write(var1.getCantidad());
+                     salidaCSV.write(var1.getPotencia());
+                     salidaCSV.write(var1.getSocket());
+                     salidaCSV.write(var1.getRAMSupported());
+                     salidaCSV.write(var1.getTamano());
+                     salidaCSV.write(var1.getOverclock());
+                     salidaCSV.write(var1.getSLI());
+                     salidaCSV.write(var1.getPuertos());
+                     salidaCSV.endRecord(); //Deja de escribir en el archivo 
+                     break;
+                 }
+             case 'f':
+                 {
+                     salidaCSV.write("f");
+                     PowerSupply var1 = (PowerSupply) elemento.getValue();
+                     salidaCSV.write(var1.getID());
+                     salidaCSV.write(var1.getMarca());
+                     salidaCSV.write(var1.getModelo());
+                     salidaCSV.write(var1.getPrecio());
+                     salidaCSV.write(var1.getCantidad());
+                     salidaCSV.write(var1.getPotencia());
+                     salidaCSV.write(var1.getCapacidad());
+                     salidaCSV.write(var1.getCertificacion());
+                     salidaCSV.endRecord(); //Deja de escribir en el archivo 
+                     break;
+                 }
+             case 'e':
+                 {
+                     salidaCSV.write("e");
+                     OS var1 = (OS) elemento.getValue();
+                     salidaCSV.write(elemento.getValue().getID());
+                     salidaCSV.write(elemento.getValue().getMarca());
+                     salidaCSV.write(elemento.getValue().getModelo());
+                     salidaCSV.write(elemento.getValue().getPrecio());
+                     salidaCSV.write(elemento.getValue().getCantidad());
+                     salidaCSV.write(elemento.getValue().getPotencia());
+                     salidaCSV.endRecord(); //Deja de escribir en el archivo 
+                     break;
+                 }
+             case 'g':
+                 {
+                     salidaCSV.write("g");
+                     RAM var1 = (RAM) elemento.getValue();
+                     salidaCSV.write(var1.getID());
+                     salidaCSV.write(var1.getMarca());
+                     salidaCSV.write(var1.getModelo());
+                     salidaCSV.write(var1.getPrecio());
+                     salidaCSV.write(var1.getCantidad());
+                     salidaCSV.write(var1.getPotencia());
+                     salidaCSV.write(var1.getGen());
+                     salidaCSV.write(var1.getVel());
+                     salidaCSV.write(var1.getCapacidad());
+                     salidaCSV.write(var1.getDisipacion());
+                     salidaCSV.endRecord(); //Deja de escribir en el archivo 
+                     break;
+                 }
+             case 'h':
+                 {
+                     salidaCSV.write("h");
+                     Storage var1 = (Storage) elemento.getValue();
+                     salidaCSV.write(var1.getID());
+                     salidaCSV.write(var1.getMarca());
+                     salidaCSV.write(var1.getModelo());
+                     salidaCSV.write(var1.getPrecio());
+                     salidaCSV.write(var1.getCantidad());
+                     salidaCSV.write(var1.getPotencia());
+                     salidaCSV.write(var1.getTipo());
+                     salidaCSV.write(var1.getCapacidad());
+                     salidaCSV.write(var1.getVel_write());
+                     salidaCSV.write(var1.getVel_Read());
+                     salidaCSV.write(var1.getBusType());
+                     salidaCSV.endRecord(); //Deja de escribir en el archivo 
+                     break;
+                 }
+             case 'i':
+                 {
+                     salidaCSV.write("i");
+                     VideoCard var1 = (VideoCard) elemento.getValue();
+                     salidaCSV.write(var1.getID());
+                     salidaCSV.write(var1.getMarca());
+                     salidaCSV.write(var1.getModelo());
+                     salidaCSV.write(var1.getPrecio());
+                     salidaCSV.write(var1.getCantidad());
+                     salidaCSV.write(var1.getPotencia());
+                     salidaCSV.write(var1.getArquitectura());
+                     salidaCSV.write(var1.getTipoBus());
+                     salidaCSV.write(var1.getFrecuencia());
+                     salidaCSV.write(var1.getMemoria());
+                     salidaCSV.write(var1.getTipoMem());
+                     salidaCSV.write(var1.getLargo());
+                     salidaCSV.write(var1.getAncho());
+                     salidaCSV.endRecord(); //Deja de escribir en el archivo 
+                     break;
+                 }
+             default:
+                 break;
+         }
+        
     }
 
-    for(Entry<Integer,CPUCooler> elemento : CPUCooler1.entrySet() ){
-        salidaCSV.write("b");
-        salidaCSV.write(elemento.getValue().getID());
-        salidaCSV.write(elemento.getValue().getMarca());
-        salidaCSV.write(elemento.getValue().getModelo());
-        salidaCSV.write(elemento.getValue().getPrecio());
-        salidaCSV.write(elemento.getValue().getCantidad());
-        salidaCSV.write(elemento.getValue().getPotencia());
-        salidaCSV.write(elemento.getValue().getTipo());
-        salidaCSV.endRecord(); //Deja de escribir en el archivo 
-
-    }
-
-    for(Entry<Integer,Case> elemento : Case1.entrySet() ){
-        salidaCSV.write("c");
-        salidaCSV.write(elemento.getValue().getID());
-        salidaCSV.write(elemento.getValue().getMarca());
-        salidaCSV.write(elemento.getValue().getModelo());
-        salidaCSV.write(elemento.getValue().getPrecio());
-        salidaCSV.write(elemento.getValue().getCantidad());
-        salidaCSV.write(elemento.getValue().getPotencia());
-        salidaCSV.write(elemento.getValue().getTamano());
-        salidaCSV.write(elemento.getValue().getSlotStorage());
-        salidaCSV.write(elemento.getValue().getSlotVideoCard());
-        salidaCSV.write(elemento.getValue().getFans());
-        salidaCSV.endRecord(); //Deja de escribir en el archivo 
-
-    }
-    for(Entry<Integer,MotherBoard> elemento : MotherBoard1.entrySet() ){
-        salidaCSV.write("d");
-        salidaCSV.write(elemento.getValue().getID());
-        salidaCSV.write(elemento.getValue().getMarca());
-        salidaCSV.write(elemento.getValue().getModelo());
-        salidaCSV.write(elemento.getValue().getPrecio());
-        salidaCSV.write(elemento.getValue().getCantidad());
-        salidaCSV.write(elemento.getValue().getPotencia());
-        salidaCSV.write(elemento.getValue().getSocket());
-        salidaCSV.write(elemento.getValue().getRAMSupported());
-        salidaCSV.write(elemento.getValue().getTamano());
-        salidaCSV.write(elemento.getValue().getOverclock());
-        salidaCSV.write(elemento.getValue().getSLI());
-        salidaCSV.write(elemento.getValue().getPuertos());
-        salidaCSV.endRecord(); //Deja de escribir en el archivo 
-
-
-    }
-    for(Entry<Integer,OS> elemento : OS1.entrySet() ){
-        salidaCSV.write("e");
-        salidaCSV.write(elemento.getValue().getID());
-        salidaCSV.write(elemento.getValue().getMarca());
-        salidaCSV.write(elemento.getValue().getModelo());
-        salidaCSV.write(elemento.getValue().getPrecio());
-        salidaCSV.write(elemento.getValue().getCantidad());
-        salidaCSV.write(elemento.getValue().getPotencia());
-        salidaCSV.endRecord(); //Deja de escribir en el archivo 
-    }
-
-    for(Entry<Integer,PowerSupply> elemento : PowerSupply1.entrySet() ){
-        salidaCSV.write("f");
-        salidaCSV.write(elemento.getValue().getID());
-        salidaCSV.write(elemento.getValue().getMarca());
-        salidaCSV.write(elemento.getValue().getModelo());
-        salidaCSV.write(elemento.getValue().getPrecio());
-        salidaCSV.write(elemento.getValue().getCantidad());
-        salidaCSV.write(elemento.getValue().getPotencia());
-        salidaCSV.write(elemento.getValue().getCapacidad());
-        salidaCSV.write(elemento.getValue().getCertificacion());
-        salidaCSV.endRecord(); //Deja de escribir en el archivo 
-
-    }
-
-    for(Entry<Integer,RAM> elemento : RAM1.entrySet() ){
-        salidaCSV.write("g");
-        salidaCSV.write(elemento.getValue().getID());
-        salidaCSV.write(elemento.getValue().getMarca());
-        salidaCSV.write(elemento.getValue().getModelo());
-        salidaCSV.write(elemento.getValue().getPrecio());
-        salidaCSV.write(elemento.getValue().getCantidad());
-        salidaCSV.write(elemento.getValue().getPotencia());
-        salidaCSV.write(elemento.getValue().getGen());
-        salidaCSV.write(elemento.getValue().getVel());
-        salidaCSV.write(elemento.getValue().getCapacidad());
-        salidaCSV.write(elemento.getValue().getDisipacion());
-        salidaCSV.endRecord(); //Deja de escribir en el archivo 
-    }
-    for(Entry<Integer,Storage> elemento : Storage1.entrySet() ){
-        salidaCSV.write("h");
-        salidaCSV.write(elemento.getValue().getID());
-        salidaCSV.write(elemento.getValue().getMarca());
-        salidaCSV.write(elemento.getValue().getModelo());
-        salidaCSV.write(elemento.getValue().getPrecio());
-        salidaCSV.write(elemento.getValue().getCantidad());
-        salidaCSV.write(elemento.getValue().getPotencia());
-        salidaCSV.write(elemento.getValue().getTipo());
-        salidaCSV.write(elemento.getValue().getCapacidad());
-        salidaCSV.write(elemento.getValue().getVel_write());
-        salidaCSV.write(elemento.getValue().getVel_Read());
-        salidaCSV.write(elemento.getValue().getBusType());
-        salidaCSV.endRecord(); //Deja de escribir en el archivo 
-    }
-    for(Entry<Integer,VideoCard> elemento : VideoCard1.entrySet() ){
-        salidaCSV.write("i");
-        salidaCSV.write(elemento.getValue().getID());
-        salidaCSV.write(elemento.getValue().getMarca());
-        salidaCSV.write(elemento.getValue().getModelo());
-        salidaCSV.write(elemento.getValue().getPrecio());
-        salidaCSV.write(elemento.getValue().getCantidad());
-        salidaCSV.write(elemento.getValue().getPotencia());
-        salidaCSV.write(elemento.getValue().getArquitectura());
-        salidaCSV.write(elemento.getValue().getTipoBus());
-        salidaCSV.write(elemento.getValue().getFrecuencia());
-        salidaCSV.write(elemento.getValue().getMemoria());
-        salidaCSV.write(elemento.getValue().getTipoMem());
-        salidaCSV.write(elemento.getValue().getLargo());
-        salidaCSV.write(elemento.getValue().getAncho());
-        salidaCSV.endRecord(); //Deja de escribir en el archivo 
-    }
-
-
+ 
+    
+    
+   
 
     salidaCSV.close(); // cierra el archivo
 
@@ -1903,16 +1799,9 @@ e.printStackTrace();
     public static void ImportarCSVInventario(Inventario in1){
 
 try {
-    Map<Integer,CPU> CPU1 = new HashMap<Integer,CPU>(); // lista donde guardaremos los datos del archivo  leerUsuarios = new CsvReader("Usuarios.csv");
-    Map<Integer, CPUCooler> CPUCooler1 = new HashMap<Integer, CPUCooler>();
-    Map<Integer, Case> Case1= new HashMap<Integer, Case>();
-    Map<Integer,MotherBoard> MotherBoard1 = new HashMap<Integer, MotherBoard>();
-    Map<Integer, OS> OS1 =new HashMap<Integer, OS>();
-    Map<Integer, PowerSupply> PowerSupply1 =new HashMap<Integer, PowerSupply>();
-    Map<Integer, RAM> RAM1 =new HashMap<Integer, RAM>();
-    Map<Integer, Storage> Storage1 =new HashMap<Integer, Storage>();
-    Map<Integer, VideoCard> VideoCard1 =new HashMap<Integer, VideoCard>();
+   Map<String, Elemento> componentes1 = new HashMap<String, Elemento>();
 CsvReader leerInventario = new CsvReader("Inventario.csv");
+
 
 
 // Mientras haya lineas obtendremos los datos del archivo 
@@ -1933,7 +1822,9 @@ while(leerInventario.readRecord()){
     String Socket1 = leerInventario.get(11);
     String cache1 = leerInventario.get(12);
     
-    CPU1.put(Integer.parseInt(ID1), new CPU(Frecuencia1, Nucleos1, Hilos1, Arquitectura1, Socket1, cache1, ID1, Marca1, Modelo1, Precio1, Cantidad1, Potencia1))  ;// añade la informacion a la lista
+
+    componentes1.put(ID1, new CPU(Frecuencia1, Nucleos1, Hilos1, Arquitectura1, Socket1, cache1, ID1, Marca1, Modelo1, Precio1, Cantidad1, Potencia1));
+   // añade la informacion a la lista
     
  }
  else if("b".equals(temp)){
@@ -1945,7 +1836,8 @@ while(leerInventario.readRecord()){
     String Potencia1 = leerInventario.get(6);
     String Tipo1 = leerInventario.get(7);
     
-    CPUCooler1.put(Integer.parseInt(ID1), new CPUCooler(Tipo1, ID1, Marca1, Modelo1, Precio1, Cantidad1, Potencia1));// añade la informacion a la lista
+    componentes1.put(ID1,  new CPUCooler(Tipo1, ID1, Marca1, Modelo1, Precio1, Cantidad1, Potencia1));
+   // añade la informacion a la lista
  
  }
  
@@ -1961,7 +1853,7 @@ while(leerInventario.readRecord()){
     String SlotVideoCard1 = leerInventario.get(9);
     String Fans1 = leerInventario.get(10);
     
-    Case1.put(Integer.parseInt(ID1), new Case(Tamano1, SlotStorage1, SlotVideoCard1, Fans1, ID1, Marca1, Modelo1, Precio1, Cantidad1, Potencia1));// añade la informacion a la lista
+    componentes1.put(ID1,  new Case(Tamano1, SlotStorage1, SlotVideoCard1, Fans1, ID1, Marca1, Modelo1, Precio1, Cantidad1, Potencia1));// añade la informacion a la lista
    
  }
  else if("d".equals(temp)){
@@ -1977,8 +1869,8 @@ while(leerInventario.readRecord()){
     String Overclock1 = leerInventario.get(10);
     String SLI1 = leerInventario.get(11);
     String Puertos1 = leerInventario.get(12);
-    
-  MotherBoard1.put(Integer.parseInt(ID1), new MotherBoard(Socket1, RAMSupported1, Tamano1, Overclock1, SLI1, Puertos1, ID1, Marca1, Modelo1, Precio1, Cantidad1, Potencia1));// añade la informacion a la lista
+   
+    componentes1.put(ID1, new MotherBoard(Socket1, RAMSupported1, Tamano1, Overclock1, SLI1, Puertos1, ID1, Marca1, Modelo1, Precio1, Cantidad1, Potencia1));// añade la informacion a la lista
     
  
  }
@@ -1990,8 +1882,8 @@ while(leerInventario.readRecord()){
     String Cantidad1 = leerInventario.get(5);
     String Potencia1 = leerInventario.get(6);
    
-    
-  OS1.put(Integer.parseInt(ID1), new OS(ID1, Marca1, Modelo1, Precio1, Cantidad1, Potencia1));// añade la informacion a la lista
+   componentes1.put(ID1, new OS(ID1, Marca1, Modelo1, Precio1, Cantidad1, Potencia1));
+ // añade la informacion a la lista
    }
  
  else if ("f".equals(temp)){
@@ -2003,8 +1895,8 @@ while(leerInventario.readRecord()){
     String Potencia1 = leerInventario.get(6);
     String Capacidad1 = leerInventario.get(7);
     String Certificacion1 = leerInventario.get(8);
-    
-    PowerSupply1.put(Integer.parseInt(ID1), new PowerSupply(Capacidad1, Certificacion1, ID1, Marca1, Modelo1, Precio1, Cantidad1, Potencia1));// añade la informacion a la lista
+  
+    componentes1.put(ID1,  new PowerSupply(Capacidad1, Certificacion1, ID1, Marca1, Modelo1, Precio1, Cantidad1, Potencia1));// añade la informacion a la lista
  }
  
  else if ("g".equals(temp)){
@@ -2019,7 +1911,7 @@ while(leerInventario.readRecord()){
     String Capacidad1 = leerInventario.get(9);
     String Disipacion1 = leerInventario.get(10);
     
-    RAM1.put(Integer.parseInt(ID1), new RAM(Gen1, Vel1, Capacidad1, Disipacion1, ID1, Marca1, Modelo1, Precio1, Cantidad1, Potencia1));// añade la informacion a la lista
+    componentes1.put(ID1,new RAM(Gen1, Vel1, Capacidad1, Disipacion1, ID1, Marca1, Modelo1, Precio1, Cantidad1, Potencia1));// añade la informacion a la lista
  }
  
  else if ("h".equals(temp)){
@@ -2035,7 +1927,7 @@ while(leerInventario.readRecord()){
       String Vel_Read1 = leerInventario.get(10);
       String BusType1 = leerInventario.get(11);
       
-      Storage1.put(Integer.parseInt(ID1), new Storage(Tipo1, Capacidad1, Vel_write1, Vel_Read1, BusType1, ID1, Marca1, Modelo1, Precio1, Cantidad1, Potencia1));// añade la informacion a la lista
+      componentes1.put(ID1, new Storage(Tipo1, Capacidad1, Vel_write1, Vel_Read1, BusType1, ID1, Marca1, Modelo1, Precio1, Cantidad1, Potencia1));// añade la informacion a la lista
  
  }
  
@@ -2053,8 +1945,8 @@ while(leerInventario.readRecord()){
       String TipoMem1 = leerInventario.get(11);
       String Largo1 = leerInventario.get(12);
       String Ancho1 = leerInventario.get(13);
-      
-      VideoCard1.put(Integer.parseInt(ID1), new VideoCard(Arquitectura1, TipoBus1, Frecuencia1, Memoria1, TipoMem1, Largo1, Ancho1, ID1, Marca1, Modelo1, Precio1, Cantidad1, Potencia1));// añade la informacion a la lista
+     
+      componentes1.put(ID1, new VideoCard(Arquitectura1, TipoBus1, Frecuencia1, Memoria1, TipoMem1, Largo1, Ancho1, ID1, Marca1, Modelo1, Precio1, Cantidad1, Potencia1));// añade la informacion a la lista
  
  }
 
@@ -2064,9 +1956,7 @@ while(leerInventario.readRecord()){
 
 
 leerInventario.close();
-in1.setCPU(CPU1); in1.setCases(Case1);in1.setCooler(CPUCooler1);in1.setMotherBoard(MotherBoard1);in1.setOs(OS1);in1.setPower(PowerSupply1);
-in1.setRAM(RAM1);in1.setStorage(Storage1);in1.setVCard(VideoCard1);
-
+in1.setComponentes(componentes1);
 }catch(FileNotFoundException e){
 e.printStackTrace();
 }catch(IOException e){
@@ -2077,4 +1967,6 @@ e.printStackTrace();
 }
 }
     
+
+
 

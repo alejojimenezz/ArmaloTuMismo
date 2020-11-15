@@ -24,7 +24,33 @@ public class Inventario {
     public Map<Integer, Storage> Storage=new HashMap<Integer, Storage>();
     public Map<Integer, VideoCard> VideoCard=new HashMap<Integer, VideoCard>();
    
-    //CPU
+    //-------------------------------------------//
+    //Metodo y atributo para TODOS los componentes//
+    public Map<String, Elemento> componentes=new HashMap<String, Elemento>();
+       
+        public Elemento consultarElemento(String key){
+    if  (componentes.get(key)== null) System.out.println("No existe componente con esa referencia");
+    return componentes.get(key);
+    }
+    
+    public void agregarElemento(String key, Elemento e){
+        componentes.put(key, e);
+    }
+
+    public void eliminarElemento(String key){
+        componentes.remove(key);
+    }
+    
+    public Map<String, Elemento> getComponentes() {
+        return componentes;
+    }
+
+    public void setComponentes(Map<String, Elemento> e) {
+        this.componentes = e;
+    }
+    
+    //----------------------------------------------//
+    
     
     public CPU consultarCpu(Integer key){
     if  (CPU.get(key)== null) System.out.println("No existe componente con esa referencia");
