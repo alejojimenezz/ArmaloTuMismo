@@ -273,8 +273,14 @@ public class Ingreso extends javax.swing.JFrame {
         inReferencia.setFont(new java.awt.Font("Consolas", 2, 18)); // NOI18N
         inReferencia.setForeground(new java.awt.Color(255, 255, 255));
         inReferencia.setText("Ingresa referencia del componente");
+        inReferencia.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                inReferenciaMouseClicked(evt);
+            }
+        });
         Consultar.add(inReferencia, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 320, -1, -1));
 
+        BuscarButton.setBackground(new java.awt.Color(0, 0, 102));
         BuscarButton.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
         BuscarButton.setForeground(new java.awt.Color(255, 255, 255));
         BuscarButton.setText("Buscar");
@@ -329,9 +335,14 @@ public class Ingreso extends javax.swing.JFrame {
     }//GEN-LAST:event_EditarButtonActionPerformed
 
     private void Volver2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Volver2ActionPerformed
+        inReferencia.setText("Ingresa referencia del componente");
         Principal.setVisible(true);
         Consultar.setVisible(false);
     }//GEN-LAST:event_Volver2ActionPerformed
+
+    private void inReferenciaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_inReferenciaMouseClicked
+        inReferencia.setText("");
+    }//GEN-LAST:event_inReferenciaMouseClicked
 
     /**
      * @param args the command line arguments
