@@ -47,6 +47,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+import javax.swing.DefaultListModel;
 import javax.swing.JFrame;
 
 /**
@@ -57,6 +58,7 @@ public class Ingreso extends javax.swing.JFrame {
         
         static Inventario in=new Inventario();
         static Map<String, Elemento> componentes1 = new HashMap<String, Elemento>();
+        
     //private final HashMap<String,JPanel> paneles;
     
     public Ingreso() {
@@ -123,6 +125,11 @@ public class Ingreso extends javax.swing.JFrame {
         BuscarButton = new javax.swing.JButton();
         Con2 = new javax.swing.JPanel();
         BuscarOtroButton = new javax.swing.JButton();
+        Cont_Consul = new javax.swing.JScrollPane();
+        ContenidoAtributos = new javax.swing.JList<>();
+        label_consult = new javax.swing.JScrollPane();
+        ListaAtri = new javax.swing.JList<>();
+        TipoComp = new javax.swing.JLabel();
         Fondo3 = new javax.swing.JLabel();
         Generico = new javax.swing.JPanel();
         MenuGen = new javax.swing.JPanel();
@@ -374,6 +381,22 @@ public class Ingreso extends javax.swing.JFrame {
         });
         Con2.add(BuscarOtroButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 410, -1, 30));
 
+        ContenidoAtributos.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
+        Cont_Consul.setViewportView(ContenidoAtributos);
+
+        Con2.add(Cont_Consul, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 200, 170, -1));
+
+        ListaAtri.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
+        label_consult.setViewportView(ListaAtri);
+
+        Con2.add(label_consult, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 200, 90, -1));
+
+        TipoComp.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
+        TipoComp.setForeground(new java.awt.Color(255, 255, 255));
+        TipoComp.setText("Null");
+        TipoComp.setToolTipText("");
+        Con2.add(TipoComp, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 180, 280, -1));
+
         Consultar.add(Con2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 80, 670, 460));
 
         Fondo3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Wallpaper.png"))); // NOI18N
@@ -618,14 +641,152 @@ public class Ingreso extends javax.swing.JFrame {
     }//GEN-LAST:event_GenericoButtonActionPerformed
 
     private void BuscarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscarButtonActionPerformed
+        DefaultListModel labels=new DefaultListModel();
+        DefaultListModel contenido=new DefaultListModel();
+        labels.addElement("ID");
+        labels.addElement("Marca");
+        labels.addElement("Modelo");
+        labels.addElement("Precio");
+        labels.addElement("Cantidad");
+        labels.addElement("Potencia");
+        if(inReferencia.getText().equals("Ingresa referencia del componente")==false || inReferencia.getText().equals("")==false){
+        
         Con1.setVisible(false);
         Con2.setVisible(true);
-        
+        String Id=null;
+        Id=inReferencia.getText();
+        try {
+        char tipo=Id.charAt(0);
+        Elemento etemp= componentes1.get(Id);
+        contenido.addElement(etemp.getID());
+        contenido.addElement(etemp.getMarca());
+        contenido.addElement(etemp.getModelo());
+        contenido.addElement(etemp.getPrecio());
+        contenido.addElement(etemp.getCantidad());
+        contenido.addElement(etemp.getPotencia());
+        switch(tipo){
+            case 'a':
+                TipoComp.setText("Procesador");
+                labels.addElement("Frecuencia");
+                labels.addElement("Nucleos");
+                labels.addElement("Hilos");
+                labels.addElement("Arquitectura");
+                labels.addElement("Socket");
+                labels.addElement("cache");
+                CPU etemp1= (CPU) etemp;
+                contenido.addElement(etemp1.getFrecuencia());
+                contenido.addElement(etemp1.getNucleos());
+                contenido.addElement(etemp1.getHilos());
+                contenido.addElement(etemp1.getArquitectura());
+                contenido.addElement(etemp1.getSocket());
+                contenido.addElement(etemp1.getCache());
+            break;
+            case 'b':
+                TipoComp.setText("Cooler");
+                labels.addElement("Tipo");
+                CPUCooler etemp2= (CPUCooler) etemp;
+                contenido.addElement(etemp2.getTipo());
+
+                
+            break;
+            case 'c':
+                TipoComp.setText("Case");
+                labels.addElement("Tamaño");
+                labels.addElement("Cant. Slots Almacenamiento");
+                labels.addElement("Cant. Slots VideoCard");
+                labels.addElement("Ventiladores");
+                Case etemp3=(Case) etemp;
+                contenido.addElement(etemp3.getTamano());
+                contenido.addElement(etemp3.getSlotStorage());
+                contenido.addElement(etemp3.getSlotVideoCard());
+                contenido.addElement(etemp3.getFans());
+            break;
+            case 'd':
+                TipoComp.setText("MotherBoard");
+                labels.addElement("Socket");
+                labels.addElement("Ram soportada");
+                labels.addElement("Tamaño");
+                labels.addElement("Apta para overclock");
+                labels.addElement("Apta para SLI");
+                labels.addElement("Cantidad de puertos");
+                MotherBoard etemp4=(MotherBoard) etemp;
+                contenido.addElement(etemp4.getSocket());
+                contenido.addElement(etemp4.getRAMSupported());
+                contenido.addElement(etemp4.getTamano());
+                contenido.addElement(etemp4.getOverclock());
+                contenido.addElement(etemp4.getSLI());
+                contenido.addElement(etemp4.getPuertos());
+            break;
+            case 'e':
+                TipoComp.setText("Sistema Operativo");
+                
+            break;
+            case 'f':
+                TipoComp.setText("Fuente de Poder");
+                labels.addElement("Capacidad");
+                labels.addElement("Certificacion");
+                PowerSupply etemp5=(PowerSupply) etemp;
+                contenido.addElement(etemp5.getCapacidad());
+                contenido.addElement(etemp5.getCertificacion());
+            break;
+            case 'g':
+                TipoComp.setText("RAM");
+                labels.addElement("Generación");
+                labels.addElement("Velocidad");
+                labels.addElement("Capacidad");
+                labels.addElement("Disipación");
+                RAM etemp6=(RAM) etemp;
+                contenido.addElement(etemp6.getGen());
+                contenido.addElement(etemp6.getVel());
+                contenido.addElement(etemp6.getCapacidad());
+                contenido.addElement(etemp6.getDisipacion());
+            break;
+            case 'h':
+                TipoComp.setText("Almacenamiento");
+                labels.addElement("Tipo");
+                labels.addElement("Capacidad");
+                labels.addElement("Vel. Escritura");
+                labels.addElement("Vel. Lectura");
+                labels.addElement("Tipo de conector");
+                Storage etemp7=(Storage) etemp;
+                contenido.addElement(etemp7.getTipo());
+                contenido.addElement(etemp7.getCapacidad());
+                contenido.addElement(etemp7.getVel_write());
+                contenido.addElement(etemp7.getVel_Read());
+                contenido.addElement(etemp7.getBusType());
+            break;
+            case 'i':
+                TipoComp.setText("Tarjeta de video");
+                labels.addElement("Arquitectura");
+                labels.addElement("Tipo de entrada");
+                labels.addElement("Frecuencia");
+                labels.addElement("Memoria VRAM");
+                labels.addElement("Longitud");
+                labels.addElement("Ancho");               
+                VideoCard etemp8=(VideoCard) etemp;
+                contenido.addElement(etemp8.getArquitectura());
+                contenido.addElement(etemp8.getTipoBus());
+                contenido.addElement(etemp8.getFrecuencia());
+                contenido.addElement(etemp8.getMemoria());
+                contenido.addElement(etemp8.getLargo());
+                contenido.addElement(etemp8.getAncho());
+                
+            break;
+            default:
+                TipoComp.setText("No existe el componente");
+        }
+     } catch (Exception e) {
+         TipoComp.setText("No existe el componente");
+     } 
+                }
+       ListaAtri.setModel(labels);
+       ContenidoAtributos.setModel(contenido);
     }//GEN-LAST:event_BuscarButtonActionPerformed
 
     private void BuscarOtroButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscarOtroButtonActionPerformed
         Con2.setVisible(false);
         Con1.setVisible(true);
+        inReferencia.setText("Ingresa referencia del componente");
     }//GEN-LAST:event_BuscarOtroButtonActionPerformed
 
     private void CartButtonGenMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CartButtonGenMouseEntered
@@ -1095,6 +1256,8 @@ e.printStackTrace();
     private javax.swing.JPanel Consultar;
     private javax.swing.JButton ConsultarButton;
     private javax.swing.JLabel ConsultarC;
+    private javax.swing.JScrollPane Cont_Consul;
+    private javax.swing.JList<String> ContenidoAtributos;
     private javax.swing.JComboBox<String> CosultarComboBox;
     private javax.swing.JPanel Editar;
     private javax.swing.JButton EditarButton;
@@ -1109,6 +1272,7 @@ e.printStackTrace();
     private javax.swing.JPanel Generico;
     private javax.swing.JButton GenericoButton;
     private javax.swing.JButton IngresarButton;
+    private javax.swing.JList<String> ListaAtri;
     private javax.swing.JPanel MenuGen;
     private javax.swing.JLabel MetGen;
     private javax.swing.JLabel MetGen1;
@@ -1130,6 +1294,7 @@ e.printStackTrace();
     private javax.swing.JButton TGGen;
     private javax.swing.JButton TMGen;
     private javax.swing.JPanel TipoArmado;
+    private javax.swing.JLabel TipoComp;
     private javax.swing.JLabel Titulo;
     private javax.swing.JLabel TituloE;
     private javax.swing.JLabel TituloTA;
@@ -1140,5 +1305,6 @@ e.printStackTrace();
     private javax.swing.JButton Volver4;
     private javax.swing.JButton Volver5;
     private javax.swing.JTextField inReferencia;
+    private javax.swing.JScrollPane label_consult;
     // End of variables declaration//GEN-END:variables
 }
