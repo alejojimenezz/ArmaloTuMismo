@@ -34,8 +34,19 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Scanner;
 */
+import Elementos.*;
+import static Ventanas.Main.ExportarCSVInventario;
+import static Ventanas.Main.ImportarCSVInventario;
+import com.csvreader.CsvReader;
+import com.csvreader.CsvWriter;
 import java.awt.Image;
 import java.awt.Toolkit;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 import javax.swing.JFrame;
 
 /**
@@ -43,7 +54,9 @@ import javax.swing.JFrame;
  * @author Familia
  */
 public class Ingreso extends javax.swing.JFrame {
-
+        
+        static Inventario in=new Inventario();
+        static Map<String, Elemento> componentes1 = new HashMap<String, Elemento>();
     //private final HashMap<String,JPanel> paneles;
     
     public Ingreso() {
@@ -316,7 +329,7 @@ public class Ingreso extends javax.swing.JFrame {
         CosultarComboBox.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
         CosultarComboBox.setForeground(new java.awt.Color(255, 255, 255));
         CosultarComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "CPU", "Tarjeta Madre", "Memoria RAM", "Tarjeta Grafica", "Almacenamiento", "Refrigeracion", "Fuente de Poder", "Chasis", "Sistema Operativo" }));
-        Con1.add(CosultarComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 30, -1, -1));
+        Con1.add(CosultarComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 140, -1, -1));
 
         inReferencia.setBackground(new java.awt.Color(0, 0, 0));
         inReferencia.setFont(new java.awt.Font("Consolas", 2, 18)); // NOI18N
@@ -327,7 +340,7 @@ public class Ingreso extends javax.swing.JFrame {
                 inReferenciaMouseClicked(evt);
             }
         });
-        Con1.add(inReferencia, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 110, -1, -1));
+        Con1.add(inReferencia, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 40, -1, -1));
 
         BuscarButton.setBackground(new java.awt.Color(0, 0, 102));
         BuscarButton.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
@@ -517,7 +530,10 @@ public class Ingreso extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirActionPerformed
+        componentes1  =in.getComponentes();
+        ExportarCSVInventario(componentes1);
         System.exit(0);
+        
     }//GEN-LAST:event_SalirActionPerformed
 
     private void IngresarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IngresarButtonActionPerformed
@@ -569,6 +585,7 @@ public class Ingreso extends javax.swing.JFrame {
     private void BuscarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscarButtonActionPerformed
         Con1.setVisible(false);
         Con2.setVisible(true);
+        
     }//GEN-LAST:event_BuscarButtonActionPerformed
 
     private void BuscarOtroButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscarOtroButtonActionPerformed
@@ -633,14 +650,396 @@ public class Ingreso extends javax.swing.JFrame {
         }
         //</editor-fold>
         //</editor-fold>
-
+        componentes1=in.getComponentes();
+        ImportarCSVInventario(in);
+        componentes1=in.getComponentes();
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Ingreso().setVisible(true);
             }
         });
+        
+        
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
+    
+    //Metodos para leer y escribir archivo Csv
+    //-----------------------------------------//
+    public static void ExportarCSVInventario(Map<String,Elemento> componentes1
+             ){
+
+    String salidaArchivo = "Inventario.csv"; // nombre del archivo
+    boolean existe = new File(salidaArchivo).exists();
+    // si existe un archivo llamado asi lo borra
+    if(existe){
+    File archivoInventario = new File(salidaArchivo);
+    archivoInventario.delete();
+    }
+    try {
+     CsvWriter salidaCSV = new CsvWriter(new FileWriter(salidaArchivo, true),',');
+    //datos para identificar las columnas
+
+
+    //salidaCSV.endRecord(); //Deja de escribir en el archivo
+
+    //recorremos la lista y lo insertamos en el archivo
+
+
+
+    for(Map.Entry<String,Elemento> elemento : componentes1.entrySet() ){
+         switch (elemento.getValue().getID().charAt(0)) {
+             case 'a':
+                 {
+                     salidaCSV.write("a");
+                     CPU var1 = (CPU) elemento.getValue();
+                     salidaCSV.write(var1.getID());
+                     salidaCSV.write(var1.getMarca());
+                     salidaCSV.write(var1.getModelo());
+                     salidaCSV.write(var1.getPrecio());
+                     salidaCSV.write(var1.getCantidad());
+                     salidaCSV.write(var1.getPotencia());
+                     salidaCSV.write(var1.getFrecuencia());
+                     salidaCSV.write(var1.getNucleos());
+                     salidaCSV.write(var1.getHilos());
+                     salidaCSV.write(var1.getArquitectura());
+                     salidaCSV.write(var1.getSocket());
+                     salidaCSV.write(var1.getCache());
+                     salidaCSV.endRecord(); //Deja de escribir en el archivo
+                     break;
+                 }
+             case 'b':
+                 {
+                     salidaCSV.write("b");
+                     CPUCooler var1 = (CPUCooler) elemento.getValue();
+                     salidaCSV.write(var1.getID());
+                     salidaCSV.write(var1.getMarca());
+                     salidaCSV.write(var1.getModelo());
+                     salidaCSV.write(var1.getPrecio());
+                     salidaCSV.write(var1.getCantidad());
+                     salidaCSV.write(var1.getPotencia());
+                     salidaCSV.write(var1.getTipo());
+                     salidaCSV.endRecord(); //Deja de escribir en el archivo
+                     break;
+                 }
+             case 'c':
+                 {
+                     salidaCSV.write("c");
+                     Case var1 = (Case) elemento.getValue();
+                     salidaCSV.write(var1.getID());
+                     salidaCSV.write(var1.getMarca());
+                     salidaCSV.write(var1.getModelo());
+                     salidaCSV.write(var1.getPrecio());
+                     salidaCSV.write(var1.getCantidad());
+                     salidaCSV.write(var1.getPotencia());
+                     salidaCSV.write(var1.getTamano());
+                     salidaCSV.write(var1.getSlotStorage());
+                     salidaCSV.write(var1.getSlotVideoCard());
+                     salidaCSV.write(var1.getFans());
+                     salidaCSV.endRecord(); //Deja de escribir en el archivo
+                     break;
+                 }
+             case 'd':
+                 {
+                     salidaCSV.write("d");
+                     MotherBoard var1 = (MotherBoard) elemento.getValue();
+                     salidaCSV.write(var1.getID());
+                     salidaCSV.write(var1.getMarca());
+                     salidaCSV.write(var1.getModelo());
+                     salidaCSV.write(var1.getPrecio());
+                     salidaCSV.write(var1.getCantidad());
+                     salidaCSV.write(var1.getPotencia());
+                     salidaCSV.write(var1.getSocket());
+                     salidaCSV.write(var1.getRAMSupported());
+                     salidaCSV.write(var1.getTamano());
+                     salidaCSV.write(var1.getOverclock());
+                     salidaCSV.write(var1.getSLI());
+                     salidaCSV.write(var1.getPuertos());
+                     salidaCSV.endRecord(); //Deja de escribir en el archivo
+                     break;
+                 }
+             case 'f':
+                 {
+                     salidaCSV.write("f");
+                     PowerSupply var1 = (PowerSupply) elemento.getValue();
+                     salidaCSV.write(var1.getID());
+                     salidaCSV.write(var1.getMarca());
+                     salidaCSV.write(var1.getModelo());
+                     salidaCSV.write(var1.getPrecio());
+                     salidaCSV.write(var1.getCantidad());
+                     salidaCSV.write(var1.getPotencia());
+                     salidaCSV.write(var1.getCapacidad());
+                     salidaCSV.write(var1.getCertificacion());
+                     salidaCSV.endRecord(); //Deja de escribir en el archivo
+                     break;
+                 }
+             case 'e':
+                 {
+                     salidaCSV.write("e");
+                     OS var1 = (OS) elemento.getValue();
+                     salidaCSV.write(elemento.getValue().getID());
+                     salidaCSV.write(elemento.getValue().getMarca());
+                     salidaCSV.write(elemento.getValue().getModelo());
+                     salidaCSV.write(elemento.getValue().getPrecio());
+                     salidaCSV.write(elemento.getValue().getCantidad());
+                     salidaCSV.write(elemento.getValue().getPotencia());
+                     salidaCSV.endRecord(); //Deja de escribir en el archivo
+                     break;
+                 }
+             case 'g':
+                 {
+                     salidaCSV.write("g");
+                     RAM var1 = (RAM) elemento.getValue();
+                     salidaCSV.write(var1.getID());
+                     salidaCSV.write(var1.getMarca());
+                     salidaCSV.write(var1.getModelo());
+                     salidaCSV.write(var1.getPrecio());
+                     salidaCSV.write(var1.getCantidad());
+                     salidaCSV.write(var1.getPotencia());
+                     salidaCSV.write(var1.getGen());
+                     salidaCSV.write(var1.getVel());
+                     salidaCSV.write(var1.getCapacidad());
+                     salidaCSV.write(var1.getDisipacion());
+                     salidaCSV.endRecord(); //Deja de escribir en el archivo
+                     break;
+                 }
+             case 'h':
+                 {
+                     salidaCSV.write("h");
+                     Storage var1 = (Storage) elemento.getValue();
+                     salidaCSV.write(var1.getID());
+                     salidaCSV.write(var1.getMarca());
+                     salidaCSV.write(var1.getModelo());
+                     salidaCSV.write(var1.getPrecio());
+                     salidaCSV.write(var1.getCantidad());
+                     salidaCSV.write(var1.getPotencia());
+                     salidaCSV.write(var1.getTipo());
+                     salidaCSV.write(var1.getCapacidad());
+                     salidaCSV.write(var1.getVel_write());
+                     salidaCSV.write(var1.getVel_Read());
+                     salidaCSV.write(var1.getBusType());
+                     salidaCSV.endRecord(); //Deja de escribir en el archivo
+                     break;
+                 }
+             case 'i':
+                 {
+                     salidaCSV.write("i");
+                     VideoCard var1 = (VideoCard) elemento.getValue();
+                     salidaCSV.write(var1.getID());
+                     salidaCSV.write(var1.getMarca());
+                     salidaCSV.write(var1.getModelo());
+                     salidaCSV.write(var1.getPrecio());
+                     salidaCSV.write(var1.getCantidad());
+                     salidaCSV.write(var1.getPotencia());
+                     salidaCSV.write(var1.getArquitectura());
+                     salidaCSV.write(var1.getTipoBus());
+                     salidaCSV.write(var1.getFrecuencia());
+                     salidaCSV.write(var1.getMemoria());
+                     salidaCSV.write(var1.getTipoMem());
+                     salidaCSV.write(var1.getLargo());
+                     salidaCSV.write(var1.getAncho());
+                     salidaCSV.endRecord(); //Deja de escribir en el archivo
+                     break;
+                 }
+             default:
+                 break;
+         }
+
+    }
+
+
+
+
+
+
+    salidaCSV.close(); // cierra el archivo
+
+    }catch(IOException e){
+    e.printStackTrace();
+    }
+
+
+
+
+    }
+
+
+    public static void ImportarCSVInventario(Inventario in1){
+
+try {
+   Map<String, Elemento> componentes1 = new HashMap<String, Elemento>();
+CsvReader leerInventario = new CsvReader("Inventario.csv");
+
+
+
+// Mientras haya lineas obtendremos los datos del archivo
+while(leerInventario.readRecord()){
+    String temp;
+    temp=leerInventario.get(0);
+ if(   null != temp)switch (temp) {
+           case "a":{
+               String ID1 = leerInventario.get(1);
+               String Marca1 = leerInventario.get(2);
+               String Modelo1 = leerInventario.get(3);
+               String Precio1 = leerInventario.get(4);
+               String Cantidad1 = leerInventario.get(5);
+               String Potencia1 = leerInventario.get(6);
+               String Frecuencia1 = leerInventario.get(7);
+               String Nucleos1 = leerInventario.get(8);
+               String Hilos1 = leerInventario.get(9);
+               String Arquitectura1 = leerInventario.get(10);
+               String Socket1 = leerInventario.get(11);
+               String cache1 = leerInventario.get(12);
+               componentes1.put(ID1, new CPU(Frecuencia1, Nucleos1, Hilos1, Arquitectura1, Socket1, cache1, ID1, Marca1, Modelo1, Precio1, Cantidad1, Potencia1));
+               // añade la informacion a la lista
+                   break;
+               }
+           case "b":{
+               String ID1 = leerInventario.get(1);
+               String Marca1 = leerInventario.get(2);
+               String Modelo1 = leerInventario.get(3);
+               String Precio1 = leerInventario.get(4);
+               String Cantidad1 = leerInventario.get(5);
+               String Potencia1 = leerInventario.get(6);
+               String Tipo1 = leerInventario.get(7);
+               componentes1.put(ID1,  new CPUCooler(Tipo1, ID1, Marca1, Modelo1, Precio1, Cantidad1, Potencia1));
+               // añade la informacion a la lista
+                   break;
+               }
+           case "c":{
+               String ID1 = leerInventario.get(1);
+               String Marca1 = leerInventario.get(2);
+               String Modelo1 = leerInventario.get(3);
+               String Precio1 = leerInventario.get(4);
+               String Cantidad1 = leerInventario.get(5);
+               String Potencia1 = leerInventario.get(6);
+               String Tamano1 = leerInventario.get(7);
+               String SlotStorage1 = leerInventario.get(8);
+               String SlotVideoCard1 = leerInventario.get(9);
+               String Fans1 = leerInventario.get(10);
+               componentes1.put(ID1,  new Case(Tamano1, SlotStorage1, SlotVideoCard1, Fans1, ID1, Marca1, Modelo1, Precio1, Cantidad1, Potencia1));// añade la informacion a la lista
+                   break;
+               }
+           case "d":{
+               String ID1 = leerInventario.get(1);
+               String Marca1 = leerInventario.get(2);
+               String Modelo1 = leerInventario.get(3);
+               String Precio1 = leerInventario.get(4);
+               String Cantidad1 = leerInventario.get(5);
+               String Potencia1 = leerInventario.get(6);
+               String Socket1 = leerInventario.get(7);
+               String RAMSupported1 = leerInventario.get(8);
+               String Tamano1 = leerInventario.get(9);
+               String Overclock1 = leerInventario.get(10);
+               String SLI1 = leerInventario.get(11);
+               String Puertos1 = leerInventario.get(12);
+               componentes1.put(ID1, new MotherBoard(Socket1, RAMSupported1, Tamano1, Overclock1, SLI1, Puertos1, ID1, Marca1, Modelo1, Precio1, Cantidad1, Potencia1));// añade la informacion a la lista
+                   break;
+               }
+           case "e":{
+               String ID1 = leerInventario.get(1);
+               String Marca1 = leerInventario.get(2);
+               String Modelo1 = leerInventario.get(3);
+               String Precio1 = leerInventario.get(4);
+               String Cantidad1 = leerInventario.get(5);
+               String Potencia1 = leerInventario.get(6);
+               componentes1.put(ID1, new OS(ID1, Marca1, Modelo1, Precio1, Cantidad1, Potencia1));
+               // añade la informacion a la lista
+                   break;
+               }
+           case "f":{
+               String ID1 = leerInventario.get(1);
+               String Marca1 = leerInventario.get(2);
+               String Modelo1 = leerInventario.get(3);
+               String Precio1 = leerInventario.get(4);
+               String Cantidad1 = leerInventario.get(5);
+               String Potencia1 = leerInventario.get(6);
+               String Capacidad1 = leerInventario.get(7);
+               String Certificacion1 = leerInventario.get(8);
+               componentes1.put(ID1,  new PowerSupply(Capacidad1, Certificacion1, ID1, Marca1, Modelo1, Precio1, Cantidad1, Potencia1));// añade la informacion a la lista
+                   break;
+               }
+           case "g":{
+               String ID1 = leerInventario.get(1);
+               String Marca1 = leerInventario.get(2);
+               String Modelo1 = leerInventario.get(3);
+               String Precio1 = leerInventario.get(4);
+               String Cantidad1 = leerInventario.get(5);
+               String Potencia1 = leerInventario.get(6);
+               String Gen1 = leerInventario.get(7);
+               String Vel1 = leerInventario.get(8);
+               String Capacidad1 = leerInventario.get(9);
+               String Disipacion1 = leerInventario.get(10);
+               componentes1.put(ID1,new RAM(Gen1, Vel1, Capacidad1, Disipacion1, ID1, Marca1, Modelo1, Precio1, Cantidad1, Potencia1));// añade la informacion a la lista
+                   break;
+               }
+           case "h":{
+               String ID1 = leerInventario.get(1);
+               String Marca1 = leerInventario.get(2);
+               String Modelo1 = leerInventario.get(3);
+               String Precio1 = leerInventario.get(4);
+               String Cantidad1 = leerInventario.get(5);
+               String Potencia1 = leerInventario.get(6);
+               String Tipo1 = leerInventario.get(7);
+               String Capacidad1 = leerInventario.get(8);
+               String Vel_write1 = leerInventario.get(9);
+               String Vel_Read1 = leerInventario.get(10);
+               String BusType1 = leerInventario.get(11);
+               componentes1.put(ID1, new Storage(Tipo1, Capacidad1, Vel_write1, Vel_Read1, BusType1, ID1, Marca1, Modelo1, Precio1, Cantidad1, Potencia1));// añade la informacion a la lista
+                   break;
+               }
+           case "i":{
+               String ID1 = leerInventario.get(1);
+               String Marca1 = leerInventario.get(2);
+               String Modelo1 = leerInventario.get(3);
+               String Precio1 = leerInventario.get(4);
+               String Cantidad1 = leerInventario.get(5);
+               String Potencia1 = leerInventario.get(6);
+               String Arquitectura1 = leerInventario.get(7);
+               String TipoBus1 = leerInventario.get(8);
+               String Frecuencia1 = leerInventario.get(9);
+               String Memoria1 = leerInventario.get(10);
+               String TipoMem1 = leerInventario.get(11);
+               String Largo1 = leerInventario.get(12);
+               String Ancho1 = leerInventario.get(13);
+               componentes1.put(ID1, new VideoCard(Arquitectura1, TipoBus1, Frecuencia1, Memoria1, TipoMem1, Largo1, Ancho1, ID1, Marca1, Modelo1, Precio1, Cantidad1, Potencia1));// añade la informacion a la lista
+                   break;
+               }
+           default:
+               break;
+       }
+
+}
+    
+
+
+
+leerInventario.close();
+in1.setComponentes(componentes1);
+}catch(FileNotFoundException e){
+e.printStackTrace();
+}catch(IOException e){
+e.printStackTrace();
+}
+
+
+}
+    
+//--------------------------------------//   
+        
+    
+    
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AgregarButton;
