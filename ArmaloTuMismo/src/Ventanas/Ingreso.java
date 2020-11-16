@@ -111,14 +111,11 @@ public class Ingreso extends javax.swing.JFrame {
         Volver = new javax.swing.JButton();
         Fondo1 = new javax.swing.JLabel();
         Editar = new javax.swing.JPanel();
-        TituloE = new javax.swing.JLabel();
-        Pregunta = new javax.swing.JLabel();
         ListaTipo = new javax.swing.JComboBox<>();
         AgregarButton = new javax.swing.JButton();
         EliminarButton = new javax.swing.JButton();
         inReferencia1 = new javax.swing.JTextField();
         Volver1 = new javax.swing.JButton();
-        Fondo2 = new javax.swing.JLabel();
         AddPan = new javax.swing.JPanel();
         Text_Cantidad = new javax.swing.JTextField();
         Text_2 = new javax.swing.JTextField();
@@ -145,6 +142,9 @@ public class Ingreso extends javax.swing.JFrame {
         ContDeleteList = new javax.swing.JList<>();
         filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 0));
         filler2 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 0));
+        TituloE = new javax.swing.JLabel();
+        Pregunta = new javax.swing.JLabel();
+        Fondo2 = new javax.swing.JLabel();
         Consultar = new javax.swing.JPanel();
         ConsultarC = new javax.swing.JLabel();
         Volver2 = new javax.swing.JButton();
@@ -160,6 +160,10 @@ public class Ingreso extends javax.swing.JFrame {
         TipoComp = new javax.swing.JLabel();
         Fondo3 = new javax.swing.JLabel();
         Generico = new javax.swing.JPanel();
+        CartGen = new javax.swing.JInternalFrame();
+        MetGen1 = new javax.swing.JLabel();
+        Volver5 = new javax.swing.JButton();
+        Fondo6 = new javax.swing.JLabel();
         MenuGen = new javax.swing.JPanel();
         CartButtonGen = new javax.swing.JButton();
         MetGen = new javax.swing.JLabel();
@@ -173,10 +177,6 @@ public class Ingreso extends javax.swing.JFrame {
         PoderGen = new javax.swing.JButton();
         ChasisGen = new javax.swing.JButton();
         OSGen = new javax.swing.JButton();
-        CartGen = new javax.swing.JInternalFrame();
-        MetGen1 = new javax.swing.JLabel();
-        Volver5 = new javax.swing.JButton();
-        Fondo6 = new javax.swing.JLabel();
         Fondo4 = new javax.swing.JLabel();
         Personalizado = new javax.swing.JPanel();
         CartButtonPer = new javax.swing.JButton();
@@ -300,16 +300,6 @@ public class Ingreso extends javax.swing.JFrame {
 
         Editar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        TituloE.setFont(new java.awt.Font("Consolas", 1, 48)); // NOI18N
-        TituloE.setForeground(new java.awt.Color(255, 255, 255));
-        TituloE.setText("Editar");
-        Editar.add(TituloE, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 50, -1, -1));
-
-        Pregunta.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
-        Pregunta.setForeground(new java.awt.Color(255, 255, 255));
-        Pregunta.setText("¿Qué deseas hacer?");
-        Editar.add(Pregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 130, -1, -1));
-
         ListaTipo.setBackground(new java.awt.Color(0, 0, 102));
         ListaTipo.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
         ListaTipo.setForeground(new java.awt.Color(255, 255, 255));
@@ -370,9 +360,7 @@ public class Ingreso extends javax.swing.JFrame {
         });
         Editar.add(Volver1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
-        Fondo2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Wallpaper.png"))); // NOI18N
-        Editar.add(Fondo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
-
+        AddPan.setOpaque(false);
         AddPan.setPreferredSize(new java.awt.Dimension(570, 258));
         AddPan.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -613,7 +601,10 @@ public class Ingreso extends javax.swing.JFrame {
         status.setText("aaaa");
         AddPan.add(status, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 510, -1, -1));
 
-        Editar.add(AddPan, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 190, 670, 300));
+        Editar.add(AddPan, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 190, 630, 300));
+
+        EliminarPan.setOpaque(false);
+        EliminarPan.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         ConfirmarDelete.setBackground(new java.awt.Color(0, 0, 102));
         ConfirmarDelete.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
@@ -624,6 +615,7 @@ public class Ingreso extends javax.swing.JFrame {
                 ConfirmarDeleteActionPerformed(evt);
             }
         });
+        EliminarPan.add(ConfirmarDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 240, -1, -1));
 
         CancelarDelete.setBackground(new java.awt.Color(0, 0, 102));
         CancelarDelete.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
@@ -635,57 +627,34 @@ public class Ingreso extends javax.swing.JFrame {
                 CancelarDeleteActionPerformed(evt);
             }
         });
+        EliminarPan.add(CancelarDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 240, 130, -1));
 
         AtributosDeleteList.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         jScrollPane1.setViewportView(AtributosDeleteList);
 
+        EliminarPan.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(168, 11, 120, 184));
+
         ContDeleteList.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         jScrollPane2.setViewportView(ContDeleteList);
 
-        javax.swing.GroupLayout EliminarPanLayout = new javax.swing.GroupLayout(EliminarPan);
-        EliminarPan.setLayout(EliminarPanLayout);
-        EliminarPanLayout.setHorizontalGroup(
-            EliminarPanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(EliminarPanLayout.createSequentialGroup()
-                .addGap(165, 165, 165)
-                .addGroup(EliminarPanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ConfirmarDelete))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(EliminarPanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(EliminarPanLayout.createSequentialGroup()
-                        .addComponent(filler2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
-                        .addComponent(filler1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(67, Short.MAX_VALUE))
-                    .addGroup(EliminarPanLayout.createSequentialGroup()
-                        .addComponent(CancelarDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-        );
-        EliminarPanLayout.setVerticalGroup(
-            EliminarPanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, EliminarPanLayout.createSequentialGroup()
-                .addGroup(EliminarPanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(EliminarPanLayout.createSequentialGroup()
-                        .addGap(137, 137, 137)
-                        .addComponent(filler1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 53, Short.MAX_VALUE))
-                    .addGroup(EliminarPanLayout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(EliminarPanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE)
-                            .addComponent(jScrollPane1)
-                            .addComponent(filler2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(50, 50, 50)
-                .addGroup(EliminarPanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ConfirmarDelete)
-                    .addComponent(CancelarDelete))
-                .addContainerGap())
-        );
+        EliminarPan.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(304, 11, 124, 184));
+        EliminarPan.add(filler1, new org.netbeans.lib.awtextra.AbsoluteConstraints(492, 137, -1, -1));
+        EliminarPan.add(filler2, new org.netbeans.lib.awtextra.AbsoluteConstraints(298, 11, -1, -1));
 
-        Editar.add(EliminarPan, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 210, 560, 270));
+        Editar.add(EliminarPan, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 210, 540, 270));
+
+        TituloE.setFont(new java.awt.Font("Consolas", 1, 48)); // NOI18N
+        TituloE.setForeground(new java.awt.Color(255, 255, 255));
+        TituloE.setText("Editar");
+        Editar.add(TituloE, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 50, -1, -1));
+
+        Pregunta.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
+        Pregunta.setForeground(new java.awt.Color(255, 255, 255));
+        Pregunta.setText("¿Qué deseas hacer?");
+        Editar.add(Pregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 130, -1, -1));
+
+        Fondo2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Wallpaper.png"))); // NOI18N
+        Editar.add(Fondo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         getContentPane().add(Editar, "card4");
 
@@ -772,6 +741,30 @@ public class Ingreso extends javax.swing.JFrame {
         getContentPane().add(Consultar, "card5");
 
         Generico.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        CartGen.setVisible(true);
+        CartGen.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        MetGen1.setFont(new java.awt.Font("Consolas", 1, 48)); // NOI18N
+        MetGen1.setForeground(new java.awt.Color(255, 255, 255));
+        MetGen1.setText("Carrito de Compras");
+        CartGen.getContentPane().add(MetGen1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 60, -1, -1));
+
+        Volver5.setBackground(new java.awt.Color(0, 0, 102));
+        Volver5.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
+        Volver5.setForeground(new java.awt.Color(255, 255, 255));
+        Volver5.setText("Volver");
+        Volver5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Volver5ActionPerformed(evt);
+            }
+        });
+        CartGen.getContentPane().add(Volver5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+
+        Fondo6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Wallpaper.png"))); // NOI18N
+        CartGen.getContentPane().add(Fondo6, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -30, -1, -1));
+
+        Generico.add(CartGen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 840, 550));
 
         MenuGen.setOpaque(false);
         MenuGen.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -869,30 +862,6 @@ public class Ingreso extends javax.swing.JFrame {
 
         Generico.add(MenuGen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 840, 550));
 
-        CartGen.setVisible(true);
-        CartGen.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        MetGen1.setFont(new java.awt.Font("Consolas", 1, 48)); // NOI18N
-        MetGen1.setForeground(new java.awt.Color(255, 255, 255));
-        MetGen1.setText("Carrito de Compras");
-        CartGen.getContentPane().add(MetGen1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 60, -1, -1));
-
-        Volver5.setBackground(new java.awt.Color(0, 0, 102));
-        Volver5.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
-        Volver5.setForeground(new java.awt.Color(255, 255, 255));
-        Volver5.setText("Volver");
-        Volver5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Volver5ActionPerformed(evt);
-            }
-        });
-        CartGen.getContentPane().add(Volver5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
-
-        Fondo6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Wallpaper.png"))); // NOI18N
-        CartGen.getContentPane().add(Fondo6, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -30, -1, -1));
-
-        Generico.add(CartGen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 840, 550));
-
         Fondo4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Wallpaper.png"))); // NOI18N
         Generico.add(Fondo4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
@@ -983,6 +952,8 @@ public class Ingreso extends javax.swing.JFrame {
 
     private void EditarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditarButtonActionPerformed
         Editar.setVisible(true);
+        AddPan.setVisible(false);
+        EliminarPan.setVisible(false);
         Principal.setVisible(false);
     }//GEN-LAST:event_EditarButtonActionPerformed
 
@@ -1201,8 +1172,10 @@ public class Ingreso extends javax.swing.JFrame {
     private void EliminarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminarButtonActionPerformed
         // TODO add your handling code here:
        EliminarPan.setVisible(true);
-       
-       AddPan.setVisible(false);
+       if(AddPan.isVisible()){
+           AddPan.setVisible(false);
+       }
+       //AddPan.setVisible(false);
        String Id=inReferencia1.getText();
                DefaultListModel labels=new DefaultListModel();
         DefaultListModel contenido=new DefaultListModel();
@@ -1471,7 +1444,10 @@ public class Ingreso extends javax.swing.JFrame {
     private void AgregarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarButtonActionPerformed
        String Tipo=(String) ListaTipo.getSelectedItem();
        AddPan.setVisible(true);
-       EliminarPan.setVisible(false);
+       if(EliminarPan.isVisible()){
+           EliminarPan.setVisible(false);
+       }
+       //EliminarPan.setVisible(false);
        Text_Cantidad.setText("Cantidad");
        Text_ID.setText("Ingrese ID");
        Text_Marca.setText("Marca");
