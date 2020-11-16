@@ -49,6 +49,8 @@ import java.util.HashMap;
 import java.util.Map;
 import javax.swing.DefaultListModel;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 
 /**
  *
@@ -113,9 +115,18 @@ public class Ingreso extends javax.swing.JFrame {
         Pregunta = new javax.swing.JLabel();
         AgregarButton = new javax.swing.JButton();
         EliminarButton = new javax.swing.JButton();
-        ModificarButton = new javax.swing.JButton();
+        inReferencia1 = new javax.swing.JTextField();
         Volver1 = new javax.swing.JButton();
         Fondo2 = new javax.swing.JLabel();
+        EliminarPan = new javax.swing.JPanel();
+        ConfirmarDelete = new javax.swing.JButton();
+        CancelarDelete = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        AtributosDeleteList = new javax.swing.JList<>();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        ContDeleteList = new javax.swing.JList<>();
+        filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 0));
+        filler2 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 0));
         Consultar = new javax.swing.JPanel();
         ConsultarC = new javax.swing.JLabel();
         Volver2 = new javax.swing.JButton();
@@ -275,30 +286,45 @@ public class Ingreso extends javax.swing.JFrame {
         TituloE.setFont(new java.awt.Font("Consolas", 1, 48)); // NOI18N
         TituloE.setForeground(new java.awt.Color(255, 255, 255));
         TituloE.setText("Editar");
-        Editar.add(TituloE, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 110, -1, -1));
+        Editar.add(TituloE, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 50, -1, -1));
 
         Pregunta.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
         Pregunta.setForeground(new java.awt.Color(255, 255, 255));
         Pregunta.setText("¿Qué deseas hacer?");
-        Editar.add(Pregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 240, -1, -1));
+        Editar.add(Pregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 130, -1, -1));
 
         AgregarButton.setBackground(new java.awt.Color(0, 0, 102));
         AgregarButton.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
         AgregarButton.setForeground(new java.awt.Color(255, 255, 255));
         AgregarButton.setText("Agregar");
-        Editar.add(AgregarButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 310, -1, -1));
+        Editar.add(AgregarButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, -1, -1));
 
         EliminarButton.setBackground(new java.awt.Color(0, 0, 102));
         EliminarButton.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
         EliminarButton.setForeground(new java.awt.Color(255, 255, 255));
         EliminarButton.setText("Eliminar");
-        Editar.add(EliminarButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 380, -1, -1));
+        EliminarButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EliminarButtonActionPerformed(evt);
+            }
+        });
+        Editar.add(EliminarButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 500, -1, -1));
 
-        ModificarButton.setBackground(new java.awt.Color(0, 0, 102));
-        ModificarButton.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
-        ModificarButton.setForeground(new java.awt.Color(255, 255, 255));
-        ModificarButton.setText("Modificar");
-        Editar.add(ModificarButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 450, -1, -1));
+        inReferencia1.setBackground(new java.awt.Color(0, 0, 0));
+        inReferencia1.setFont(new java.awt.Font("Consolas", 2, 18)); // NOI18N
+        inReferencia1.setForeground(new java.awt.Color(255, 255, 255));
+        inReferencia1.setText("Ingresa referencia del componente");
+        inReferencia1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                inReferencia1MouseClicked(evt);
+            }
+        });
+        inReferencia1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                inReferencia1ActionPerformed(evt);
+            }
+        });
+        Editar.add(inReferencia1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 500, -1, -1));
 
         Volver1.setBackground(new java.awt.Color(0, 0, 102));
         Volver1.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
@@ -313,6 +339,78 @@ public class Ingreso extends javax.swing.JFrame {
 
         Fondo2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Wallpaper.png"))); // NOI18N
         Editar.add(Fondo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        ConfirmarDelete.setBackground(new java.awt.Color(0, 0, 102));
+        ConfirmarDelete.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
+        ConfirmarDelete.setForeground(new java.awt.Color(255, 255, 255));
+        ConfirmarDelete.setText("Confirmar");
+        ConfirmarDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ConfirmarDeleteActionPerformed(evt);
+            }
+        });
+
+        CancelarDelete.setBackground(new java.awt.Color(0, 0, 102));
+        CancelarDelete.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
+        CancelarDelete.setForeground(new java.awt.Color(255, 255, 255));
+        CancelarDelete.setText("Cancelar");
+        CancelarDelete.setToolTipText("");
+        CancelarDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CancelarDeleteActionPerformed(evt);
+            }
+        });
+
+        AtributosDeleteList.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
+        jScrollPane1.setViewportView(AtributosDeleteList);
+
+        ContDeleteList.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
+        jScrollPane2.setViewportView(ContDeleteList);
+
+        javax.swing.GroupLayout EliminarPanLayout = new javax.swing.GroupLayout(EliminarPan);
+        EliminarPan.setLayout(EliminarPanLayout);
+        EliminarPanLayout.setHorizontalGroup(
+            EliminarPanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(EliminarPanLayout.createSequentialGroup()
+                .addGap(165, 165, 165)
+                .addGroup(EliminarPanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ConfirmarDelete))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(EliminarPanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(EliminarPanLayout.createSequentialGroup()
+                        .addComponent(filler2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
+                        .addComponent(filler1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(63, Short.MAX_VALUE))
+                    .addGroup(EliminarPanLayout.createSequentialGroup()
+                        .addComponent(CancelarDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+        );
+        EliminarPanLayout.setVerticalGroup(
+            EliminarPanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, EliminarPanLayout.createSequentialGroup()
+                .addGroup(EliminarPanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(EliminarPanLayout.createSequentialGroup()
+                        .addGap(137, 137, 137)
+                        .addComponent(filler1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 53, Short.MAX_VALUE))
+                    .addGroup(EliminarPanLayout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(EliminarPanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE)
+                            .addComponent(jScrollPane1)
+                            .addComponent(filler2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(50, 50, 50)
+                .addGroup(EliminarPanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ConfirmarDelete)
+                    .addComponent(CancelarDelete))
+                .addContainerGap())
+        );
+
+        Editar.add(EliminarPan, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 210, 560, 270));
 
         getContentPane().add(Editar, "card4");
 
@@ -773,10 +871,10 @@ public class Ingreso extends javax.swing.JFrame {
                 
             break;
             default:
-                TipoComp.setText("No existe el componente");
+                EliminarPan.setVisible(false);
         }
      } catch (Exception e) {
-         TipoComp.setText("No existe el componente");
+         EliminarPan.setVisible(false);
      } 
                 }
        ListaAtri.setModel(labels);
@@ -822,6 +920,178 @@ public class Ingreso extends javax.swing.JFrame {
     private void Volver5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Volver5ActionPerformed
         CartGen.setVisible(false);
     }//GEN-LAST:event_Volver5ActionPerformed
+
+    private void inReferencia1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_inReferencia1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_inReferencia1MouseClicked
+
+    private void inReferencia1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inReferencia1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_inReferencia1ActionPerformed
+
+    private void EliminarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminarButtonActionPerformed
+        // TODO add your handling code here:
+       EliminarPan.setVisible(true);
+       String Id=inReferencia1.getText();
+               DefaultListModel labels=new DefaultListModel();
+        DefaultListModel contenido=new DefaultListModel();
+        labels.addElement("ID");
+        labels.addElement("Marca");
+        labels.addElement("Modelo");
+        labels.addElement("Precio");
+        labels.addElement("Cantidad");
+        labels.addElement("Potencia");
+        if(inReferencia.getText().equals("Ingresa referencia del componente")==false || inReferencia.getText().equals("")==false){
+        try {
+        char tipo=Id.charAt(0);
+        Elemento etemp= componentes1.get(Id);
+        contenido.addElement(etemp.getID());
+        contenido.addElement(etemp.getMarca());
+        contenido.addElement(etemp.getModelo());
+        contenido.addElement(etemp.getPrecio());
+        contenido.addElement(etemp.getCantidad());
+        contenido.addElement(etemp.getPotencia());
+        switch(tipo){
+            case 'a':
+                
+                labels.addElement("Frecuencia");
+                labels.addElement("Nucleos");
+                labels.addElement("Hilos");
+                labels.addElement("Arquitectura");
+                labels.addElement("Socket");
+                labels.addElement("cache");
+                CPU etemp1= (CPU) etemp;
+                contenido.addElement(etemp1.getFrecuencia());
+                contenido.addElement(etemp1.getNucleos());
+                contenido.addElement(etemp1.getHilos());
+                contenido.addElement(etemp1.getArquitectura());
+                contenido.addElement(etemp1.getSocket());
+                contenido.addElement(etemp1.getCache());
+            break;
+            case 'b':
+                TipoComp.setText("Cooler");
+                labels.addElement("Tipo");
+                CPUCooler etemp2= (CPUCooler) etemp;
+                contenido.addElement(etemp2.getTipo());
+
+                
+            break;
+            case 'c':
+                TipoComp.setText("Case");
+                labels.addElement("Tamaño");
+                labels.addElement("Cant. Slots Almacenamiento");
+                labels.addElement("Cant. Slots VideoCard");
+                labels.addElement("Ventiladores");
+                Case etemp3=(Case) etemp;
+                contenido.addElement(etemp3.getTamano());
+                contenido.addElement(etemp3.getSlotStorage());
+                contenido.addElement(etemp3.getSlotVideoCard());
+                contenido.addElement(etemp3.getFans());
+            break;
+            case 'd':
+                TipoComp.setText("MotherBoard");
+                labels.addElement("Socket");
+                labels.addElement("Ram soportada");
+                labels.addElement("Tamaño");
+                labels.addElement("Apta para overclock");
+                labels.addElement("Apta para SLI");
+                labels.addElement("Cantidad de puertos");
+                MotherBoard etemp4=(MotherBoard) etemp;
+                contenido.addElement(etemp4.getSocket());
+                contenido.addElement(etemp4.getRAMSupported());
+                contenido.addElement(etemp4.getTamano());
+                contenido.addElement(etemp4.getOverclock());
+                contenido.addElement(etemp4.getSLI());
+                contenido.addElement(etemp4.getPuertos());
+            break;
+            case 'e':
+                TipoComp.setText("Sistema Operativo");
+                
+            break;
+            case 'f':
+                TipoComp.setText("Fuente de Poder");
+                labels.addElement("Capacidad");
+                labels.addElement("Certificacion");
+                PowerSupply etemp5=(PowerSupply) etemp;
+                contenido.addElement(etemp5.getCapacidad());
+                contenido.addElement(etemp5.getCertificacion());
+            break;
+            case 'g':
+                TipoComp.setText("RAM");
+                labels.addElement("Generación");
+                labels.addElement("Velocidad");
+                labels.addElement("Capacidad");
+                labels.addElement("Disipación");
+                RAM etemp6=(RAM) etemp;
+                contenido.addElement(etemp6.getGen());
+                contenido.addElement(etemp6.getVel());
+                contenido.addElement(etemp6.getCapacidad());
+                contenido.addElement(etemp6.getDisipacion());
+            break;
+            case 'h':
+                TipoComp.setText("Almacenamiento");
+                labels.addElement("Tipo");
+                labels.addElement("Capacidad");
+                labels.addElement("Vel. Escritura");
+                labels.addElement("Vel. Lectura");
+                labels.addElement("Tipo de conector");
+                Storage etemp7=(Storage) etemp;
+                contenido.addElement(etemp7.getTipo());
+                contenido.addElement(etemp7.getCapacidad());
+                contenido.addElement(etemp7.getVel_write());
+                contenido.addElement(etemp7.getVel_Read());
+                contenido.addElement(etemp7.getBusType());
+            break;
+            case 'i':
+                TipoComp.setText("Tarjeta de video");
+                labels.addElement("Arquitectura");
+                labels.addElement("Tipo de entrada");
+                labels.addElement("Frecuencia");
+                labels.addElement("Memoria VRAM");
+                labels.addElement("Longitud");
+                labels.addElement("Ancho");               
+                VideoCard etemp8=(VideoCard) etemp;
+                contenido.addElement(etemp8.getArquitectura());
+                contenido.addElement(etemp8.getTipoBus());
+                contenido.addElement(etemp8.getFrecuencia());
+                contenido.addElement(etemp8.getMemoria());
+                contenido.addElement(etemp8.getLargo());
+                contenido.addElement(etemp8.getAncho());
+                
+            break;
+            default:
+                TipoComp.setText("No existe el componente");
+        }
+     } catch (Exception e) {
+         TipoComp.setText("No existe el componente");
+     } 
+                }
+       AtributosDeleteList.setModel(labels);
+       ContDeleteList.setModel(contenido);
+       
+    }//GEN-LAST:event_EliminarButtonActionPerformed
+
+    private void CancelarDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelarDeleteActionPerformed
+        EliminarPan.setVisible(false);
+    }//GEN-LAST:event_CancelarDeleteActionPerformed
+
+    private void ConfirmarDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConfirmarDeleteActionPerformed
+      String Id=  ContDeleteList.getModel().getElementAt(0);
+      final JPanel panel = new JPanel();
+      if (Id!=null){
+          componentes1.remove(Id);
+          in.setComponentes(componentes1);
+        
+        JOptionPane.showMessageDialog(panel, "Eliminado con éxito", "Warning",
+        JOptionPane.WARNING_MESSAGE);
+        EliminarPan.setVisible(false);
+      }
+      else{
+      JOptionPane.showMessageDialog(panel, "No se encontré el elemento", "Warning",
+        JOptionPane.WARNING_MESSAGE);
+      
+      }
+    }//GEN-LAST:event_ConfirmarDeleteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1244,24 +1514,29 @@ e.printStackTrace();
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AgregarButton;
     private javax.swing.JButton AlmGen;
+    private javax.swing.JList<String> AtributosDeleteList;
     private javax.swing.JButton BuscarButton;
     private javax.swing.JButton BuscarOtroButton;
     private javax.swing.JButton CPUGen;
+    private javax.swing.JButton CancelarDelete;
     private javax.swing.JButton CartButtonGen;
     private javax.swing.JButton CartButtonPer;
     private javax.swing.JInternalFrame CartGen;
     private javax.swing.JButton ChasisGen;
     private javax.swing.JPanel Con1;
     private javax.swing.JPanel Con2;
+    private javax.swing.JButton ConfirmarDelete;
     private javax.swing.JPanel Consultar;
     private javax.swing.JButton ConsultarButton;
     private javax.swing.JLabel ConsultarC;
+    private javax.swing.JList<String> ContDeleteList;
     private javax.swing.JScrollPane Cont_Consul;
     private javax.swing.JList<String> ContenidoAtributos;
     private javax.swing.JComboBox<String> CosultarComboBox;
     private javax.swing.JPanel Editar;
     private javax.swing.JButton EditarButton;
     private javax.swing.JButton EliminarButton;
+    private javax.swing.JPanel EliminarPan;
     private javax.swing.JLabel Fondo;
     private javax.swing.JLabel Fondo1;
     private javax.swing.JLabel Fondo2;
@@ -1277,7 +1552,6 @@ e.printStackTrace();
     private javax.swing.JLabel MetGen;
     private javax.swing.JLabel MetGen1;
     private javax.swing.JLabel MetPer;
-    private javax.swing.JButton ModificarButton;
     private javax.swing.JButton NextButton;
     private javax.swing.JButton OSGen;
     private javax.swing.JPanel Personalizado;
@@ -1304,7 +1578,12 @@ e.printStackTrace();
     private javax.swing.JButton Volver3;
     private javax.swing.JButton Volver4;
     private javax.swing.JButton Volver5;
+    private javax.swing.Box.Filler filler1;
+    private javax.swing.Box.Filler filler2;
     private javax.swing.JTextField inReferencia;
+    private javax.swing.JTextField inReferencia1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane label_consult;
     // End of variables declaration//GEN-END:variables
 }
