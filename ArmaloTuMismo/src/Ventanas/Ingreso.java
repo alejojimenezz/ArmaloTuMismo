@@ -113,11 +113,29 @@ public class Ingreso extends javax.swing.JFrame {
         Editar = new javax.swing.JPanel();
         TituloE = new javax.swing.JLabel();
         Pregunta = new javax.swing.JLabel();
+        ListaTipo = new javax.swing.JComboBox<>();
         AgregarButton = new javax.swing.JButton();
         EliminarButton = new javax.swing.JButton();
         inReferencia1 = new javax.swing.JTextField();
         Volver1 = new javax.swing.JButton();
         Fondo2 = new javax.swing.JLabel();
+        AddPan = new javax.swing.JPanel();
+        Text_Cantidad = new javax.swing.JTextField();
+        Text_2 = new javax.swing.JTextField();
+        Text_ID = new javax.swing.JTextField();
+        Text_Marca = new javax.swing.JTextField();
+        Text_modelo = new javax.swing.JTextField();
+        Text_4 = new javax.swing.JTextField();
+        Text_5 = new javax.swing.JTextField();
+        Text_Potencia = new javax.swing.JTextField();
+        Text_3 = new javax.swing.JTextField();
+        Text_6 = new javax.swing.JTextField();
+        Text_7 = new javax.swing.JTextField();
+        Text_Precio = new javax.swing.JTextField();
+        Text_1 = new javax.swing.JTextField();
+        addCancelar = new javax.swing.JButton();
+        AddConfirmar1 = new javax.swing.JButton();
+        status = new javax.swing.JLabel();
         EliminarPan = new javax.swing.JPanel();
         ConfirmarDelete = new javax.swing.JButton();
         CancelarDelete = new javax.swing.JButton();
@@ -131,7 +149,6 @@ public class Ingreso extends javax.swing.JFrame {
         ConsultarC = new javax.swing.JLabel();
         Volver2 = new javax.swing.JButton();
         Con1 = new javax.swing.JPanel();
-        CosultarComboBox = new javax.swing.JComboBox<>();
         inReferencia = new javax.swing.JTextField();
         BuscarButton = new javax.swing.JButton();
         Con2 = new javax.swing.JPanel();
@@ -293,11 +310,27 @@ public class Ingreso extends javax.swing.JFrame {
         Pregunta.setText("¿Qué deseas hacer?");
         Editar.add(Pregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 130, -1, -1));
 
+        ListaTipo.setBackground(new java.awt.Color(0, 0, 102));
+        ListaTipo.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
+        ListaTipo.setForeground(new java.awt.Color(255, 255, 255));
+        ListaTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "CPU", "Tarjeta Madre", "Memoria RAM", "Tarjeta Grafica", "Almacenamiento", "Refrigeracion", "Fuente de Poder", "Chasis", "Sistema Operativo" }));
+        ListaTipo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ListaTipoActionPerformed(evt);
+            }
+        });
+        Editar.add(ListaTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, 230, 30));
+
         AgregarButton.setBackground(new java.awt.Color(0, 0, 102));
         AgregarButton.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
         AgregarButton.setForeground(new java.awt.Color(255, 255, 255));
         AgregarButton.setText("Agregar");
-        Editar.add(AgregarButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, -1, -1));
+        AgregarButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AgregarButtonActionPerformed(evt);
+            }
+        });
+        Editar.add(AgregarButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, -1, -1));
 
         EliminarButton.setBackground(new java.awt.Color(0, 0, 102));
         EliminarButton.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
@@ -339,6 +372,248 @@ public class Ingreso extends javax.swing.JFrame {
 
         Fondo2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Wallpaper.png"))); // NOI18N
         Editar.add(Fondo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        AddPan.setPreferredSize(new java.awt.Dimension(570, 258));
+        AddPan.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        Text_Cantidad.setBackground(new java.awt.Color(0, 0, 0));
+        Text_Cantidad.setFont(new java.awt.Font("Consolas", 2, 18)); // NOI18N
+        Text_Cantidad.setForeground(new java.awt.Color(255, 255, 255));
+        Text_Cantidad.setText("Cantidad");
+        Text_Cantidad.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Text_CantidadMouseClicked(evt);
+            }
+        });
+        Text_Cantidad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Text_CantidadActionPerformed(evt);
+            }
+        });
+        AddPan.add(Text_Cantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 90, 120, -1));
+
+        Text_2.setBackground(new java.awt.Color(0, 0, 0));
+        Text_2.setFont(new java.awt.Font("Consolas", 2, 18)); // NOI18N
+        Text_2.setForeground(new java.awt.Color(255, 255, 255));
+        Text_2.setText("Espacio 2");
+        Text_2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Text_2MouseClicked(evt);
+            }
+        });
+        Text_2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Text_2ActionPerformed(evt);
+            }
+        });
+        AddPan.add(Text_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 130, 120, -1));
+
+        Text_ID.setBackground(new java.awt.Color(0, 0, 0));
+        Text_ID.setFont(new java.awt.Font("Consolas", 2, 18)); // NOI18N
+        Text_ID.setForeground(new java.awt.Color(255, 255, 255));
+        Text_ID.setText("Ingresa ID");
+        Text_ID.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Text_IDMouseClicked(evt);
+            }
+        });
+        Text_ID.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Text_IDActionPerformed(evt);
+            }
+        });
+        AddPan.add(Text_ID, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 10, -1, -1));
+
+        Text_Marca.setBackground(new java.awt.Color(0, 0, 0));
+        Text_Marca.setFont(new java.awt.Font("Consolas", 2, 18)); // NOI18N
+        Text_Marca.setForeground(new java.awt.Color(255, 255, 255));
+        Text_Marca.setText("Marca");
+        Text_Marca.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Text_MarcaMouseClicked(evt);
+            }
+        });
+        Text_Marca.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Text_MarcaActionPerformed(evt);
+            }
+        });
+        AddPan.add(Text_Marca, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 50, 120, -1));
+
+        Text_modelo.setBackground(new java.awt.Color(0, 0, 0));
+        Text_modelo.setFont(new java.awt.Font("Consolas", 2, 18)); // NOI18N
+        Text_modelo.setForeground(new java.awt.Color(255, 255, 255));
+        Text_modelo.setText("Modelo");
+        Text_modelo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Text_modeloMouseClicked(evt);
+            }
+        });
+        Text_modelo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Text_modeloActionPerformed(evt);
+            }
+        });
+        AddPan.add(Text_modelo, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 50, 120, -1));
+
+        Text_4.setBackground(new java.awt.Color(0, 0, 0));
+        Text_4.setFont(new java.awt.Font("Consolas", 2, 18)); // NOI18N
+        Text_4.setForeground(new java.awt.Color(255, 255, 255));
+        Text_4.setText("Espacio 4");
+        Text_4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Text_4MouseClicked(evt);
+            }
+        });
+        Text_4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Text_4ActionPerformed(evt);
+            }
+        });
+        AddPan.add(Text_4, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 130, 120, -1));
+
+        Text_5.setBackground(new java.awt.Color(0, 0, 0));
+        Text_5.setFont(new java.awt.Font("Consolas", 2, 18)); // NOI18N
+        Text_5.setForeground(new java.awt.Color(255, 255, 255));
+        Text_5.setText("Espacio 5");
+        Text_5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Text_5MouseClicked(evt);
+            }
+        });
+        Text_5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Text_5ActionPerformed(evt);
+            }
+        });
+        AddPan.add(Text_5, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 170, 120, -1));
+
+        Text_Potencia.setBackground(new java.awt.Color(0, 0, 0));
+        Text_Potencia.setFont(new java.awt.Font("Consolas", 2, 18)); // NOI18N
+        Text_Potencia.setForeground(new java.awt.Color(255, 255, 255));
+        Text_Potencia.setText("Potencia");
+        Text_Potencia.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Text_PotenciaMouseClicked(evt);
+            }
+        });
+        Text_Potencia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Text_PotenciaActionPerformed(evt);
+            }
+        });
+        AddPan.add(Text_Potencia, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 90, 120, -1));
+
+        Text_3.setBackground(new java.awt.Color(0, 0, 0));
+        Text_3.setFont(new java.awt.Font("Consolas", 2, 18)); // NOI18N
+        Text_3.setForeground(new java.awt.Color(255, 255, 255));
+        Text_3.setText("Espacio 3");
+        Text_3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Text_3MouseClicked(evt);
+            }
+        });
+        Text_3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Text_3ActionPerformed(evt);
+            }
+        });
+        AddPan.add(Text_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 130, 120, -1));
+
+        Text_6.setBackground(new java.awt.Color(0, 0, 0));
+        Text_6.setFont(new java.awt.Font("Consolas", 2, 18)); // NOI18N
+        Text_6.setForeground(new java.awt.Color(255, 255, 255));
+        Text_6.setText("Espacio 6");
+        Text_6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Text_6MouseClicked(evt);
+            }
+        });
+        Text_6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Text_6ActionPerformed(evt);
+            }
+        });
+        AddPan.add(Text_6, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 170, 120, -1));
+
+        Text_7.setBackground(new java.awt.Color(0, 0, 0));
+        Text_7.setFont(new java.awt.Font("Consolas", 2, 18)); // NOI18N
+        Text_7.setForeground(new java.awt.Color(255, 255, 255));
+        Text_7.setText("Espacio 7");
+        Text_7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Text_7MouseClicked(evt);
+            }
+        });
+        Text_7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Text_7ActionPerformed(evt);
+            }
+        });
+        AddPan.add(Text_7, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 170, 120, -1));
+
+        Text_Precio.setBackground(new java.awt.Color(0, 0, 0));
+        Text_Precio.setFont(new java.awt.Font("Consolas", 2, 18)); // NOI18N
+        Text_Precio.setForeground(new java.awt.Color(255, 255, 255));
+        Text_Precio.setText("Precio");
+        Text_Precio.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Text_PrecioMouseClicked(evt);
+            }
+        });
+        Text_Precio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Text_PrecioActionPerformed(evt);
+            }
+        });
+        AddPan.add(Text_Precio, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 50, 120, -1));
+
+        Text_1.setBackground(new java.awt.Color(0, 0, 0));
+        Text_1.setFont(new java.awt.Font("Consolas", 2, 18)); // NOI18N
+        Text_1.setForeground(new java.awt.Color(255, 255, 255));
+        Text_1.setText("Espacio 1");
+        Text_1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Text_1MouseClicked(evt);
+            }
+        });
+        Text_1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Text_1ActionPerformed(evt);
+            }
+        });
+        AddPan.add(Text_1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 90, 120, -1));
+
+        addCancelar.setBackground(new java.awt.Color(0, 0, 102));
+        addCancelar.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
+        addCancelar.setForeground(new java.awt.Color(255, 255, 255));
+        addCancelar.setText("Cancelar");
+        addCancelar.setMaximumSize(new java.awt.Dimension(124, 38));
+        addCancelar.setMinimumSize(new java.awt.Dimension(124, 38));
+        addCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addCancelarActionPerformed(evt);
+            }
+        });
+        AddPan.add(addCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 220, -1, -1));
+
+        AddConfirmar1.setBackground(new java.awt.Color(0, 0, 102));
+        AddConfirmar1.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
+        AddConfirmar1.setForeground(new java.awt.Color(255, 255, 255));
+        AddConfirmar1.setText("Confirmar");
+        AddConfirmar1.setMaximumSize(new java.awt.Dimension(124, 38));
+        AddConfirmar1.setMinimumSize(new java.awt.Dimension(124, 38));
+        AddConfirmar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AddConfirmar1ActionPerformed(evt);
+            }
+        });
+        AddPan.add(AddConfirmar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 220, -1, -1));
+
+        status.setText("aaaa");
+        AddPan.add(status, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 510, -1, -1));
+
+        Editar.add(AddPan, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 190, 670, 300));
 
         ConfirmarDelete.setBackground(new java.awt.Color(0, 0, 102));
         ConfirmarDelete.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
@@ -382,9 +657,9 @@ public class Ingreso extends javax.swing.JFrame {
                         .addComponent(filler2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
                         .addComponent(filler1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(63, Short.MAX_VALUE))
+                        .addContainerGap(67, Short.MAX_VALUE))
                     .addGroup(EliminarPanLayout.createSequentialGroup()
                         .addComponent(CancelarDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
@@ -434,12 +709,6 @@ public class Ingreso extends javax.swing.JFrame {
 
         Con1.setOpaque(false);
         Con1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        CosultarComboBox.setBackground(new java.awt.Color(0, 0, 102));
-        CosultarComboBox.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
-        CosultarComboBox.setForeground(new java.awt.Color(255, 255, 255));
-        CosultarComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "CPU", "Tarjeta Madre", "Memoria RAM", "Tarjeta Grafica", "Almacenamiento", "Refrigeracion", "Fuente de Poder", "Chasis", "Sistema Operativo" }));
-        Con1.add(CosultarComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 140, -1, -1));
 
         inReferencia.setBackground(new java.awt.Color(0, 0, 0));
         inReferencia.setFont(new java.awt.Font("Consolas", 2, 18)); // NOI18N
@@ -932,6 +1201,8 @@ public class Ingreso extends javax.swing.JFrame {
     private void EliminarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminarButtonActionPerformed
         // TODO add your handling code here:
        EliminarPan.setVisible(true);
+       
+       AddPan.setVisible(false);
        String Id=inReferencia1.getText();
                DefaultListModel labels=new DefaultListModel();
         DefaultListModel contenido=new DefaultListModel();
@@ -1087,11 +1358,345 @@ public class Ingreso extends javax.swing.JFrame {
         EliminarPan.setVisible(false);
       }
       else{
-      JOptionPane.showMessageDialog(panel, "No se encontré el elemento", "Warning",
+      JOptionPane.showMessageDialog(panel, "No se encontró el elemento", "Warning",
         JOptionPane.WARNING_MESSAGE);
       
       }
     }//GEN-LAST:event_ConfirmarDeleteActionPerformed
+
+    private void Text_CantidadMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Text_CantidadMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Text_CantidadMouseClicked
+
+    private void Text_CantidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Text_CantidadActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Text_CantidadActionPerformed
+
+    private void Text_2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Text_2MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Text_2MouseClicked
+
+    private void Text_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Text_2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Text_2ActionPerformed
+
+    private void Text_IDMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Text_IDMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Text_IDMouseClicked
+
+    private void Text_IDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Text_IDActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Text_IDActionPerformed
+
+    private void Text_MarcaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Text_MarcaMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Text_MarcaMouseClicked
+
+    private void Text_MarcaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Text_MarcaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Text_MarcaActionPerformed
+
+    private void Text_modeloMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Text_modeloMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Text_modeloMouseClicked
+
+    private void Text_modeloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Text_modeloActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Text_modeloActionPerformed
+
+    private void Text_4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Text_4MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Text_4MouseClicked
+
+    private void Text_4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Text_4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Text_4ActionPerformed
+
+    private void Text_5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Text_5MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Text_5MouseClicked
+
+    private void Text_5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Text_5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Text_5ActionPerformed
+
+    private void Text_PotenciaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Text_PotenciaMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Text_PotenciaMouseClicked
+
+    private void Text_PotenciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Text_PotenciaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Text_PotenciaActionPerformed
+
+    private void Text_3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Text_3MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Text_3MouseClicked
+
+    private void Text_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Text_3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Text_3ActionPerformed
+
+    private void Text_6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Text_6MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Text_6MouseClicked
+
+    private void Text_6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Text_6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Text_6ActionPerformed
+
+    private void Text_7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Text_7MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Text_7MouseClicked
+
+    private void Text_7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Text_7ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Text_7ActionPerformed
+
+    private void Text_PrecioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Text_PrecioMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Text_PrecioMouseClicked
+
+    private void Text_PrecioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Text_PrecioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Text_PrecioActionPerformed
+
+    private void Text_1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Text_1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Text_1MouseClicked
+
+    private void Text_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Text_1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Text_1ActionPerformed
+
+    private void AgregarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarButtonActionPerformed
+       String Tipo=(String) ListaTipo.getSelectedItem();
+       AddPan.setVisible(true);
+       EliminarPan.setVisible(false);
+       Text_Cantidad.setText("Cantidad");
+       Text_ID.setText("Ingrese ID");
+       Text_Marca.setText("Marca");
+       Text_Potencia.setText("Potencia");
+       Text_Precio.setText("Precio");
+       Text_modelo.setText("Modelo");
+       Text_1.setVisible(false);
+       Text_1.setText("Espacio 1");
+       Text_2.setVisible(false);
+       Text_2.setText("Espacio 2");
+       Text_3.setVisible(false);
+       Text_3.setText("Espacio 3");
+       Text_4.setVisible(false);
+       Text_4.setText("Espacio 4");
+       Text_5.setVisible(false);
+       Text_5.setText("Espacio 5");       
+       Text_6.setVisible(false);
+       Text_6.setText("Espacio 6");
+       Text_7.setVisible(false);
+       Text_7.setText("Espacio 7");
+       switch(Tipo){
+           case "CPU":
+       Text_1.setVisible(true);
+       Text_1.setText("Frecuencia");
+       Text_2.setVisible(true);
+       Text_2.setText("Nucleos");
+       Text_3.setVisible(true);
+       Text_3.setText("Hilos");
+       Text_4.setVisible(true);
+       Text_4.setText("Arquitectura");
+       Text_5.setVisible(true);
+       Text_5.setText("Socket");       
+       Text_6.setVisible(true);
+       Text_6.setText("Cache");  
+       status.setText("CPU");
+           break;
+           case "Tarjeta Madre":
+       Text_1.setVisible(true);
+       Text_1.setText("Socket");
+       Text_2.setVisible(true);
+       Text_2.setText("RAM Soportada");
+       Text_3.setVisible(true);
+       Text_3.setText("Tamaño");
+       Text_4.setVisible(true);
+       Text_4.setText("Overclock");
+       Text_5.setVisible(true);
+       Text_5.setText("SLI");       
+       Text_6.setVisible(true);
+       Text_6.setText("Puertos"); 
+       status.setText("Tarjeta Madre");
+           break;
+           case "Memoria RAM":
+       Text_1.setVisible(true);
+       Text_1.setText("Generación");
+       Text_2.setVisible(true);
+       Text_2.setText("Velocidad");
+       Text_3.setVisible(true);
+       Text_3.setText("Capacidad");
+       Text_4.setVisible(true);
+       Text_4.setText("Tamaño");
+       status.setText("Memoria RAM");
+           break;
+           case "Tarjeta Grafica":
+       Text_1.setVisible(true);
+       Text_1.setText("Arquitectura");
+       Text_2.setVisible(true);
+       Text_2.setText("Tipo de conector");
+       Text_3.setVisible(true);
+       Text_3.setText("Frecuencia");
+       Text_4.setVisible(true);
+       Text_4.setText("Memoria");
+       Text_5.setVisible(true);
+       Text_5.setText("Tipo memoria");       
+       Text_6.setVisible(true);
+       Text_6.setText("largo"); 
+       Text_7.setVisible(true);
+       Text_7.setText("ancho"); 
+       status.setText("Tarjeta Grafica");
+           break;
+           case "Almacenamiento":
+       Text_1.setVisible(true);
+       Text_1.setText("Tipo");
+       Text_2.setVisible(true);
+       Text_2.setText("Capacidad");
+       Text_3.setVisible(true);
+       Text_3.setText("Vel. Escritura");
+       Text_4.setVisible(true);
+       Text_4.setText("Vel. Lectura");
+       Text_5.setVisible(true);
+       Text_5.setText("Tipo conector");  
+       status.setText("Almacenamiento");
+           break;
+           case "Refrigeracion":
+       Text_1.setVisible(true);
+       Text_1.setText("Tipo");
+       status.setText("Refrigeracion");
+           break;
+           case "Fuente de Poder":
+       Text_1.setVisible(true);
+       Text_1.setText("Capacidad");
+       Text_2.setVisible(true);
+       Text_2.setText("Certificacion");  
+       status.setText("Fuente de Poder");
+           break;
+           case "Chasis":
+       Text_1.setVisible(true);
+       Text_1.setText("Tamaño");
+       Text_2.setVisible(true);
+       Text_2.setText("Slots para alma.");
+       Text_3.setVisible(true);
+       Text_3.setText("Slots para VideoCard");
+       Text_4.setVisible(true);
+       Text_4.setText("Ventiladores");
+       status.setText("Chasis");
+           break;
+           case "Sistema Operativo":
+               status.setText("Sistema Operativo");
+           break;
+           default:
+       AddPan.setVisible(false);
+       EliminarPan.setVisible(false);
+               ;
+       }
+    }//GEN-LAST:event_AgregarButtonActionPerformed
+
+    private void ListaTipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ListaTipoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ListaTipoActionPerformed
+
+    private void addCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addCancelarActionPerformed
+        AddPan.setVisible(false);
+       Text_1.setVisible(false);
+       Text_1.setText("Espacio 1");
+       Text_2.setVisible(false);
+       Text_1.setText("Espacio 2");
+       Text_3.setVisible(false);
+       Text_1.setText("Espacio 3");
+       Text_4.setVisible(false);
+       Text_1.setText("Espacio 4");
+       Text_5.setVisible(false);
+       Text_1.setText("Espacio 5");       
+       Text_6.setVisible(false);
+       Text_1.setText("Espacio 6");
+       Text_7.setVisible(false);
+       Text_1.setText("Espacio 7");
+    }//GEN-LAST:event_addCancelarActionPerformed
+
+    private void AddConfirmar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddConfirmar1ActionPerformed
+        String ID=Text_ID.getText();
+        String cantidad= Text_Cantidad.getText();
+        String marca=Text_Marca.getText();
+        String potencia=Text_Potencia.getText();
+        String precio=Text_Precio.getText();
+        String modelo=Text_modelo.getText();
+        String At1=Text_1.getText();
+        String At2=Text_2.getText();
+        String At3=Text_3.getText();
+        String At4=Text_4.getText();
+        String At5=Text_5.getText();
+        String At6=Text_6.getText();
+        String At7=Text_7.getText();
+        
+        switch(status.getText()){
+       case "CPU":
+       CPU e= new CPU(At1, At2, At3, At4, At5, At6, ID, marca, modelo, precio, cantidad, potencia);
+       componentes1.put(ID, e);
+       in.setComponentes(componentes1);
+       break;
+           case "Tarjeta Madre":
+       MotherBoard e1= new MotherBoard(At1, At2, At3, At4, At5, At6, ID, marca, modelo, precio, cantidad, potencia);
+       componentes1.put(ID, e1);
+       in.setComponentes(componentes1);
+           break;
+           case "Memoria RAM":
+       RAM e2= new RAM(At1, At2, At3, At4,ID, marca, modelo, precio, cantidad, potencia);
+       componentes1.put(ID, e2);
+       in.setComponentes(componentes1);
+           break;
+           case "Tarjeta Grafica":
+       VideoCard e4= new VideoCard(At1, At2, At3, At4, At5, At6,At7, ID, marca, modelo, precio, cantidad, potencia);
+       componentes1.put(ID, e4);
+       in.setComponentes(componentes1);
+           break;
+           case "Almacenamiento":
+       Storage e5= new Storage(At1, At2, At3, At4, At5, ID, marca, modelo, precio, cantidad, potencia);
+       componentes1.put(ID, e5);
+       in.setComponentes(componentes1);
+           break;
+           case "Refrigeracion":
+       CPUCooler e6= new CPUCooler(At1, ID, marca, modelo, precio, cantidad, potencia);
+       componentes1.put(ID, e6);
+       in.setComponentes(componentes1);
+           break;
+           case "Fuente de Poder":
+       Text_1.setVisible(true);
+       Text_1.setText("Capacidad");
+       Text_2.setVisible(true);
+       Text_2.setText("Certificacion");  
+       status.setText("Fuente de Poder");
+       PowerSupply e7= new PowerSupply(At1,At2, ID, marca, modelo, precio, cantidad, potencia);
+       componentes1.put(ID, e7);
+       in.setComponentes(componentes1);
+           break;
+           case "Chasis":
+       Case e8= new Case(At1, At2, At3, At4, ID, marca, modelo, precio, cantidad, potencia);
+       componentes1.put(ID, e8);
+       in.setComponentes(componentes1);
+           break;
+           case "Sistema Operativo":
+               status.setText("Sistema Operativo");
+       OS e9= new OS(ID, marca, modelo, precio, cantidad, potencia);
+       componentes1.put(ID, e9);
+       in.setComponentes(componentes1);
+           break;
+           default:
+       AddPan.setVisible(false);
+       EliminarPan.setVisible(false);
+               ;
+        
+        }
+        final JPanel panel = new JPanel();
+        JOptionPane.showMessageDialog(panel, "Agregado con éxito", "Warning",
+        JOptionPane.WARNING_MESSAGE);
+        AddPan.setVisible(false);
+    }//GEN-LAST:event_AddConfirmar1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1512,6 +2117,8 @@ e.printStackTrace();
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton AddConfirmar1;
+    private javax.swing.JPanel AddPan;
     private javax.swing.JButton AgregarButton;
     private javax.swing.JButton AlmGen;
     private javax.swing.JList<String> AtributosDeleteList;
@@ -1532,7 +2139,6 @@ e.printStackTrace();
     private javax.swing.JList<String> ContDeleteList;
     private javax.swing.JScrollPane Cont_Consul;
     private javax.swing.JList<String> ContenidoAtributos;
-    private javax.swing.JComboBox<String> CosultarComboBox;
     private javax.swing.JPanel Editar;
     private javax.swing.JButton EditarButton;
     private javax.swing.JButton EliminarButton;
@@ -1548,6 +2154,7 @@ e.printStackTrace();
     private javax.swing.JButton GenericoButton;
     private javax.swing.JButton IngresarButton;
     private javax.swing.JList<String> ListaAtri;
+    private javax.swing.JComboBox<String> ListaTipo;
     private javax.swing.JPanel MenuGen;
     private javax.swing.JLabel MetGen;
     private javax.swing.JLabel MetGen1;
@@ -1567,6 +2174,19 @@ e.printStackTrace();
     private javax.swing.JLabel Seleccione;
     private javax.swing.JButton TGGen;
     private javax.swing.JButton TMGen;
+    private javax.swing.JTextField Text_1;
+    private javax.swing.JTextField Text_2;
+    private javax.swing.JTextField Text_3;
+    private javax.swing.JTextField Text_4;
+    private javax.swing.JTextField Text_5;
+    private javax.swing.JTextField Text_6;
+    private javax.swing.JTextField Text_7;
+    private javax.swing.JTextField Text_Cantidad;
+    private javax.swing.JTextField Text_ID;
+    private javax.swing.JTextField Text_Marca;
+    private javax.swing.JTextField Text_Potencia;
+    private javax.swing.JTextField Text_Precio;
+    private javax.swing.JTextField Text_modelo;
     private javax.swing.JPanel TipoArmado;
     private javax.swing.JLabel TipoComp;
     private javax.swing.JLabel Titulo;
@@ -1578,6 +2198,7 @@ e.printStackTrace();
     private javax.swing.JButton Volver3;
     private javax.swing.JButton Volver4;
     private javax.swing.JButton Volver5;
+    private javax.swing.JButton addCancelar;
     private javax.swing.Box.Filler filler1;
     private javax.swing.Box.Filler filler2;
     private javax.swing.JTextField inReferencia;
@@ -1585,5 +2206,6 @@ e.printStackTrace();
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane label_consult;
+    private javax.swing.JLabel status;
     // End of variables declaration//GEN-END:variables
 }
