@@ -103,11 +103,36 @@ public class Ingreso extends javax.swing.JFrame {
         Fondo2 = new javax.swing.JLabel();
         Consultar = new javax.swing.JPanel();
         ConsultarC = new javax.swing.JLabel();
+        Volver2 = new javax.swing.JButton();
+        Con1 = new javax.swing.JPanel();
         CosultarComboBox = new javax.swing.JComboBox<>();
         inReferencia = new javax.swing.JTextField();
         BuscarButton = new javax.swing.JButton();
-        Volver2 = new javax.swing.JButton();
+        Con2 = new javax.swing.JPanel();
+        BuscarOtroButton = new javax.swing.JButton();
         Fondo3 = new javax.swing.JLabel();
+        Generico = new javax.swing.JPanel();
+        CartButton = new javax.swing.JButton();
+        MetGen = new javax.swing.JLabel();
+        Volver3 = new javax.swing.JButton();
+        CPUGen = new javax.swing.JButton();
+        TMGen = new javax.swing.JButton();
+        RAMGen = new javax.swing.JButton();
+        TGGen = new javax.swing.JButton();
+        AlmGen = new javax.swing.JButton();
+        RefGen = new javax.swing.JButton();
+        PoderGen = new javax.swing.JButton();
+        ChasisGen = new javax.swing.JButton();
+        OSGen = new javax.swing.JButton();
+        Fondo4 = new javax.swing.JLabel();
+        Personalizado = new javax.swing.JPanel();
+        CartButton1 = new javax.swing.JButton();
+        MetPer = new javax.swing.JLabel();
+        Volver4 = new javax.swing.JButton();
+        Progreso = new javax.swing.JProgressBar();
+        NextButton = new javax.swing.JButton();
+        PrevButton = new javax.swing.JButton();
+        Fondo5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setIconImage(getIconImage());
@@ -186,12 +211,22 @@ public class Ingreso extends javax.swing.JFrame {
         PersonalizadoButton.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
         PersonalizadoButton.setForeground(new java.awt.Color(255, 255, 255));
         PersonalizadoButton.setText("Personalizado");
+        PersonalizadoButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PersonalizadoButtonActionPerformed(evt);
+            }
+        });
         TipoArmado.add(PersonalizadoButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 350, -1, -1));
 
         GenericoButton.setBackground(new java.awt.Color(0, 0, 102));
         GenericoButton.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
         GenericoButton.setForeground(new java.awt.Color(255, 255, 255));
         GenericoButton.setText("Generico");
+        GenericoButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GenericoButtonActionPerformed(evt);
+            }
+        });
         TipoArmado.add(GenericoButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 350, -1, -1));
 
         Volver.setBackground(new java.awt.Color(0, 0, 102));
@@ -263,29 +298,6 @@ public class Ingreso extends javax.swing.JFrame {
         ConsultarC.setText("Consultar Componente");
         Consultar.add(ConsultarC, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 110, -1, -1));
 
-        CosultarComboBox.setBackground(new java.awt.Color(0, 0, 102));
-        CosultarComboBox.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
-        CosultarComboBox.setForeground(new java.awt.Color(255, 255, 255));
-        CosultarComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "CPU", "Tarjeta Madre", "Memoria RAM", "Tarjeta Grafica", "Almacenamiento", "Refrigeracion", "Fuente de Poder", "Chasis", "Sistema Operativo" }));
-        Consultar.add(CosultarComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 240, -1, -1));
-
-        inReferencia.setBackground(new java.awt.Color(0, 0, 0));
-        inReferencia.setFont(new java.awt.Font("Consolas", 2, 18)); // NOI18N
-        inReferencia.setForeground(new java.awt.Color(255, 255, 255));
-        inReferencia.setText("Ingresa referencia del componente");
-        inReferencia.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                inReferenciaMouseClicked(evt);
-            }
-        });
-        Consultar.add(inReferencia, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 320, -1, -1));
-
-        BuscarButton.setBackground(new java.awt.Color(0, 0, 102));
-        BuscarButton.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
-        BuscarButton.setForeground(new java.awt.Color(255, 255, 255));
-        BuscarButton.setText("Buscar");
-        Consultar.add(BuscarButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 450, -1, -1));
-
         Volver2.setBackground(new java.awt.Color(0, 0, 102));
         Volver2.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
         Volver2.setForeground(new java.awt.Color(255, 255, 255));
@@ -297,10 +309,209 @@ public class Ingreso extends javax.swing.JFrame {
         });
         Consultar.add(Volver2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
+        Con1.setOpaque(false);
+        Con1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        CosultarComboBox.setBackground(new java.awt.Color(0, 0, 102));
+        CosultarComboBox.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
+        CosultarComboBox.setForeground(new java.awt.Color(255, 255, 255));
+        CosultarComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "CPU", "Tarjeta Madre", "Memoria RAM", "Tarjeta Grafica", "Almacenamiento", "Refrigeracion", "Fuente de Poder", "Chasis", "Sistema Operativo" }));
+        Con1.add(CosultarComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 30, -1, -1));
+
+        inReferencia.setBackground(new java.awt.Color(0, 0, 0));
+        inReferencia.setFont(new java.awt.Font("Consolas", 2, 18)); // NOI18N
+        inReferencia.setForeground(new java.awt.Color(255, 255, 255));
+        inReferencia.setText("Ingresa referencia del componente");
+        inReferencia.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                inReferenciaMouseClicked(evt);
+            }
+        });
+        Con1.add(inReferencia, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 110, -1, -1));
+
+        BuscarButton.setBackground(new java.awt.Color(0, 0, 102));
+        BuscarButton.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
+        BuscarButton.setForeground(new java.awt.Color(255, 255, 255));
+        BuscarButton.setText("Buscar");
+        BuscarButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BuscarButtonActionPerformed(evt);
+            }
+        });
+        Con1.add(BuscarButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 240, -1, -1));
+
+        Consultar.add(Con1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 200, 610, 320));
+
+        Con2.setOpaque(false);
+        Con2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        BuscarOtroButton.setBackground(new java.awt.Color(0, 0, 102));
+        BuscarOtroButton.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
+        BuscarOtroButton.setForeground(new java.awt.Color(255, 255, 255));
+        BuscarOtroButton.setText("Buscar otro componente");
+        BuscarOtroButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BuscarOtroButtonActionPerformed(evt);
+            }
+        });
+        Con2.add(BuscarOtroButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 410, -1, 30));
+
+        Consultar.add(Con2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 80, 670, 460));
+
         Fondo3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Wallpaper.png"))); // NOI18N
         Consultar.add(Fondo3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         getContentPane().add(Consultar, "card5");
+
+        Generico.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        CartButton.setBackground(new java.awt.Color(0, 0, 102));
+        CartButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/WhiteCart.png"))); // NOI18N
+        CartButton.setBorderPainted(false);
+        CartButton.setContentAreaFilled(false);
+        CartButton.setMaximumSize(new java.awt.Dimension(50, 50));
+        CartButton.setMinimumSize(new java.awt.Dimension(50, 50));
+        CartButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                CartButtonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                CartButtonMouseExited(evt);
+            }
+        });
+        CartButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CartButtonActionPerformed(evt);
+            }
+        });
+        Generico.add(CartButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 10, 50, 50));
+
+        MetGen.setFont(new java.awt.Font("Consolas", 1, 48)); // NOI18N
+        MetGen.setForeground(new java.awt.Color(255, 255, 255));
+        MetGen.setText("Metodo Genérico");
+        Generico.add(MetGen, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 80, -1, -1));
+
+        Volver3.setBackground(new java.awt.Color(0, 0, 102));
+        Volver3.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
+        Volver3.setForeground(new java.awt.Color(255, 255, 255));
+        Volver3.setText("Volver");
+        Volver3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Volver3ActionPerformed(evt);
+            }
+        });
+        Generico.add(Volver3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+
+        CPUGen.setBackground(new java.awt.Color(0, 0, 102));
+        CPUGen.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
+        CPUGen.setForeground(new java.awt.Color(255, 255, 255));
+        CPUGen.setText("Procesador");
+        Generico.add(CPUGen, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 200, -1, -1));
+
+        TMGen.setBackground(new java.awt.Color(0, 0, 102));
+        TMGen.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
+        TMGen.setForeground(new java.awt.Color(255, 255, 255));
+        TMGen.setText("Tarjeta Madre");
+        Generico.add(TMGen, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 270, -1, -1));
+
+        RAMGen.setBackground(new java.awt.Color(0, 0, 102));
+        RAMGen.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
+        RAMGen.setForeground(new java.awt.Color(255, 255, 255));
+        RAMGen.setText("Memoria RAM");
+        Generico.add(RAMGen, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 340, -1, -1));
+
+        TGGen.setBackground(new java.awt.Color(0, 0, 102));
+        TGGen.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
+        TGGen.setForeground(new java.awt.Color(255, 255, 255));
+        TGGen.setText("Tarjeta Gráfica");
+        Generico.add(TGGen, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 410, -1, -1));
+
+        AlmGen.setBackground(new java.awt.Color(0, 0, 102));
+        AlmGen.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
+        AlmGen.setForeground(new java.awt.Color(255, 255, 255));
+        AlmGen.setText("Almacenamiento");
+        Generico.add(AlmGen, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 480, -1, -1));
+
+        RefGen.setBackground(new java.awt.Color(0, 0, 102));
+        RefGen.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
+        RefGen.setForeground(new java.awt.Color(255, 255, 255));
+        RefGen.setText("Refrigeración");
+        Generico.add(RefGen, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 200, -1, -1));
+
+        PoderGen.setBackground(new java.awt.Color(0, 0, 102));
+        PoderGen.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
+        PoderGen.setForeground(new java.awt.Color(255, 255, 255));
+        PoderGen.setText("Fuente de Poder");
+        Generico.add(PoderGen, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 270, -1, -1));
+
+        ChasisGen.setBackground(new java.awt.Color(0, 0, 102));
+        ChasisGen.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
+        ChasisGen.setForeground(new java.awt.Color(255, 255, 255));
+        ChasisGen.setText("Chasis");
+        Generico.add(ChasisGen, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 340, -1, -1));
+
+        OSGen.setBackground(new java.awt.Color(0, 0, 102));
+        OSGen.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
+        OSGen.setForeground(new java.awt.Color(255, 255, 255));
+        OSGen.setText("Sistema Operativo");
+        Generico.add(OSGen, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 410, -1, -1));
+
+        Fondo4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Wallpaper.png"))); // NOI18N
+        Generico.add(Fondo4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        getContentPane().add(Generico, "card6");
+
+        Personalizado.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        CartButton1.setBackground(new java.awt.Color(0, 0, 102));
+        CartButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/WhiteCart.png"))); // NOI18N
+        CartButton1.setBorderPainted(false);
+        CartButton1.setContentAreaFilled(false);
+        CartButton1.setMaximumSize(new java.awt.Dimension(50, 50));
+        CartButton1.setMinimumSize(new java.awt.Dimension(50, 50));
+        CartButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                CartButton1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                CartButton1MouseExited(evt);
+            }
+        });
+        Personalizado.add(CartButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 10, 50, 50));
+
+        MetPer.setFont(new java.awt.Font("Consolas", 1, 48)); // NOI18N
+        MetPer.setForeground(new java.awt.Color(255, 255, 255));
+        MetPer.setText("Metodo Personalizado");
+        Personalizado.add(MetPer, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 80, -1, -1));
+
+        Volver4.setBackground(new java.awt.Color(0, 0, 102));
+        Volver4.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
+        Volver4.setForeground(new java.awt.Color(255, 255, 255));
+        Volver4.setText("Volver");
+        Volver4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Volver4ActionPerformed(evt);
+            }
+        });
+        Personalizado.add(Volver4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+        Personalizado.add(Progreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 500, 520, -1));
+
+        NextButton.setBackground(new java.awt.Color(0, 0, 102));
+        NextButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        NextButton.setForeground(new java.awt.Color(255, 255, 255));
+        NextButton.setText("Siguiente");
+        Personalizado.add(NextButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 490, -1, -1));
+
+        PrevButton.setBackground(new java.awt.Color(0, 0, 102));
+        PrevButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        PrevButton.setForeground(new java.awt.Color(255, 255, 255));
+        PrevButton.setText("Anterior");
+        Personalizado.add(PrevButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 490, -1, -1));
+
+        Fondo5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Wallpaper.png"))); // NOI18N
+        Personalizado.add(Fondo5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        getContentPane().add(Personalizado, "card6");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -316,6 +527,7 @@ public class Ingreso extends javax.swing.JFrame {
 
     private void ConsultarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConsultarButtonActionPerformed
         Consultar.setVisible(true);
+        Con2.setVisible(false);
         Principal.setVisible(false);
     }//GEN-LAST:event_ConsultarButtonActionPerformed
 
@@ -343,6 +555,56 @@ public class Ingreso extends javax.swing.JFrame {
     private void inReferenciaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_inReferenciaMouseClicked
         inReferencia.setText("");
     }//GEN-LAST:event_inReferenciaMouseClicked
+
+    private void Volver3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Volver3ActionPerformed
+        TipoArmado.setVisible(true);
+        Generico.setVisible(false);
+    }//GEN-LAST:event_Volver3ActionPerformed
+
+    private void GenericoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GenericoButtonActionPerformed
+        Generico.setVisible(true);
+        TipoArmado.setVisible(false);
+    }//GEN-LAST:event_GenericoButtonActionPerformed
+
+    private void BuscarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscarButtonActionPerformed
+        Con1.setVisible(false);
+        Con2.setVisible(true);
+    }//GEN-LAST:event_BuscarButtonActionPerformed
+
+    private void BuscarOtroButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscarOtroButtonActionPerformed
+        Con2.setVisible(false);
+        Con1.setVisible(true);
+    }//GEN-LAST:event_BuscarOtroButtonActionPerformed
+
+    private void CartButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CartButtonMouseEntered
+        CartButton.setOpaque(true);
+    }//GEN-LAST:event_CartButtonMouseEntered
+
+    private void CartButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CartButtonMouseExited
+        CartButton.setOpaque(false);
+    }//GEN-LAST:event_CartButtonMouseExited
+
+    private void CartButton1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CartButton1MouseEntered
+        CartButton1.setOpaque(true);
+    }//GEN-LAST:event_CartButton1MouseEntered
+
+    private void CartButton1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CartButton1MouseExited
+        CartButton1.setOpaque(false);
+    }//GEN-LAST:event_CartButton1MouseExited
+
+    private void Volver4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Volver4ActionPerformed
+        TipoArmado.setVisible(true);
+        Personalizado.setVisible(false);
+    }//GEN-LAST:event_Volver4ActionPerformed
+
+    private void PersonalizadoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PersonalizadoButtonActionPerformed
+        Personalizado.setVisible(true);
+        TipoArmado.setVisible(false);
+    }//GEN-LAST:event_PersonalizadoButtonActionPerformed
+
+    private void CartButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CartButtonActionPerformed
+        //Carrito.setVisible(true);
+    }//GEN-LAST:event_CartButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -382,7 +644,15 @@ public class Ingreso extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AgregarButton;
+    private javax.swing.JButton AlmGen;
     private javax.swing.JButton BuscarButton;
+    private javax.swing.JButton BuscarOtroButton;
+    private javax.swing.JButton CPUGen;
+    private javax.swing.JButton CartButton;
+    private javax.swing.JButton CartButton1;
+    private javax.swing.JButton ChasisGen;
+    private javax.swing.JPanel Con1;
+    private javax.swing.JPanel Con2;
     private javax.swing.JPanel Consultar;
     private javax.swing.JButton ConsultarButton;
     private javax.swing.JLabel ConsultarC;
@@ -394,14 +664,29 @@ public class Ingreso extends javax.swing.JFrame {
     private javax.swing.JLabel Fondo1;
     private javax.swing.JLabel Fondo2;
     private javax.swing.JLabel Fondo3;
+    private javax.swing.JLabel Fondo4;
+    private javax.swing.JLabel Fondo5;
+    private javax.swing.JPanel Generico;
     private javax.swing.JButton GenericoButton;
     private javax.swing.JButton IngresarButton;
+    private javax.swing.JLabel MetGen;
+    private javax.swing.JLabel MetPer;
     private javax.swing.JButton ModificarButton;
+    private javax.swing.JButton NextButton;
+    private javax.swing.JButton OSGen;
+    private javax.swing.JPanel Personalizado;
     private javax.swing.JButton PersonalizadoButton;
+    private javax.swing.JButton PoderGen;
     private javax.swing.JLabel Pregunta;
+    private javax.swing.JButton PrevButton;
     private javax.swing.JPanel Principal;
+    private javax.swing.JProgressBar Progreso;
+    private javax.swing.JButton RAMGen;
+    private javax.swing.JButton RefGen;
     private javax.swing.JButton Salir;
     private javax.swing.JLabel Seleccione;
+    private javax.swing.JButton TGGen;
+    private javax.swing.JButton TMGen;
     private javax.swing.JPanel TipoArmado;
     private javax.swing.JLabel Titulo;
     private javax.swing.JLabel TituloE;
@@ -409,6 +694,8 @@ public class Ingreso extends javax.swing.JFrame {
     private javax.swing.JButton Volver;
     private javax.swing.JButton Volver1;
     private javax.swing.JButton Volver2;
+    private javax.swing.JButton Volver3;
+    private javax.swing.JButton Volver4;
     private javax.swing.JTextField inReferencia;
     // End of variables declaration//GEN-END:variables
 }
