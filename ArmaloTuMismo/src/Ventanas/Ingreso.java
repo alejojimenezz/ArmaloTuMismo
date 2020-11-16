@@ -140,6 +140,8 @@ public class Ingreso extends javax.swing.JFrame {
         OSGen = new javax.swing.JButton();
         CartGen = new javax.swing.JInternalFrame();
         MetGen1 = new javax.swing.JLabel();
+        Volver5 = new javax.swing.JButton();
+        Fondo6 = new javax.swing.JLabel();
         Fondo4 = new javax.swing.JLabel();
         Personalizado = new javax.swing.JPanel();
         CartButtonPer = new javax.swing.JButton();
@@ -483,7 +485,21 @@ public class Ingreso extends javax.swing.JFrame {
         MetGen1.setFont(new java.awt.Font("Consolas", 1, 48)); // NOI18N
         MetGen1.setForeground(new java.awt.Color(255, 255, 255));
         MetGen1.setText("Carrito de Compras");
-        CartGen.getContentPane().add(MetGen1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 60, -1, -1));
+        CartGen.getContentPane().add(MetGen1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 60, -1, -1));
+
+        Volver5.setBackground(new java.awt.Color(0, 0, 102));
+        Volver5.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
+        Volver5.setForeground(new java.awt.Color(255, 255, 255));
+        Volver5.setText("Volver");
+        Volver5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Volver5ActionPerformed(evt);
+            }
+        });
+        CartGen.getContentPane().add(Volver5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+
+        Fondo6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Wallpaper.png"))); // NOI18N
+        CartGen.getContentPane().add(Fondo6, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -30, -1, -1));
 
         Generico.add(CartGen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 840, 550));
 
@@ -641,6 +657,10 @@ public class Ingreso extends javax.swing.JFrame {
     private void CartButtonGenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CartButtonGenActionPerformed
         CartGen.setVisible(true);
     }//GEN-LAST:event_CartButtonGenActionPerformed
+
+    private void Volver5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Volver5ActionPerformed
+        CartGen.setVisible(false);
+    }//GEN-LAST:event_Volver5ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1085,6 +1105,7 @@ e.printStackTrace();
     private javax.swing.JLabel Fondo3;
     private javax.swing.JLabel Fondo4;
     private javax.swing.JLabel Fondo5;
+    private javax.swing.JLabel Fondo6;
     private javax.swing.JPanel Generico;
     private javax.swing.JButton GenericoButton;
     private javax.swing.JButton IngresarButton;
@@ -1117,6 +1138,7 @@ e.printStackTrace();
     private javax.swing.JButton Volver2;
     private javax.swing.JButton Volver3;
     private javax.swing.JButton Volver4;
+    private javax.swing.JButton Volver5;
     private javax.swing.JTextField inReferencia;
     // End of variables declaration//GEN-END:variables
 }
