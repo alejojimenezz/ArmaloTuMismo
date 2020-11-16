@@ -125,7 +125,8 @@ public class Ingreso extends javax.swing.JFrame {
         BuscarOtroButton = new javax.swing.JButton();
         Fondo3 = new javax.swing.JLabel();
         Generico = new javax.swing.JPanel();
-        CartButton = new javax.swing.JButton();
+        MenuGen = new javax.swing.JPanel();
+        CartButtonGen = new javax.swing.JButton();
         MetGen = new javax.swing.JLabel();
         Volver3 = new javax.swing.JButton();
         CPUGen = new javax.swing.JButton();
@@ -137,9 +138,11 @@ public class Ingreso extends javax.swing.JFrame {
         PoderGen = new javax.swing.JButton();
         ChasisGen = new javax.swing.JButton();
         OSGen = new javax.swing.JButton();
+        CartGen = new javax.swing.JInternalFrame();
+        MetGen1 = new javax.swing.JLabel();
         Fondo4 = new javax.swing.JLabel();
         Personalizado = new javax.swing.JPanel();
-        CartButton1 = new javax.swing.JButton();
+        CartButtonPer = new javax.swing.JButton();
         MetPer = new javax.swing.JLabel();
         Volver4 = new javax.swing.JButton();
         Progreso = new javax.swing.JProgressBar();
@@ -378,31 +381,34 @@ public class Ingreso extends javax.swing.JFrame {
 
         Generico.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        CartButton.setBackground(new java.awt.Color(0, 0, 102));
-        CartButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/WhiteCart.png"))); // NOI18N
-        CartButton.setBorderPainted(false);
-        CartButton.setContentAreaFilled(false);
-        CartButton.setMaximumSize(new java.awt.Dimension(50, 50));
-        CartButton.setMinimumSize(new java.awt.Dimension(50, 50));
-        CartButton.addMouseListener(new java.awt.event.MouseAdapter() {
+        MenuGen.setOpaque(false);
+        MenuGen.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        CartButtonGen.setBackground(new java.awt.Color(0, 0, 102));
+        CartButtonGen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/WhiteCart.png"))); // NOI18N
+        CartButtonGen.setBorderPainted(false);
+        CartButtonGen.setContentAreaFilled(false);
+        CartButtonGen.setMaximumSize(new java.awt.Dimension(50, 50));
+        CartButtonGen.setMinimumSize(new java.awt.Dimension(50, 50));
+        CartButtonGen.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                CartButtonMouseEntered(evt);
+                CartButtonGenMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                CartButtonMouseExited(evt);
+                CartButtonGenMouseExited(evt);
             }
         });
-        CartButton.addActionListener(new java.awt.event.ActionListener() {
+        CartButtonGen.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CartButtonActionPerformed(evt);
+                CartButtonGenActionPerformed(evt);
             }
         });
-        Generico.add(CartButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 10, 50, 50));
+        MenuGen.add(CartButtonGen, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 10, 50, 50));
 
         MetGen.setFont(new java.awt.Font("Consolas", 1, 48)); // NOI18N
         MetGen.setForeground(new java.awt.Color(255, 255, 255));
         MetGen.setText("Metodo Genérico");
-        Generico.add(MetGen, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 80, -1, -1));
+        MenuGen.add(MetGen, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 80, -1, -1));
 
         Volver3.setBackground(new java.awt.Color(0, 0, 102));
         Volver3.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
@@ -413,61 +419,73 @@ public class Ingreso extends javax.swing.JFrame {
                 Volver3ActionPerformed(evt);
             }
         });
-        Generico.add(Volver3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+        MenuGen.add(Volver3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
         CPUGen.setBackground(new java.awt.Color(0, 0, 102));
         CPUGen.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
         CPUGen.setForeground(new java.awt.Color(255, 255, 255));
         CPUGen.setText("Procesador");
-        Generico.add(CPUGen, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 200, -1, -1));
+        MenuGen.add(CPUGen, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 200, -1, -1));
 
         TMGen.setBackground(new java.awt.Color(0, 0, 102));
         TMGen.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
         TMGen.setForeground(new java.awt.Color(255, 255, 255));
         TMGen.setText("Tarjeta Madre");
-        Generico.add(TMGen, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 270, -1, -1));
+        MenuGen.add(TMGen, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 270, -1, -1));
 
         RAMGen.setBackground(new java.awt.Color(0, 0, 102));
         RAMGen.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
         RAMGen.setForeground(new java.awt.Color(255, 255, 255));
         RAMGen.setText("Memoria RAM");
-        Generico.add(RAMGen, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 340, -1, -1));
+        MenuGen.add(RAMGen, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 340, -1, -1));
 
         TGGen.setBackground(new java.awt.Color(0, 0, 102));
         TGGen.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
         TGGen.setForeground(new java.awt.Color(255, 255, 255));
         TGGen.setText("Tarjeta Gráfica");
-        Generico.add(TGGen, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 410, -1, -1));
+        MenuGen.add(TGGen, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 410, -1, -1));
 
         AlmGen.setBackground(new java.awt.Color(0, 0, 102));
         AlmGen.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
         AlmGen.setForeground(new java.awt.Color(255, 255, 255));
         AlmGen.setText("Almacenamiento");
-        Generico.add(AlmGen, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 480, -1, -1));
+        MenuGen.add(AlmGen, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 480, -1, -1));
 
         RefGen.setBackground(new java.awt.Color(0, 0, 102));
         RefGen.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
         RefGen.setForeground(new java.awt.Color(255, 255, 255));
         RefGen.setText("Refrigeración");
-        Generico.add(RefGen, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 200, -1, -1));
+        MenuGen.add(RefGen, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 200, -1, -1));
 
         PoderGen.setBackground(new java.awt.Color(0, 0, 102));
         PoderGen.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
         PoderGen.setForeground(new java.awt.Color(255, 255, 255));
         PoderGen.setText("Fuente de Poder");
-        Generico.add(PoderGen, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 270, -1, -1));
+        MenuGen.add(PoderGen, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 270, -1, -1));
 
         ChasisGen.setBackground(new java.awt.Color(0, 0, 102));
         ChasisGen.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
         ChasisGen.setForeground(new java.awt.Color(255, 255, 255));
         ChasisGen.setText("Chasis");
-        Generico.add(ChasisGen, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 340, -1, -1));
+        MenuGen.add(ChasisGen, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 340, -1, -1));
 
         OSGen.setBackground(new java.awt.Color(0, 0, 102));
         OSGen.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
         OSGen.setForeground(new java.awt.Color(255, 255, 255));
         OSGen.setText("Sistema Operativo");
-        Generico.add(OSGen, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 410, -1, -1));
+        MenuGen.add(OSGen, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 410, -1, -1));
+
+        Generico.add(MenuGen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 840, 550));
+
+        CartGen.setVisible(true);
+        CartGen.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        MetGen1.setFont(new java.awt.Font("Consolas", 1, 48)); // NOI18N
+        MetGen1.setForeground(new java.awt.Color(255, 255, 255));
+        MetGen1.setText("Carrito de Compras");
+        CartGen.getContentPane().add(MetGen1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 60, -1, -1));
+
+        Generico.add(CartGen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 840, 550));
 
         Fondo4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Wallpaper.png"))); // NOI18N
         Generico.add(Fondo4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -476,21 +494,21 @@ public class Ingreso extends javax.swing.JFrame {
 
         Personalizado.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        CartButton1.setBackground(new java.awt.Color(0, 0, 102));
-        CartButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/WhiteCart.png"))); // NOI18N
-        CartButton1.setBorderPainted(false);
-        CartButton1.setContentAreaFilled(false);
-        CartButton1.setMaximumSize(new java.awt.Dimension(50, 50));
-        CartButton1.setMinimumSize(new java.awt.Dimension(50, 50));
-        CartButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+        CartButtonPer.setBackground(new java.awt.Color(0, 0, 102));
+        CartButtonPer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/WhiteCart.png"))); // NOI18N
+        CartButtonPer.setBorderPainted(false);
+        CartButtonPer.setContentAreaFilled(false);
+        CartButtonPer.setMaximumSize(new java.awt.Dimension(50, 50));
+        CartButtonPer.setMinimumSize(new java.awt.Dimension(50, 50));
+        CartButtonPer.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                CartButton1MouseEntered(evt);
+                CartButtonPerMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                CartButton1MouseExited(evt);
+                CartButtonPerMouseExited(evt);
             }
         });
-        Personalizado.add(CartButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 10, 50, 50));
+        Personalizado.add(CartButtonPer, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 10, 50, 50));
 
         MetPer.setFont(new java.awt.Font("Consolas", 1, 48)); // NOI18N
         MetPer.setForeground(new java.awt.Color(255, 255, 255));
@@ -580,6 +598,7 @@ public class Ingreso extends javax.swing.JFrame {
     private void GenericoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GenericoButtonActionPerformed
         Generico.setVisible(true);
         TipoArmado.setVisible(false);
+        CartGen.setVisible(false);
     }//GEN-LAST:event_GenericoButtonActionPerformed
 
     private void BuscarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscarButtonActionPerformed
@@ -593,21 +612,21 @@ public class Ingreso extends javax.swing.JFrame {
         Con1.setVisible(true);
     }//GEN-LAST:event_BuscarOtroButtonActionPerformed
 
-    private void CartButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CartButtonMouseEntered
-        CartButton.setOpaque(true);
-    }//GEN-LAST:event_CartButtonMouseEntered
+    private void CartButtonGenMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CartButtonGenMouseEntered
+        CartButtonGen.setOpaque(true);
+    }//GEN-LAST:event_CartButtonGenMouseEntered
 
-    private void CartButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CartButtonMouseExited
-        CartButton.setOpaque(false);
-    }//GEN-LAST:event_CartButtonMouseExited
+    private void CartButtonGenMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CartButtonGenMouseExited
+        CartButtonGen.setOpaque(false);
+    }//GEN-LAST:event_CartButtonGenMouseExited
 
-    private void CartButton1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CartButton1MouseEntered
-        CartButton1.setOpaque(true);
-    }//GEN-LAST:event_CartButton1MouseEntered
+    private void CartButtonPerMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CartButtonPerMouseEntered
+        CartButtonPer.setOpaque(true);
+    }//GEN-LAST:event_CartButtonPerMouseEntered
 
-    private void CartButton1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CartButton1MouseExited
-        CartButton1.setOpaque(false);
-    }//GEN-LAST:event_CartButton1MouseExited
+    private void CartButtonPerMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CartButtonPerMouseExited
+        CartButtonPer.setOpaque(false);
+    }//GEN-LAST:event_CartButtonPerMouseExited
 
     private void Volver4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Volver4ActionPerformed
         TipoArmado.setVisible(true);
@@ -619,9 +638,9 @@ public class Ingreso extends javax.swing.JFrame {
         TipoArmado.setVisible(false);
     }//GEN-LAST:event_PersonalizadoButtonActionPerformed
 
-    private void CartButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CartButtonActionPerformed
-        //Carrito.setVisible(true);
-    }//GEN-LAST:event_CartButtonActionPerformed
+    private void CartButtonGenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CartButtonGenActionPerformed
+        CartGen.setVisible(true);
+    }//GEN-LAST:event_CartButtonGenActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1047,8 +1066,9 @@ e.printStackTrace();
     private javax.swing.JButton BuscarButton;
     private javax.swing.JButton BuscarOtroButton;
     private javax.swing.JButton CPUGen;
-    private javax.swing.JButton CartButton;
-    private javax.swing.JButton CartButton1;
+    private javax.swing.JButton CartButtonGen;
+    private javax.swing.JButton CartButtonPer;
+    private javax.swing.JInternalFrame CartGen;
     private javax.swing.JButton ChasisGen;
     private javax.swing.JPanel Con1;
     private javax.swing.JPanel Con2;
@@ -1068,7 +1088,9 @@ e.printStackTrace();
     private javax.swing.JPanel Generico;
     private javax.swing.JButton GenericoButton;
     private javax.swing.JButton IngresarButton;
+    private javax.swing.JPanel MenuGen;
     private javax.swing.JLabel MetGen;
+    private javax.swing.JLabel MetGen1;
     private javax.swing.JLabel MetPer;
     private javax.swing.JButton ModificarButton;
     private javax.swing.JButton NextButton;
