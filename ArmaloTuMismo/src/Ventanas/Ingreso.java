@@ -102,7 +102,8 @@ public class Ingreso extends javax.swing.JFrame {
         Principal = new javax.swing.JPanel();
         Salir = new javax.swing.JButton();
         IngresarButton = new javax.swing.JButton();
-        ConsultarButton = new javax.swing.JButton();
+        ConsultarFilButton = new javax.swing.JButton();
+        ConsultarRefButton = new javax.swing.JButton();
         EditarButton = new javax.swing.JButton();
         Titulo = new javax.swing.JLabel();
         Fondo = new javax.swing.JLabel();
@@ -194,6 +195,7 @@ public class Ingreso extends javax.swing.JFrame {
         PrevButton = new javax.swing.JButton();
         Fondo5 = new javax.swing.JLabel();
         Filtro = new javax.swing.JPanel();
+        Volver6 = new javax.swing.JButton();
         compFiltro = new javax.swing.JComboBox<>();
         TipFiltro = new javax.swing.JComboBox<>();
         Filtrar = new javax.swing.JButton();
@@ -239,16 +241,27 @@ public class Ingreso extends javax.swing.JFrame {
         });
         Principal.add(IngresarButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 280, -1, -1));
 
-        ConsultarButton.setBackground(new java.awt.Color(0, 0, 102));
-        ConsultarButton.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
-        ConsultarButton.setForeground(new java.awt.Color(255, 255, 255));
-        ConsultarButton.setText("Consultar");
-        ConsultarButton.addActionListener(new java.awt.event.ActionListener() {
+        ConsultarFilButton.setBackground(new java.awt.Color(0, 0, 102));
+        ConsultarFilButton.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
+        ConsultarFilButton.setForeground(new java.awt.Color(255, 255, 255));
+        ConsultarFilButton.setText("Consultar por Filtro");
+        ConsultarFilButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ConsultarButtonActionPerformed(evt);
+                ConsultarFilButtonActionPerformed(evt);
             }
         });
-        Principal.add(ConsultarButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 410, -1, -1));
+        Principal.add(ConsultarFilButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 480, -1, -1));
+
+        ConsultarRefButton.setBackground(new java.awt.Color(0, 0, 102));
+        ConsultarRefButton.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
+        ConsultarRefButton.setForeground(new java.awt.Color(255, 255, 255));
+        ConsultarRefButton.setText("Consultar por Referencia");
+        ConsultarRefButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ConsultarRefButtonActionPerformed(evt);
+            }
+        });
+        Principal.add(ConsultarRefButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 410, -1, -1));
 
         EditarButton.setBackground(new java.awt.Color(0, 0, 102));
         EditarButton.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
@@ -984,6 +997,17 @@ public class Ingreso extends javax.swing.JFrame {
 
         Filtro.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        Volver6.setBackground(new java.awt.Color(0, 0, 102));
+        Volver6.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
+        Volver6.setForeground(new java.awt.Color(255, 255, 255));
+        Volver6.setText("Volver");
+        Volver6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Volver6ActionPerformed(evt);
+            }
+        });
+        Filtro.add(Volver6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+
         compFiltro.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "CPU", "Cooler", "Case", "MotherBoard", "Sistema operativo", "Fuente de poder", "RAM", "Almacenamiento", "Tarjeta de Video" }));
         compFiltro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1078,11 +1102,11 @@ public class Ingreso extends javax.swing.JFrame {
         Principal.setVisible(false);
     }//GEN-LAST:event_IngresarButtonActionPerformed
 
-    private void ConsultarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConsultarButtonActionPerformed
+    private void ConsultarRefButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConsultarRefButtonActionPerformed
         Consultar.setVisible(true);
         Con2.setVisible(false);
         Principal.setVisible(false);
-    }//GEN-LAST:event_ConsultarButtonActionPerformed
+    }//GEN-LAST:event_ConsultarRefButtonActionPerformed
 
     private void VolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VolverActionPerformed
         Principal.setVisible(true);
@@ -1920,6 +1944,16 @@ public class Ingreso extends javax.swing.JFrame {
         // TODO add your handling code here:
         
     }//GEN-LAST:event_textrefActionPerformed
+
+    private void ConsultarFilButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConsultarFilButtonActionPerformed
+        Filtro.setVisible(true);
+        Principal.setVisible(false);
+    }//GEN-LAST:event_ConsultarFilButtonActionPerformed
+
+    private void Volver6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Volver6ActionPerformed
+        Principal.setVisible(true);
+        Filtro.setVisible(false);
+    }//GEN-LAST:event_Volver6ActionPerformed
      //imprimir componentes
     public static int imprimir(Map<String, Elemento> Componentes, char a){
         int count = 0;
@@ -2434,8 +2468,9 @@ e.printStackTrace();
     private javax.swing.JPanel Con2;
     private javax.swing.JButton ConfirmarDelete;
     private javax.swing.JPanel Consultar;
-    private javax.swing.JButton ConsultarButton;
     private javax.swing.JLabel ConsultarC;
+    private javax.swing.JButton ConsultarFilButton;
+    private javax.swing.JButton ConsultarRefButton;
     private javax.swing.JList<String> ContDeleteList;
     private javax.swing.JScrollPane Cont_Consul;
     private javax.swing.JList<String> ContenidoAtributos;
@@ -2507,6 +2542,7 @@ e.printStackTrace();
     private javax.swing.JButton Volver3;
     private javax.swing.JButton Volver4;
     private javax.swing.JButton Volver5;
+    private javax.swing.JButton Volver6;
     private javax.swing.JButton addCancelar;
     private javax.swing.JComboBox<String> compFiltro;
     private javax.swing.Box.Filler filler1;
