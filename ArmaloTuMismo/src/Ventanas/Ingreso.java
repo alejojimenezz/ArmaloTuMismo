@@ -1050,6 +1050,9 @@ public class Ingreso extends javax.swing.JFrame {
         });
         Filtro.add(Volver6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
+        compFiltro.setBackground(new java.awt.Color(0, 0, 102));
+        compFiltro.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
+        compFiltro.setForeground(new java.awt.Color(255, 255, 255));
         compFiltro.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "CPU", "Cooler", "Case", "MotherBoard", "Sistema operativo", "Fuente de poder", "RAM", "Almacenamiento", "Tarjeta de Video" }));
         compFiltro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1058,6 +1061,9 @@ public class Ingreso extends javax.swing.JFrame {
         });
         Filtro.add(compFiltro, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 150, 240, 40));
 
+        TipFiltro.setBackground(new java.awt.Color(0, 0, 102));
+        TipFiltro.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
+        TipFiltro.setForeground(new java.awt.Color(255, 255, 255));
         TipFiltro.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Filtrar por referencia", "Filtrar por precio" }));
         TipFiltro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1066,6 +1072,8 @@ public class Ingreso extends javax.swing.JFrame {
         });
         Filtro.add(TipFiltro, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 210, 240, 50));
 
+        Filtrar.setBackground(new java.awt.Color(0, 0, 102));
+        Filtrar.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
         Filtrar.setText("Filtrar");
         Filtrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1074,15 +1082,20 @@ public class Ingreso extends javax.swing.JFrame {
         });
         Filtro.add(Filtrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 440, 130, 30));
 
-        TituloFil.setFont(new java.awt.Font("Consolas", 0, 36)); // NOI18N
+        TituloFil.setFont(new java.awt.Font("Consolas", 1, 48)); // NOI18N
+        TituloFil.setForeground(new java.awt.Color(255, 255, 255));
         TituloFil.setText("Filtrar Componentes");
-        Filtro.add(TituloFil, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 40, 400, 80));
+        Filtro.add(TituloFil, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 30, -1, 80));
 
+        TextComp.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
+        TextComp.setForeground(new java.awt.Color(255, 255, 255));
         TextComp.setText("Tipo de componente");
-        Filtro.add(TextComp, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 160, 170, 30));
+        Filtro.add(TextComp, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 150, 170, 30));
 
+        TextFil.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
+        TextFil.setForeground(new java.awt.Color(255, 255, 255));
         TextFil.setText("Tipo de filtro");
-        Filtro.add(TextFil, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 230, 170, 30));
+        Filtro.add(TextFil, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 210, 170, 30));
 
         maome.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
