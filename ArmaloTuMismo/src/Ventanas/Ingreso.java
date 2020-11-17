@@ -166,6 +166,10 @@ public class Ingreso extends javax.swing.JFrame {
         CartGen = new javax.swing.JInternalFrame();
         MetGen1 = new javax.swing.JLabel();
         Volver5 = new javax.swing.JButton();
+        PanelLista = new javax.swing.JScrollPane();
+        Lista = new javax.swing.JTable();
+        TotalSt = new javax.swing.JLabel();
+        TotalDoub = new javax.swing.JLabel();
         Fondo6 = new javax.swing.JLabel();
         MenuGen = new javax.swing.JPanel();
         CartButtonGen = new javax.swing.JButton();
@@ -761,6 +765,7 @@ public class Ingreso extends javax.swing.JFrame {
 
         Generico.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        CartGen.setBorder(null);
         CartGen.setVisible(true);
         CartGen.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -780,8 +785,47 @@ public class Ingreso extends javax.swing.JFrame {
         });
         CartGen.getContentPane().add(Volver5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
+        Lista.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
+        Lista.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Parte", "Nombre del Elemento", "Cantidad", "Precio"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.Double.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        Lista.setOpaque(false);
+        PanelLista.setViewportView(Lista);
+
+        CartGen.getContentPane().add(PanelLista, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 150, -1, 300));
+
+        TotalSt.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
+        TotalSt.setForeground(new java.awt.Color(255, 255, 255));
+        TotalSt.setText("Total: $");
+        CartGen.getContentPane().add(TotalSt, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 460, -1, -1));
+
+        TotalDoub.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
+        TotalDoub.setForeground(new java.awt.Color(255, 255, 255));
+        TotalDoub.setText("0");
+        CartGen.getContentPane().add(TotalDoub, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 460, 10, -1));
+
         Fondo6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Wallpaper.png"))); // NOI18N
-        CartGen.getContentPane().add(Fondo6, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -30, -1, -1));
+        CartGen.getContentPane().add(Fondo6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -30, -1, -1));
 
         Generico.add(CartGen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 840, 550));
 
@@ -2411,6 +2455,7 @@ e.printStackTrace();
     private javax.swing.JPanel Generico;
     private javax.swing.JButton GenericoButton;
     private javax.swing.JButton IngresarButton;
+    private javax.swing.JTable Lista;
     private javax.swing.JList<String> ListaAtri;
     private javax.swing.JComboBox<String> ListaTipo;
     private javax.swing.JPanel MenuGen;
@@ -2420,6 +2465,7 @@ e.printStackTrace();
     private javax.swing.JComboBox<String> Mom;
     private javax.swing.JButton NextButton;
     private javax.swing.JButton OSGen;
+    private javax.swing.JScrollPane PanelLista;
     private javax.swing.JPanel Personalizado;
     private javax.swing.JButton PersonalizadoButton;
     private javax.swing.JButton PoderGen;
@@ -2453,6 +2499,8 @@ e.printStackTrace();
     private javax.swing.JLabel Titulo;
     private javax.swing.JLabel TituloE;
     private javax.swing.JLabel TituloTA;
+    private javax.swing.JLabel TotalDoub;
+    private javax.swing.JLabel TotalSt;
     private javax.swing.JButton Volver;
     private javax.swing.JButton Volver1;
     private javax.swing.JButton Volver2;
