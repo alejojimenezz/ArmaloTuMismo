@@ -370,7 +370,7 @@ public class Main {
                    
                     Scanner sc = new Scanner(System.in);
                     int count;
-                    System.out.println(componentes1.size());
+                    
                     System.out.println("Oprima el numero del componente del cual desea saber informacion:");
                     System.out.println(" 1. CPU\n 2. Cooler\n 3. Case\n 4. MotherBoard\n 5. Sistema operativo"
                                     + "\n 6. Fuente de poder\n 7. RAM\n 8. Almacenamiento\n 9. Tarjeta de Video");
@@ -419,7 +419,7 @@ public class Main {
                     
 
                    count = imprimir(componentes1, tip);
-                   //System.out.println(count);
+                   
 
                     System.out.println("Oprima el numero del tipo de filtro que desea aplicar:");
                     System.out.println("1. Filtrar por referencia ");
@@ -485,10 +485,9 @@ public class Main {
         int count = 0;
         System.out.println("entro");
         for (Entry<String, Elemento> CPU : Componentes.entrySet()){
-            //if (CPU.getKey().charAt(0) == a) {
-                //System.out.println(CPU.getValue().getMarca());
+            if (CPU.getKey().charAt(0) == a) {
                 count++;
-            //}
+            }
         }
         return count;
 

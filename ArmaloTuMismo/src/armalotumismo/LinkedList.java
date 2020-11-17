@@ -128,28 +128,5 @@ public class LinkedList {
         return lista;
     }
 
-    /*public boolean insert(int item){
-        boolean inserted;
-        Nodo ptr = new Nodo(head);
-        Nodo prev = null;
-        inserted = false;
-        int c = 0;
-        if(ptr != null) {
-            c = (int) ptr.getValue();
-            while (ptr != null && c < item) {
-                prev = ptr;
-                ptr = ptr.getNext();
-            }
-        }
-        if (ptr == null || c != item) {
-            inserted = true;
-            Nodo newp = new Nodo(item);
-            newp.setNext(ptr);
-            if(prev == null)
-                head = newp;
-            else
-                prev.setNext(newp);
-        }
-        return inserted;
-    }*/
+   
 }

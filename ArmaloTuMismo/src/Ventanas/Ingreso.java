@@ -35,8 +35,11 @@ import java.util.Map.Entry;
 import java.util.Scanner;
 */
 import Elementos.*;
+import armalotumismo.*;
 import static Ventanas.Main.ExportarCSVInventario;
 import static Ventanas.Main.ImportarCSVInventario;
+import static Ventanas.Main.lista;
+import armalotumismo.SortClass;
 import com.csvreader.CsvReader;
 import com.csvreader.CsvWriter;
 import java.awt.Image;
@@ -186,6 +189,22 @@ public class Ingreso extends javax.swing.JFrame {
         NextButton = new javax.swing.JButton();
         PrevButton = new javax.swing.JButton();
         Fondo5 = new javax.swing.JLabel();
+        Filtro = new javax.swing.JPanel();
+        compFiltro = new javax.swing.JComboBox<>();
+        TipFiltro = new javax.swing.JComboBox<>();
+        Filtrar = new javax.swing.JButton();
+        maome = new javax.swing.JPanel();
+        Mom = new javax.swing.JComboBox<>();
+        impresultados = new javax.swing.JPanel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        txtm = new javax.swing.JTextArea();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        Tdatos = new javax.swing.JTable();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        referencia = new javax.swing.JPanel();
+        textref = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setIconImage(getIconImage());
@@ -918,6 +937,87 @@ public class Ingreso extends javax.swing.JFrame {
         Personalizado.add(Fondo5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         getContentPane().add(Personalizado, "card6");
+
+        Filtro.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        compFiltro.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "CPU", "Cooler", "Case", "MotherBoard", "Sistema operativo", "Fuente de poder", "RAM", "Almacenamiento", "Tarjeta de Video" }));
+        compFiltro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                compFiltroActionPerformed(evt);
+            }
+        });
+        Filtro.add(compFiltro, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 150, 240, 40));
+
+        TipFiltro.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Filtar por referencia", "Filtrar por precio" }));
+        TipFiltro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TipFiltroActionPerformed(evt);
+            }
+        });
+        Filtro.add(TipFiltro, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 210, 240, 50));
+
+        Filtrar.setText("Filtar");
+        Filtrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                FiltrarActionPerformed(evt);
+            }
+        });
+        Filtro.add(Filtrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 440, 130, 30));
+
+        maome.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        Mom.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Mayor a menor ", "Menor a mayor", " " }));
+        maome.add(Mom, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 240, 50));
+
+        Filtro.add(maome, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 270, 260, 80));
+
+        impresultados.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        txtm.setColumns(20);
+        txtm.setRows(5);
+        jScrollPane3.setViewportView(txtm);
+
+        impresultados.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 20, 420, 50));
+
+        Tdatos.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "Marca", "Modelo ", "Precio "
+            }
+        ));
+        jScrollPane4.setViewportView(Tdatos);
+
+        impresultados.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 760, -1));
+
+        Filtro.add(impresultados, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 820, 530));
+
+        jLabel2.setFont(new java.awt.Font("Consolas", 0, 36)); // NOI18N
+        jLabel2.setText("Filtar Componentes");
+        Filtro.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 40, 400, 80));
+
+        jLabel3.setText("Tipo de componente");
+        Filtro.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 160, 170, 30));
+
+        jLabel4.setText("Tipo de filtro");
+        Filtro.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 230, 170, 30));
+
+        referencia.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        textref.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textrefActionPerformed(evt);
+            }
+        });
+        referencia.add(textref, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 220, 40));
+
+        Filtro.add(referencia, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 340, 260, 60));
+
+        getContentPane().add(Filtro, "card8");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -1673,7 +1773,187 @@ public class Ingreso extends javax.swing.JFrame {
         JOptionPane.WARNING_MESSAGE);
         AddPan.setVisible(false);
     }//GEN-LAST:event_AddConfirmar1ActionPerformed
+     static String Busqueda;
+     static String filt;
+     static String prec;
+     static char tip;
+     static char flt;
+     static int nin;
+     static String Text;
+    private void compFiltroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_compFiltroActionPerformed
+        // TODO add your handling code here:
+         Busqueda = (String) compFiltro.getSelectedItem();
+         tip = 0;
+        if (Busqueda.equals("CPU")){
+            tip = 'a';
+        } else if (Busqueda.equals("Cooler")){
+            tip = 'b';
+        }else if (Busqueda.equals("Case")){
+            tip = 'c';
+        }else if (Busqueda.equals("MotherBoard")){
+            tip = 'd';
+        }else if (Busqueda.equals("Sistema operativo")){
+            tip = 'e';
+        }else if (Busqueda.equals("Fuente de poder")){
+            tip = 'f';
+        }else if (Busqueda.equals("RAM")){
+            tip = 'g';
+        }else if (Busqueda.equals("Almacenamiento")){
+            tip = 'h';
+        }else if (Busqueda.equals("Tarjeta de Video")){
+            tip = 'i';
+        }
+    }//GEN-LAST:event_compFiltroActionPerformed
 
+    private void TipFiltroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TipFiltroActionPerformed
+        // TODO add your handling code here:
+        filt = (String) TipFiltro.getSelectedItem();
+        flt = 0;
+        if (filt.equals("Referencia")){
+            flt = 'a';
+        } else if (filt.equals("Precio")){
+            flt = 'b';
+            //hacer visible la ventana de mayor a menor
+        }
+    }//GEN-LAST:event_TipFiltroActionPerformed
+
+    private void FiltrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FiltrarActionPerformed
+        // TODO add your handling code here:
+        LinkedList result = new LinkedList();
+        int count = imprimir(componentes1, tip);
+        String [][] datos = null;
+        
+        if (flt == 'a'){
+            //mostar la barra de busqueda
+            String ref = textref.getText();
+            result = resultado(ref,componentes1,tip);
+            datos = new String [result.size()][3];
+            if (result.size() == 0){
+                // crear un cuadro de dialogo
+            Text = "NO SE ENCONTRARON RESULTADO";
+            }else {
+                //cuadro de dialogo
+            Text = ("NUMERO DE RESULTADOS ENCONTRADOS: " + lista.size());
+            for (int b = 0; b < result.size(); b++) {
+                Elemento Filtro = (Elemento) result.get(b);
+                datos [b][0] =  Filtro.getMarca();
+                datos [b][1] =  Filtro.getModelo();
+                datos [b][2] =  Filtro.getPrecio();
+             }
+            
+        }
+        }else if (flt == 'b'){
+           Elemento [] prec = organizacion(componentes1, count, tip, nin);
+           datos = new String [prec.length][3];
+           if (nin == 1){
+                for (int b = prec.length - 1; b >= 0; b--) {
+                    datos [b][0] =  prec[b].getMarca();
+                    datos [b][1] =  prec[b].getModelo();
+                    datos [b][2] =  prec[b].getPrecio();
+
+                }
+            }else {
+                for (int b = 0; b < prec.length; b++) {
+                    datos [b][0] =  prec[b].getMarca();
+                    datos [b][1] =  prec[b].getModelo();
+                    datos [b][2] =  prec[b].getPrecio();
+
+                }
+            }
+        }
+        //mostar ultimo panel
+          txtm.setText(Text);
+          Tdatos.setModel(new javax.swing.table.DefaultTableModel(
+           datos,
+            new String [] {
+                "Marca", "Modelo ", "Precio "
+            }
+        ));
+        
+    }//GEN-LAST:event_FiltrarActionPerformed
+
+    private void textrefActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textrefActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_textrefActionPerformed
+     //imprimir componentes
+    public static int imprimir(Map<String, Elemento> Componentes, char a){
+        int count = 0;
+        System.out.println("entro");
+        for (Map.Entry<String, Elemento> CPU : Componentes.entrySet()){
+            if (CPU.getKey().charAt(0) == a) {
+                count++;
+            }
+        }
+        return count;
+
+    }
+    //Resultados de la busqueda personalizada
+    public static LinkedList resultado(String Busqueda, Map<String, Elemento> Componentes, char tipCom){
+        LinkedList lista = new LinkedList();
+        int tam1 = Busqueda.length();
+
+        for (Map.Entry<String, Elemento> CPU : Componentes.entrySet()){
+            if(CPU.getKey().charAt(0) == tipCom) {
+                String Bus2 = CPU.getValue().getMarca();
+
+                if (tam1 <= Bus2.length()) {
+                    int res=0;
+                    for (int j = 0; j < tam1; j++) {
+
+                        char a = Busqueda.charAt(j);
+                        char b = Bus2.charAt(j);
+                        int asc = (int) a;
+                        int asc2 = (int) b;
+                        int ran1 = 0;
+
+                        if (asc2 <= 90 && asc2 >= 65){
+                            ran1 = asc2 + 32;
+                        }else if(asc2 <= 122 && asc2 >= 97){
+                            ran1 = asc2 - 32;
+                        }else if (asc2 == 209){
+                            ran1 = 241;
+                        }else if (asc2 == 241){
+                            ran1 = 209;
+                        }
+
+                        if (asc == asc2 || asc == ran1) {
+                            res++;
+                        }
+                    }
+                    if (res == tam1){
+                        lista.pushFront(CPU.getValue());
+                    }
+                }
+            }
+
+
+        }
+     
+        return lista;
+
+    }
+    //Organizacion por precio componentes
+    public static  Elemento [] organizacion(Map<String, Elemento> Componentes, int count, char tipCom, int MaoMe){
+
+        Elemento [] Compon = new Elemento[count];
+        int co=0;
+        for (Map.Entry<String, Elemento> CPU : Componentes.entrySet()){
+            if(CPU.getKey().charAt(0) == tipCom) {
+                Compon [co] = CPU.getValue();
+                co++;
+            }
+        }
+
+        if (Compon.length == 0){
+            Text = "NO SE ENCONTRARON RESULTADO";
+        }else {
+            SortClass sortClass = new SortClass();
+            sortClass.heapSort(Compon,co-1);
+            Text =("NUMERO DE RESULTADOS ENCONTRADOS: " + Compon.length);
+          }
+        return Compon;
+    }
     /**
      * @param args the command line arguments
      */
@@ -2119,6 +2399,8 @@ e.printStackTrace();
     private javax.swing.JButton EditarButton;
     private javax.swing.JButton EliminarButton;
     private javax.swing.JPanel EliminarPan;
+    private javax.swing.JButton Filtrar;
+    private javax.swing.JPanel Filtro;
     private javax.swing.JLabel Fondo;
     private javax.swing.JLabel Fondo1;
     private javax.swing.JLabel Fondo2;
@@ -2135,6 +2417,7 @@ e.printStackTrace();
     private javax.swing.JLabel MetGen;
     private javax.swing.JLabel MetGen1;
     private javax.swing.JLabel MetPer;
+    private javax.swing.JComboBox<String> Mom;
     private javax.swing.JButton NextButton;
     private javax.swing.JButton OSGen;
     private javax.swing.JPanel Personalizado;
@@ -2150,6 +2433,7 @@ e.printStackTrace();
     private javax.swing.JLabel Seleccione;
     private javax.swing.JButton TGGen;
     private javax.swing.JButton TMGen;
+    private javax.swing.JTable Tdatos;
     private javax.swing.JTextField Text_1;
     private javax.swing.JTextField Text_2;
     private javax.swing.JTextField Text_3;
@@ -2163,6 +2447,7 @@ e.printStackTrace();
     private javax.swing.JTextField Text_Potencia;
     private javax.swing.JTextField Text_Precio;
     private javax.swing.JTextField Text_modelo;
+    private javax.swing.JComboBox<String> TipFiltro;
     private javax.swing.JPanel TipoArmado;
     private javax.swing.JLabel TipoComp;
     private javax.swing.JLabel Titulo;
@@ -2175,13 +2460,24 @@ e.printStackTrace();
     private javax.swing.JButton Volver4;
     private javax.swing.JButton Volver5;
     private javax.swing.JButton addCancelar;
+    private javax.swing.JComboBox<String> compFiltro;
     private javax.swing.Box.Filler filler1;
     private javax.swing.Box.Filler filler2;
+    private javax.swing.JPanel impresultados;
     private javax.swing.JTextField inReferencia;
     private javax.swing.JTextField inReferencia1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane label_consult;
+    private javax.swing.JPanel maome;
+    private javax.swing.JPanel referencia;
     private javax.swing.JLabel status;
+    private javax.swing.JTextField textref;
+    private javax.swing.JTextArea txtm;
     // End of variables declaration//GEN-END:variables
 }
