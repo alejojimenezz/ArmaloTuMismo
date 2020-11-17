@@ -288,10 +288,7 @@ public class Main {
  
  }
            
- public static void FiltrarComp(){
- 
- 
- }
+
             //HACER AGREGAR CARRITO
  public static void AgregarCarrito(ShoppingCart SC){
  
@@ -319,7 +316,7 @@ public class Main {
    
    //Mapa general
    
-   Map<String, Elemento> componentes1 = new HashMap<String, Elemento>();
+   Map <String, Elemento> componentes1 = new HashMap<String, Elemento>();
    
    boolean valid=true;
    int opcion=0;
@@ -330,8 +327,9 @@ public class Main {
    CPU1=in.getCPU();Case1=in.getCase();CPUCooler1=in.getCooler();MotherBoard1=in.getMother();OS1=in.getOs();PowerSupply1=in.getPower();
    RAM1=in.getRAM();Storage1=in.getStorage();VideoCard1=in.getVCard(); //Actualiza mapas internos main desde inventario
    
-   componentes1=in.getComponentes();
+   
    ImportarCSVInventario(in);
+   componentes1=in.getComponentes();
    //Modulo del menu     
         while(valid){
             System.out.println("¿Qué desea hacer? Ingrese la opcion deseada: ");
@@ -371,8 +369,8 @@ public class Main {
                 case 4:
                    
                     Scanner sc = new Scanner(System.in);
-                    int count=0;
-                    
+                    int count;
+                    System.out.println(componentes1.size());
                     System.out.println("Oprima el numero del componente del cual desea saber informacion:");
                     System.out.println(" 1. CPU\n 2. Cooler\n 3. Case\n 4. MotherBoard\n 5. Sistema operativo"
                                     + "\n 6. Fuente de poder\n 7. RAM\n 8. Almacenamiento\n 9. Tarjeta de Video");
@@ -418,8 +416,10 @@ public class Main {
                         default:
                             System.out.println("Ingrese un numero valido");
                    }
+                    
 
-                   //imprimir(componentes1, tip);
+                   count = imprimir(componentes1, tip);
+                   //System.out.println(count);
 
                     System.out.println("Oprima el numero del tipo de filtro que desea aplicar:");
                     System.out.println("1. Filtrar por referencia ");
@@ -452,7 +452,7 @@ public class Main {
                         default:
                             System.out.println("Ingrese un numero valido");
                     }
-    
+           
                     
                     break;
                     
@@ -483,11 +483,12 @@ public class Main {
     //imprimir componentes
     public static int imprimir(Map<String, Elemento> Componentes, char a){
         int count = 0;
+        System.out.println("entro");
         for (Entry<String, Elemento> CPU : Componentes.entrySet()){
-            if (CPU.getKey().charAt(0) == a) {
-                System.out.println(CPU.getValue().getMarca());
+            //if (CPU.getKey().charAt(0) == a) {
+                //System.out.println(CPU.getValue().getMarca());
                 count++;
-            }
+            //}
         }
         return count;
 
