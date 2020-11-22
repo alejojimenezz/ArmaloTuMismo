@@ -164,14 +164,6 @@ public class Ingreso extends javax.swing.JFrame {
         TipoComp = new javax.swing.JLabel();
         Fondo3 = new javax.swing.JLabel();
         Generico = new javax.swing.JPanel();
-        CartGen = new javax.swing.JInternalFrame();
-        MetGen1 = new javax.swing.JLabel();
-        Volver5 = new javax.swing.JButton();
-        PanelLista = new javax.swing.JScrollPane();
-        Lista = new javax.swing.JTable();
-        TotalSt = new javax.swing.JLabel();
-        TotalDoub = new javax.swing.JLabel();
-        Fondo6 = new javax.swing.JLabel();
         MenuGen = new javax.swing.JPanel();
         CartButtonGen = new javax.swing.JButton();
         MetGen = new javax.swing.JLabel();
@@ -185,15 +177,100 @@ public class Ingreso extends javax.swing.JFrame {
         PoderGen = new javax.swing.JButton();
         ChasisGen = new javax.swing.JButton();
         OSGen = new javax.swing.JButton();
+        Elemento = new javax.swing.JPanel();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        CartGen = new javax.swing.JInternalFrame();
+        MetGen1 = new javax.swing.JLabel();
+        Volver5 = new javax.swing.JButton();
+        PanelLista = new javax.swing.JScrollPane();
+        Lista = new javax.swing.JTable();
+        TotalSt = new javax.swing.JLabel();
+        TotalDoub = new javax.swing.JLabel();
+        Fondo6 = new javax.swing.JLabel();
         Fondo4 = new javax.swing.JLabel();
         Personalizado = new javax.swing.JPanel();
-        CartButtonPer = new javax.swing.JButton();
-        MetPer = new javax.swing.JLabel();
-        Volver4 = new javax.swing.JButton();
+        PerCPU = new javax.swing.JPanel();
         Progreso = new javax.swing.JProgressBar();
-        NextButton = new javax.swing.JButton();
+        LabelCPU = new javax.swing.JLabel();
         PrevButton = new javax.swing.JButton();
+        NextButton = new javax.swing.JButton();
+        Volver4 = new javax.swing.JButton();
+        MetPer = new javax.swing.JLabel();
+        CartButtonPer = new javax.swing.JButton();
         Fondo5 = new javax.swing.JLabel();
+        PerTM = new javax.swing.JPanel();
+        Progreso1 = new javax.swing.JProgressBar();
+        LabelTM = new javax.swing.JLabel();
+        PrevButton1 = new javax.swing.JButton();
+        NextButton1 = new javax.swing.JButton();
+        Volver8 = new javax.swing.JButton();
+        MetPer1 = new javax.swing.JLabel();
+        CartButtonPer1 = new javax.swing.JButton();
+        Fondo9 = new javax.swing.JLabel();
+        PerRAM = new javax.swing.JPanel();
+        Progreso2 = new javax.swing.JProgressBar();
+        LabelRAM = new javax.swing.JLabel();
+        PrevButton2 = new javax.swing.JButton();
+        NextButton2 = new javax.swing.JButton();
+        Volver9 = new javax.swing.JButton();
+        MetPer2 = new javax.swing.JLabel();
+        CartButtonPer2 = new javax.swing.JButton();
+        Fondo10 = new javax.swing.JLabel();
+        PerTG = new javax.swing.JPanel();
+        Progreso3 = new javax.swing.JProgressBar();
+        LabelTG = new javax.swing.JLabel();
+        PrevButton3 = new javax.swing.JButton();
+        NextButton3 = new javax.swing.JButton();
+        Volver10 = new javax.swing.JButton();
+        MetPer3 = new javax.swing.JLabel();
+        CartButtonPer3 = new javax.swing.JButton();
+        Fondo11 = new javax.swing.JLabel();
+        PerAlm = new javax.swing.JPanel();
+        Progreso4 = new javax.swing.JProgressBar();
+        LabelAlm = new javax.swing.JLabel();
+        PrevButton4 = new javax.swing.JButton();
+        NextButton4 = new javax.swing.JButton();
+        Volver11 = new javax.swing.JButton();
+        MetPer4 = new javax.swing.JLabel();
+        CartButtonPer4 = new javax.swing.JButton();
+        Fondo12 = new javax.swing.JLabel();
+        PerRef = new javax.swing.JPanel();
+        Progreso5 = new javax.swing.JProgressBar();
+        LabelRef = new javax.swing.JLabel();
+        PrevButton5 = new javax.swing.JButton();
+        NextButton5 = new javax.swing.JButton();
+        Volver12 = new javax.swing.JButton();
+        MetPer5 = new javax.swing.JLabel();
+        CartButtonPer5 = new javax.swing.JButton();
+        Fondo13 = new javax.swing.JLabel();
+        PerFP = new javax.swing.JPanel();
+        Progreso6 = new javax.swing.JProgressBar();
+        LabelFP = new javax.swing.JLabel();
+        PrevButton6 = new javax.swing.JButton();
+        NextButton6 = new javax.swing.JButton();
+        Volver13 = new javax.swing.JButton();
+        MetPer6 = new javax.swing.JLabel();
+        CartButtonPer6 = new javax.swing.JButton();
+        Fondo14 = new javax.swing.JLabel();
+        PerCha = new javax.swing.JPanel();
+        Progreso7 = new javax.swing.JProgressBar();
+        LabelCha = new javax.swing.JLabel();
+        PrevButton7 = new javax.swing.JButton();
+        NextButton7 = new javax.swing.JButton();
+        Volver14 = new javax.swing.JButton();
+        MetPer7 = new javax.swing.JLabel();
+        CartButtonPer7 = new javax.swing.JButton();
+        Fondo15 = new javax.swing.JLabel();
+        PerSO = new javax.swing.JPanel();
+        Progreso8 = new javax.swing.JProgressBar();
+        LabelSO = new javax.swing.JLabel();
+        PrevButton8 = new javax.swing.JButton();
+        FinButton = new javax.swing.JButton();
+        Volver15 = new javax.swing.JButton();
+        MetPer8 = new javax.swing.JLabel();
+        CartButtonPer8 = new javax.swing.JButton();
+        Fondo16 = new javax.swing.JLabel();
         Filtro = new javax.swing.JPanel();
         impresultados = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
@@ -781,70 +858,6 @@ public class Ingreso extends javax.swing.JFrame {
 
         Generico.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        CartGen.setBorder(null);
-        CartGen.setVisible(true);
-        CartGen.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        MetGen1.setFont(new java.awt.Font("Consolas", 1, 48)); // NOI18N
-        MetGen1.setForeground(new java.awt.Color(255, 255, 255));
-        MetGen1.setText("Carrito de Compras");
-        CartGen.getContentPane().add(MetGen1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 60, -1, -1));
-
-        Volver5.setBackground(new java.awt.Color(0, 0, 102));
-        Volver5.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
-        Volver5.setForeground(new java.awt.Color(255, 255, 255));
-        Volver5.setText("Volver");
-        Volver5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Volver5ActionPerformed(evt);
-            }
-        });
-        CartGen.getContentPane().add(Volver5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
-
-        Lista.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
-        Lista.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Parte", "Nombre del Elemento", "Cantidad", "Precio"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.Double.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        Lista.setOpaque(false);
-        PanelLista.setViewportView(Lista);
-
-        CartGen.getContentPane().add(PanelLista, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 150, -1, 300));
-
-        TotalSt.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
-        TotalSt.setForeground(new java.awt.Color(255, 255, 255));
-        TotalSt.setText("Total: $");
-        CartGen.getContentPane().add(TotalSt, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 460, -1, -1));
-
-        TotalDoub.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
-        TotalDoub.setForeground(new java.awt.Color(255, 255, 255));
-        TotalDoub.setText("0");
-        CartGen.getContentPane().add(TotalDoub, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 460, 10, -1));
-
-        Fondo6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Wallpaper.png"))); // NOI18N
-        CartGen.getContentPane().add(Fondo6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -30, -1, -1));
-
-        Generico.add(CartGen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 840, 550));
-
         MenuGen.setOpaque(false);
         MenuGen.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -939,14 +952,150 @@ public class Ingreso extends javax.swing.JFrame {
         OSGen.setText("Sistema Operativo");
         MenuGen.add(OSGen, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 410, -1, -1));
 
+        Elemento.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, ""},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Marca", "Modelo", "Precio", ""
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jTable1.setShowVerticalLines(false);
+        jScrollPane5.setViewportView(jTable1);
+
+        Elemento.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 220, 420, 150));
+
+        MenuGen.add(Elemento, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 840, 550));
+
         Generico.add(MenuGen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 840, 550));
+
+        CartGen.setBorder(null);
+        CartGen.setVisible(true);
+        CartGen.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        MetGen1.setFont(new java.awt.Font("Consolas", 1, 48)); // NOI18N
+        MetGen1.setForeground(new java.awt.Color(255, 255, 255));
+        MetGen1.setText("Carrito de Compras");
+        CartGen.getContentPane().add(MetGen1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 60, -1, -1));
+
+        Volver5.setBackground(new java.awt.Color(0, 0, 102));
+        Volver5.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
+        Volver5.setForeground(new java.awt.Color(255, 255, 255));
+        Volver5.setText("Volver");
+        Volver5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Volver5ActionPerformed(evt);
+            }
+        });
+        CartGen.getContentPane().add(Volver5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+
+        Lista.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
+        Lista.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Parte", "Nombre del Elemento", "Cantidad", "Precio"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.Double.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        Lista.setOpaque(false);
+        PanelLista.setViewportView(Lista);
+
+        CartGen.getContentPane().add(PanelLista, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 150, -1, 300));
+
+        TotalSt.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
+        TotalSt.setForeground(new java.awt.Color(255, 255, 255));
+        TotalSt.setText("Total: $");
+        CartGen.getContentPane().add(TotalSt, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 460, -1, -1));
+
+        TotalDoub.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
+        TotalDoub.setForeground(new java.awt.Color(255, 255, 255));
+        TotalDoub.setText("0");
+        CartGen.getContentPane().add(TotalDoub, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 460, 10, -1));
+
+        Fondo6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Wallpaper.png"))); // NOI18N
+        CartGen.getContentPane().add(Fondo6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -30, -1, -1));
+
+        Generico.add(CartGen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 840, 550));
 
         Fondo4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Wallpaper.png"))); // NOI18N
         Generico.add(Fondo4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         getContentPane().add(Generico, "card6");
 
-        Personalizado.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        Personalizado.setLayout(new java.awt.CardLayout());
+
+        PerCPU.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        Progreso.setToolTipText("");
+        PerCPU.add(Progreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 500, 520, -1));
+
+        LabelCPU.setFont(new java.awt.Font("Consolas", 1, 24)); // NOI18N
+        LabelCPU.setForeground(new java.awt.Color(255, 255, 255));
+        LabelCPU.setText("Elige el procesador (CPU):");
+        PerCPU.add(LabelCPU, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 160, -1, -1));
+
+        PrevButton.setBackground(new java.awt.Color(0, 0, 102));
+        PrevButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        PrevButton.setForeground(new java.awt.Color(255, 255, 255));
+        PrevButton.setText("Anterior");
+        PrevButton.setEnabled(false);
+        PerCPU.add(PrevButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 490, -1, -1));
+
+        NextButton.setBackground(new java.awt.Color(0, 0, 102));
+        NextButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        NextButton.setForeground(new java.awt.Color(255, 255, 255));
+        NextButton.setText("Siguiente");
+        NextButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NextButtonActionPerformed(evt);
+            }
+        });
+        PerCPU.add(NextButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 490, -1, -1));
+
+        Volver4.setBackground(new java.awt.Color(0, 0, 102));
+        Volver4.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
+        Volver4.setForeground(new java.awt.Color(255, 255, 255));
+        Volver4.setText("Volver");
+        Volver4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Volver4ActionPerformed(evt);
+            }
+        });
+        PerCPU.add(Volver4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+
+        MetPer.setFont(new java.awt.Font("Consolas", 1, 48)); // NOI18N
+        MetPer.setForeground(new java.awt.Color(255, 255, 255));
+        MetPer.setText("Metodo Personalizado");
+        PerCPU.add(MetPer, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 80, -1, -1));
 
         CartButtonPer.setBackground(new java.awt.Color(0, 0, 102));
         CartButtonPer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/WhiteCart.png"))); // NOI18N
@@ -962,39 +1111,559 @@ public class Ingreso extends javax.swing.JFrame {
                 CartButtonPerMouseExited(evt);
             }
         });
-        Personalizado.add(CartButtonPer, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 10, 50, 50));
-
-        MetPer.setFont(new java.awt.Font("Consolas", 1, 48)); // NOI18N
-        MetPer.setForeground(new java.awt.Color(255, 255, 255));
-        MetPer.setText("Metodo Personalizado");
-        Personalizado.add(MetPer, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 80, -1, -1));
-
-        Volver4.setBackground(new java.awt.Color(0, 0, 102));
-        Volver4.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
-        Volver4.setForeground(new java.awt.Color(255, 255, 255));
-        Volver4.setText("Volver");
-        Volver4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Volver4ActionPerformed(evt);
-            }
-        });
-        Personalizado.add(Volver4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
-        Personalizado.add(Progreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 500, 520, -1));
-
-        NextButton.setBackground(new java.awt.Color(0, 0, 102));
-        NextButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        NextButton.setForeground(new java.awt.Color(255, 255, 255));
-        NextButton.setText("Siguiente");
-        Personalizado.add(NextButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 490, -1, -1));
-
-        PrevButton.setBackground(new java.awt.Color(0, 0, 102));
-        PrevButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        PrevButton.setForeground(new java.awt.Color(255, 255, 255));
-        PrevButton.setText("Anterior");
-        Personalizado.add(PrevButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 490, -1, -1));
+        PerCPU.add(CartButtonPer, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 10, 50, 50));
 
         Fondo5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Wallpaper.png"))); // NOI18N
-        Personalizado.add(Fondo5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        PerCPU.add(Fondo5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        Personalizado.add(PerCPU, "card2");
+
+        PerTM.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        Progreso1.setValue(11);
+        PerTM.add(Progreso1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 500, 520, -1));
+
+        LabelTM.setFont(new java.awt.Font("Consolas", 1, 24)); // NOI18N
+        LabelTM.setForeground(new java.awt.Color(255, 255, 255));
+        LabelTM.setText("Elige la Tarjeta Madre:");
+        PerTM.add(LabelTM, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 160, -1, -1));
+
+        PrevButton1.setBackground(new java.awt.Color(0, 0, 102));
+        PrevButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        PrevButton1.setForeground(new java.awt.Color(255, 255, 255));
+        PrevButton1.setText("Anterior");
+        PrevButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PrevButton1ActionPerformed(evt);
+            }
+        });
+        PerTM.add(PrevButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 490, -1, -1));
+
+        NextButton1.setBackground(new java.awt.Color(0, 0, 102));
+        NextButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        NextButton1.setForeground(new java.awt.Color(255, 255, 255));
+        NextButton1.setText("Siguiente");
+        NextButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NextButton1ActionPerformed(evt);
+            }
+        });
+        PerTM.add(NextButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 490, -1, -1));
+
+        Volver8.setBackground(new java.awt.Color(0, 0, 102));
+        Volver8.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
+        Volver8.setForeground(new java.awt.Color(255, 255, 255));
+        Volver8.setText("Volver");
+        Volver8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Volver8ActionPerformed(evt);
+            }
+        });
+        PerTM.add(Volver8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+
+        MetPer1.setFont(new java.awt.Font("Consolas", 1, 48)); // NOI18N
+        MetPer1.setForeground(new java.awt.Color(255, 255, 255));
+        MetPer1.setText("Metodo Personalizado");
+        PerTM.add(MetPer1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 80, -1, -1));
+
+        CartButtonPer1.setBackground(new java.awt.Color(0, 0, 102));
+        CartButtonPer1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/WhiteCart.png"))); // NOI18N
+        CartButtonPer1.setBorderPainted(false);
+        CartButtonPer1.setContentAreaFilled(false);
+        CartButtonPer1.setMaximumSize(new java.awt.Dimension(50, 50));
+        CartButtonPer1.setMinimumSize(new java.awt.Dimension(50, 50));
+        CartButtonPer1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                CartButtonPer1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                CartButtonPer1MouseExited(evt);
+            }
+        });
+        PerTM.add(CartButtonPer1, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 10, 50, 50));
+
+        Fondo9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Wallpaper.png"))); // NOI18N
+        PerTM.add(Fondo9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        Personalizado.add(PerTM, "card2");
+
+        PerRAM.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        Progreso2.setValue(22);
+        PerRAM.add(Progreso2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 500, 520, -1));
+
+        LabelRAM.setFont(new java.awt.Font("Consolas", 1, 24)); // NOI18N
+        LabelRAM.setForeground(new java.awt.Color(255, 255, 255));
+        LabelRAM.setText("Elige la memoria RAM:");
+        PerRAM.add(LabelRAM, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 160, -1, -1));
+
+        PrevButton2.setBackground(new java.awt.Color(0, 0, 102));
+        PrevButton2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        PrevButton2.setForeground(new java.awt.Color(255, 255, 255));
+        PrevButton2.setText("Anterior");
+        PrevButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PrevButton2ActionPerformed(evt);
+            }
+        });
+        PerRAM.add(PrevButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 490, -1, -1));
+
+        NextButton2.setBackground(new java.awt.Color(0, 0, 102));
+        NextButton2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        NextButton2.setForeground(new java.awt.Color(255, 255, 255));
+        NextButton2.setText("Siguiente");
+        NextButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NextButton2ActionPerformed(evt);
+            }
+        });
+        PerRAM.add(NextButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 490, -1, -1));
+
+        Volver9.setBackground(new java.awt.Color(0, 0, 102));
+        Volver9.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
+        Volver9.setForeground(new java.awt.Color(255, 255, 255));
+        Volver9.setText("Volver");
+        Volver9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Volver9ActionPerformed(evt);
+            }
+        });
+        PerRAM.add(Volver9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+
+        MetPer2.setFont(new java.awt.Font("Consolas", 1, 48)); // NOI18N
+        MetPer2.setForeground(new java.awt.Color(255, 255, 255));
+        MetPer2.setText("Metodo Personalizado");
+        PerRAM.add(MetPer2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 80, -1, -1));
+
+        CartButtonPer2.setBackground(new java.awt.Color(0, 0, 102));
+        CartButtonPer2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/WhiteCart.png"))); // NOI18N
+        CartButtonPer2.setBorderPainted(false);
+        CartButtonPer2.setContentAreaFilled(false);
+        CartButtonPer2.setMaximumSize(new java.awt.Dimension(50, 50));
+        CartButtonPer2.setMinimumSize(new java.awt.Dimension(50, 50));
+        CartButtonPer2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                CartButtonPer2MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                CartButtonPer2MouseExited(evt);
+            }
+        });
+        PerRAM.add(CartButtonPer2, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 10, 50, 50));
+
+        Fondo10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Wallpaper.png"))); // NOI18N
+        PerRAM.add(Fondo10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        Personalizado.add(PerRAM, "card2");
+
+        PerTG.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        Progreso3.setValue(33);
+        PerTG.add(Progreso3, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 500, 520, -1));
+
+        LabelTG.setFont(new java.awt.Font("Consolas", 1, 24)); // NOI18N
+        LabelTG.setForeground(new java.awt.Color(255, 255, 255));
+        LabelTG.setText("Elige la Tarjeta Gráfica:");
+        PerTG.add(LabelTG, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 160, -1, -1));
+
+        PrevButton3.setBackground(new java.awt.Color(0, 0, 102));
+        PrevButton3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        PrevButton3.setForeground(new java.awt.Color(255, 255, 255));
+        PrevButton3.setText("Anterior");
+        PrevButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PrevButton3ActionPerformed(evt);
+            }
+        });
+        PerTG.add(PrevButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 490, -1, -1));
+
+        NextButton3.setBackground(new java.awt.Color(0, 0, 102));
+        NextButton3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        NextButton3.setForeground(new java.awt.Color(255, 255, 255));
+        NextButton3.setText("Siguiente");
+        NextButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NextButton3ActionPerformed(evt);
+            }
+        });
+        PerTG.add(NextButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 490, -1, -1));
+
+        Volver10.setBackground(new java.awt.Color(0, 0, 102));
+        Volver10.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
+        Volver10.setForeground(new java.awt.Color(255, 255, 255));
+        Volver10.setText("Volver");
+        Volver10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Volver10ActionPerformed(evt);
+            }
+        });
+        PerTG.add(Volver10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+
+        MetPer3.setFont(new java.awt.Font("Consolas", 1, 48)); // NOI18N
+        MetPer3.setForeground(new java.awt.Color(255, 255, 255));
+        MetPer3.setText("Metodo Personalizado");
+        PerTG.add(MetPer3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 80, -1, -1));
+
+        CartButtonPer3.setBackground(new java.awt.Color(0, 0, 102));
+        CartButtonPer3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/WhiteCart.png"))); // NOI18N
+        CartButtonPer3.setBorderPainted(false);
+        CartButtonPer3.setContentAreaFilled(false);
+        CartButtonPer3.setMaximumSize(new java.awt.Dimension(50, 50));
+        CartButtonPer3.setMinimumSize(new java.awt.Dimension(50, 50));
+        CartButtonPer3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                CartButtonPer3MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                CartButtonPer3MouseExited(evt);
+            }
+        });
+        PerTG.add(CartButtonPer3, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 10, 50, 50));
+
+        Fondo11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Wallpaper.png"))); // NOI18N
+        PerTG.add(Fondo11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        Personalizado.add(PerTG, "card2");
+
+        PerAlm.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        Progreso4.setValue(44);
+        PerAlm.add(Progreso4, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 500, 520, -1));
+
+        LabelAlm.setFont(new java.awt.Font("Consolas", 1, 24)); // NOI18N
+        LabelAlm.setForeground(new java.awt.Color(255, 255, 255));
+        LabelAlm.setText("Elige el almacenamiento:");
+        PerAlm.add(LabelAlm, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 160, -1, -1));
+
+        PrevButton4.setBackground(new java.awt.Color(0, 0, 102));
+        PrevButton4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        PrevButton4.setForeground(new java.awt.Color(255, 255, 255));
+        PrevButton4.setText("Anterior");
+        PrevButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PrevButton4ActionPerformed(evt);
+            }
+        });
+        PerAlm.add(PrevButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 490, -1, -1));
+
+        NextButton4.setBackground(new java.awt.Color(0, 0, 102));
+        NextButton4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        NextButton4.setForeground(new java.awt.Color(255, 255, 255));
+        NextButton4.setText("Siguiente");
+        NextButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NextButton4ActionPerformed(evt);
+            }
+        });
+        PerAlm.add(NextButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 490, -1, -1));
+
+        Volver11.setBackground(new java.awt.Color(0, 0, 102));
+        Volver11.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
+        Volver11.setForeground(new java.awt.Color(255, 255, 255));
+        Volver11.setText("Volver");
+        Volver11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Volver11ActionPerformed(evt);
+            }
+        });
+        PerAlm.add(Volver11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+
+        MetPer4.setFont(new java.awt.Font("Consolas", 1, 48)); // NOI18N
+        MetPer4.setForeground(new java.awt.Color(255, 255, 255));
+        MetPer4.setText("Metodo Personalizado");
+        PerAlm.add(MetPer4, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 80, -1, -1));
+
+        CartButtonPer4.setBackground(new java.awt.Color(0, 0, 102));
+        CartButtonPer4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/WhiteCart.png"))); // NOI18N
+        CartButtonPer4.setBorderPainted(false);
+        CartButtonPer4.setContentAreaFilled(false);
+        CartButtonPer4.setMaximumSize(new java.awt.Dimension(50, 50));
+        CartButtonPer4.setMinimumSize(new java.awt.Dimension(50, 50));
+        CartButtonPer4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                CartButtonPer4MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                CartButtonPer4MouseExited(evt);
+            }
+        });
+        PerAlm.add(CartButtonPer4, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 10, 50, 50));
+
+        Fondo12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Wallpaper.png"))); // NOI18N
+        PerAlm.add(Fondo12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        Personalizado.add(PerAlm, "card2");
+
+        PerRef.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        Progreso5.setValue(56);
+        PerRef.add(Progreso5, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 500, 520, -1));
+
+        LabelRef.setFont(new java.awt.Font("Consolas", 1, 24)); // NOI18N
+        LabelRef.setForeground(new java.awt.Color(255, 255, 255));
+        LabelRef.setText("Elige la Refrigeración:");
+        PerRef.add(LabelRef, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 160, -1, -1));
+
+        PrevButton5.setBackground(new java.awt.Color(0, 0, 102));
+        PrevButton5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        PrevButton5.setForeground(new java.awt.Color(255, 255, 255));
+        PrevButton5.setText("Anterior");
+        PrevButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PrevButton5ActionPerformed(evt);
+            }
+        });
+        PerRef.add(PrevButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 490, -1, -1));
+
+        NextButton5.setBackground(new java.awt.Color(0, 0, 102));
+        NextButton5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        NextButton5.setForeground(new java.awt.Color(255, 255, 255));
+        NextButton5.setText("Siguiente");
+        NextButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NextButton5ActionPerformed(evt);
+            }
+        });
+        PerRef.add(NextButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 490, -1, -1));
+
+        Volver12.setBackground(new java.awt.Color(0, 0, 102));
+        Volver12.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
+        Volver12.setForeground(new java.awt.Color(255, 255, 255));
+        Volver12.setText("Volver");
+        Volver12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Volver12ActionPerformed(evt);
+            }
+        });
+        PerRef.add(Volver12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+
+        MetPer5.setFont(new java.awt.Font("Consolas", 1, 48)); // NOI18N
+        MetPer5.setForeground(new java.awt.Color(255, 255, 255));
+        MetPer5.setText("Metodo Personalizado");
+        PerRef.add(MetPer5, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 80, -1, -1));
+
+        CartButtonPer5.setBackground(new java.awt.Color(0, 0, 102));
+        CartButtonPer5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/WhiteCart.png"))); // NOI18N
+        CartButtonPer5.setBorderPainted(false);
+        CartButtonPer5.setContentAreaFilled(false);
+        CartButtonPer5.setMaximumSize(new java.awt.Dimension(50, 50));
+        CartButtonPer5.setMinimumSize(new java.awt.Dimension(50, 50));
+        CartButtonPer5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                CartButtonPer5MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                CartButtonPer5MouseExited(evt);
+            }
+        });
+        PerRef.add(CartButtonPer5, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 10, 50, 50));
+
+        Fondo13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Wallpaper.png"))); // NOI18N
+        PerRef.add(Fondo13, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        Personalizado.add(PerRef, "card2");
+
+        PerFP.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        Progreso6.setValue(67);
+        PerFP.add(Progreso6, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 500, 520, -1));
+
+        LabelFP.setFont(new java.awt.Font("Consolas", 1, 24)); // NOI18N
+        LabelFP.setForeground(new java.awt.Color(255, 255, 255));
+        LabelFP.setText("Elige la Fuente de Poder:");
+        PerFP.add(LabelFP, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 160, -1, -1));
+
+        PrevButton6.setBackground(new java.awt.Color(0, 0, 102));
+        PrevButton6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        PrevButton6.setForeground(new java.awt.Color(255, 255, 255));
+        PrevButton6.setText("Anterior");
+        PrevButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PrevButton6ActionPerformed(evt);
+            }
+        });
+        PerFP.add(PrevButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 490, -1, -1));
+
+        NextButton6.setBackground(new java.awt.Color(0, 0, 102));
+        NextButton6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        NextButton6.setForeground(new java.awt.Color(255, 255, 255));
+        NextButton6.setText("Siguiente");
+        NextButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NextButton6ActionPerformed(evt);
+            }
+        });
+        PerFP.add(NextButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 490, -1, -1));
+
+        Volver13.setBackground(new java.awt.Color(0, 0, 102));
+        Volver13.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
+        Volver13.setForeground(new java.awt.Color(255, 255, 255));
+        Volver13.setText("Volver");
+        Volver13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Volver13ActionPerformed(evt);
+            }
+        });
+        PerFP.add(Volver13, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+
+        MetPer6.setFont(new java.awt.Font("Consolas", 1, 48)); // NOI18N
+        MetPer6.setForeground(new java.awt.Color(255, 255, 255));
+        MetPer6.setText("Metodo Personalizado");
+        PerFP.add(MetPer6, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 80, -1, -1));
+
+        CartButtonPer6.setBackground(new java.awt.Color(0, 0, 102));
+        CartButtonPer6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/WhiteCart.png"))); // NOI18N
+        CartButtonPer6.setBorderPainted(false);
+        CartButtonPer6.setContentAreaFilled(false);
+        CartButtonPer6.setMaximumSize(new java.awt.Dimension(50, 50));
+        CartButtonPer6.setMinimumSize(new java.awt.Dimension(50, 50));
+        CartButtonPer6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                CartButtonPer6MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                CartButtonPer6MouseExited(evt);
+            }
+        });
+        PerFP.add(CartButtonPer6, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 10, 50, 50));
+
+        Fondo14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Wallpaper.png"))); // NOI18N
+        PerFP.add(Fondo14, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        Personalizado.add(PerFP, "card2");
+
+        PerCha.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        Progreso7.setValue(78);
+        PerCha.add(Progreso7, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 500, 520, -1));
+
+        LabelCha.setFont(new java.awt.Font("Consolas", 1, 24)); // NOI18N
+        LabelCha.setForeground(new java.awt.Color(255, 255, 255));
+        LabelCha.setText("Elige el Chasis:");
+        PerCha.add(LabelCha, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 160, -1, -1));
+
+        PrevButton7.setBackground(new java.awt.Color(0, 0, 102));
+        PrevButton7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        PrevButton7.setForeground(new java.awt.Color(255, 255, 255));
+        PrevButton7.setText("Anterior");
+        PrevButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PrevButton7ActionPerformed(evt);
+            }
+        });
+        PerCha.add(PrevButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 490, -1, -1));
+
+        NextButton7.setBackground(new java.awt.Color(0, 0, 102));
+        NextButton7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        NextButton7.setForeground(new java.awt.Color(255, 255, 255));
+        NextButton7.setText("Siguiente");
+        NextButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NextButton7ActionPerformed(evt);
+            }
+        });
+        PerCha.add(NextButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 490, -1, -1));
+
+        Volver14.setBackground(new java.awt.Color(0, 0, 102));
+        Volver14.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
+        Volver14.setForeground(new java.awt.Color(255, 255, 255));
+        Volver14.setText("Volver");
+        Volver14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Volver14ActionPerformed(evt);
+            }
+        });
+        PerCha.add(Volver14, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+
+        MetPer7.setFont(new java.awt.Font("Consolas", 1, 48)); // NOI18N
+        MetPer7.setForeground(new java.awt.Color(255, 255, 255));
+        MetPer7.setText("Metodo Personalizado");
+        PerCha.add(MetPer7, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 80, -1, -1));
+
+        CartButtonPer7.setBackground(new java.awt.Color(0, 0, 102));
+        CartButtonPer7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/WhiteCart.png"))); // NOI18N
+        CartButtonPer7.setBorderPainted(false);
+        CartButtonPer7.setContentAreaFilled(false);
+        CartButtonPer7.setMaximumSize(new java.awt.Dimension(50, 50));
+        CartButtonPer7.setMinimumSize(new java.awt.Dimension(50, 50));
+        CartButtonPer7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                CartButtonPer7MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                CartButtonPer7MouseExited(evt);
+            }
+        });
+        PerCha.add(CartButtonPer7, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 10, 50, 50));
+
+        Fondo15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Wallpaper.png"))); // NOI18N
+        PerCha.add(Fondo15, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        Personalizado.add(PerCha, "card2");
+
+        PerSO.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        Progreso8.setValue(89);
+        PerSO.add(Progreso8, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 500, 520, -1));
+
+        LabelSO.setFont(new java.awt.Font("Consolas", 1, 24)); // NOI18N
+        LabelSO.setForeground(new java.awt.Color(255, 255, 255));
+        LabelSO.setText("Elige el Sistema Operativo:");
+        PerSO.add(LabelSO, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 160, -1, -1));
+
+        PrevButton8.setBackground(new java.awt.Color(0, 0, 102));
+        PrevButton8.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        PrevButton8.setForeground(new java.awt.Color(255, 255, 255));
+        PrevButton8.setText("Anterior");
+        PrevButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PrevButton8ActionPerformed(evt);
+            }
+        });
+        PerSO.add(PrevButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 490, -1, -1));
+
+        FinButton.setBackground(new java.awt.Color(0, 0, 102));
+        FinButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        FinButton.setForeground(new java.awt.Color(255, 255, 255));
+        FinButton.setText("Terminar");
+        PerSO.add(FinButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 490, -1, -1));
+
+        Volver15.setBackground(new java.awt.Color(0, 0, 102));
+        Volver15.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
+        Volver15.setForeground(new java.awt.Color(255, 255, 255));
+        Volver15.setText("Volver");
+        Volver15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Volver15ActionPerformed(evt);
+            }
+        });
+        PerSO.add(Volver15, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+
+        MetPer8.setFont(new java.awt.Font("Consolas", 1, 48)); // NOI18N
+        MetPer8.setForeground(new java.awt.Color(255, 255, 255));
+        MetPer8.setText("Metodo Personalizado");
+        PerSO.add(MetPer8, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 80, -1, -1));
+
+        CartButtonPer8.setBackground(new java.awt.Color(0, 0, 102));
+        CartButtonPer8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/WhiteCart.png"))); // NOI18N
+        CartButtonPer8.setBorderPainted(false);
+        CartButtonPer8.setContentAreaFilled(false);
+        CartButtonPer8.setMaximumSize(new java.awt.Dimension(50, 50));
+        CartButtonPer8.setMinimumSize(new java.awt.Dimension(50, 50));
+        CartButtonPer8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                CartButtonPer8MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                CartButtonPer8MouseExited(evt);
+            }
+        });
+        PerSO.add(CartButtonPer8, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 10, 50, 50));
+
+        Fondo16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Wallpaper.png"))); // NOI18N
+        PerSO.add(Fondo16, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        Personalizado.add(PerSO, "card2");
 
         getContentPane().add(Personalizado, "card6");
 
@@ -1351,11 +2020,21 @@ public class Ingreso extends javax.swing.JFrame {
 
     private void Volver4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Volver4ActionPerformed
         TipoArmado.setVisible(true);
+        PerCPU.setVisible(false);
         Personalizado.setVisible(false);
     }//GEN-LAST:event_Volver4ActionPerformed
 
     private void PersonalizadoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PersonalizadoButtonActionPerformed
         Personalizado.setVisible(true);
+        PerCPU.setVisible(true);
+        PerTM.setVisible(false);
+        PerRAM.setVisible(false);
+        PerTG.setVisible(false);
+        PerAlm.setVisible(false);
+        PerRef.setVisible(false);
+        PerFP.setVisible(false);
+        PerCha.setVisible(false);
+        PerSO.setVisible(false);
         TipoArmado.setVisible(false);
     }//GEN-LAST:event_PersonalizadoButtonActionPerformed
 
@@ -2009,6 +2688,198 @@ public class Ingreso extends javax.swing.JFrame {
     private void MomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MomActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_MomActionPerformed
+
+    private void Volver8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Volver8ActionPerformed
+        TipoArmado.setVisible(true);
+        PerTM.setVisible(false);
+        Personalizado.setVisible(false);
+    }//GEN-LAST:event_Volver8ActionPerformed
+
+    private void CartButtonPer1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CartButtonPer1MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CartButtonPer1MouseEntered
+
+    private void CartButtonPer1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CartButtonPer1MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CartButtonPer1MouseExited
+
+    private void Volver9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Volver9ActionPerformed
+        TipoArmado.setVisible(true);
+        PerRAM.setVisible(false);
+        Personalizado.setVisible(false);
+    }//GEN-LAST:event_Volver9ActionPerformed
+
+    private void CartButtonPer2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CartButtonPer2MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CartButtonPer2MouseEntered
+
+    private void CartButtonPer2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CartButtonPer2MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CartButtonPer2MouseExited
+
+    private void Volver10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Volver10ActionPerformed
+        TipoArmado.setVisible(true);
+        PerTG.setVisible(false);
+        Personalizado.setVisible(false);
+    }//GEN-LAST:event_Volver10ActionPerformed
+
+    private void CartButtonPer3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CartButtonPer3MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CartButtonPer3MouseEntered
+
+    private void CartButtonPer3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CartButtonPer3MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CartButtonPer3MouseExited
+
+    private void Volver11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Volver11ActionPerformed
+        TipoArmado.setVisible(true);
+        PerAlm.setVisible(false);
+        Personalizado.setVisible(false);
+    }//GEN-LAST:event_Volver11ActionPerformed
+
+    private void CartButtonPer4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CartButtonPer4MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CartButtonPer4MouseEntered
+
+    private void CartButtonPer4MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CartButtonPer4MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CartButtonPer4MouseExited
+
+    private void Volver12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Volver12ActionPerformed
+        TipoArmado.setVisible(true);
+        PerRef.setVisible(false);
+        Personalizado.setVisible(false);
+    }//GEN-LAST:event_Volver12ActionPerformed
+
+    private void CartButtonPer5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CartButtonPer5MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CartButtonPer5MouseEntered
+
+    private void CartButtonPer5MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CartButtonPer5MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CartButtonPer5MouseExited
+
+    private void Volver13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Volver13ActionPerformed
+        TipoArmado.setVisible(true);
+        PerFP.setVisible(false);
+        Personalizado.setVisible(false);
+    }//GEN-LAST:event_Volver13ActionPerformed
+
+    private void CartButtonPer6MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CartButtonPer6MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CartButtonPer6MouseEntered
+
+    private void CartButtonPer6MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CartButtonPer6MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CartButtonPer6MouseExited
+
+    private void Volver14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Volver14ActionPerformed
+        TipoArmado.setVisible(true);
+        PerCha.setVisible(false);
+        Personalizado.setVisible(false);
+    }//GEN-LAST:event_Volver14ActionPerformed
+
+    private void CartButtonPer7MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CartButtonPer7MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CartButtonPer7MouseEntered
+
+    private void CartButtonPer7MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CartButtonPer7MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CartButtonPer7MouseExited
+
+    private void Volver15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Volver15ActionPerformed
+        TipoArmado.setVisible(true);
+        PerSO.setVisible(false);
+        Personalizado.setVisible(false);
+    }//GEN-LAST:event_Volver15ActionPerformed
+
+    private void CartButtonPer8MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CartButtonPer8MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CartButtonPer8MouseEntered
+
+    private void CartButtonPer8MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CartButtonPer8MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CartButtonPer8MouseExited
+
+    private void NextButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NextButtonActionPerformed
+        PerTM.setVisible(true);
+        PerCPU.setVisible(false);
+    }//GEN-LAST:event_NextButtonActionPerformed
+
+    private void NextButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NextButton1ActionPerformed
+        PerRAM.setVisible(true);
+        PerTM.setVisible(false);
+    }//GEN-LAST:event_NextButton1ActionPerformed
+
+    private void PrevButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PrevButton1ActionPerformed
+        PerTM.setVisible(false);
+        PerCPU.setVisible(true);
+    }//GEN-LAST:event_PrevButton1ActionPerformed
+
+    private void PrevButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PrevButton2ActionPerformed
+        PerRAM.setVisible(false);
+        PerTM.setVisible(true);
+    }//GEN-LAST:event_PrevButton2ActionPerformed
+
+    private void NextButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NextButton2ActionPerformed
+        PerRAM.setVisible(false);
+        PerTG.setVisible(true);
+    }//GEN-LAST:event_NextButton2ActionPerformed
+
+    private void PrevButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PrevButton3ActionPerformed
+        PerRAM.setVisible(true);
+        PerTG.setVisible(false);
+    }//GEN-LAST:event_PrevButton3ActionPerformed
+
+    private void NextButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NextButton3ActionPerformed
+        PerAlm.setVisible(true);
+        PerTG.setVisible(false);
+    }//GEN-LAST:event_NextButton3ActionPerformed
+
+    private void PrevButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PrevButton4ActionPerformed
+        PerAlm.setVisible(false);
+        PerTG.setVisible(true);
+    }//GEN-LAST:event_PrevButton4ActionPerformed
+
+    private void NextButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NextButton4ActionPerformed
+        PerAlm.setVisible(false);
+        PerRef.setVisible(true);
+    }//GEN-LAST:event_NextButton4ActionPerformed
+
+    private void PrevButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PrevButton5ActionPerformed
+        PerAlm.setVisible(true);
+        PerRef.setVisible(false);
+    }//GEN-LAST:event_PrevButton5ActionPerformed
+
+    private void NextButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NextButton5ActionPerformed
+        PerFP.setVisible(true);
+        PerRef.setVisible(false);
+    }//GEN-LAST:event_NextButton5ActionPerformed
+
+    private void PrevButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PrevButton6ActionPerformed
+        PerFP.setVisible(false);
+        PerRef.setVisible(true);
+    }//GEN-LAST:event_PrevButton6ActionPerformed
+
+    private void NextButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NextButton6ActionPerformed
+        PerFP.setVisible(false);
+        PerCha.setVisible(true);
+    }//GEN-LAST:event_NextButton6ActionPerformed
+
+    private void PrevButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PrevButton7ActionPerformed
+        PerFP.setVisible(true);
+        PerCha.setVisible(false);
+    }//GEN-LAST:event_PrevButton7ActionPerformed
+
+    private void NextButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NextButton7ActionPerformed
+        PerSO.setVisible(true);
+        PerCha.setVisible(false);
+    }//GEN-LAST:event_NextButton7ActionPerformed
+
+    private void PrevButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PrevButton8ActionPerformed
+        PerSO.setVisible(false);
+        PerCha.setVisible(true);
+    }//GEN-LAST:event_PrevButton8ActionPerformed
      //imprimir componentes
     public static int imprimir(Map<String, Elemento> Componentes, char a){
         int count = 0;
@@ -2517,6 +3388,14 @@ e.printStackTrace();
     private javax.swing.JButton CancelarDelete;
     private javax.swing.JButton CartButtonGen;
     private javax.swing.JButton CartButtonPer;
+    private javax.swing.JButton CartButtonPer1;
+    private javax.swing.JButton CartButtonPer2;
+    private javax.swing.JButton CartButtonPer3;
+    private javax.swing.JButton CartButtonPer4;
+    private javax.swing.JButton CartButtonPer5;
+    private javax.swing.JButton CartButtonPer6;
+    private javax.swing.JButton CartButtonPer7;
+    private javax.swing.JButton CartButtonPer8;
     private javax.swing.JInternalFrame CartGen;
     private javax.swing.JButton ChasisGen;
     private javax.swing.JPanel Con1;
@@ -2531,12 +3410,21 @@ e.printStackTrace();
     private javax.swing.JList<String> ContenidoAtributos;
     private javax.swing.JPanel Editar;
     private javax.swing.JButton EditarButton;
+    private javax.swing.JPanel Elemento;
     private javax.swing.JButton EliminarButton;
     private javax.swing.JPanel EliminarPan;
     private javax.swing.JButton Filtrar;
     private javax.swing.JPanel Filtro;
+    private javax.swing.JButton FinButton;
     private javax.swing.JLabel Fondo;
     private javax.swing.JLabel Fondo1;
+    private javax.swing.JLabel Fondo10;
+    private javax.swing.JLabel Fondo11;
+    private javax.swing.JLabel Fondo12;
+    private javax.swing.JLabel Fondo13;
+    private javax.swing.JLabel Fondo14;
+    private javax.swing.JLabel Fondo15;
+    private javax.swing.JLabel Fondo16;
     private javax.swing.JLabel Fondo2;
     private javax.swing.JLabel Fondo3;
     private javax.swing.JLabel Fondo4;
@@ -2544,9 +3432,19 @@ e.printStackTrace();
     private javax.swing.JLabel Fondo6;
     private javax.swing.JLabel Fondo7;
     private javax.swing.JLabel Fondo8;
+    private javax.swing.JLabel Fondo9;
     private javax.swing.JPanel Generico;
     private javax.swing.JButton GenericoButton;
     private javax.swing.JButton IngresarButton;
+    private javax.swing.JLabel LabelAlm;
+    private javax.swing.JLabel LabelCPU;
+    private javax.swing.JLabel LabelCha;
+    private javax.swing.JLabel LabelFP;
+    private javax.swing.JLabel LabelRAM;
+    private javax.swing.JLabel LabelRef;
+    private javax.swing.JLabel LabelSO;
+    private javax.swing.JLabel LabelTG;
+    private javax.swing.JLabel LabelTM;
     private javax.swing.JTable Lista;
     private javax.swing.JList<String> ListaAtri;
     private javax.swing.JComboBox<String> ListaTipo;
@@ -2554,17 +3452,57 @@ e.printStackTrace();
     private javax.swing.JLabel MetGen;
     private javax.swing.JLabel MetGen1;
     private javax.swing.JLabel MetPer;
+    private javax.swing.JLabel MetPer1;
+    private javax.swing.JLabel MetPer2;
+    private javax.swing.JLabel MetPer3;
+    private javax.swing.JLabel MetPer4;
+    private javax.swing.JLabel MetPer5;
+    private javax.swing.JLabel MetPer6;
+    private javax.swing.JLabel MetPer7;
+    private javax.swing.JLabel MetPer8;
     private javax.swing.JComboBox<String> Mom;
     private javax.swing.JButton NextButton;
+    private javax.swing.JButton NextButton1;
+    private javax.swing.JButton NextButton2;
+    private javax.swing.JButton NextButton3;
+    private javax.swing.JButton NextButton4;
+    private javax.swing.JButton NextButton5;
+    private javax.swing.JButton NextButton6;
+    private javax.swing.JButton NextButton7;
     private javax.swing.JButton OSGen;
     private javax.swing.JScrollPane PanelLista;
+    private javax.swing.JPanel PerAlm;
+    private javax.swing.JPanel PerCPU;
+    private javax.swing.JPanel PerCha;
+    private javax.swing.JPanel PerFP;
+    private javax.swing.JPanel PerRAM;
+    private javax.swing.JPanel PerRef;
+    private javax.swing.JPanel PerSO;
+    private javax.swing.JPanel PerTG;
+    private javax.swing.JPanel PerTM;
     private javax.swing.JPanel Personalizado;
     private javax.swing.JButton PersonalizadoButton;
     private javax.swing.JButton PoderGen;
     private javax.swing.JLabel Pregunta;
     private javax.swing.JButton PrevButton;
+    private javax.swing.JButton PrevButton1;
+    private javax.swing.JButton PrevButton2;
+    private javax.swing.JButton PrevButton3;
+    private javax.swing.JButton PrevButton4;
+    private javax.swing.JButton PrevButton5;
+    private javax.swing.JButton PrevButton6;
+    private javax.swing.JButton PrevButton7;
+    private javax.swing.JButton PrevButton8;
     private javax.swing.JPanel Principal;
     private javax.swing.JProgressBar Progreso;
+    private javax.swing.JProgressBar Progreso1;
+    private javax.swing.JProgressBar Progreso2;
+    private javax.swing.JProgressBar Progreso3;
+    private javax.swing.JProgressBar Progreso4;
+    private javax.swing.JProgressBar Progreso5;
+    private javax.swing.JProgressBar Progreso6;
+    private javax.swing.JProgressBar Progreso7;
+    private javax.swing.JProgressBar Progreso8;
     private javax.swing.JButton RAMGen;
     private javax.swing.JButton RefGen;
     private javax.swing.JButton Salir;
@@ -2598,12 +3536,20 @@ e.printStackTrace();
     private javax.swing.JLabel TotalSt;
     private javax.swing.JButton Volver;
     private javax.swing.JButton Volver1;
+    private javax.swing.JButton Volver10;
+    private javax.swing.JButton Volver11;
+    private javax.swing.JButton Volver12;
+    private javax.swing.JButton Volver13;
+    private javax.swing.JButton Volver14;
+    private javax.swing.JButton Volver15;
     private javax.swing.JButton Volver2;
     private javax.swing.JButton Volver3;
     private javax.swing.JButton Volver4;
     private javax.swing.JButton Volver5;
     private javax.swing.JButton Volver6;
     private javax.swing.JButton Volver7;
+    private javax.swing.JButton Volver8;
+    private javax.swing.JButton Volver9;
     private javax.swing.JButton addCancelar;
     private javax.swing.JComboBox<String> compFiltro;
     private javax.swing.Box.Filler filler1;
@@ -2615,6 +3561,8 @@ e.printStackTrace();
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JTable jTable1;
     private javax.swing.JScrollPane label_consult;
     private javax.swing.JPanel maome;
     private javax.swing.JPanel referencia;
