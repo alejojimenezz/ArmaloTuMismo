@@ -192,6 +192,8 @@ public class Ingreso extends javax.swing.JFrame {
         Personalizado = new javax.swing.JPanel();
         PerCPU = new javax.swing.JPanel();
         Progreso = new javax.swing.JProgressBar();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        jTable2 = new javax.swing.JTable();
         LabelCPU = new javax.swing.JLabel();
         PrevButton = new javax.swing.JButton();
         NextButton = new javax.swing.JButton();
@@ -1058,6 +1060,35 @@ public class Ingreso extends javax.swing.JFrame {
         Progreso.setToolTipText("");
         PerCPU.add(Progreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 500, 520, -1));
 
+        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, ""},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Marca", "Modelo", "Precio", ""
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jTable2.setShowVerticalLines(false);
+        jScrollPane6.setViewportView(jTable2);
+
+        PerCPU.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 230, 420, 170));
+
         LabelCPU.setFont(new java.awt.Font("Consolas", 1, 24)); // NOI18N
         LabelCPU.setForeground(new java.awt.Color(255, 255, 255));
         LabelCPU.setText("Elige el procesador (CPU):");
@@ -1849,6 +1880,7 @@ public class Ingreso extends javax.swing.JFrame {
 
     private void GenericoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GenericoButtonActionPerformed
         Generico.setVisible(true);
+        Elemento.setVisible(false);
         TipoArmado.setVisible(false);
         CartGen.setVisible(false);
     }//GEN-LAST:event_GenericoButtonActionPerformed
@@ -3562,7 +3594,9 @@ e.printStackTrace();
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTable2;
     private javax.swing.JScrollPane label_consult;
     private javax.swing.JPanel maome;
     private javax.swing.JPanel referencia;
