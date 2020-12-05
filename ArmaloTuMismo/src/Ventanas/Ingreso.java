@@ -1797,6 +1797,7 @@ public class Ingreso extends javax.swing.JFrame {
         TextFil.setText("Tipo de filtro");
         Filtro.add(TextFil, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 210, 170, 30));
 
+        maome.setOpaque(false);
         maome.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Mom.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Mayor a menor ", "Menor a mayor", " " }));
@@ -1809,6 +1810,7 @@ public class Ingreso extends javax.swing.JFrame {
 
         Filtro.add(maome, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 270, 260, 80));
 
+        referencia.setOpaque(false);
         referencia.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         textref.addActionListener(new java.awt.event.ActionListener() {
