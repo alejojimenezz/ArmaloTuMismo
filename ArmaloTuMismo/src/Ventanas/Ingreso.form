@@ -1,6 +1,35 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <Form version="1.9" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <NonVisualComponents>
+    <Container class="javax.swing.JScrollPane" name="jScrollPane5">
+      <AuxValues>
+        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+      </AuxValues>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+      <SubComponents>
+        <Component class="javax.swing.JTable" name="jTable1">
+          <Properties>
+            <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+              <Table columnCount="4" rowCount="4">
+                <Column editable="false" title="Marca" type="java.lang.Object"/>
+                <Column editable="false" title="Modelo" type="java.lang.Object"/>
+                <Column editable="false" title="Precio" type="java.lang.Object"/>
+                <Column editable="true" title="" type="java.lang.Object">
+                  <Data value="null"/>
+                  <Data value=""/>
+                  <Data value="null"/>
+                  <Data value="null"/>
+                </Column>
+              </Table>
+            </Property>
+            <Property name="showVerticalLines" type="boolean" value="false"/>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+  </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
     <Property name="iconImage" type="java.awt.Image" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
@@ -1337,6 +1366,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Procesador"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CPUGenActionPerformed"/>
+              </Events>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                   <AbsoluteConstraints x="160" y="200" width="-1" height="-1"/>
@@ -1505,40 +1537,6 @@
               <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
                 <Property name="useNullLayout" type="boolean" value="false"/>
               </Layout>
-              <SubComponents>
-                <Container class="javax.swing.JScrollPane" name="jScrollPane5">
-                  <AuxValues>
-                    <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-                  </AuxValues>
-                  <Constraints>
-                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                      <AbsoluteConstraints x="210" y="220" width="420" height="150"/>
-                    </Constraint>
-                  </Constraints>
-
-                  <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-                  <SubComponents>
-                    <Component class="javax.swing.JTable" name="jTable1">
-                      <Properties>
-                        <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                          <Table columnCount="4" rowCount="4">
-                            <Column editable="false" title="Marca" type="java.lang.Object"/>
-                            <Column editable="false" title="Modelo" type="java.lang.Object"/>
-                            <Column editable="false" title="Precio" type="java.lang.Object"/>
-                            <Column editable="true" title="" type="java.lang.Object">
-                              <Data value="null"/>
-                              <Data value=""/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                            </Column>
-                          </Table>
-                        </Property>
-                        <Property name="showVerticalLines" type="boolean" value="false"/>
-                      </Properties>
-                    </Component>
-                  </SubComponents>
-                </Container>
-              </SubComponents>
             </Container>
           </SubComponents>
         </Container>

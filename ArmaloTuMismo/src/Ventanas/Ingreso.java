@@ -99,6 +99,8 @@ public class Ingreso extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane5 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
         Principal = new javax.swing.JPanel();
         Salir = new javax.swing.JButton();
         IngresarButton = new javax.swing.JButton();
@@ -178,8 +180,6 @@ public class Ingreso extends javax.swing.JFrame {
         ChasisGen = new javax.swing.JButton();
         OSGen = new javax.swing.JButton();
         Elemento = new javax.swing.JPanel();
-        jScrollPane5 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
         CartGen = new javax.swing.JInternalFrame();
         MetGen1 = new javax.swing.JLabel();
         Volver5 = new javax.swing.JButton();
@@ -293,6 +293,28 @@ public class Ingreso extends javax.swing.JFrame {
         referencia = new javax.swing.JPanel();
         textref = new javax.swing.JTextField();
         Fondo7 = new javax.swing.JLabel();
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, ""},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Marca", "Modelo", "Precio", ""
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jTable1.setShowVerticalLines(false);
+        jScrollPane5.setViewportView(jTable1);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setIconImage(getIconImage());
@@ -904,6 +926,11 @@ public class Ingreso extends javax.swing.JFrame {
         CPUGen.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
         CPUGen.setForeground(new java.awt.Color(255, 255, 255));
         CPUGen.setText("Procesador");
+        CPUGen.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CPUGenActionPerformed(evt);
+            }
+        });
         MenuGen.add(CPUGen, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 200, -1, -1));
 
         TMGen.setBackground(new java.awt.Color(0, 0, 102));
@@ -955,31 +982,6 @@ public class Ingreso extends javax.swing.JFrame {
         MenuGen.add(OSGen, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 410, -1, -1));
 
         Elemento.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, ""},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Marca", "Modelo", "Precio", ""
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, false, true
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        jTable1.setShowVerticalLines(false);
-        jScrollPane5.setViewportView(jTable1);
-
-        Elemento.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 220, 420, 150));
-
         MenuGen.add(Elemento, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 840, 550));
 
         Generico.add(MenuGen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 840, 550));
@@ -2914,6 +2916,10 @@ public class Ingreso extends javax.swing.JFrame {
         PerSO.setVisible(false);
         PerCha.setVisible(true);
     }//GEN-LAST:event_PrevButton8ActionPerformed
+
+    private void CPUGenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CPUGenActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CPUGenActionPerformed
      //imprimir componentes
     public static int imprimir(Map<String, Elemento> Componentes, char a){
         int count = 0;
