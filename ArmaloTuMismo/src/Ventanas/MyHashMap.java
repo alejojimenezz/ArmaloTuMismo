@@ -10,7 +10,8 @@ import java.util.List;
 
 
 public class MyHashMap {
-
+       
+    public int cantidad=0;
 	class Container{
 		Object key;
 		Object value;
@@ -41,17 +42,32 @@ public class MyHashMap {
 			}
 		}
 		recordList.add(c);
+                cantidad++;
 	}
 	
 	public Object get(Object k){
+            Object vuelta= new Object();
 		for(int i=0; i<this.recordList.size(); i++){
 			Container con = recordList.get(i);
 			//System.out.println("k.toString():"+k.toString()+"con.key.toString()"+con.key.toString());
-			if (k.toString()==con.key.toString()) {
+			if (k.toString().equals(con.key.toString())) {
 				
-				return con.value;
+				vuelta= con.value;
+                                return vuelta;
 			}
+                        else{
+                        vuelta=null;
+                        }
+                        
 			
 		}
-		return null;
-	}}
+              return vuelta;  
+	}
+
+    public int getCantidad() {
+        return cantidad;
+    }
+
+         
+
+}

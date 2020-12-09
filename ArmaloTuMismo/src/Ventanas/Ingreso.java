@@ -63,7 +63,9 @@ public class Ingreso extends javax.swing.JFrame {
         
         static Inventario in=new Inventario();
         static Map<String, Elemento> componentes1 = new HashMap<String, Elemento>();
-        
+        static CarritoCompra sc =new CarritoCompra();
+        static MyHashMap HMsc = new MyHashMap();
+        static int posicionHM=0;
     //private final HashMap<String,JPanel> paneles;
     
     public Ingreso() {
@@ -170,19 +172,13 @@ public class Ingreso extends javax.swing.JFrame {
         CartButtonGen = new javax.swing.JButton();
         MetGen = new javax.swing.JLabel();
         Volver3 = new javax.swing.JButton();
-        CPUGen = new javax.swing.JButton();
-        TMGen = new javax.swing.JButton();
-        RAMGen = new javax.swing.JButton();
-        TGGen = new javax.swing.JButton();
-        AlmGen = new javax.swing.JButton();
-        RefGen = new javax.swing.JButton();
-        PoderGen = new javax.swing.JButton();
-        ChasisGen = new javax.swing.JButton();
-        OSGen = new javax.swing.JButton();
+        componenteSC = new javax.swing.JTextField();
+        CodSC = new javax.swing.JButton();
         Elemento = new javax.swing.JPanel();
         CartGen = new javax.swing.JInternalFrame();
         MetGen1 = new javax.swing.JLabel();
         Volver5 = new javax.swing.JButton();
+        EliminarSC = new javax.swing.JButton();
         PanelLista = new javax.swing.JScrollPane();
         Lista = new javax.swing.JTable();
         TotalSt = new javax.swing.JLabel();
@@ -922,69 +918,37 @@ public class Ingreso extends javax.swing.JFrame {
         });
         MenuGen.add(Volver3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
-        CPUGen.setBackground(new java.awt.Color(0, 0, 102));
-        CPUGen.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
-        CPUGen.setForeground(new java.awt.Color(255, 255, 255));
-        CPUGen.setText("Procesador");
-        CPUGen.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CPUGenActionPerformed(evt);
+        componenteSC.setBackground(new java.awt.Color(0, 0, 0));
+        componenteSC.setFont(new java.awt.Font("Consolas", 2, 18)); // NOI18N
+        componenteSC.setForeground(new java.awt.Color(255, 255, 255));
+        componenteSC.setText("Ingresa referencia del componente a agregar");
+        componenteSC.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                componenteSCMouseClicked(evt);
             }
         });
-        MenuGen.add(CPUGen, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 200, -1, -1));
+        componenteSC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                componenteSCActionPerformed(evt);
+            }
+        });
+        MenuGen.add(componenteSC, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 210, -1, -1));
 
-        TMGen.setBackground(new java.awt.Color(0, 0, 102));
-        TMGen.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
-        TMGen.setForeground(new java.awt.Color(255, 255, 255));
-        TMGen.setText("Tarjeta Madre");
-        MenuGen.add(TMGen, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 270, -1, -1));
-
-        RAMGen.setBackground(new java.awt.Color(0, 0, 102));
-        RAMGen.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
-        RAMGen.setForeground(new java.awt.Color(255, 255, 255));
-        RAMGen.setText("Memoria RAM");
-        MenuGen.add(RAMGen, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 340, -1, -1));
-
-        TGGen.setBackground(new java.awt.Color(0, 0, 102));
-        TGGen.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
-        TGGen.setForeground(new java.awt.Color(255, 255, 255));
-        TGGen.setText("Tarjeta Gráfica");
-        MenuGen.add(TGGen, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 410, -1, -1));
-
-        AlmGen.setBackground(new java.awt.Color(0, 0, 102));
-        AlmGen.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
-        AlmGen.setForeground(new java.awt.Color(255, 255, 255));
-        AlmGen.setText("Almacenamiento");
-        MenuGen.add(AlmGen, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 480, -1, -1));
-
-        RefGen.setBackground(new java.awt.Color(0, 0, 102));
-        RefGen.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
-        RefGen.setForeground(new java.awt.Color(255, 255, 255));
-        RefGen.setText("Refrigeración");
-        MenuGen.add(RefGen, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 200, -1, -1));
-
-        PoderGen.setBackground(new java.awt.Color(0, 0, 102));
-        PoderGen.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
-        PoderGen.setForeground(new java.awt.Color(255, 255, 255));
-        PoderGen.setText("Fuente de Poder");
-        MenuGen.add(PoderGen, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 270, -1, -1));
-
-        ChasisGen.setBackground(new java.awt.Color(0, 0, 102));
-        ChasisGen.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
-        ChasisGen.setForeground(new java.awt.Color(255, 255, 255));
-        ChasisGen.setText("Chasis");
-        MenuGen.add(ChasisGen, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 340, -1, -1));
-
-        OSGen.setBackground(new java.awt.Color(0, 0, 102));
-        OSGen.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
-        OSGen.setForeground(new java.awt.Color(255, 255, 255));
-        OSGen.setText("Sistema Operativo");
-        MenuGen.add(OSGen, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 410, -1, -1));
-
-        Elemento.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        MenuGen.add(Elemento, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 840, 550));
+        CodSC.setBackground(new java.awt.Color(0, 0, 102));
+        CodSC.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
+        CodSC.setForeground(new java.awt.Color(255, 255, 255));
+        CodSC.setText("Agregar al carrito");
+        CodSC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CodSCActionPerformed(evt);
+            }
+        });
+        MenuGen.add(CodSC, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 350, -1, -1));
 
         Generico.add(MenuGen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 840, 550));
+
+        Elemento.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        Generico.add(Elemento, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 840, 550));
 
         CartGen.setBorder(null);
         CartGen.setVisible(true);
@@ -1004,7 +968,19 @@ public class Ingreso extends javax.swing.JFrame {
                 Volver5ActionPerformed(evt);
             }
         });
-        CartGen.getContentPane().add(Volver5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+        CartGen.getContentPane().add(Volver5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, -1, -1));
+
+        EliminarSC.setBackground(new java.awt.Color(0, 0, 102));
+        EliminarSC.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
+        EliminarSC.setForeground(new java.awt.Color(255, 255, 255));
+        EliminarSC.setText("Eliminar Carrito");
+        EliminarSC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EliminarSCActionPerformed(evt);
+            }
+        });
+        CartGen.getContentPane().add(EliminarSC, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 460, -1, -1));
+        EliminarSC.getAccessibleContext().setAccessibleName("volver");
 
         Lista.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
         Lista.setModel(new javax.swing.table.DefaultTableModel(
@@ -1046,7 +1022,7 @@ public class Ingreso extends javax.swing.JFrame {
         CartGen.getContentPane().add(TotalDoub, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 460, 10, -1));
 
         Fondo6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Wallpaper.png"))); // NOI18N
-        CartGen.getContentPane().add(Fondo6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -30, -1, -1));
+        CartGen.getContentPane().add(Fondo6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -20, -1, -1));
 
         Generico.add(CartGen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 840, 550));
 
@@ -2076,10 +2052,31 @@ public class Ingreso extends javax.swing.JFrame {
 
     private void CartButtonGenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CartButtonGenActionPerformed
         CartGen.setVisible(true);
+        MenuGen.setVisible(false);
+        int size=HMsc.getCantidad();
+        String [][] datos = new String [HMsc.getCantidad()] [4];
+        for(int i=0; i<size; i++){
+        Elemento agregar =(Elemento) HMsc.get(i);
+        datos[i][0]=agregar.getID();
+        datos[i][1]=agregar.getModelo();
+        datos[i][2]=agregar.getCantidad();
+        datos[i][3]=agregar.getPrecio();
+        }
+        Lista.setModel(new javax.swing.table.DefaultTableModel(
+                datos,
+                new String []{
+          "Referencia", "Modelo", "Cantidad", "Precio"      
+          }
+           ));
+        
+        
+        
     }//GEN-LAST:event_CartButtonGenActionPerformed
 
     private void Volver5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Volver5ActionPerformed
         CartGen.setVisible(false);
+        MenuGen.setVisible(true);
+        
     }//GEN-LAST:event_Volver5ActionPerformed
 
     private void inReferencia1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_inReferencia1MouseClicked
@@ -2917,9 +2914,34 @@ public class Ingreso extends javax.swing.JFrame {
         PerCha.setVisible(true);
     }//GEN-LAST:event_PrevButton8ActionPerformed
 
-    private void CPUGenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CPUGenActionPerformed
+    private void CodSCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CodSCActionPerformed
+      
+      String id=componenteSC.getText();
+      Elemento Compagregar=componentes1.get(id);
+      HMsc.put(posicionHM, Compagregar);
+      posicionHM++;
+      
+        final JPanel panel = new JPanel();
+        JOptionPane.showMessageDialog(panel, "Agregado con éxito", "Warning",
+        JOptionPane.WARNING_MESSAGE);
+      
+        
+    }//GEN-LAST:event_CodSCActionPerformed
+
+    private void componenteSCMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_componenteSCMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_CPUGenActionPerformed
+    }//GEN-LAST:event_componenteSCMouseClicked
+
+    private void componenteSCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_componenteSCActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_componenteSCActionPerformed
+
+    private void EliminarSCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminarSCActionPerformed
+        CartGen.setVisible(false);
+        MenuGen.setVisible(true);
+        HMsc=null;
+       
+    }//GEN-LAST:event_EliminarSCActionPerformed
      //imprimir componentes
     public static int imprimir(Map<String, Elemento> Componentes, char a){
         int count = 0;
@@ -3420,11 +3442,9 @@ e.printStackTrace();
     private javax.swing.JButton AddConfirmar1;
     private javax.swing.JPanel AddPan;
     private javax.swing.JButton AgregarButton;
-    private javax.swing.JButton AlmGen;
     private javax.swing.JList<String> AtributosDeleteList;
     private javax.swing.JButton BuscarButton;
     private javax.swing.JButton BuscarOtroButton;
-    private javax.swing.JButton CPUGen;
     private javax.swing.JButton CancelarDelete;
     private javax.swing.JButton CartButtonGen;
     private javax.swing.JButton CartButtonPer;
@@ -3437,7 +3457,7 @@ e.printStackTrace();
     private javax.swing.JButton CartButtonPer7;
     private javax.swing.JButton CartButtonPer8;
     private javax.swing.JInternalFrame CartGen;
-    private javax.swing.JButton ChasisGen;
+    private javax.swing.JButton CodSC;
     private javax.swing.JPanel Con1;
     private javax.swing.JPanel Con2;
     private javax.swing.JButton ConfirmarDelete;
@@ -3453,6 +3473,7 @@ e.printStackTrace();
     private javax.swing.JPanel Elemento;
     private javax.swing.JButton EliminarButton;
     private javax.swing.JPanel EliminarPan;
+    private javax.swing.JButton EliminarSC;
     private javax.swing.JButton Filtrar;
     private javax.swing.JPanel Filtro;
     private javax.swing.JButton FinButton;
@@ -3509,7 +3530,6 @@ e.printStackTrace();
     private javax.swing.JButton NextButton5;
     private javax.swing.JButton NextButton6;
     private javax.swing.JButton NextButton7;
-    private javax.swing.JButton OSGen;
     private javax.swing.JScrollPane PanelLista;
     private javax.swing.JPanel PerAlm;
     private javax.swing.JPanel PerCPU;
@@ -3522,7 +3542,6 @@ e.printStackTrace();
     private javax.swing.JPanel PerTM;
     private javax.swing.JPanel Personalizado;
     private javax.swing.JButton PersonalizadoButton;
-    private javax.swing.JButton PoderGen;
     private javax.swing.JLabel Pregunta;
     private javax.swing.JButton PrevButton;
     private javax.swing.JButton PrevButton1;
@@ -3543,12 +3562,8 @@ e.printStackTrace();
     private javax.swing.JProgressBar Progreso6;
     private javax.swing.JProgressBar Progreso7;
     private javax.swing.JProgressBar Progreso8;
-    private javax.swing.JButton RAMGen;
-    private javax.swing.JButton RefGen;
     private javax.swing.JButton Salir;
     private javax.swing.JLabel Seleccione;
-    private javax.swing.JButton TGGen;
-    private javax.swing.JButton TMGen;
     private javax.swing.JTable Tdatos;
     private javax.swing.JLabel TextComp;
     private javax.swing.JLabel TextFil;
@@ -3592,6 +3607,7 @@ e.printStackTrace();
     private javax.swing.JButton Volver9;
     private javax.swing.JButton addCancelar;
     private javax.swing.JComboBox<String> compFiltro;
+    private javax.swing.JTextField componenteSC;
     private javax.swing.Box.Filler filler1;
     private javax.swing.Box.Filler filler2;
     private javax.swing.JPanel impresultados;
